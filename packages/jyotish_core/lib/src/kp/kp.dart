@@ -222,4 +222,80 @@ class KpChart {
       moonSubLord: moon.sub,
     );
   }
+
+  // ---- Nakshatra Nadi, 4-step, cuspal interlinks ---------------------------
+
+  Rashi _sign(Graha g) => Rashi.ofLongitude(planets[g]!);
+
+  /// True if [p] aspects sign [s] by whole-sign graha drishti (7th for
+  /// all; Mars also 4th/8th, Jupiter 5th/9th, Saturn 3rd/10th).
+  bool _aspects(Graha p, Rashi s) {
+    final n = (s.index - _sign(p).index) % 12 + 1;
+    if (n == 7) return true;
+    return switch (p) {
+      Graha.mars => n == 4 || n == 8,
+      Graha.jupiter => n == 5 || n == 9,
+      Graha.saturn => n == 3 || n == 10,
+      _ => false,
+    };
+  }
+
+  static const _sevenGrahas = [
+    Graha.sun, Graha.moon, Graha.mars, Graha.mercury,
+    Graha.jupiter, Graha.venus, Graha.saturn,
+  ];
+
+  List<int> _occOwn(Graha g) =>
+      {houseOf(planets[g]!), ...owns(g)}.toList()..sort();
+
+  /// Houses a planet signifies in Nakshatra Nadi: occupancy + ownership.
+  /// Rahu/Ketu add their sign lord's, star lord's, and conjunct and
+  /// aspecting planets' houses (they act as agents).
+  List<int> nadi(Graha g) {
+    if (!g.isNode) return _occOwn(g);
+    final s = _sign(g);
+    final out = <int>{houseOf(planets[g]!)};
+    out.addAll(_occOwn(s.lord));
+    final star = lordsOf(g).star;
+    if (!star.isNode) out.addAll(_occOwn(star));
+    for (final p in _sevenGrahas) {
+      if (_sign(p) == s || _aspects(p, s)) out.addAll(_occOwn(p));
+    }
+    return out.toList()..sort();
+  }
+
+  /// KP 4-step: the planet, its star lord, its sub lord, and the sub
+  /// lord's star lord, each with its Nakshatra Nadi houses.
+  List<(Graha, List<int>)> fourStep(Graha g) {
+    final l = lordsOf(g);
+    final subStar = lordsOf(l.sub).star;
+    return [
+      (g, nadi(g)),
+      (l.star, nadi(l.star)),
+      (l.sub, nadi(l.sub)),
+      (subStar, nadi(subStar)),
+    ];
+  }
+
+  /// Cuspal interlinks (sub) for cusp [h], as AstroSage lists them:
+  /// T1 cusps whose sub lord is the star or sub lord of this cusp's sub
+  /// lord; T3 cusps whose sub lord has this cusp's sub lord as star lord;
+  /// T4 house occupied by the star lord of this cusp's sub lord.
+  ({List<int> t1, List<int> t3, int t4, Graha subLord}) cilSub(int h) {
+    final s = cuspLords(h).sub;
+    final ls = lordsOf(s);
+    final subs = [for (var c = 1; c <= 12; c++) cuspLords(c).sub];
+    return (
+      subLord: s,
+      t1: [
+        for (var c = 1; c <= 12; c++)
+          if (subs[c - 1] == ls.star || subs[c - 1] == ls.sub) c,
+      ],
+      t3: [
+        for (var c = 1; c <= 12; c++)
+          if (lordsOf(subs[c - 1]).star == s) c,
+      ],
+      t4: houseOf(planets[ls.star]!),
+    );
+  }
 }

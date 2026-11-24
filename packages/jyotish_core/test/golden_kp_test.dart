@@ -88,6 +88,31 @@ void main() {
         }
       });
 
+      test('Nakshatra Nadi matches AstroSage', () {
+        final want = (kpExp['nadi'] as Map).cast<String, List>();
+        for (final e in want.entries) {
+          expect(kp.nadi(Graha.values.byName(e.key)), e.value.cast<int>(),
+              reason: e.key);
+        }
+      });
+
+      test('CIL (sub) T1, T3, T4 match AstroSage', () {
+        final cil = (kpExp['cilSub'] as Map).cast<String, List>();
+        for (var h = 1; h <= 12; h++) {
+          final c = kp.cilSub(h);
+          expect(c.t1, (cil['T1']![h - 1] as List).cast<int>(), reason: 'T1 cusp $h');
+          expect(c.t3, (cil['T3']![h - 1] as List).cast<int>(), reason: 'T3 cusp $h');
+          expect(c.t4, cil['T4']![h - 1], reason: 'T4 cusp $h');
+        }
+      });
+
+      test('4-step chains planet → star → sub → star of sub', () {
+        final fs = kp.fourStep(Graha.sun);
+        expect([for (final (g, _) in fs) g],
+            [Graha.sun, Graha.saturn, Graha.mercury, Graha.rahu]);
+        expect(fs[1].$2, kp.nadi(Graha.saturn));
+      });
+
       test('ruling planets at birth match AstroSage', () {
         final rp = kp.rulingPlanets(Graha.moon); // Monday (Hindu weekday)
         final want = (kpExp['rulingPlanets'] as Map).cast<String, String>();

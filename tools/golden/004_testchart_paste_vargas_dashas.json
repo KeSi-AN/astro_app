@@ -1,6 +1,6 @@
 {
   "id": "004_testchart_paste_vargas_dashas",
-  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only). KP: k02 (planets), k03 (cusps), k16-k18 (significations), k_rp (ruling planets).",
+  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only). KP: k02 (planets), k03 (cusps), k16-k18 (significations), k_rp (ruling planets). KP Nadi: m03; CIL sub: k112; 4-step: m01/m02.",
   "settings": {
     "ayanamsa": "lahiri"
   },
@@ -778,6 +778,200 @@
         "moonSignLord": "mars",
         "moonStarLord": "venus",
         "moonSubLord": "mercury"
+      },
+      "nadi": {
+        "sun": [
+          2,
+          4
+        ],
+        "moon": [
+          1,
+          9,
+          12
+        ],
+        "mars": [
+          1,
+          5,
+          10
+        ],
+        "mercury": [
+          3
+        ],
+        "jupiter": [
+          1,
+          9
+        ],
+        "venus": [
+          3,
+          4,
+          11
+        ],
+        "saturn": [
+          6,
+          7,
+          8
+        ],
+        "rahu": [
+          1,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "ketu": [
+          1,
+          2,
+          4,
+          5,
+          9,
+          10
+        ]
+      },
+      "cilSub": {
+        "T1": [
+          [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          [
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          [
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            1,
+            2,
+            5,
+            7,
+            8,
+            11
+          ],
+          [
+            1,
+            3,
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          [
+            2,
+            4,
+            8
+          ]
+        ],
+        "T3": [
+          [
+            1,
+            5,
+            7,
+            10,
+            11
+          ],
+          [],
+          [
+            2,
+            8
+          ],
+          [
+            12
+          ],
+          [
+            1,
+            5,
+            7,
+            10,
+            11
+          ],
+          [
+            2,
+            8
+          ],
+          [
+            1,
+            5,
+            7,
+            10,
+            11
+          ],
+          [],
+          [
+            2,
+            8
+          ],
+          [],
+          [
+            1,
+            5,
+            7,
+            10,
+            11
+          ],
+          []
+        ],
+        "T4": [
+          8,
+          7,
+          1,
+          1,
+          8,
+          1,
+          8,
+          7,
+          1,
+          8,
+          8,
+          3
+        ]
       }
     }
   }

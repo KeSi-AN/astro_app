@@ -72,4 +72,8 @@ AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Again
 | House significators | all match |
 | Ruling planets at birth | all match |
 
-Not yet built: CIL (cuspal interlinks) and 4-step tables, Nakshatra Nadi.
+| Nakshatra Nadi (9 planets; nodes take sign lord, star lord, conjunct and aspecting planets) | all match |
+| CIL (sub) T1, T3, T4 for 12 cusps | all match |
+| CIL (sub) T2 | not shown: no consistent rule reproduces AstroSage's column from its own data |
+| CIL (sub-sub) | not built: AstroSage's columns could not be decoded |
+| 4-step | ours: textbook chain (planet → star lord → sub lord → sub lord's star lord), each with Nakshatra Nadi houses. AstroSage adds "cuspal" and conjunction/aspect notes, blanks a planet's own row when other planets sit in its stars, and drops some owned houses (e.g. Jupiter's 9th, Venus's 4th) — not reproduced. |

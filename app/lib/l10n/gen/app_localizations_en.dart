@@ -944,4 +944,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invalidHorary => 'Enter a number from 1 to 249';
+
+  @override
+  String get kpNadi => 'Nadi';
+
+  @override
+  String get kp4Step => '4-step';
+
+  @override
+  String get kpCil => 'CIL';
+
+  @override
+  String get nadiNote =>
+      'Nakshatra Nadi: houses occupied and owned; Rahu/Ketu also take their sign lord, star lord, and conjunct and aspecting planets.';
+
+  @override
+  String get rowPlanet => 'Planet';
+
+  @override
+  String get rowStarLord => 'Star lord';
+
+  @override
+  String get rowSubLord => 'Sub lord';
+
+  @override
+  String get rowSubStar => 'Star lord of sub lord';
+
+  @override
+  String get fourStepNote =>
+      'Each step shows the lord and its Nakshatra Nadi houses.';
+
+  @override
+  String get colT1 => 'T1';
+
+  @override
+  String get colT3 => 'T3';
+
+  @override
+  String get colT4 => 'T4';
+
+  @override
+  String get cilNote =>
+      'Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp\'s sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord\'s star lord.';
 }

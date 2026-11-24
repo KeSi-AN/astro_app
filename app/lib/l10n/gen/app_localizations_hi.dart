@@ -943,4 +943,46 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get invalidHorary => '1 से 249 के बीच संख्या दर्ज करें';
+
+  @override
+  String get kpNadi => 'नाड़ी';
+
+  @override
+  String get kp4Step => '4-चरण';
+
+  @override
+  String get kpCil => 'सीआईएल';
+
+  @override
+  String get nadiNote =>
+      'नक्षत्र नाड़ी: स्थित और स्वामित्व वाले भाव; राहु/केतु अपने राशि स्वामी, नक्षत्र स्वामी तथा युति और दृष्टि वाले ग्रहों के भाव भी लेते हैं।';
+
+  @override
+  String get rowPlanet => 'ग्रह';
+
+  @override
+  String get rowStarLord => 'नक्षत्र स्वामी';
+
+  @override
+  String get rowSubLord => 'उप स्वामी';
+
+  @override
+  String get rowSubStar => 'उप स्वामी का नक्षत्र स्वामी';
+
+  @override
+  String get fourStepNote =>
+      'प्रत्येक चरण में स्वामी और उसके नक्षत्र नाड़ी भाव।';
+
+  @override
+  String get colT1 => 'T1';
+
+  @override
+  String get colT3 => 'T3';
+
+  @override
+  String get colT4 => 'T4';
+
+  @override
+  String get cilNote =>
+      'भाव संधि अंतर्संबंध (उप)। T1: वे भाव जिनका उप स्वामी इस भाव के उप स्वामी का नक्षत्र या उप स्वामी है। T3: वे भाव जिनके उप स्वामी का नक्षत्र स्वामी यह उप स्वामी है। T4: उप स्वामी के नक्षत्र स्वामी का भाव।';
 }

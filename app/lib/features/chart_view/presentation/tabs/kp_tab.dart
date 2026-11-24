@@ -5,7 +5,7 @@ import '../../../../l10n/l10n.dart';
 import '../../../settings/settings.dart';
 import 'table_widgets.dart';
 
-enum _Kp { planets, cusps, signif, ruling, horary }
+enum _Kp { planets, cusps, signif, nadi, fourStep, cil, ruling, horary }
 
 /// KP system: planet and cusp lords, significations, house significators,
 /// ruling planets (birth and now) and horary (1–249).
@@ -95,6 +95,9 @@ class _KpTabState extends State<KpTab> with AutomaticKeepAliveClientMixin {
               (_Kp.planets, l10n.kpPlanets),
               (_Kp.cusps, l10n.kpCusps),
               (_Kp.signif, l10n.kpSignif),
+              (_Kp.nadi, l10n.kpNadi),
+              (_Kp.fourStep, l10n.kp4Step),
+              (_Kp.cil, l10n.kpCil),
               (_Kp.ruling, l10n.kpRuling),
               (_Kp.horary, l10n.kpHorary),
             ])
@@ -115,6 +118,9 @@ class _KpTabState extends State<KpTab> with AutomaticKeepAliveClientMixin {
           _Kp.planets => _planets(context, kp),
           _Kp.cusps => _cusps(context, kp),
           _Kp.signif => _signif(context, kp),
+          _Kp.nadi => _nadi(context, kp),
+          _Kp.fourStep => _fourStep(context, kp),
+          _Kp.cil => _cil(context, kp),
           _Kp.ruling => _ruling(context),
           _Kp.horary => _horaryView(context),
         },
@@ -314,6 +320,85 @@ class _KpTabState extends State<KpTab> with AutomaticKeepAliveClientMixin {
         const SizedBox(height: 12),
         ..._signif(context, h),
       ],
+    ];
+  }
+
+  List<Widget> _nadi(BuildContext context, KpChart kp) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    String row(Graha g) => '${t.grahaShort(g)}  ${kp.nadi(g).join(', ')}';
+    return [
+      GridTable(
+        header: [l10n.rowPlanet, l10n.rowStarLord, l10n.rowSubLord],
+        rows: [
+          for (final g in kpGrahas)
+            [row(g), row(kp.lordsOf(g).star), row(kp.lordsOf(g).sub)],
+        ],
+      ),
+      const SizedBox(height: 6),
+      Text(l10n.nadiNote, style: Theme.of(context).textTheme.bodySmall),
+    ];
+  }
+
+  List<Widget> _fourStep(BuildContext context, KpChart kp) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final labels = [
+      l10n.rowPlanet,
+      l10n.rowStarLord,
+      l10n.rowSubLord,
+      l10n.rowSubStar,
+    ];
+    return [
+      for (final g in kpGrahas)
+        Card(
+          margin: const EdgeInsets.only(bottom: 8),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                for (final (i, (lord, houses)) in kp.fourStep(g).indexed)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    child: Text(
+                      '${i + 1}. ${labels[i]}: ${t.graha(lord)} — '
+                      '${houses.isEmpty ? '—' : houses.join(', ')}',
+                      style: i == 0
+                          ? Theme.of(context).textTheme.titleSmall
+                          : null,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      Text(l10n.fourStepNote, style: Theme.of(context).textTheme.bodySmall),
+    ];
+  }
+
+  List<Widget> _cil(BuildContext context, KpChart kp) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    return [
+      GridTable(
+        header: [l10n.colCusp, l10n.colSub, l10n.colT1, l10n.colT3, l10n.colT4],
+        rows: [
+          for (var h = 1; h <= 12; h++)
+            () {
+              final c = kp.cilSub(h);
+              return [
+                '$h',
+                t.grahaShort(c.subLord),
+                c.t1.join(','),
+                c.t3.isEmpty ? '—' : c.t3.join(','),
+                '${c.t4}',
+              ];
+            }(),
+        ],
+      ),
+      const SizedBox(height: 6),
+      Text(l10n.cilNote, style: Theme.of(context).textTheme.bodySmall),
     ];
   }
 

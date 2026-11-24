@@ -1819,6 +1819,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter a number from 1 to 249'**
   String get invalidHorary;
+
+  /// No description provided for @kpNadi.
+  ///
+  /// In en, this message translates to:
+  /// **'Nadi'**
+  String get kpNadi;
+
+  /// No description provided for @kp4Step.
+  ///
+  /// In en, this message translates to:
+  /// **'4-step'**
+  String get kp4Step;
+
+  /// No description provided for @kpCil.
+  ///
+  /// In en, this message translates to:
+  /// **'CIL'**
+  String get kpCil;
+
+  /// No description provided for @nadiNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra Nadi: houses occupied and owned; Rahu/Ketu also take their sign lord, star lord, and conjunct and aspecting planets.'**
+  String get nadiNote;
+
+  /// No description provided for @rowPlanet.
+  ///
+  /// In en, this message translates to:
+  /// **'Planet'**
+  String get rowPlanet;
+
+  /// No description provided for @rowStarLord.
+  ///
+  /// In en, this message translates to:
+  /// **'Star lord'**
+  String get rowStarLord;
+
+  /// No description provided for @rowSubLord.
+  ///
+  /// In en, this message translates to:
+  /// **'Sub lord'**
+  String get rowSubLord;
+
+  /// No description provided for @rowSubStar.
+  ///
+  /// In en, this message translates to:
+  /// **'Star lord of sub lord'**
+  String get rowSubStar;
+
+  /// No description provided for @fourStepNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Each step shows the lord and its Nakshatra Nadi houses.'**
+  String get fourStepNote;
+
+  /// No description provided for @colT1.
+  ///
+  /// In en, this message translates to:
+  /// **'T1'**
+  String get colT1;
+
+  /// No description provided for @colT3.
+  ///
+  /// In en, this message translates to:
+  /// **'T3'**
+  String get colT3;
+
+  /// No description provided for @colT4.
+  ///
+  /// In en, this message translates to:
+  /// **'T4'**
+  String get colT4;
+
+  /// No description provided for @cilNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp\'s sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord\'s star lord.'**
+  String get cilNote;
 }
 
 class _AppLocalizationsDelegate
