@@ -1,0 +1,143 @@
+{
+  "id": "001_testchart_agra",
+  "source": "AstroSage Android v32.6 (Planets screen + free PDF page 1), captured 2026-11-23 from the Moto Edge 50 Neo. Screenshots: REA/astrosage/live/06.png, 11.png",
+  "settings": {
+    "ayanamsa": "lahiri",
+    "chartStyle": "north"
+  },
+  "birth": {
+    "date": "2026-11-23",
+    "time": "23:21:37",
+    "place": "Agra",
+    "latitude": "27N09",
+    "longitude": "078E00",
+    "utcOffsetHours": 5.5,
+    "dstHours": 0
+  },
+  "expected": {
+    "julianDay": 2461368,
+    "ayanamsa": "024-13-56",
+    "obliquity": "023-26-09",
+    "siderealTime": "03.14.27",
+    "lmtCorrection": "-00.18.00",
+    "positions": [
+      [
+        "lagna",
+        "Cancer",
+        "29 13 58",
+        "Ashlesha",
+        4,
+        false
+      ],
+      [
+        "sun",
+        "Scorpio",
+        "07 13 25",
+        "Anuradha",
+        2,
+        false
+      ],
+      [
+        "moon",
+        "Aries",
+        "25 00 12",
+        "Bharani",
+        4,
+        false
+      ],
+      [
+        "mars",
+        "Leo",
+        "04 51 08",
+        "Magha",
+        2,
+        false
+      ],
+      [
+        "mercury",
+        "Libra",
+        "18 01 08",
+        "Swati",
+        4,
+        false
+      ],
+      [
+        "jupiter",
+        "Leo",
+        "02 08 59",
+        "Magha",
+        1,
+        false
+      ],
+      [
+        "venus",
+        "Libra",
+        "00 25 29",
+        "Chitra",
+        3,
+        false
+      ],
+      [
+        "saturn",
+        "Pisces",
+        "13 56 18",
+        "Uttara Bhadrapada",
+        4,
+        true
+      ],
+      [
+        "rahu",
+        "Aquarius",
+        "00 37 42",
+        "Dhanishta",
+        3,
+        true
+      ],
+      [
+        "ketu",
+        "Leo",
+        "00 37 42",
+        "Magha",
+        1,
+        true
+      ],
+      [
+        "uranus",
+        "Taurus",
+        "09 33 54",
+        "Krittika",
+        4,
+        true
+      ],
+      [
+        "neptune",
+        "Pisces",
+        "07 25 23",
+        "Uttara Bhadrapada",
+        2,
+        true
+      ],
+      [
+        "pluto",
+        "Capricorn",
+        "08 59 40",
+        "Uttara Ashadha",
+        4,
+        false
+      ]
+    ],
+    "obliquityKind": "mean"
+  },
+  "reference": "astrosage",
+  "tolerancesArcSec": {
+    "_note": "AstroSage uses its own lower-precision ephemeris (see DIVERGENCES.md). Signs, nakshatras, padas and retrograde must match exactly; degrees within these limits.",
+    "default": 60,
+    "jupiter": 240,
+    "saturn": 240,
+    "uranus": 300,
+    "neptune": 300,
+    "pluto": 900,
+    "ayanamsa": 15,
+    "obliquity": 5
+  }
+}

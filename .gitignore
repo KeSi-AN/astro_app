@@ -1,0 +1,14 @@
+# Build outputs
+build/
+.dart_tool/
+*.iml
+.idea/
+# Locally built test library (tools/build_sweph_dll.bat)
+packages/jyotish_core/native/
+# Flutter/Android local files
+**/android/local.properties
+**/android/.gradle/
+**/android/app/debug/
+**/android/app/release/
+**/*.keystore
+**/key.properties
