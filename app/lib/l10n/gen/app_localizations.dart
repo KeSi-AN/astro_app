@@ -1897,6 +1897,240 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp\'s sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord\'s star lord.'**
   String get cilNote;
+
+  /// No description provided for @tabYogas.
+  ///
+  /// In en, this message translates to:
+  /// **'Yogas'**
+  String get tabYogas;
+
+  /// No description provided for @secYogas.
+  ///
+  /// In en, this message translates to:
+  /// **'Yogas & doshas'**
+  String get secYogas;
+
+  /// No description provided for @secSadeSati.
+  ///
+  /// In en, this message translates to:
+  /// **'Sade Sati'**
+  String get secSadeSati;
+
+  /// No description provided for @secAvastha.
+  ///
+  /// In en, this message translates to:
+  /// **'Avastha'**
+  String get secAvastha;
+
+  /// No description provided for @secUpagraha.
+  ///
+  /// In en, this message translates to:
+  /// **'Upagraha'**
+  String get secUpagraha;
+
+  /// No description provided for @secArudha.
+  ///
+  /// In en, this message translates to:
+  /// **'Arudha'**
+  String get secArudha;
+
+  /// No description provided for @secNavatara.
+  ///
+  /// In en, this message translates to:
+  /// **'Navatara'**
+  String get secNavatara;
+
+  /// No description provided for @present.
+  ///
+  /// In en, this message translates to:
+  /// **'Present'**
+  String get present;
+
+  /// No description provided for @absent.
+  ///
+  /// In en, this message translates to:
+  /// **'Absent'**
+  String get absent;
+
+  /// No description provided for @cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get cancelled;
+
+  /// No description provided for @showAbsent.
+  ///
+  /// In en, this message translates to:
+  /// **'Show absent ones'**
+  String get showAbsent;
+
+  /// No description provided for @mangalFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'from {ref}: house {house}'**
+  String mangalFrom(Object ref, Object house);
+
+  /// No description provided for @refLagna.
+  ///
+  /// In en, this message translates to:
+  /// **'lagna'**
+  String get refLagna;
+
+  /// No description provided for @refMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon'**
+  String get refMoon;
+
+  /// No description provided for @refVenus.
+  ///
+  /// In en, this message translates to:
+  /// **'Venus'**
+  String get refVenus;
+
+  /// No description provided for @cancelMarsStrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Mars in own/exalted sign'**
+  String get cancelMarsStrong;
+
+  /// No description provided for @cancelWithJupiter.
+  ///
+  /// In en, this message translates to:
+  /// **'Mars with Jupiter'**
+  String get cancelWithJupiter;
+
+  /// No description provided for @cancelWithMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Mars with Moon'**
+  String get cancelWithMoon;
+
+  /// No description provided for @cancelSignException.
+  ///
+  /// In en, this message translates to:
+  /// **'Mars in a sign that cancels it in house {house}'**
+  String cancelSignException(Object house);
+
+  /// No description provided for @kaalSarpType.
+  ///
+  /// In en, this message translates to:
+  /// **'Type: {name}'**
+  String kaalSarpType(Object name);
+
+  /// No description provided for @colYoga.
+  ///
+  /// In en, this message translates to:
+  /// **'Yoga / dosha'**
+  String get colYoga;
+
+  /// No description provided for @colResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Result'**
+  String get colResult;
+
+  /// No description provided for @sadeSatiNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturn in the 12th, 1st or 2nd from the Moon sign is Sade Sati; in the 4th or 8th, Small Panoti (Dhaiya). Retrograde returns are listed separately.'**
+  String get sadeSatiNote;
+
+  /// No description provided for @colKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get colKind;
+
+  /// No description provided for @colPhase.
+  ///
+  /// In en, this message translates to:
+  /// **'Phase'**
+  String get colPhase;
+
+  /// No description provided for @sadeSatiKind.
+  ///
+  /// In en, this message translates to:
+  /// **'Sade Sati'**
+  String get sadeSatiKind;
+
+  /// No description provided for @smallPanoti.
+  ///
+  /// In en, this message translates to:
+  /// **'Small Panoti'**
+  String get smallPanoti;
+
+  /// No description provided for @phaseRising.
+  ///
+  /// In en, this message translates to:
+  /// **'Rising'**
+  String get phaseRising;
+
+  /// No description provided for @phasePeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Peak'**
+  String get phasePeak;
+
+  /// No description provided for @phaseSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting'**
+  String get phaseSetting;
+
+  /// No description provided for @runningNow.
+  ///
+  /// In en, this message translates to:
+  /// **'running now'**
+  String get runningNow;
+
+  /// No description provided for @colBaladi.
+  ///
+  /// In en, this message translates to:
+  /// **'Baladi'**
+  String get colBaladi;
+
+  /// No description provided for @colJagratadi.
+  ///
+  /// In en, this message translates to:
+  /// **'Jagratadi'**
+  String get colJagratadi;
+
+  /// No description provided for @colDeeptadi.
+  ///
+  /// In en, this message translates to:
+  /// **'Deeptadi'**
+  String get colDeeptadi;
+
+  /// No description provided for @avasthaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Baladi and Jagratadi by degrees (reversed in even signs); Deeptadi by dignity, Kopa if combust.'**
+  String get avasthaNote;
+
+  /// No description provided for @upagrahaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Gulika = lagna at the start of Saturn\'s part of the day/night; Maandi = at its middle (BPHS). Other software may use a different rule.'**
+  String get upagrahaNote;
+
+  /// No description provided for @arudhaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'A1 = Arudha Lagna (AL), A12 = Upapada (UL).'**
+  String get arudhaNote;
+
+  /// No description provided for @colTara.
+  ///
+  /// In en, this message translates to:
+  /// **'Tara'**
+  String get colTara;
+
+  /// No description provided for @colCycle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cycle {n}'**
+  String colCycle(Object n);
 }
 
 class _AppLocalizationsDelegate

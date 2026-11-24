@@ -1,6 +1,6 @@
 {
   "id": "004_testchart_paste_vargas_dashas",
-  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only). KP: k02 (planets), k03 (cusps), k16-k18 (significations), k_rp (ruling planets). KP Nadi: m03; CIL sub: k112; 4-step: m01/m02.",
+  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only). KP: k02 (planets), k03 (cusps), k16-k18 (significations), k_rp (ruling planets). KP Nadi: m03; CIL sub: k112; 4-step: m01/m02. Phase 6: y_1 (yogas), y_5 (avastha), y_6 (navatara), y_7 (upagraha), y_9 (arudha), s_1 (Sade Sati).",
   "settings": {
     "ayanamsa": "lahiri"
   },
@@ -973,6 +973,183 @@
           3
         ]
       }
+    },
+    "phase6": {
+      "upagrahas": {
+        "dhuma": [
+          "pisces",
+          "20 33 23"
+        ],
+        "vyatipata": [
+          "aries",
+          "09 26 36"
+        ],
+        "parivesha": [
+          "libra",
+          "09 26 36"
+        ],
+        "indrachapa": [
+          "virgo",
+          "20 33 23"
+        ],
+        "upaketu": [
+          "libra",
+          "07 13 23"
+        ],
+        "kaala": [
+          "taurus",
+          "18 09 05"
+        ],
+        "mrityu": [
+          "cancer",
+          "03 48 36"
+        ],
+        "arthaprahara": [
+          "cancer",
+          "25 23 51"
+        ],
+        "yamaghantaka": [
+          "leo",
+          "17 22 29"
+        ],
+        "maandi": [
+          "libra",
+          "01 59 46"
+        ],
+        "gulika": [
+          "virgo",
+          "23 11 15"
+        ]
+      },
+      "baladi": {
+        "sun": "vriddha",
+        "moon": "mrita",
+        "mars": "bala",
+        "mercury": "vriddha",
+        "jupiter": "bala",
+        "venus": "bala",
+        "saturn": "yuva"
+      },
+      "jagratadi": {
+        "sun": "sushupta",
+        "moon": "sushupta",
+        "mars": "jagrat",
+        "mercury": "swapna",
+        "jupiter": "jagrat",
+        "venus": "jagrat",
+        "saturn": "swapna"
+      },
+      "deeptadiAstroSage": {
+        "sun": "Deepta",
+        "moon": "Muditha",
+        "mars": "Shant",
+        "mercury": "Muditha",
+        "jupiter": "Deena",
+        "venus": "Deepta",
+        "saturn": "Swastha"
+      },
+      "arudhas": {
+        "A1": "libra",
+        "A2": "scorpio",
+        "A3": "scorpio",
+        "A4": "cancer",
+        "A5": "aquarius",
+        "A6": "aries",
+        "A7": "taurus",
+        "A8": "aries",
+        "A9": "capricorn",
+        "A10": "sagittarius",
+        "A11": "pisces",
+        "A12": "aquarius"
+      },
+      "yogas": {
+        "mangalDosha": false,
+        "kaalSarp": false,
+        "present": [
+          "Malavya",
+          "Saraswati",
+          "Vosi",
+          "Parvata",
+          "Anapha",
+          "Dhana",
+          "Parashari Raja",
+          "Maala"
+        ]
+      },
+      "sadeSati": [
+        [
+          "sade",
+          "pisces",
+          "2025-03-30",
+          "2027-06-02"
+        ],
+        [
+          "sade",
+          "aries",
+          "2027-06-03",
+          "2027-10-19"
+        ],
+        [
+          "sade",
+          "pisces",
+          "2027-10-20",
+          "2028-02-23"
+        ],
+        [
+          "sade",
+          "aries",
+          "2028-02-24",
+          "2029-08-07"
+        ],
+        [
+          "sade",
+          "taurus",
+          "2029-08-08",
+          "2029-10-05"
+        ],
+        [
+          "sade",
+          "aries",
+          "2029-10-06",
+          "2030-04-16"
+        ],
+        [
+          "sade",
+          "taurus",
+          "2030-04-17",
+          "2032-05-30"
+        ],
+        [
+          "small",
+          "cancer",
+          "2034-07-13",
+          "2036-08-27"
+        ],
+        [
+          "small",
+          "scorpio",
+          "2043-12-12",
+          "2044-06-22"
+        ],
+        [
+          "small",
+          "scorpio",
+          "2044-08-30",
+          "2046-12-07"
+        ],
+        [
+          "sade",
+          "pisces",
+          "2054-05-15",
+          "2054-09-01"
+        ],
+        [
+          "sade",
+          "pisces",
+          "2055-02-06",
+          "2057-04-06"
+        ]
+      ]
     }
   }
 }

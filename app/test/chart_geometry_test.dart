@@ -7,20 +7,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:jyotish_core/jyotish_core.dart';
 
 ChartPlate plateFrom(Rashi asc, {int perHouse = 1}) => ChartPlate(
-      title: 'Test',
-      ascendantSign: asc,
-      houses: [
-        for (var h = 1; h <= 12; h++)
-          PlateHouse(
-            number: h,
-            sign: Rashi.values[(asc.index + h - 1) % 12],
-            items: [
-              for (var i = 0; i < perHouse; i++)
-                PlateItem(graha: Graha.values[i % 12], degree: 10),
-            ],
-          ),
-      ],
-    );
+  title: 'Test',
+  ascendantSign: asc,
+  houses: [
+    for (var h = 1; h <= 12; h++)
+      PlateHouse(
+        number: h,
+        sign: Rashi.values[(asc.index + h - 1) % 12],
+        items: [
+          for (var i = 0; i < perHouse; i++)
+            PlateItem(graha: Graha.values[i % 12], degree: 10),
+        ],
+      ),
+  ],
+);
 
 double area(List<Offset> p) {
   var a = 0.0;
@@ -40,20 +40,33 @@ void main() {
       expect(cells.length, 12);
       final total = cells.fold<double>(0, (s, c) => s + area(c.polygon));
       // North and East cover the whole square; South leaves the 2×2 centre.
-      final expected = style == ChartStyle.south ? 300 * 300 * 0.75 : 300.0 * 300;
-      final expectedArea = style == ChartStyle.east ? 300 * 300 * 8 / 9 : expected;
+      final expected = style == ChartStyle.south
+          ? 300 * 300 * 0.75
+          : 300.0 * 300;
+      final expectedArea = style == ChartStyle.east
+          ? 300 * 300 * 8 / 9
+          : expected;
       expect(total, closeTo(expectedArea, 1));
       for (final c in cells) {
-        expect(polygonContains(c.polygon, c.textBox.center), isTrue,
-            reason: 'house ${c.house.number} text centre outside its cell');
+        expect(
+          polygonContains(c.polygon, c.textBox.center),
+          isTrue,
+          reason: 'house ${c.house.number} text centre outside its cell',
+        );
       }
     });
 
     test('$style: crowded houses keep labels inside the chart', () {
-      final cells = chartCells(plateFrom(Rashi.aries, perHouse: 6), style, size);
+      final cells = chartCells(
+        plateFrom(Rashi.aries, perHouse: 6),
+        style,
+        size,
+      );
       for (final l in layoutLabels(cells, 300, style)) {
-        expect(const Rect.fromLTWH(-1, -1, 302, 302).contains(l.rect.center),
-            isTrue);
+        expect(
+          const Rect.fromLTWH(-1, -1, 302, 302).contains(l.rect.center),
+          isTrue,
+        );
       }
     });
   }
@@ -93,7 +106,11 @@ void main() {
 
   test('plate item labels carry AstroSage-style markers', () {
     const item = PlateItem(
-        graha: Graha.saturn, degree: 3, retrograde: true, exalted: true);
+      graha: Graha.saturn,
+      degree: 3,
+      retrograde: true,
+      exalted: true,
+    );
     expect(item.label, 'Sa*↑ 03');
     const lagna = PlateItem(graha: null, degree: 29);
     expect(lagna.label, 'As 29');

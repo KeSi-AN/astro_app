@@ -77,3 +77,18 @@ AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Again
 | CIL (sub) T2 | not shown: no consistent rule reproduces AstroSage's column from its own data |
 | CIL (sub-sub) | not built: AstroSage's columns could not be decoded |
 | 4-step | ours: textbook chain (planet → star lord → sub lord → sub lord's star lord), each with Nakshatra Nadi houses. AstroSage adds "cuspal" and conjunction/aspect notes, blanks a planet's own row when other planets sit in its stars, and drops some owned houses (e.g. Jupiter's 9th, Venus's 4th) — not reproduced. |
+
+## Yogas, doshas, Sade Sati (Phase 6, 2026-11-25, fixture 004)
+
+| Item | Result |
+|---|---|
+| Sun-based upagrahas (5) | match within seconds |
+| Time-based upagrahas (Kaala, Mrityu, Arthaprahara, Yamaghantaka, Gulika, Maandi) | differ: ours BPHS (parts ruled from the weekday lord, night from the 5th), AstroSage's fit a Sun-first sequence with a ~38-min offset (BACKLOG) |
+| Baladi, Jagratadi | match (Jagratadi by degrees, as AstroSage) |
+| Deeptadi | differ: ours by dignity (Phaladeepika); AstroSage's mapping unknown (BACKLOG) |
+| Arudha padas A1–A12 | all match |
+| Navatara | matches |
+| Mangal dosha | both absent (ours: found from the lagna, cancelled because Mars is with Jupiter) |
+| Kaal Sarp | both absent |
+| Named yogas | 7 of AstroSage's 8 present in ours; Maala not implemented (definition unknown). Ours also shows Guru Chandala, which AstroSage doesn't check. |
+| Sade Sati / Small Panoti | 12 periods: same signs, kinds and order; dates within 3 days (Saturn's position and ingress timing) |

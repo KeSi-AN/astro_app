@@ -14,15 +14,22 @@ final _devanagari = RegExp('[ऀ-ॿ]');
 void main() {
   test('every English string has a Hindi translation', () {
     Map<String, dynamic> load(String f) =>
-        jsonDecode(File('lib/l10n/$f').readAsStringSync()) as Map<String, dynamic>;
+        jsonDecode(File('lib/l10n/$f').readAsStringSync())
+            as Map<String, dynamic>;
     final en = load('app_en.arb'), hi = load('app_hi.arb');
     final keys = en.keys.where((k) => !k.startsWith('@')).toSet();
     final missing = keys.where((k) => !hi.containsKey(k)).toList();
     expect(missing, isEmpty, reason: 'missing in app_hi.arb');
     // Placeholders must survive translation.
     for (final k in keys) {
-      final ph = RegExp(r'\{(\w+)\}').allMatches(en[k] as String).map((m) => m[1]).toSet();
-      final phHi = RegExp(r'\{(\w+)\}').allMatches(hi[k] as String).map((m) => m[1]).toSet();
+      final ph = RegExp(r'\{(\w+)\}')
+          .allMatches(en[k] as String)
+          .map((m) => m[1])
+          .toSet();
+      final phHi = RegExp(r'\{(\w+)\}')
+          .allMatches(hi[k] as String)
+          .map((m) => m[1])
+          .toSet();
       expect(phHi, ph, reason: 'placeholders of $k');
     }
   });
@@ -92,6 +99,57 @@ void main() {
       for (final v in DashaYear.values) {
         hindi(t.dashaYear(v), '$v');
       }
+      for (final id in [
+        'ruchaka',
+        'bhadra',
+        'hamsa',
+        'malavya',
+        'shasha',
+        'gajakesari',
+        'sunapha',
+        'anapha',
+        'durudhara',
+        'kemadruma',
+        'chandraMangala',
+        'adhi',
+        'vesi',
+        'vosi',
+        'ubhayachari',
+        'budhaditya',
+        'amala',
+        'saraswati',
+        'parvata',
+        'kahala',
+        'raja',
+        'dhana',
+        'harsha',
+        'sarala',
+        'vimala',
+        'neechaBhanga',
+        'mangal',
+        'kaalSarp',
+        'guruChandala',
+        'grahan',
+        'shakata',
+      ]) {
+        hindi(t.yogaName(id), id);
+        hindi(t.yogaRule(id), '$id rule');
+      }
+      for (final v in Upagraha.values) {
+        hindi(t.upagraha(v), '$v');
+      }
+      for (final v in Baladi.values) {
+        hindi(t.baladi(v), '$v');
+      }
+      for (final v in Jagratadi.values) {
+        hindi(t.jagratadi(v), '$v');
+      }
+      for (final v in Deeptadi.values) {
+        hindi(t.deeptadi(v), '$v');
+      }
+      for (var i = 0; i < 9; i++) {
+        hindi(t.navatara(i), 'navatara $i');
+      }
       for (var m = 1; m <= 12; m++) {
         hindi(t.month(m), 'month $m');
       }
@@ -105,12 +163,43 @@ void main() {
 
     test('every Avakhada value the engine can produce is translated', () {
       const values = [
-        'Brahmin', 'Kshatriya', 'Vaishya', 'Shudra',
-        'Chatushpada', 'Manava', 'Jalachara', 'Vanachara', 'Keeta',
-        'Horse', 'Elephant', 'Sheep', 'Serpent', 'Dog', 'Cat', 'Rat', 'Cow',
-        'Buffalo', 'Tiger', 'Deer', 'Monkey', 'Mongoose', 'Lion',
-        'Deva', 'Manushya', 'Rakshasa', 'Adi', 'Madhya', 'Antya',
-        'Fire', 'Earth', 'Air', 'Water', 'Gold', 'Silver', 'Copper', 'Iron',
+        'Brahmin',
+        'Kshatriya',
+        'Vaishya',
+        'Shudra',
+        'Chatushpada',
+        'Manava',
+        'Jalachara',
+        'Vanachara',
+        'Keeta',
+        'Horse',
+        'Elephant',
+        'Sheep',
+        'Serpent',
+        'Dog',
+        'Cat',
+        'Rat',
+        'Cow',
+        'Buffalo',
+        'Tiger',
+        'Deer',
+        'Monkey',
+        'Mongoose',
+        'Lion',
+        'Deva',
+        'Manushya',
+        'Rakshasa',
+        'Adi',
+        'Madhya',
+        'Antya',
+        'Fire',
+        'Earth',
+        'Air',
+        'Water',
+        'Gold',
+        'Silver',
+        'Copper',
+        'Iron',
       ];
       for (final v in values) {
         hindi(t.avakhadaValue(v), v);
@@ -119,7 +208,11 @@ void main() {
 
     test('chart abbreviations stay short', () {
       for (final g in Graha.values) {
-        expect(t.grahaShort(g).runes.length, lessThanOrEqualTo(4), reason: '$g');
+        expect(
+          t.grahaShort(g).runes.length,
+          lessThanOrEqualTo(4),
+          reason: '$g',
+        );
       }
       expect(t.lagnaShort, 'ल');
     });

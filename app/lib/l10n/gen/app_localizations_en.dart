@@ -986,4 +986,132 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get cilNote =>
       'Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp\'s sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord\'s star lord.';
+
+  @override
+  String get tabYogas => 'Yogas';
+
+  @override
+  String get secYogas => 'Yogas & doshas';
+
+  @override
+  String get secSadeSati => 'Sade Sati';
+
+  @override
+  String get secAvastha => 'Avastha';
+
+  @override
+  String get secUpagraha => 'Upagraha';
+
+  @override
+  String get secArudha => 'Arudha';
+
+  @override
+  String get secNavatara => 'Navatara';
+
+  @override
+  String get present => 'Present';
+
+  @override
+  String get absent => 'Absent';
+
+  @override
+  String get cancelled => 'Cancelled';
+
+  @override
+  String get showAbsent => 'Show absent ones';
+
+  @override
+  String mangalFrom(Object ref, Object house) {
+    return 'from $ref: house $house';
+  }
+
+  @override
+  String get refLagna => 'lagna';
+
+  @override
+  String get refMoon => 'Moon';
+
+  @override
+  String get refVenus => 'Venus';
+
+  @override
+  String get cancelMarsStrong => 'Mars in own/exalted sign';
+
+  @override
+  String get cancelWithJupiter => 'Mars with Jupiter';
+
+  @override
+  String get cancelWithMoon => 'Mars with Moon';
+
+  @override
+  String cancelSignException(Object house) {
+    return 'Mars in a sign that cancels it in house $house';
+  }
+
+  @override
+  String kaalSarpType(Object name) {
+    return 'Type: $name';
+  }
+
+  @override
+  String get colYoga => 'Yoga / dosha';
+
+  @override
+  String get colResult => 'Result';
+
+  @override
+  String get sadeSatiNote =>
+      'Saturn in the 12th, 1st or 2nd from the Moon sign is Sade Sati; in the 4th or 8th, Small Panoti (Dhaiya). Retrograde returns are listed separately.';
+
+  @override
+  String get colKind => 'Period';
+
+  @override
+  String get colPhase => 'Phase';
+
+  @override
+  String get sadeSatiKind => 'Sade Sati';
+
+  @override
+  String get smallPanoti => 'Small Panoti';
+
+  @override
+  String get phaseRising => 'Rising';
+
+  @override
+  String get phasePeak => 'Peak';
+
+  @override
+  String get phaseSetting => 'Setting';
+
+  @override
+  String get runningNow => 'running now';
+
+  @override
+  String get colBaladi => 'Baladi';
+
+  @override
+  String get colJagratadi => 'Jagratadi';
+
+  @override
+  String get colDeeptadi => 'Deeptadi';
+
+  @override
+  String get avasthaNote =>
+      'Baladi and Jagratadi by degrees (reversed in even signs); Deeptadi by dignity, Kopa if combust.';
+
+  @override
+  String get upagrahaNote =>
+      'Gulika = lagna at the start of Saturn\'s part of the day/night; Maandi = at its middle (BPHS). Other software may use a different rule.';
+
+  @override
+  String get arudhaNote => 'A1 = Arudha Lagna (AL), A12 = Upapada (UL).';
+
+  @override
+  String get colTara => 'Tara';
+
+  @override
+  String colCycle(Object n) {
+    return 'Cycle $n';
+  }
 }

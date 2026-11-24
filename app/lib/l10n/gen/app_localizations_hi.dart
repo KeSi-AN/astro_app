@@ -985,4 +985,132 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get cilNote =>
       'भाव संधि अंतर्संबंध (उप)। T1: वे भाव जिनका उप स्वामी इस भाव के उप स्वामी का नक्षत्र या उप स्वामी है। T3: वे भाव जिनके उप स्वामी का नक्षत्र स्वामी यह उप स्वामी है। T4: उप स्वामी के नक्षत्र स्वामी का भाव।';
+
+  @override
+  String get tabYogas => 'योग';
+
+  @override
+  String get secYogas => 'योग व दोष';
+
+  @override
+  String get secSadeSati => 'साढ़ेसाती';
+
+  @override
+  String get secAvastha => 'अवस्था';
+
+  @override
+  String get secUpagraha => 'उपग्रह';
+
+  @override
+  String get secArudha => 'आरूढ़';
+
+  @override
+  String get secNavatara => 'नवतारा';
+
+  @override
+  String get present => 'है';
+
+  @override
+  String get absent => 'नहीं';
+
+  @override
+  String get cancelled => 'भंग';
+
+  @override
+  String get showAbsent => 'जो नहीं हैं वे भी दिखाएँ';
+
+  @override
+  String mangalFrom(Object ref, Object house) {
+    return '$ref से: भाव $house';
+  }
+
+  @override
+  String get refLagna => 'लग्न';
+
+  @override
+  String get refMoon => 'चंद्र';
+
+  @override
+  String get refVenus => 'शुक्र';
+
+  @override
+  String get cancelMarsStrong => 'मंगल स्वराशि/उच्च में';
+
+  @override
+  String get cancelWithJupiter => 'मंगल गुरु के साथ';
+
+  @override
+  String get cancelWithMoon => 'मंगल चंद्र के साथ';
+
+  @override
+  String cancelSignException(Object house) {
+    return 'भाव $house में मंगल ऐसी राशि में जो दोष भंग करती है';
+  }
+
+  @override
+  String kaalSarpType(Object name) {
+    return 'प्रकार: $name';
+  }
+
+  @override
+  String get colYoga => 'योग / दोष';
+
+  @override
+  String get colResult => 'परिणाम';
+
+  @override
+  String get sadeSatiNote =>
+      'चंद्र राशि से 12वें, पहले या दूसरे शनि = साढ़ेसाती; चौथे या आठवें = लघु पनौती (ढैया)। वक्री होकर लौटने की अवधियाँ अलग दिखाई गई हैं।';
+
+  @override
+  String get colKind => 'अवधि';
+
+  @override
+  String get colPhase => 'चरण';
+
+  @override
+  String get sadeSatiKind => 'साढ़ेसाती';
+
+  @override
+  String get smallPanoti => 'लघु पनौती';
+
+  @override
+  String get phaseRising => 'आरंभ';
+
+  @override
+  String get phasePeak => 'शिखर';
+
+  @override
+  String get phaseSetting => 'अंत';
+
+  @override
+  String get runningNow => 'अभी चल रही';
+
+  @override
+  String get colBaladi => 'बालादि';
+
+  @override
+  String get colJagratadi => 'जाग्रतादि';
+
+  @override
+  String get colDeeptadi => 'दीप्तादि';
+
+  @override
+  String get avasthaNote =>
+      'बालादि और जाग्रतादि अंशों से (सम राशि में उल्टा); दीप्तादि स्थिति से, अस्त हो तो कोप।';
+
+  @override
+  String get upagrahaNote =>
+      'गुलिक = दिन/रात्रि के शनि भाग के आरंभ का लग्न; मांदी = उसके मध्य का (बृहत् पाराशर)। अन्य सॉफ़्टवेयर भिन्न नियम अपना सकते हैं।';
+
+  @override
+  String get arudhaNote => 'A1 = आरूढ़ लग्न (AL), A12 = उपपद (UL)।';
+
+  @override
+  String get colTara => 'तारा';
+
+  @override
+  String colCycle(Object n) {
+    return 'चक्र $n';
+  }
 }

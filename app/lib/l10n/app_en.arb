@@ -426,5 +426,65 @@
   "colT1": "T1",
   "colT3": "T3",
   "colT4": "T4",
-  "cilNote": "Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp's sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord's star lord."
+  "cilNote": "Cuspal interlinks (sub), as in AstroSage. T1: cusps whose sub lord is the star or sub lord of this cusp's sub lord. T3: cusps whose sub lord has this sub lord as star lord. T4: house occupied by the sub lord's star lord.",
+  "tabYogas": "Yogas",
+  "secYogas": "Yogas & doshas",
+  "secSadeSati": "Sade Sati",
+  "secAvastha": "Avastha",
+  "secUpagraha": "Upagraha",
+  "secArudha": "Arudha",
+  "secNavatara": "Navatara",
+  "present": "Present",
+  "absent": "Absent",
+  "cancelled": "Cancelled",
+  "showAbsent": "Show absent ones",
+  "mangalFrom": "from {ref}: house {house}",
+  "@mangalFrom": {
+    "placeholders": {
+      "ref": {},
+      "house": {}
+    }
+  },
+  "refLagna": "lagna",
+  "refMoon": "Moon",
+  "refVenus": "Venus",
+  "cancelMarsStrong": "Mars in own/exalted sign",
+  "cancelWithJupiter": "Mars with Jupiter",
+  "cancelWithMoon": "Mars with Moon",
+  "cancelSignException": "Mars in a sign that cancels it in house {house}",
+  "@cancelSignException": {
+    "placeholders": {
+      "house": {}
+    }
+  },
+  "kaalSarpType": "Type: {name}",
+  "@kaalSarpType": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "colYoga": "Yoga / dosha",
+  "colResult": "Result",
+  "sadeSatiNote": "Saturn in the 12th, 1st or 2nd from the Moon sign is Sade Sati; in the 4th or 8th, Small Panoti (Dhaiya). Retrograde returns are listed separately.",
+  "colKind": "Period",
+  "colPhase": "Phase",
+  "sadeSatiKind": "Sade Sati",
+  "smallPanoti": "Small Panoti",
+  "phaseRising": "Rising",
+  "phasePeak": "Peak",
+  "phaseSetting": "Setting",
+  "runningNow": "running now",
+  "colBaladi": "Baladi",
+  "colJagratadi": "Jagratadi",
+  "colDeeptadi": "Deeptadi",
+  "avasthaNote": "Baladi and Jagratadi by degrees (reversed in even signs); Deeptadi by dignity, Kopa if combust.",
+  "upagrahaNote": "Gulika = lagna at the start of Saturn's part of the day/night; Maandi = at its middle (BPHS). Other software may use a different rule.",
+  "arudhaNote": "A1 = Arudha Lagna (AL), A12 = Upapada (UL).",
+  "colTara": "Tara",
+  "colCycle": "Cycle {n}",
+  "@colCycle": {
+    "placeholders": {
+      "n": {}
+    }
+  }
 }

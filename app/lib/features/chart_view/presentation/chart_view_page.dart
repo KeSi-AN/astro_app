@@ -18,6 +18,7 @@ import 'tabs/kp_tab.dart';
 import 'tabs/planets_tab.dart';
 import 'tabs/strength_tab.dart';
 import 'tabs/vargas_tab.dart';
+import 'tabs/yogas_tab.dart';
 
 /// A saved chart with its analysis, recomputed when settings change.
 class ChartViewPage extends StatefulWidget {
@@ -74,7 +75,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
   Widget build(BuildContext context) {
     final e = _entry;
     return DefaultTabController(
-      length: 10,
+      length: 11,
       child: Scaffold(
         appBar: AppBar(
           title: Text(e?.name ?? ''),
@@ -104,6 +105,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
               Tab(text: context.l10n.tabVargas),
               Tab(text: context.l10n.tabStrength),
               Tab(text: context.l10n.tabKp),
+              Tab(text: context.l10n.tabYogas),
               Tab(text: context.l10n.tabBhava),
               Tab(text: context.l10n.tabDetails),
               Tab(text: context.l10n.tabFriendship),
@@ -131,6 +133,10 @@ class _ChartViewPageState extends State<ChartViewPage> {
                       KpTab(
                         analysis: a,
                         settings: s,
+                        ephemeris: context.read<AppServices>().ephemeris,
+                      ),
+                      YogasTab(
+                        analysis: a,
                         ephemeris: context.read<AppServices>().ephemeris,
                       ),
                       BhavaTab(analysis: a),
