@@ -15,8 +15,9 @@ const _monthShort = [
 
 String _two(int v) => v.toString().padLeft(2, '0');
 
-/// 12 Mar 1990
-String formatDate(int y, int m, int d) => '${_two(d)} ${_monthShort[m - 1]} $y';
+/// 12 Mar 1990 ([month] gives localised month names).
+String formatDate(int y, int m, int d, {String Function(int)? month}) =>
+    '${_two(d)} ${month?.call(m) ?? _monthShort[m - 1]} $y';
 
 /// 12/03/1990 (form field format)
 String formatDateInput(int y, int m, int d) => '${_two(d)}/${_two(m)}/$y';

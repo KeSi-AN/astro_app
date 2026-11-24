@@ -1,6 +1,7 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../l10n/l10n.dart';
 import 'graha_sheet.dart';
 import 'table_widgets.dart';
 
@@ -10,39 +11,42 @@ class PlanetsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final t = context.terms;
     final a = analysis;
     final lagna = a.chart.lagna;
     String flags(GrahaInfo i) => [
-      if (i.placement.isRetrograde) 'R',
-      if (i.combust) 'C',
-      if (i.vargottama) 'V',
+      if (i.placement.isRetrograde) l10n.flagRetro,
+      if (i.combust) l10n.flagCombust,
+      if (i.vargottama) l10n.flagVargottama,
     ].join(' ');
+    String nak(Placement p) => '${t.nakshatra(p.nakshatra)} ${p.pada}';
     final rows = <List<String>>[
       [
-        'Lagna',
+        t.lagna,
         '',
-        lagna.rashi.short,
+        t.rashiShort(lagna.rashi),
         Dms.of(lagna.degreeInSign).degrees,
-        '${lagna.nakshatra.label} ${lagna.pada}',
-        lagna.nakshatraLord.short,
-        a.lagnaSubLords[1].short,
+        nak(lagna),
+        t.grahaShort(lagna.nakshatraLord),
+        t.grahaShort(a.lagnaSubLords[1]),
         '',
-        a.lagnaNavamsha.short,
+        t.rashiShort(a.lagnaNavamsha),
       ],
       for (final g in Graha.values)
         () {
           final i = a.grahas[g]!;
           final p = i.placement;
           return [
-            g.label,
+            t.graha(g),
             flags(i),
-            p.rashi.short,
+            t.rashiShort(p.rashi),
             Dms.of(p.degreeInSign).degrees,
-            '${p.nakshatra.label} ${p.pada}',
-            p.nakshatraLord.short,
-            i.subLord.short,
-            i.dignity?.label ?? '',
-            i.navamshaSign.short,
+            nak(p),
+            t.grahaShort(p.nakshatraLord),
+            t.grahaShort(i.subLord),
+            i.dignity == null ? '' : t.dignity(i.dignity!),
+            t.rashiShort(i.navamshaSign),
           ];
         }(),
     ];
@@ -50,15 +54,15 @@ class PlanetsTab extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       children: [
         GridTable(
-          header: const [
-            'Planet',
+          header: [
+            l10n.colPlanet,
             '',
-            'Sign',
-            'Degree',
-            'Nakshatra',
-            'Star',
-            'Sub',
-            'Dignity',
+            l10n.sign,
+            l10n.colDegree,
+            l10n.colNakshatra,
+            l10n.colStar,
+            l10n.colSub,
+            l10n.dignity,
             'D9',
           ],
           rows: rows,
@@ -75,11 +79,7 @@ class PlanetsTab extends StatelessWidget {
           },
         ),
         const SizedBox(height: 8),
-        Text(
-          'R retrograde · C combust · V vargottama. Dignity uses the '
-          'compound (five-fold) relationship with the sign lord.',
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        Text(l10n.planetsLegend, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 12),
         Wrap(
           spacing: 8,
@@ -87,7 +87,7 @@ class PlanetsTab extends StatelessWidget {
           children: [
             for (final g in Graha.values)
               ActionChip(
-                label: Text(g.label),
+                label: Text(t.graha(g)),
                 onPressed: () => showGrahaSheet(context, a, g),
               ),
           ],

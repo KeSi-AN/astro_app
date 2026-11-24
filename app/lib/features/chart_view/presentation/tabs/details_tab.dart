@@ -2,6 +2,7 @@ import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/format/formatters.dart';
+import '../../../../l10n/l10n.dart';
 import '../../../atlas/domain/place.dart';
 import '../../../charts/domain/chart_entry.dart';
 import '../../../settings/settings.dart';
@@ -22,6 +23,8 @@ class DetailsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final t = context.terms;
     final e = entry, a = analysis, c = a.chart, p = a.panchang, av = a.avakhada;
     final b = c.birth;
     final offset = b.utcOffsetHours + b.dstHours;
@@ -30,9 +33,7 @@ class DetailsTab extends StatelessWidget {
     String hours(double h) => Dms.of(((h % 24) + 24) % 24).clock;
     final moon = c.grahas[Graha.moon]!;
     final sun = c.grahas[Graha.sun]!;
-    final tropicalSun = Rashi.ofLongitude(
-      sun.longitude + c.ayanamsa,
-    ); // Western sun sign
+    final tropicalSun = Rashi.ofLongitude(sun.longitude + c.ayanamsa);
     final isht = p.ishtkaalGhatis;
     String ghati(double g) {
       final total = (g * 3600).round(); // vipal
@@ -40,88 +41,98 @@ class DetailsTab extends StatelessWidget {
           '-${(total % 60).toString().padLeft(2, '0')}';
     }
 
+    String withLord(String name, Graha lord) =>
+        l10n.withLord(name, t.graha(lord));
+    final (y, mo, d) = yearsToYmd(av.dashaBalanceYears);
+
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
         KeyValueCard(
-          title: 'Birth details',
+          title: l10n.birthDetails,
           rows: [
-            ('Name', e.name),
+            (l10n.name, e.name),
             if (e.gender != null)
-              ('Gender', e.gender == 'male' ? 'Male' : 'Female'),
-            ('Date', formatDate(e.year, e.month, e.day)),
-            ('Time', formatTime(e.hour, e.minute, e.second)),
-            ('Place', e.place.displayName),
+              (l10n.gender, e.gender == 'male' ? l10n.male : l10n.female),
+            (l10n.date, formatDate(e.year, e.month, e.day, month: t.month)),
+            (l10n.time, formatTime(e.hour, e.minute, e.second)),
+            (l10n.place, e.place.displayName),
             (
-              'Latitude / longitude',
-              '${formatLatitude(e.place.latitude)}  ${formatLongitude(e.place.longitude)}',
+              l10n.latLon,
+              '${formatLatitude(e.place.latitude)}  '
+                  '${formatLongitude(e.place.longitude)}',
             ),
             (
-              'Time zone',
-              '${formatOffset(e.utcOffsetHours)} (${e.timeBasis.name})',
+              l10n.timeZone,
+              '${formatOffset(e.utcOffsetHours)} (${t.timeBasis(e.timeBasis)})',
             ),
             if (e.dstHours != 0)
               (
-                e.warTimeApplied == true ? 'War time' : 'DST',
-                '+${e.dstHours} h',
+                e.warTimeApplied == true ? l10n.warTime : l10n.dst,
+                l10n.hoursValue('${e.dstHours}'),
               ),
             (
-              'LMT correction',
+              l10n.lmtCorrection,
               formatSignedHms(b.lmtCorrectionHours - b.dstHours),
             ),
-            ('LMT at birth', hours(b.utHours + b.longitude / 15)),
-            ('UT (GMT) at birth', hours(b.utHours)),
-            ('Julian day (UT)', c.jdUt.toStringAsFixed(5)),
-            ('Ayanamsa', '${settings.ayanamsa.label}  ${Dms.of(c.ayanamsa)}'),
-            ('Obliquity', Dms.of(c.obliquity).degrees),
-            ('Sidereal time', Dms.of(c.siderealTimeLocal).clock),
-            if (e.maritalStatus != null) ('Marital status', e.maritalStatus!),
-            if (e.occupation != null) ('Occupation', e.occupation!),
+            (l10n.lmtAtBirth, hours(b.utHours + b.longitude / 15)),
+            (l10n.utAtBirth, hours(b.utHours)),
+            (l10n.julianDay, c.jdUt.toStringAsFixed(5)),
+            (
+              l10n.ayanamsa,
+              '${t.ayanamsa(settings.ayanamsa)}  ${Dms.of(c.ayanamsa)}',
+            ),
+            (l10n.obliquity, Dms.of(c.obliquity).degrees),
+            (l10n.siderealTime, Dms.of(c.siderealTimeLocal).clock),
+            if (e.maritalStatus != null)
+              (l10n.maritalStatus, t.maritalStatus(e.maritalStatus!)),
+            if (e.occupation != null)
+              (l10n.occupation, t.occupation(e.occupation!)),
           ],
         ),
         KeyValueCard(
-          title: 'Panchang at birth',
+          title: l10n.panchangAtBirth,
           rows: [
-            ('Hindu weekday', '${p.weekdayName} (lord ${p.varaLord.label})'),
-            ('Tithi', '${p.tithiName} (${p.paksha})'),
-            ('Nakshatra', '${moon.nakshatra.label} ${moon.pada}'),
-            ('Yoga', p.yogaName),
-            ('Karana', p.karanaName),
-            ('Sunrise', clock(p.sunriseJd)),
-            ('Sunset', clock(p.sunsetJd)),
+            (l10n.hinduWeekday, withLord(t.weekday(p.weekday), p.varaLord)),
+            (l10n.tithi, '${t.tithi(p.tithi)} (${t.paksha(p.tithi)})'),
+            (l10n.nakshatra, '${t.nakshatra(moon.nakshatra)} ${moon.pada}'),
+            (l10n.yoga, t.yoga(p.yoga)),
+            (l10n.karana, t.karana(p.karana)),
+            (l10n.sunrise, clock(p.sunriseJd)),
+            (l10n.sunset, clock(p.sunsetJd)),
             if (p.dayLengthHours != null)
-              ('Day length', hours(p.dayLengthHours!)),
-            if (isht != null) ('Ishtkaal (ghati)', ghati(isht)),
-            ('Sunrise rule', p.sunriseMode.label),
+              (l10n.dayLength, hours(p.dayLengthHours!)),
+            if (isht != null) (l10n.ishtkaal, ghati(isht)),
+            (l10n.sunriseRule, t.sunriseMode(p.sunriseMode)),
           ],
         ),
         KeyValueCard(
-          title: 'Avakhada chakra',
+          title: l10n.avakhada,
           rows: [
+            (l10n.lagna, withLord(t.rashi(c.lagna.rashi), c.lagna.rashi.lord)),
+            (l10n.rashi, withLord(t.rashi(moon.rashi), moon.rashi.lord)),
             (
-              'Lagna',
-              '${c.lagna.rashi.label} (lord ${c.lagna.rashi.lord.label})',
+              l10n.nakshatraPadaLabel,
+              withLord(
+                '${t.nakshatra(moon.nakshatra)}-${moon.pada}',
+                moon.nakshatraLord,
+              ),
             ),
-            ('Rashi', '${moon.rashi.label} (lord ${moon.rashi.lord.label})'),
+            (l10n.varna, t.avakhadaValue(av.varna)),
+            (l10n.vashya, t.avakhadaValue(av.vashya)),
+            (l10n.yoni, t.avakhadaValue(av.yoni)),
+            (l10n.gana, t.avakhadaValue(av.gana)),
+            (l10n.nadi, t.avakhadaValue(av.nadi)),
+            (l10n.tatva, t.avakhadaValue(av.tatva)),
+            (l10n.payaNakshatra, t.avakhadaValue(av.payaByNakshatra)),
+            (l10n.payaMoon, t.avakhadaValue(av.payaByMoonHouse)),
+            (l10n.nameSyllable, t.nameSyllable(moon.nakshatra, moon.pada)),
             (
-              'Nakshatra-pada',
-              '${moon.nakshatra.label}-${moon.pada} (lord ${moon.nakshatraLord.label})',
+              l10n.dashaBalance,
+              '${t.graha(av.dashaLord)}  ${l10n.ymd('$y', '$mo', '$d')}',
             ),
-            ('Varna', av.varna),
-            ('Vashya', av.vashya),
-            ('Yoni', av.yoni),
-            ('Gana', av.gana),
-            ('Nadi', av.nadi),
-            ('Tatva', av.tatva),
-            ('Paya (nakshatra)', av.payaByNakshatra),
-            ('Paya (Moon house)', av.payaByMoonHouse),
-            ('Name syllable', av.nameSyllable),
-            (
-              'Dasha balance',
-              '${av.dashaLord.label}  ${formatYmd(av.dashaBalanceYears)}',
-            ),
-            ('Sun sign (Indian)', sun.rashi.label),
-            ('Sun sign (Western)', tropicalSun.label),
+            (l10n.sunSignIndian, t.rashi(sun.rashi)),
+            (l10n.sunSignWestern, t.rashi(tropicalSun)),
           ],
         ),
       ],

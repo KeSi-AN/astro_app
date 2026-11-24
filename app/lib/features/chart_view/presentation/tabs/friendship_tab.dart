@@ -1,6 +1,7 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../l10n/l10n.dart';
 import 'table_widgets.dart';
 
 /// Natural, temporal and five-fold (compound) relationships, rows = the
@@ -11,42 +12,55 @@ class FriendshipTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final t = context.terms;
     final a = analysis;
-    List<List<String>> grid(Relation Function(Graha, Graha) rel) => [
+    // Colour by relation, not by the (language-dependent) text.
+    List<List<Relation?>> rel(Relation Function(Graha, Graha) f) => [
       for (final r in sevenGrahas)
-        [r.short, for (final c in sevenGrahas) r == c ? '—' : rel(r, c).short],
+        [for (final c in sevenGrahas) r == c ? null : f(r, c)],
     ];
-    Color? colour(String s) => switch (s) {
-      'GF' => const Color(0xFF81C784),
-      'F' => const Color(0xFFA5D6A7),
-      'E' => const Color(0xFFEF9A9A),
-      'GE' => const Color(0xFFE57373),
+    Color? colour(Relation? r) => switch (r) {
+      Relation.greatFriend => const Color(0xFF81C784),
+      Relation.friend => const Color(0xFFA5D6A7),
+      Relation.enemy => const Color(0xFFEF9A9A),
+      Relation.greatEnemy => const Color(0xFFE57373),
       _ => null,
     };
-    Widget section(String title, List<List<String>> rows) => Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, style: Theme.of(context).textTheme.titleSmall),
-          const SizedBox(height: 6),
-          GridTable(
-            header: ['', for (final g in sevenGrahas) g.short],
-            rows: rows,
-            minColumnWidth: 40,
-            highlight: (r, c) => c == 0 ? null : colour(rows[r][c]),
-          ),
-        ],
-      ),
-    );
+    Widget section(String title, List<List<Relation?>> grid) {
+      final rows = [
+        for (var i = 0; i < 7; i++)
+          [
+            t.grahaShort(sevenGrahas[i]),
+            for (final r in grid[i]) r == null ? '—' : t.relationShort(r),
+          ],
+      ];
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: Theme.of(context).textTheme.titleSmall),
+            const SizedBox(height: 6),
+            GridTable(
+              header: ['', for (final g in sevenGrahas) t.grahaShort(g)],
+              rows: rows,
+              minColumnWidth: 40,
+              highlight: (r, c) => c == 0 ? null : colour(grid[r][c - 1]),
+            ),
+          ],
+        ),
+      );
+    }
+
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
-        section('Natural (permanent)', grid(a.natural)),
-        section('Temporal (in this chart)', grid(a.temporal)),
-        section('Five-fold (compound)', grid(a.compound)),
+        section(l10n.naturalTitle, rel(a.natural)),
+        section(l10n.temporalTitle, rel(a.temporal)),
+        section(l10n.compoundTitle, rel(a.compound)),
         Text(
-          'GF great friend · F friend · N neutral · E enemy · GE great enemy',
+          l10n.friendshipLegend,
           style: Theme.of(context).textTheme.bodySmall,
         ),
       ],

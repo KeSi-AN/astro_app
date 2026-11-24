@@ -7,6 +7,27 @@
 /// Indian conventions are assumed: dates are day-first unless that is
 /// impossible. Everything parsed is shown to the user to confirm, so the
 /// parser prefers leaving a field empty over guessing wildly.
+/// Something the user should double-check after parsing.
+enum ParseNoteKind {
+  /// params: [first, second] numbers as written; read as month/day.
+  monthFirstDate,
+
+  /// Ambiguous date read day-first (Indian order).
+  dayFirstDate,
+
+  /// Night word with an early hour read as after midnight. params: [hh:mm].
+  afterMidnight,
+
+  /// No AM/PM given; read as 24-hour. params: [hh:mm].
+  noAmPm,
+}
+
+class ParseNote {
+  const ParseNote(this.kind, [this.params = const []]);
+  final ParseNoteKind kind;
+  final List<String> params;
+}
+
 class ParsedBirth {
   ParsedBirth({
     this.name,
@@ -18,7 +39,7 @@ class ParsedBirth {
     this.minute,
     this.second,
     this.place,
-    List<String>? notes,
+    List<ParseNote>? notes,
   }) : notes = notes ?? [];
 
   String? name;
@@ -28,7 +49,7 @@ class ParsedBirth {
   String? place;
 
   /// Things the user should double-check (ambiguous date order, missing AM/PM).
-  final List<String> notes;
+  final List<ParseNote> notes;
 
   bool get hasDate => year != null && month != null && day != null;
   bool get hasTime => hour != null && minute != null;
@@ -58,7 +79,48 @@ class BirthTextParser {
     (RegExp(r'^(?:date\s+of\s+birth|birth\s*date|d\.?\s*o\.?\s*b\.?|janm\s*tithi|janam\s*tithi|janm\s*tarikh|date|born\s+on)', caseSensitive: false), 'date'),
   ];
 
+  /// Hindi words and Devanagari digits → the English forms the rest of the
+  /// parser understands. Longer phrases first.
+  static const _hindi = <String, String>{
+    'जन्म तिथि': 'DOB', 'जन्मतिथि': 'DOB', 'जन्म दिनांक': 'DOB',
+    'जन्म तारीख': 'DOB', 'दिनांक': 'Date', 'तारीख': 'Date', 'तिथि': 'Date',
+    'जन्म समय': 'TOB', 'जन्म का समय': 'TOB', 'समय': 'Time',
+    'जन्म स्थान': 'POB', 'जन्मस्थान': 'POB', 'जन्म स्थल': 'POB',
+    'स्थान': 'Place', 'शहर': 'City',
+    'नाम': 'Name', 'लिंग': 'Gender',
+    'पुरुष': 'male', 'लड़का': 'boy', 'लडका': 'boy', 'पुत्र': 'son',
+    'स्त्री': 'female', 'महिला': 'female', 'लड़की': 'girl', 'लडकी': 'girl',
+    'पुत्री': 'daughter',
+    'सुबह': 'morning', 'सुबह के': 'morning', 'प्रातः': 'morning',
+    'प्रात:': 'morning', 'सवेरे': 'morning', 'दोपहर': 'afternoon',
+    'शाम': 'evening', 'सायं': 'evening', 'रात्रि': 'night', 'रात': 'night',
+    'बजकर': ':', 'मिनट': ' ', 'बजे': 'baje',
+    'जनवरी': 'January', 'फ़रवरी': 'February', 'फरवरी': 'February',
+    'मार्च': 'March', 'अप्रैल': 'April', 'मई': 'May', 'जून': 'June',
+    'जुलाई': 'July', 'अगस्त': 'August', 'सितंबर': 'September',
+    'सितम्बर': 'September', 'अक्टूबर': 'October', 'अक्तूबर': 'October',
+    'नवंबर': 'November', 'नवम्बर': 'November', 'दिसंबर': 'December',
+    'दिसम्बर': 'December',
+  };
+
+  static String _normalise(String text) {
+    var t = text;
+    for (var i = 0; i < 10; i++) {
+      t = t.replaceAll(String.fromCharCode(0x0966 + i), '$i');
+    }
+    final keys = _hindi.keys.toList()..sort((a, b) => b.length.compareTo(a.length));
+    for (final k in keys) {
+      t = t.replaceAll(k, ' ${_hindi[k]} ');
+    }
+    // "10 : 45" left by "10 बजकर 45 मिनट"
+    t = t.replaceAllMapped(RegExp(r'(\d{1,2})\s*:\s*(\d{1,2})(?!\d)'),
+        (m) => '${m[1]}:${m[2]!.padLeft(2, '0')}');
+    // "Name : x" spacing from replaced labels is fine for the label regexes.
+    return t.replaceAll(RegExp(r'[ \t]+'), ' ');
+  }
+
   static ParsedBirth parse(String text, {int? currentYear}) {
+    text = _normalise(text);
     final out = ParsedBirth();
     final nowYear = currentYear ?? DateTime.now().year;
     final leftovers = <String>[];
@@ -172,12 +234,12 @@ class BirthTextParser {
       final y = _year(m[3]!, nowYear);
       if (a <= 12 && b > 12) {
         // Only month-first is possible.
-        out.notes.add('Date read as month/day ($a/$b), since $b is not a valid month.');
+        out.notes.add(ParseNote(ParseNoteKind.monthFirstDate, ['$a', '$b']));
         final t = a;
         a = b;
         b = t;
       } else if (a <= 12 && b <= 12 && a != b) {
-        out.notes.add('Date read as day/month (Indian order). Check it isn\'t month/day.');
+        out.notes.add(const ParseNote(ParseNoteKind.dayFirstDate));
       }
       return _setDate(out, y, b, a) ? (m.start, m.end) : null;
     }
@@ -251,15 +313,13 @@ class BirthTextParser {
           final lateNight = RegExp(r'^(?:night|raat|rat)$').hasMatch(mer) && h <= 4;
           h = lateNight ? h % 12 : h % 12 + 12;
           if (lateNight) {
-            out.notes.add('"$mer $h" read as ${h.toString().padLeft(2, '0')}:'
-                '${mi.toString().padLeft(2, '0')} after midnight. Check the date.');
+            out.notes.add(ParseNote(ParseNoteKind.afterMidnight, [_hm(h, mi)]));
           }
         } else {
           h = h % 12;
         }
       } else if (h <= 12) {
-        out.notes.add('No AM/PM given: time read as 24-hour (${h.toString().padLeft(2, '0')}:'
-            '${mi.toString().padLeft(2, '0')}).');
+        out.notes.add(ParseNote(ParseNoteKind.noAmPm, [_hm(h, mi)]));
       }
       out
         ..hour = h
@@ -269,6 +329,9 @@ class BirthTextParser {
     }
     return null;
   }
+
+  static String _hm(int h, int m) =>
+      '${h.toString().padLeft(2, '0')}:${m.toString().padLeft(2, '0')}';
 
   static String? _gender(String s) {
     final t = s.toLowerCase();

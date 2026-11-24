@@ -1,0 +1,1280 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart' as intl;
+
+import 'app_localizations_en.dart';
+import 'app_localizations_hi.dart';
+
+// ignore_for_file: type=lint
+
+/// Callers can lookup localized strings with an instance of AppLocalizations
+/// returned by `AppLocalizations.of(context)`.
+///
+/// Applications need to include `AppLocalizations.delegate()` in their app's
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
+///
+/// ```dart
+/// import 'gen/app_localizations.dart';
+///
+/// return MaterialApp(
+///   localizationsDelegates: AppLocalizations.localizationsDelegates,
+///   supportedLocales: AppLocalizations.supportedLocales,
+///   home: MyApplicationHome(),
+/// );
+/// ```
+///
+/// ## Update pubspec.yaml
+///
+/// Please make sure to update your pubspec.yaml to include the following
+/// packages:
+///
+/// ```yaml
+/// dependencies:
+///   # Internationalization support.
+///   flutter_localizations:
+///     sdk: flutter
+///   intl: any # Use the pinned version from flutter_localizations
+///
+///   # Rest of dependencies
+/// ```
+///
+/// ## iOS Applications
+///
+/// iOS applications define key application metadata, including supported
+/// locales, in an Info.plist file that is built into the application bundle.
+/// To configure the locales supported by your app, you’ll need to edit this
+/// file.
+///
+/// First, open your project’s ios/Runner.xcworkspace Xcode workspace file.
+/// Then, in the Project Navigator, open the Info.plist file under the Runner
+/// project’s Runner folder.
+///
+/// Next, select the Information Property List item, select Add Item from the
+/// Editor menu, then select Localizations from the pop-up menu.
+///
+/// Select and expand the newly-created Localizations item then, for each
+/// locale your application supports, add a new item and select the locale
+/// you wish to add from the pop-up menu in the Value field. This list should
+/// be consistent with the languages listed in the AppLocalizations.supportedLocales
+/// property.
+abstract class AppLocalizations {
+  AppLocalizations(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+
+  final String localeName;
+
+  static AppLocalizations of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
+  }
+
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
+
+  /// A list of this localizations delegate along with the default localizations
+  /// delegates.
+  ///
+  /// Returns a list of localizations delegates containing this delegate along with
+  /// GlobalMaterialLocalizations.delegate, GlobalCupertinoLocalizations.delegate,
+  /// and GlobalWidgetsLocalizations.delegate.
+  ///
+  /// Additional delegates can be added by appending to this list in
+  /// MaterialApp. This list does not have to be used at all if a custom list
+  /// of delegates is preferred or required.
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
+
+  /// A list of this localizations delegate's supported locales.
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('en'),
+    Locale('hi'),
+  ];
+
+  /// No description provided for @startError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not start: {error}'**
+  String startError(Object error);
+
+  /// No description provided for @chartsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Charts'**
+  String get chartsTitle;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @searchCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by name or place'**
+  String get searchCharts;
+
+  /// No description provided for @newChart.
+  ///
+  /// In en, this message translates to:
+  /// **'New chart'**
+  String get newChart;
+
+  /// No description provided for @loadChartsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load charts: {error}'**
+  String loadChartsError(Object error);
+
+  /// No description provided for @noChartsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No charts yet.\nTap \"New chart\" to add one.'**
+  String get noChartsYet;
+
+  /// No description provided for @noChartMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No chart matches \"{query}\".'**
+  String noChartMatches(Object query);
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @duplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get duplicate;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @deleteChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete chart?'**
+  String get deleteChartTitle;
+
+  /// No description provided for @deleteChartBody.
+  ///
+  /// In en, this message translates to:
+  /// **'\"{name}\" will be removed from this phone. This cannot be undone.'**
+  String deleteChartBody(Object name);
+
+  /// No description provided for @copySuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'(copy)'**
+  String get copySuffix;
+
+  /// No description provided for @editChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit chart'**
+  String get editChart;
+
+  /// No description provided for @pasteDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste details'**
+  String get pasteDetails;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @enterName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a name'**
+  String get enterName;
+
+  /// No description provided for @male.
+  ///
+  /// In en, this message translates to:
+  /// **'Male'**
+  String get male;
+
+  /// No description provided for @female.
+  ///
+  /// In en, this message translates to:
+  /// **'Female'**
+  String get female;
+
+  /// No description provided for @gender.
+  ///
+  /// In en, this message translates to:
+  /// **'Gender'**
+  String get gender;
+
+  /// No description provided for @dateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Date (DD/MM/YYYY)'**
+  String get dateLabel;
+
+  /// No description provided for @dateError.
+  ///
+  /// In en, this message translates to:
+  /// **'DD/MM/YYYY, 1800–2399'**
+  String get dateError;
+
+  /// No description provided for @timeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Time (24h, HH:MM:SS)'**
+  String get timeLabel;
+
+  /// No description provided for @timeError.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 22:45:10'**
+  String get timeError;
+
+  /// No description provided for @birthPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth place'**
+  String get birthPlace;
+
+  /// No description provided for @optional.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional'**
+  String get optional;
+
+  /// No description provided for @maritalStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Marital status'**
+  String get maritalStatus;
+
+  /// No description provided for @occupation.
+  ///
+  /// In en, this message translates to:
+  /// **'Occupation'**
+  String get occupation;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @saveAndOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Save & open'**
+  String get saveAndOpen;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @choosePlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the birth place.'**
+  String get choosePlace;
+
+  /// No description provided for @checkTimeZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the time zone.'**
+  String get checkTimeZone;
+
+  /// No description provided for @enterOffset.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the UTC offset, e.g. 5:30'**
+  String get enterOffset;
+
+  /// No description provided for @unknownZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown time zone \"{zone}\". Use a manual offset.'**
+  String unknownZone(Object zone);
+
+  /// No description provided for @noDetailsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No birth details found in that text.'**
+  String get noDetailsFound;
+
+  /// No description provided for @noDateFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No date found: enter it below.'**
+  String get noDateFound;
+
+  /// No description provided for @noTimeFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No time found: enter it below.'**
+  String get noTimeFound;
+
+  /// No description provided for @placeMatched.
+  ///
+  /// In en, this message translates to:
+  /// **'Place matched to {place}. Tap the place to change it.'**
+  String placeMatched(Object place);
+
+  /// No description provided for @placeNeedsChoosing.
+  ///
+  /// In en, this message translates to:
+  /// **'Place \"{place}\" needs choosing.'**
+  String placeNeedsChoosing(Object place);
+
+  /// No description provided for @noteMonthFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Date read as month/day ({a}/{b}), since {b} is not a valid month.'**
+  String noteMonthFirst(Object a, Object b);
+
+  /// No description provided for @noteDayFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Date read as day/month (Indian order). Check it isn\'t month/day.'**
+  String get noteDayFirst;
+
+  /// No description provided for @noteAfterMidnight.
+  ///
+  /// In en, this message translates to:
+  /// **'Night time read as {time} after midnight. Check the date.'**
+  String noteAfterMidnight(Object time);
+
+  /// No description provided for @noteNoAmPm.
+  ///
+  /// In en, this message translates to:
+  /// **'No AM/PM given: time read as 24-hour ({time}).'**
+  String noteNoAmPm(Object time);
+
+  /// No description provided for @pasteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste birth details'**
+  String get pasteTitle;
+
+  /// No description provided for @pasteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g.\nName: Rahul Sharma\nDOB 12/03/1990, 10:45 am\nPlace: Lucknow'**
+  String get pasteHint;
+
+  /// No description provided for @fillForm.
+  ///
+  /// In en, this message translates to:
+  /// **'Fill form'**
+  String get fillForm;
+
+  /// No description provided for @timeZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Time zone'**
+  String get timeZone;
+
+  /// No description provided for @birthTimeIsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth time is in'**
+  String get birthTimeIsIn;
+
+  /// No description provided for @utcOffset.
+  ///
+  /// In en, this message translates to:
+  /// **'UTC offset'**
+  String get utcOffset;
+
+  /// No description provided for @dstWarHours.
+  ///
+  /// In en, this message translates to:
+  /// **'DST / war time (h)'**
+  String get dstWarHours;
+
+  /// No description provided for @standardOffset.
+  ///
+  /// In en, this message translates to:
+  /// **'Standard {offset}'**
+  String standardOffset(Object offset);
+
+  /// No description provided for @dstPlus.
+  ///
+  /// In en, this message translates to:
+  /// **'DST +{hours}h'**
+  String dstPlus(Object hours);
+
+  /// No description provided for @warTimePlus.
+  ///
+  /// In en, this message translates to:
+  /// **'War time +{hours}h'**
+  String warTimePlus(Object hours);
+
+  /// No description provided for @lmtCorrection.
+  ///
+  /// In en, this message translates to:
+  /// **'LMT correction'**
+  String get lmtCorrection;
+
+  /// No description provided for @warTimeSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Recorded time includes war time (+1h)'**
+  String get warTimeSwitch;
+
+  /// No description provided for @tzPre1906.
+  ///
+  /// In en, this message translates to:
+  /// **'Before 1906 India had no single standard time. Local mean time is assumed; switch if the record used Madras or Calcutta time.'**
+  String get tzPre1906;
+
+  /// No description provided for @tzBombay.
+  ///
+  /// In en, this message translates to:
+  /// **'Bombay kept its own Bombay Time (UTC+4:51) until 1955. If the birth was recorded in Bombay Time, choose it above.'**
+  String get tzBombay;
+
+  /// No description provided for @tzCalcutta.
+  ///
+  /// In en, this message translates to:
+  /// **'Calcutta kept its own Calcutta Time (UTC+5:53:20) until 1948. If the birth was recorded in Calcutta Time, choose it above.'**
+  String get tzCalcutta;
+
+  /// No description provided for @tzNonExistent.
+  ///
+  /// In en, this message translates to:
+  /// **'This time did not exist here (clocks were moved forward). Check the recorded time or set the offset manually.'**
+  String get tzNonExistent;
+
+  /// No description provided for @tzAmbiguous.
+  ///
+  /// In en, this message translates to:
+  /// **'Clocks went back around this time, so it may have occurred twice. Confirm whether daylight saving was still on.'**
+  String get tzAmbiguous;
+
+  /// No description provided for @tzWarOn.
+  ///
+  /// In en, this message translates to:
+  /// **'War time was in force (clocks 1 hour ahead of IST, UTC+6:30). Turn this off only if the recorded time was in IST.'**
+  String get tzWarOn;
+
+  /// No description provided for @tzWarOff.
+  ///
+  /// In en, this message translates to:
+  /// **'War-time hour removed: the recorded time is treated as IST (UTC+5:30).'**
+  String get tzWarOff;
+
+  /// No description provided for @placeSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Town or village (add \", state\" to narrow)'**
+  String get placeSearchHint;
+
+  /// No description provided for @placeSearchLatin.
+  ///
+  /// In en, this message translates to:
+  /// **'Type place names in English letters, e.g. Lucknow.'**
+  String get placeSearchLatin;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @noPlaceFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No place found. Try another spelling, or enter the coordinates yourself.'**
+  String get noPlaceFound;
+
+  /// No description provided for @enterCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter coordinates manually'**
+  String get enterCoordinates;
+
+  /// No description provided for @geonamesCredit.
+  ///
+  /// In en, this message translates to:
+  /// **'Place data © GeoNames (geonames.org), CC BY 4.0'**
+  String get geonamesCredit;
+
+  /// No description provided for @placeByCoordinates.
+  ///
+  /// In en, this message translates to:
+  /// **'Place by coordinates'**
+  String get placeByCoordinates;
+
+  /// No description provided for @placeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Place name'**
+  String get placeName;
+
+  /// No description provided for @required.
+  ///
+  /// In en, this message translates to:
+  /// **'Required'**
+  String get required;
+
+  /// No description provided for @latitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get latitude;
+
+  /// No description provided for @longitudeGeo.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get longitudeGeo;
+
+  /// No description provided for @latError.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 27.15 or 27N09'**
+  String get latError;
+
+  /// No description provided for @lonError.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 78.0 or 078E00'**
+  String get lonError;
+
+  /// No description provided for @zoneError.
+  ///
+  /// In en, this message translates to:
+  /// **'An IANA zone like Asia/Kolkata'**
+  String get zoneError;
+
+  /// No description provided for @use.
+  ///
+  /// In en, this message translates to:
+  /// **'Use'**
+  String get use;
+
+  /// No description provided for @editBirthDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit birth details'**
+  String get editBirthDetails;
+
+  /// No description provided for @tabChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Chart'**
+  String get tabChart;
+
+  /// No description provided for @tabPlanets.
+  ///
+  /// In en, this message translates to:
+  /// **'Planets'**
+  String get tabPlanets;
+
+  /// No description provided for @tabBhava.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhava'**
+  String get tabBhava;
+
+  /// No description provided for @tabDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get tabDetails;
+
+  /// No description provided for @tabFriendship.
+  ///
+  /// In en, this message translates to:
+  /// **'Friendship'**
+  String get tabFriendship;
+
+  /// No description provided for @tabKarakas.
+  ///
+  /// In en, this message translates to:
+  /// **'Karakas'**
+  String get tabKarakas;
+
+  /// No description provided for @chartNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Chart not found'**
+  String get chartNotFound;
+
+  /// No description provided for @chartLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'* retrograde  ^ combust  ◻ vargottama  ↑ exalted  ↓ debilitated'**
+  String get chartLegend;
+
+  /// No description provided for @chalitNorthOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Chalit is always shown North Indian (house-based).'**
+  String get chalitNorthOnly;
+
+  /// No description provided for @tapPlanet.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a planet for details.'**
+  String get tapPlanet;
+
+  /// No description provided for @navamshaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Navamsha (D9)'**
+  String get navamshaTitle;
+
+  /// No description provided for @chalitTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chalit (Sripati)'**
+  String get chalitTitle;
+
+  /// No description provided for @sign.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign'**
+  String get sign;
+
+  /// No description provided for @withLord.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (lord {lord})'**
+  String withLord(Object name, Object lord);
+
+  /// No description provided for @degreeInSignLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get degreeInSignLabel;
+
+  /// No description provided for @nakshatraPada.
+  ///
+  /// In en, this message translates to:
+  /// **'{nakshatra}, pada {pada}'**
+  String nakshatraPada(Object nakshatra, Object pada);
+
+  /// No description provided for @starSubLords.
+  ///
+  /// In en, this message translates to:
+  /// **'Star / sub / sub-sub lord'**
+  String get starSubLords;
+
+  /// No description provided for @houseWholeSign.
+  ///
+  /// In en, this message translates to:
+  /// **'House (whole sign)'**
+  String get houseWholeSign;
+
+  /// No description provided for @chalitBhava.
+  ///
+  /// In en, this message translates to:
+  /// **'Chalit bhava'**
+  String get chalitBhava;
+
+  /// No description provided for @navamsha.
+  ///
+  /// In en, this message translates to:
+  /// **'Navamsha'**
+  String get navamsha;
+
+  /// No description provided for @dignity.
+  ///
+  /// In en, this message translates to:
+  /// **'Dignity'**
+  String get dignity;
+
+  /// No description provided for @motion.
+  ///
+  /// In en, this message translates to:
+  /// **'Motion'**
+  String get motion;
+
+  /// No description provided for @retrograde.
+  ///
+  /// In en, this message translates to:
+  /// **'Retrograde'**
+  String get retrograde;
+
+  /// No description provided for @direct.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get direct;
+
+  /// No description provided for @speed.
+  ///
+  /// In en, this message translates to:
+  /// **'Speed'**
+  String get speed;
+
+  /// No description provided for @speedValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{value}°/day'**
+  String speedValue(Object value);
+
+  /// No description provided for @combust.
+  ///
+  /// In en, this message translates to:
+  /// **'Combust'**
+  String get combust;
+
+  /// No description provided for @vargottama.
+  ///
+  /// In en, this message translates to:
+  /// **'Vargottama'**
+  String get vargottama;
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No description provided for @colPlanet.
+  ///
+  /// In en, this message translates to:
+  /// **'Planet'**
+  String get colPlanet;
+
+  /// No description provided for @colDegree.
+  ///
+  /// In en, this message translates to:
+  /// **'Degree'**
+  String get colDegree;
+
+  /// No description provided for @colNakshatra.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra'**
+  String get colNakshatra;
+
+  /// No description provided for @colStar.
+  ///
+  /// In en, this message translates to:
+  /// **'Star'**
+  String get colStar;
+
+  /// No description provided for @colSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sub'**
+  String get colSub;
+
+  /// No description provided for @flagRetro.
+  ///
+  /// In en, this message translates to:
+  /// **'R'**
+  String get flagRetro;
+
+  /// No description provided for @flagCombust.
+  ///
+  /// In en, this message translates to:
+  /// **'C'**
+  String get flagCombust;
+
+  /// No description provided for @flagVargottama.
+  ///
+  /// In en, this message translates to:
+  /// **'V'**
+  String get flagVargottama;
+
+  /// No description provided for @planetsLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'R retrograde · C combust · V vargottama. Dignity uses the compound (five-fold) relationship with the sign lord.'**
+  String get planetsLegend;
+
+  /// No description provided for @bhavaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhava chalit (Sripati)'**
+  String get bhavaTitle;
+
+  /// No description provided for @colBhava.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhava'**
+  String get colBhava;
+
+  /// No description provided for @colStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start (sandhi)'**
+  String get colStart;
+
+  /// No description provided for @colMadhya.
+  ///
+  /// In en, this message translates to:
+  /// **'Madhya'**
+  String get colMadhya;
+
+  /// No description provided for @colEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'End'**
+  String get colEnd;
+
+  /// No description provided for @colPlanets.
+  ///
+  /// In en, this message translates to:
+  /// **'Planets'**
+  String get colPlanets;
+
+  /// No description provided for @chalitDiffers.
+  ///
+  /// In en, this message translates to:
+  /// **'Planets whose chalit bhava differs from their sign house:'**
+  String get chalitDiffers;
+
+  /// No description provided for @chalitShift.
+  ///
+  /// In en, this message translates to:
+  /// **'{planet}: house {house} → bhava {bhava}'**
+  String chalitShift(Object planet, Object house, Object bhava);
+
+  /// No description provided for @none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get none;
+
+  /// No description provided for @kpCuspsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Placidus cusps (KP)'**
+  String get kpCuspsTitle;
+
+  /// No description provided for @colCusp.
+  ///
+  /// In en, this message translates to:
+  /// **'Cusp'**
+  String get colCusp;
+
+  /// No description provided for @colLongitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get colLongitude;
+
+  /// No description provided for @birthDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth details'**
+  String get birthDetails;
+
+  /// No description provided for @date.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get date;
+
+  /// No description provided for @time.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get time;
+
+  /// No description provided for @place.
+  ///
+  /// In en, this message translates to:
+  /// **'Place'**
+  String get place;
+
+  /// No description provided for @latLon.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude / longitude'**
+  String get latLon;
+
+  /// No description provided for @warTime.
+  ///
+  /// In en, this message translates to:
+  /// **'War time'**
+  String get warTime;
+
+  /// No description provided for @dst.
+  ///
+  /// In en, this message translates to:
+  /// **'DST'**
+  String get dst;
+
+  /// No description provided for @hoursValue.
+  ///
+  /// In en, this message translates to:
+  /// **'+{hours} h'**
+  String hoursValue(Object hours);
+
+  /// No description provided for @lmtAtBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'LMT at birth'**
+  String get lmtAtBirth;
+
+  /// No description provided for @utAtBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'UT (GMT) at birth'**
+  String get utAtBirth;
+
+  /// No description provided for @julianDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Julian day (UT)'**
+  String get julianDay;
+
+  /// No description provided for @ayanamsa.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayanamsa'**
+  String get ayanamsa;
+
+  /// No description provided for @obliquity.
+  ///
+  /// In en, this message translates to:
+  /// **'Obliquity'**
+  String get obliquity;
+
+  /// No description provided for @siderealTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Sidereal time'**
+  String get siderealTime;
+
+  /// No description provided for @panchangAtBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchang at birth'**
+  String get panchangAtBirth;
+
+  /// No description provided for @hinduWeekday.
+  ///
+  /// In en, this message translates to:
+  /// **'Hindu weekday'**
+  String get hinduWeekday;
+
+  /// No description provided for @tithi.
+  ///
+  /// In en, this message translates to:
+  /// **'Tithi'**
+  String get tithi;
+
+  /// No description provided for @nakshatra.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra'**
+  String get nakshatra;
+
+  /// No description provided for @yoga.
+  ///
+  /// In en, this message translates to:
+  /// **'Yoga'**
+  String get yoga;
+
+  /// No description provided for @karana.
+  ///
+  /// In en, this message translates to:
+  /// **'Karana'**
+  String get karana;
+
+  /// No description provided for @sunrise.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise'**
+  String get sunrise;
+
+  /// No description provided for @sunset.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunset'**
+  String get sunset;
+
+  /// No description provided for @dayLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Day length'**
+  String get dayLength;
+
+  /// No description provided for @ishtkaal.
+  ///
+  /// In en, this message translates to:
+  /// **'Ishtkaal (ghati)'**
+  String get ishtkaal;
+
+  /// No description provided for @sunriseRule.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise rule'**
+  String get sunriseRule;
+
+  /// No description provided for @avakhada.
+  ///
+  /// In en, this message translates to:
+  /// **'Avakhada chakra'**
+  String get avakhada;
+
+  /// No description provided for @lagna.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna'**
+  String get lagna;
+
+  /// No description provided for @rashi.
+  ///
+  /// In en, this message translates to:
+  /// **'Rashi'**
+  String get rashi;
+
+  /// No description provided for @nakshatraPadaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra-pada'**
+  String get nakshatraPadaLabel;
+
+  /// No description provided for @varna.
+  ///
+  /// In en, this message translates to:
+  /// **'Varna'**
+  String get varna;
+
+  /// No description provided for @vashya.
+  ///
+  /// In en, this message translates to:
+  /// **'Vashya'**
+  String get vashya;
+
+  /// No description provided for @yoni.
+  ///
+  /// In en, this message translates to:
+  /// **'Yoni'**
+  String get yoni;
+
+  /// No description provided for @gana.
+  ///
+  /// In en, this message translates to:
+  /// **'Gana'**
+  String get gana;
+
+  /// No description provided for @nadi.
+  ///
+  /// In en, this message translates to:
+  /// **'Nadi'**
+  String get nadi;
+
+  /// No description provided for @tatva.
+  ///
+  /// In en, this message translates to:
+  /// **'Tatva'**
+  String get tatva;
+
+  /// No description provided for @payaNakshatra.
+  ///
+  /// In en, this message translates to:
+  /// **'Paya (nakshatra)'**
+  String get payaNakshatra;
+
+  /// No description provided for @payaMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Paya (Moon house)'**
+  String get payaMoon;
+
+  /// No description provided for @nameSyllable.
+  ///
+  /// In en, this message translates to:
+  /// **'Name syllable'**
+  String get nameSyllable;
+
+  /// No description provided for @dashaBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Dasha balance'**
+  String get dashaBalance;
+
+  /// No description provided for @sunSignIndian.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun sign (Indian)'**
+  String get sunSignIndian;
+
+  /// No description provided for @sunSignWestern.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun sign (Western)'**
+  String get sunSignWestern;
+
+  /// No description provided for @ymd.
+  ///
+  /// In en, this message translates to:
+  /// **'{y}y {m}m {d}d'**
+  String ymd(Object y, Object m, Object d);
+
+  /// No description provided for @naturalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural (permanent)'**
+  String get naturalTitle;
+
+  /// No description provided for @temporalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Temporal (in this chart)'**
+  String get temporalTitle;
+
+  /// No description provided for @compoundTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Five-fold (compound)'**
+  String get compoundTitle;
+
+  /// No description provided for @friendshipLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'GF great friend · F friend · N neutral · E enemy · GE great enemy'**
+  String get friendshipLegend;
+
+  /// No description provided for @charaKarakasTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chara karakas · {scheme}'**
+  String charaKarakasTitle(Object scheme);
+
+  /// No description provided for @colKaraka.
+  ///
+  /// In en, this message translates to:
+  /// **'Karaka'**
+  String get colKaraka;
+
+  /// No description provided for @colDegreeInSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Degree in sign'**
+  String get colDegreeInSign;
+
+  /// No description provided for @rahuBackwards.
+  ///
+  /// In en, this message translates to:
+  /// **'Rahu\'s degree is counted backwards (30° − its degree).'**
+  String get rahuBackwards;
+
+  /// No description provided for @karakaSchemeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Change to the 8-karaka scheme (with Rahu) in Settings.'**
+  String get karakaSchemeHint;
+
+  /// No description provided for @display.
+  ///
+  /// In en, this message translates to:
+  /// **'Display'**
+  String get display;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @languageSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Same as phone'**
+  String get languageSystem;
+
+  /// No description provided for @chartStyle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chart style'**
+  String get chartStyle;
+
+  /// No description provided for @showOuterPlanets.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Uranus, Neptune, Pluto'**
+  String get showOuterPlanets;
+
+  /// No description provided for @calculation.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculation'**
+  String get calculation;
+
+  /// No description provided for @rahuKetu.
+  ///
+  /// In en, this message translates to:
+  /// **'Rahu / Ketu'**
+  String get rahuKetu;
+
+  /// No description provided for @charaKarakas.
+  ///
+  /// In en, this message translates to:
+  /// **'Chara karakas'**
+  String get charaKarakas;
+
+  /// No description provided for @settingsFootnote.
+  ///
+  /// In en, this message translates to:
+  /// **'Defaults match AstroSage: Lahiri, mean node, upper-limb sunrise. Planet positions come from Swiss Ephemeris (Astrodienst, AGPL). Place data © GeoNames, CC BY 4.0.'**
+  String get settingsFootnote;
+}
+
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  Future<AppLocalizations> load(Locale locale) {
+    return SynchronousFuture<AppLocalizations>(lookupAppLocalizations(locale));
+  }
+
+  @override
+  bool isSupported(Locale locale) =>
+      <String>['en', 'hi'].contains(locale.languageCode);
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
+}
+
+AppLocalizations lookupAppLocalizations(Locale locale) {
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'en':
+      return AppLocalizationsEn();
+    case 'hi':
+      return AppLocalizationsHi();
+  }
+
+  throw FlutterError(
+    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
+}

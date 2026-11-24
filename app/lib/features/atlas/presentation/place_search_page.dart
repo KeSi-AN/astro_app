@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../app/services.dart';
+import '../../../l10n/l10n.dart';
 import '../domain/place.dart';
 
 /// Full-screen place search. Pops with the chosen [Place], or a manual one.
@@ -34,8 +35,8 @@ class _PlaceSearchPageState extends State<PlaceSearchPage> {
         title: TextField(
           controller: _controller,
           autofocus: true,
-          decoration: const InputDecoration(
-            hintText: 'Town or village (add ", state" to narrow)',
+          decoration: InputDecoration(
+            hintText: context.l10n.placeSearchHint,
             border: InputBorder.none,
           ),
           textInputAction: TextInputAction.search,
@@ -43,7 +44,7 @@ class _PlaceSearchPageState extends State<PlaceSearchPage> {
         ),
         actions: [
           IconButton(
-            tooltip: 'Clear',
+            tooltip: context.l10n.clear,
             icon: const Icon(Icons.clear),
             onPressed: () {
               _controller.clear();
@@ -65,16 +66,18 @@ class _PlaceSearchPageState extends State<PlaceSearchPage> {
               onTap: () => Navigator.pop(context, p),
             ),
           if (_controller.text.trim().length >= 2 && _results.isEmpty)
-            const Padding(
-              padding: EdgeInsets.all(24),
+            Padding(
+              padding: const EdgeInsets.all(24),
               child: Text(
-                'No place found. Try another spelling, or enter '
-                'the coordinates yourself.',
+                // Devanagari input can't match the Latin-script atlas.
+                RegExp('[ऀ-ॿ]').hasMatch(_controller.text)
+                    ? context.l10n.placeSearchLatin
+                    : context.l10n.noPlaceFound,
               ),
             ),
           ListTile(
             leading: const Icon(Icons.edit_location_alt_outlined),
-            title: const Text('Enter coordinates manually'),
+            title: Text(context.l10n.enterCoordinates),
             onTap: () async {
               final p = await showDialog<Place>(
                 context: context,
@@ -84,11 +87,11 @@ class _PlaceSearchPageState extends State<PlaceSearchPage> {
               if (p != null && context.mounted) Navigator.pop(context, p);
             },
           ),
-          const Padding(
-            padding: EdgeInsets.all(16),
+          Padding(
+            padding: const EdgeInsets.all(16),
             child: Text(
-              'Place data © GeoNames (geonames.org), CC BY 4.0',
-              style: TextStyle(fontSize: 11),
+              context.l10n.geonamesCredit,
+              style: const TextStyle(fontSize: 11),
             ),
           ),
         ],
@@ -130,7 +133,7 @@ class _ManualPlaceDialogState extends State<_ManualPlaceDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Place by coordinates'),
+      title: Text(context.l10n.placeByCoordinates),
       content: Form(
         key: _form,
         child: SingleChildScrollView(
@@ -139,47 +142,47 @@ class _ManualPlaceDialogState extends State<_ManualPlaceDialog> {
             children: [
               TextFormField(
                 controller: _name,
-                decoration: const InputDecoration(labelText: 'Place name'),
-                validator: (v) => (v ?? '').trim().isEmpty ? 'Required' : null,
+                decoration: InputDecoration(labelText: context.l10n.placeName),
+                validator: (v) =>
+                    (v ?? '').trim().isEmpty ? context.l10n.required : null,
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _lat,
-                decoration: const InputDecoration(
-                  labelText: 'Latitude',
+                decoration: InputDecoration(
+                  labelText: context.l10n.latitude,
                   hintText: '27.15 or 27N09',
                 ),
                 validator: (v) {
                   final x = _parse(v ?? '', 'N', 'S');
                   return x == null || x.abs() > 90
-                      ? 'e.g. 27.15 or 27N09'
+                      ? context.l10n.latError
                       : null;
                 },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _lon,
-                decoration: const InputDecoration(
-                  labelText: 'Longitude',
+                decoration: InputDecoration(
+                  labelText: context.l10n.longitudeGeo,
                   hintText: '78.00 or 078E00',
                 ),
                 validator: (v) {
                   final x = _parse(v ?? '', 'E', 'W');
                   return x == null || x.abs() > 180
-                      ? 'e.g. 78.0 or 078E00'
+                      ? context.l10n.lonError
                       : null;
                 },
               ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _zone,
-                decoration: const InputDecoration(
-                  labelText: 'Time zone',
+                decoration: InputDecoration(
+                  labelText: context.l10n.timeZone,
                   hintText: 'Asia/Kolkata',
                 ),
-                validator: (v) => (v ?? '').contains('/')
-                    ? null
-                    : 'An IANA zone like Asia/Kolkata',
+                validator: (v) =>
+                    (v ?? '').contains('/') ? null : context.l10n.zoneError,
               ),
             ],
           ),
@@ -188,7 +191,7 @@ class _ManualPlaceDialogState extends State<_ManualPlaceDialog> {
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(context.l10n.cancel),
         ),
         FilledButton(
           onPressed: () {
@@ -203,7 +206,7 @@ class _ManualPlaceDialogState extends State<_ManualPlaceDialog> {
               ),
             );
           },
-          child: const Text('Use'),
+          child: Text(context.l10n.use),
         ),
       ],
     );

@@ -24,8 +24,20 @@ enum TimeBasis {
 
 enum NoteLevel { info, warning }
 
+/// What a note is about, so the app can show it in any language.
+enum TimeNoteKind {
+  pre1906,
+  bombayTime,
+  calcuttaTime,
+  nonExistentTime,
+  ambiguousTime,
+  warTimeApplied,
+  warTimeRemoved,
+}
+
 class TimeNote {
-  const TimeNote(this.level, this.text);
+  const TimeNote(this.kind, this.level, this.text);
+  final TimeNoteKind kind;
   final NoteLevel level;
   final String text;
 }
@@ -116,21 +128,21 @@ class TimeResolver {
     final notes = <TimeNote>[];
     final alternatives = <TimeBasis>[];
     if (india && date < 19060101) {
-      notes.add(const TimeNote(NoteLevel.info,
+      notes.add(const TimeNote(TimeNoteKind.pre1906, NoteLevel.info,
           'Before 1906 India had no single standard time. Local mean time is '
           'assumed; switch if the record used Madras or Calcutta time.'));
       alternatives.addAll([TimeBasis.lmt, TimeBasis.zone]);
     }
     if (india && date >= 19060101 && date < 19560101 &&
         _bombayStates.contains(admin1)) {
-      notes.add(const TimeNote(NoteLevel.warning,
+      notes.add(const TimeNote(TimeNoteKind.bombayTime, NoteLevel.warning,
           'Bombay kept its own Bombay Time (UTC+4:51) until 1955. If the '
           'birth was recorded in Bombay Time, choose it below.'));
       alternatives.addAll([TimeBasis.zone, TimeBasis.bombay]);
     }
     if (india && date >= 19060101 && date < 19490101 &&
         _calcuttaStates.contains(admin1)) {
-      notes.add(const TimeNote(NoteLevel.warning,
+      notes.add(const TimeNote(TimeNoteKind.calcuttaTime, NoteLevel.warning,
           'Calcutta kept its own Calcutta Time (UTC+5:53:20) until 1948. If '
           'the birth was recorded in Calcutta Time, choose it below.'));
       alternatives.addAll([TimeBasis.zone, TimeBasis.calcutta]);
@@ -177,7 +189,7 @@ class TimeResolver {
     // A local time that doesn't exist (clocks jumped forward) comes back
     // shifted; a time that occurs twice (clocks went back) is ambiguous.
     if (t.hour != hour || t.minute != minute) {
-      notes.add(const TimeNote(NoteLevel.warning,
+      notes.add(const TimeNote(TimeNoteKind.nonExistentTime, NoteLevel.warning,
           'This time did not exist here (clocks were moved forward). Check '
           'the recorded time or set the offset manually.'));
     } else {
@@ -185,7 +197,7 @@ class TimeResolver {
       final hourAfter = loc.timeZone(t.millisecondsSinceEpoch + 3600000);
       final drop = hourBefore.offset - hourAfter.offset;
       if (drop > Duration.zero && drop <= const Duration(hours: 1)) {
-        notes.add(const TimeNote(NoteLevel.warning,
+        notes.add(const TimeNote(TimeNoteKind.ambiguousTime, NoteLevel.warning,
             'Clocks went back around this time, so it may have occurred '
             'twice. Confirm whether daylight saving was still on.'));
       }
@@ -195,7 +207,10 @@ class TimeResolver {
     final war = india && zone.isDst;
     if (war) {
       final apply = applyWarTime ?? true;
-      notes.add(TimeNote(NoteLevel.warning, apply
+      notes.add(TimeNote(
+          apply ? TimeNoteKind.warTimeApplied : TimeNoteKind.warTimeRemoved,
+          NoteLevel.warning,
+          apply
           ? 'War time was in force (clocks 1 hour ahead of IST, UTC+6:30). '
               'Turn this off only if the recorded time was in IST.'
           : 'War-time hour removed: the recorded time is treated as IST '

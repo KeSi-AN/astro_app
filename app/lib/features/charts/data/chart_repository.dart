@@ -74,12 +74,12 @@ class ChartRepository {
     return e.id!;
   }
 
-  Future<int> duplicate(int id) async {
+  Future<int> duplicate(int id, {String suffix = '(copy)'}) async {
     final e = await get(id);
     if (e == null) throw StateError('Chart $id not found');
     return save(
       ChartEntry(
-        name: '${e.name} (copy)',
+        name: '${e.name} $suffix',
         gender: e.gender,
         year: e.year,
         month: e.month,

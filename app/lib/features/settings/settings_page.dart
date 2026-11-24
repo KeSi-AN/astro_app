@@ -3,6 +3,7 @@ import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../chart_view/presentation/chart_geometry.dart';
+import '../../l10n/l10n.dart';
 import 'settings.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -10,69 +11,80 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final t = context.terms;
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(l10n.settings)),
       body: BlocBuilder<SettingsCubit, AppSettings>(
         builder: (context, s) {
           final cubit = context.read<SettingsCubit>();
           return ListView(
             children: [
-              const _Header('Display'),
+              _Header(l10n.display),
+              _Choice<AppLanguage>(
+                title: l10n.language,
+                value: s.language,
+                values: AppLanguage.values,
+                // Language names are shown in their own script.
+                label: (v) => switch (v) {
+                  AppLanguage.system => l10n.languageSystem,
+                  AppLanguage.english => 'English',
+                  AppLanguage.hindi => 'हिंदी',
+                },
+                onChanged: (v) => cubit.update((s) => s.copyWith(language: v)),
+              ),
               _Choice<ChartStyle>(
-                title: 'Chart style',
+                title: l10n.chartStyle,
                 value: s.chartStyle,
                 values: ChartStyle.values,
-                label: (v) => v.label,
+                label: t.chartStyle,
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(chartStyle: v)),
               ),
               SwitchListTile(
-                title: const Text('Show Uranus, Neptune, Pluto'),
+                title: Text(l10n.showOuterPlanets),
                 value: s.showOuterPlanets,
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(showOuterPlanets: v)),
               ),
-              const _Header('Calculation'),
+              _Header(l10n.calculation),
               _Choice<Ayanamsa>(
-                title: 'Ayanamsa',
+                title: l10n.ayanamsa,
                 value: s.ayanamsa,
                 values: Ayanamsa.values
                     .where((a) => a != Ayanamsa.user)
                     .toList(),
-                label: (v) => v.label,
+                label: t.ayanamsa,
                 onChanged: (v) => cubit.update((s) => s.copyWith(ayanamsa: v)),
               ),
               _Choice<NodeType>(
-                title: 'Rahu / Ketu',
+                title: l10n.rahuKetu,
                 value: s.nodeType,
                 values: NodeType.values,
-                label: (v) =>
-                    v == NodeType.meanNode ? 'Mean node' : 'True node',
+                label: t.nodeType,
                 onChanged: (v) => cubit.update((s) => s.copyWith(nodeType: v)),
               ),
               _Choice<SunriseMode>(
-                title: 'Sunrise',
+                title: l10n.sunrise,
                 value: s.sunriseMode,
                 values: SunriseMode.values,
-                label: (v) => v.label,
+                label: t.sunriseMode,
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(sunriseMode: v)),
               ),
               _Choice<KarakaScheme>(
-                title: 'Chara karakas',
+                title: l10n.charaKarakas,
                 value: s.karakaScheme,
                 values: KarakaScheme.values,
-                label: (v) => v.label,
+                label: t.karakaScheme,
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(karakaScheme: v)),
               ),
-              const Padding(
-                padding: EdgeInsets.all(16),
+              Padding(
+                padding: const EdgeInsets.all(16),
                 child: Text(
-                  'Defaults match AstroSage: Lahiri, mean node, upper-limb '
-                  'sunrise. Planet positions come from Swiss Ephemeris '
-                  '(Astrodienst, AGPL). Place data © GeoNames, CC BY 4.0.',
-                  style: TextStyle(fontSize: 12),
+                  l10n.settingsFootnote,
+                  style: const TextStyle(fontSize: 12),
                 ),
               ),
             ],

@@ -68,13 +68,13 @@ Gender: Male'''),
   test('day-first, with a note when ambiguous', () {
     final r = p('DOB 04/05/1990');
     expectBirth(r, date: [1990, 5, 4]);
-    expect(r.notes.join(), contains('day/month'));
+    expect(r.notes.single.kind, ParseNoteKind.dayFirstDate);
   });
 
   test('switches to month-first only when day-first is impossible', () {
     final r = p('DOB 03/25/1990');
     expectBirth(r, date: [1990, 3, 25]);
-    expect(r.notes.join(), contains('month/day'));
+    expect(r.notes.single.kind, ParseNoteKind.monthFirstDate);
   });
 
   test('rejects impossible dates', () {
@@ -86,7 +86,7 @@ Gender: Male'''),
     expectBirth(p('samay shaam 6 baje'), time: [18, 0, 0]);
     final r = p('time raat 1:15');
     expectBirth(r, time: [1, 15, 0]);
-    expect(r.notes.join(), contains('after midnight'));
+    expect(r.notes.single.kind, ParseNoteKind.afterMidnight);
     expectBirth(p('time raat 10:15'), time: [22, 15, 0]);
   });
 
@@ -98,7 +98,7 @@ Gender: Male'''),
   test('time without am/pm gets a note', () {
     final r = p('TOB 7:15');
     expectBirth(r, time: [7, 15, 0]);
-    expect(r.notes.join(), contains('No AM/PM'));
+    expect(r.notes.single.kind, ParseNoteKind.noAmPm);
   });
 
   test('a bare number is not a time', () {
@@ -113,5 +113,33 @@ Gender: Male'''),
   test('empty or unrelated text', () {
     expect(p('').isEmpty, isTrue);
     expect(p('   \n  ').isEmpty, isTrue);
+  });
+
+  group('Hindi input', () {
+    test('labelled Hindi message', () {
+      expectBirth(p('''
+नाम: राहुल शर्मा
+जन्म तिथि: 12/03/1990
+जन्म समय: सुबह 10:45
+जन्म स्थान: Lucknow
+लिंग: पुरुष'''),
+          name: 'राहुल शर्मा', gender: 'male', date: [1990, 3, 12],
+          time: [10, 45, 0], place: 'Lucknow');
+    });
+
+    test('Devanagari digits and बजकर/मिनट', () {
+      expectBirth(p('जन्म तिथि १२/०३/१९९० समय शाम ६ बजकर ५ मिनट'),
+          date: [1990, 3, 12], time: [18, 5, 0]);
+    });
+
+    test('Hindi month names and रात', () {
+      expectBirth(p('दिनांक 5 अगस्त 1994, रात 1:15'),
+          date: [1994, 8, 5], time: [1, 15, 0]);
+      expectBirth(p('समय रात 10 बजे'), time: [22, 0, 0]);
+    });
+
+    test('female in Hindi', () {
+      expect(p('लिंग: स्त्री').gender, 'female');
+    });
   });
 }

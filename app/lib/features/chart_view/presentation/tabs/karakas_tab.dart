@@ -1,6 +1,7 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../l10n/l10n.dart';
 import 'table_widgets.dart';
 
 class KarakasTab extends StatelessWidget {
@@ -9,27 +10,33 @@ class KarakasTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final t = context.terms;
     final a = analysis;
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
         Text(
-          'Chara karakas · ${a.karakaScheme.label}',
+          l10n.charaKarakasTitle(t.karakaScheme(a.karakaScheme)),
           style: Theme.of(context).textTheme.titleSmall,
         ),
         const SizedBox(height: 8),
         GridTable(
-          header: const ['Karaka', 'Planet', 'Degree in sign'],
+          header: [l10n.colKaraka, l10n.colPlanet, l10n.colDegreeInSign],
           rows: [
             for (final (k, g, d) in a.karakas)
-              ['${k.label} (${k.short})', g.label, Dms.of(d).degrees],
+              [
+                '${t.karaka(k)} (${t.karakaShort(k)})',
+                t.graha(g),
+                Dms.of(d).degrees,
+              ],
           ],
         ),
         const SizedBox(height: 8),
         Text(
           a.karakaScheme == KarakaScheme.eight
-              ? "Rahu's degree is counted backwards (30° − its degree)."
-              : 'Change to the 8-karaka scheme (with Rahu) in Settings.',
+              ? l10n.rahuBackwards
+              : l10n.karakaSchemeHint,
           style: Theme.of(context).textTheme.bodySmall,
         ),
       ],

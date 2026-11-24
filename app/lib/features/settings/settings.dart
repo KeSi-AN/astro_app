@@ -3,15 +3,19 @@ import 'dart:async';
 import 'package:drift/drift.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/widgets.dart' show Locale;
 import 'package:jyotish_core/jyotish_core.dart';
 
 import '../../core/db/app_database.dart';
 import '../chart_view/presentation/chart_geometry.dart';
 
+enum AppLanguage { system, english, hindi }
+
 /// Calculation and display preferences. Defaults match AstroSage, which
 /// the astrologer is used to (see DIVERGENCES.md).
 class AppSettings extends Equatable {
   const AppSettings({
+    this.language = AppLanguage.system,
     this.chartStyle = ChartStyle.north,
     this.ayanamsa = Ayanamsa.lahiri,
     this.nodeType = NodeType.meanNode,
@@ -20,6 +24,7 @@ class AppSettings extends Equatable {
     this.showOuterPlanets = true,
   });
 
+  final AppLanguage language;
   final ChartStyle chartStyle;
   final Ayanamsa ayanamsa;
   final NodeType nodeType;
@@ -29,7 +34,15 @@ class AppSettings extends Equatable {
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
+  /// null = follow the phone.
+  Locale? get locale => switch (language) {
+    AppLanguage.system => null,
+    AppLanguage.english => const Locale('en'),
+    AppLanguage.hindi => const Locale('hi'),
+  };
+
   AppSettings copyWith({
+    AppLanguage? language,
     ChartStyle? chartStyle,
     Ayanamsa? ayanamsa,
     NodeType? nodeType,
@@ -37,6 +50,7 @@ class AppSettings extends Equatable {
     KarakaScheme? karakaScheme,
     bool? showOuterPlanets,
   }) => AppSettings(
+    language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
     ayanamsa: ayanamsa ?? this.ayanamsa,
     nodeType: nodeType ?? this.nodeType,
@@ -46,6 +60,7 @@ class AppSettings extends Equatable {
   );
 
   Map<String, String> toMap() => {
+    'language': language.name,
     'chartStyle': chartStyle.name,
     'ayanamsa': ayanamsa.name,
     'nodeType': nodeType.name,
@@ -59,6 +74,7 @@ class AppSettings extends Equatable {
         values.asNameMap()[m[key]] ?? fallback;
     const d = AppSettings();
     return AppSettings(
+      language: pick(AppLanguage.values, 'language', d.language),
       chartStyle: pick(ChartStyle.values, 'chartStyle', d.chartStyle),
       // User-defined ayanamsa needs extra values the settings screen doesn't
       // collect yet, so it never comes back from storage.
@@ -76,6 +92,7 @@ class AppSettings extends Equatable {
 
   @override
   List<Object?> get props => [
+    language,
     chartStyle,
     ayanamsa,
     nodeType,

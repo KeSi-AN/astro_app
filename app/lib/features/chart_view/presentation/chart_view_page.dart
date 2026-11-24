@@ -6,6 +6,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../charts/domain/chart_entry.dart';
+import '../../../l10n/l10n.dart';
 import '../../settings/settings.dart';
 import 'tabs/bhava_tab.dart';
 import 'tabs/chart_tab.dart';
@@ -40,7 +41,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
   Future<void> _load() async {
     try {
       final e = await context.read<AppServices>().charts.get(widget.id);
-      if (e == null) throw StateError('Chart not found');
+      if (e == null) throw StateError('not found');
       if (mounted) {
         setState(() {
           _entry = e;
@@ -65,27 +66,18 @@ class _ChartViewPageState extends State<ChartViewPage> {
     );
   }
 
-  static const _tabs = [
-    'Chart',
-    'Planets',
-    'Bhava',
-    'Details',
-    'Friendship',
-    'Karakas',
-  ];
-
   @override
   Widget build(BuildContext context) {
     final e = _entry;
     return DefaultTabController(
-      length: _tabs.length,
+      length: 6,
       child: Scaffold(
         appBar: AppBar(
           title: Text(e?.name ?? ''),
           actions: [
             if (e != null)
               IconButton(
-                tooltip: 'Edit birth details',
+                tooltip: context.l10n.editBirthDetails,
                 icon: const Icon(Icons.edit_outlined),
                 onPressed: () async {
                   await context.push(Routes.editChart(e.id!));
@@ -93,7 +85,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
                 },
               ),
             IconButton(
-              tooltip: 'Settings',
+              tooltip: context.l10n.settings,
               icon: const Icon(Icons.tune),
               onPressed: () => context.push(Routes.settings),
             ),
@@ -101,11 +93,18 @@ class _ChartViewPageState extends State<ChartViewPage> {
           bottom: TabBar(
             isScrollable: true,
             tabAlignment: TabAlignment.start,
-            tabs: [for (final t in _tabs) Tab(text: t)],
+            tabs: [
+              Tab(text: context.l10n.tabChart),
+              Tab(text: context.l10n.tabPlanets),
+              Tab(text: context.l10n.tabBhava),
+              Tab(text: context.l10n.tabDetails),
+              Tab(text: context.l10n.tabFriendship),
+              Tab(text: context.l10n.tabKarakas),
+            ],
           ),
         ),
         body: _error != null
-            ? Center(child: Text('$_error'))
+            ? Center(child: Text(context.l10n.chartNotFound))
             : e == null
             ? const Center(child: CircularProgressIndicator())
             : BlocBuilder<SettingsCubit, AppSettings>(

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../l10n/l10n.dart';
 import '../../../settings/settings.dart';
 import '../../domain/chart_plate.dart';
 import '../chart_geometry.dart';
@@ -28,11 +29,19 @@ class _ChartTabState extends State<ChartTab>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    final l10n = context.l10n;
+    final terms = context.terms;
     final s = widget.settings;
     final plate = buildPlate(widget.analysis, _kind, outer: s.showOuterPlanets);
     // Chalit houses don't map to fixed sign cells, so it is always drawn
     // in the house-based North Indian style.
     final style = _kind == PlateKind.chalit ? ChartStyle.north : s.chartStyle;
+    final title = switch (_kind) {
+      PlateKind.navamsha => l10n.navamshaTitle,
+      PlateKind.chalit => l10n.chalitTitle,
+      _ => terms.plateKind(_kind),
+    };
+    final small = Theme.of(context).textTheme.bodySmall;
 
     return ListView(
       padding: const EdgeInsets.all(12),
@@ -42,7 +51,7 @@ class _ChartTabState extends State<ChartTab>
           children: [
             for (final k in PlateKind.values)
               ChoiceChip(
-                label: Text(k.label),
+                label: Text(terms.plateKind(k)),
                 selected: _kind == k,
                 onSelected: (_) => setState(() => _kind = k),
               ),
@@ -52,6 +61,7 @@ class _ChartTabState extends State<ChartTab>
         ChartWidget(
           plate: plate,
           style: style,
+          title: title,
           selected: _selected,
           onGrahaTap: (g, house) async {
             if (g == null) return;
@@ -61,21 +71,15 @@ class _ChartTabState extends State<ChartTab>
           },
         ),
         const SizedBox(height: 8),
-        Row(
-          children: [
-            Expanded(
-              child: Text(
-                '* retrograde  ^ combust  ◻ vargottama  ↑ exalted  ↓ debilitated',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ),
-          ],
-        ),
+        Text(l10n.chartLegend, style: small),
         const SizedBox(height: 12),
         SegmentedButton<ChartStyle>(
           segments: [
             for (final st in ChartStyle.values)
-              ButtonSegment(value: st, label: Text(st.label.split(' ').first)),
+              ButtonSegment(
+                value: st,
+                label: Text(terms.chartStyle(st).split(' ').first),
+              ),
           ],
           selected: {s.chartStyle},
           onSelectionChanged: (v) => context.read<SettingsCubit>().update(
@@ -85,16 +89,10 @@ class _ChartTabState extends State<ChartTab>
         if (_kind == PlateKind.chalit)
           Padding(
             padding: const EdgeInsets.only(top: 8),
-            child: Text(
-              'Chalit is always shown North Indian (house-based).',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            child: Text(l10n.chalitNorthOnly, style: small),
           ),
         const SizedBox(height: 8),
-        Text(
-          'Tap a planet for details.',
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        Text(l10n.tapPlanet, style: small),
       ],
     );
   }

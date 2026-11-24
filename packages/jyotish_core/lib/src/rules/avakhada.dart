@@ -110,7 +110,7 @@ const _syllables = [
   ['A', 'I', 'U', 'E'], // Krittika
   ['O', 'Va', 'Vi', 'Vu'], // Rohini
   ['Ve', 'Vo', 'Ka', 'Ki'], // Mrigashira
-  ['Ku', 'Gha', 'Na', 'Chha'], // Ardra
+  ['Ku', 'Gha', 'Nga', 'Chha'], // Ardra
   ['Ke', 'Ko', 'Ha', 'Hi'], // Punarvasu
   ['Hu', 'He', 'Ho', 'Da'], // Pushya
   ['Di', 'Du', 'De', 'Do'], // Ashlesha
@@ -126,7 +126,7 @@ const _syllables = [
   ['Ye', 'Yo', 'Bha', 'Bhi'], // Mula
   ['Bhu', 'Dha', 'Pha', 'Dha'], // Purva Ashadha
   ['Bhe', 'Bho', 'Ja', 'Ji'], // Uttara Ashadha
-  ['Ju', 'Je', 'Jo', 'Gha'], // Shravana
+  ['Khi', 'Khu', 'Khe', 'Kho'], // Shravana
   ['Ga', 'Gi', 'Gu', 'Ge'], // Dhanishta
   ['Go', 'Sa', 'Si', 'Su'], // Shatabhisha
   ['Se', 'So', 'Da', 'Di'], // Purva Bhadrapada

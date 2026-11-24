@@ -1,6 +1,8 @@
 import 'package:birth_input/birth_input.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../l10n/l10n.dart';
+
 import '../../../../core/format/formatters.dart';
 import '../../../atlas/domain/place.dart';
 
@@ -32,6 +34,8 @@ class TimeZonePanel extends StatelessWidget {
   Widget build(BuildContext context) {
     final r = resolution;
     final theme = Theme.of(context);
+    final l10n = context.l10n;
+    final terms = context.terms;
     final small = theme.textTheme.bodySmall;
     final current = basis ?? r?.basis ?? TimeBasis.zone;
     final options = {
@@ -54,7 +58,7 @@ class TimeZonePanel extends StatelessWidget {
               children: [
                 const Icon(Icons.public, size: 18),
                 const SizedBox(width: 8),
-                Text('Time zone', style: theme.textTheme.titleSmall),
+                Text(l10n.timeZone, style: theme.textTheme.titleSmall),
                 const Spacer(),
                 if (r != null)
                   Text(
@@ -70,10 +74,10 @@ class TimeZonePanel extends StatelessWidget {
               key: ValueKey(current),
               initialValue: current,
               isExpanded: true,
-              decoration: const InputDecoration(labelText: 'Birth time is in'),
+              decoration: InputDecoration(labelText: l10n.birthTimeIsIn),
               items: [
                 for (final b in options)
-                  DropdownMenuItem(value: b, child: Text(b.label)),
+                  DropdownMenuItem(value: b, child: Text(terms.timeBasis(b))),
               ],
               onChanged: onBasis,
             ),
@@ -84,8 +88,8 @@ class TimeZonePanel extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       controller: manualOffset,
-                      decoration: const InputDecoration(
-                        labelText: 'UTC offset',
+                      decoration: InputDecoration(
+                        labelText: l10n.utcOffset,
                         hintText: '5:30',
                       ),
                     ),
@@ -97,8 +101,8 @@ class TimeZonePanel extends StatelessWidget {
                       keyboardType: const TextInputType.numberWithOptions(
                         decimal: true,
                       ),
-                      decoration: const InputDecoration(
-                        labelText: 'DST / war time (h)',
+                      decoration: InputDecoration(
+                        labelText: l10n.dstWarHours,
                         hintText: '0 or 1',
                       ),
                     ),
@@ -116,17 +120,19 @@ class TimeZonePanel extends StatelessWidget {
                 [
                   if (r.basis == TimeBasis.zone)
                     '${r.zoneName}${r.abbreviation.isEmpty ? '' : ' (${r.abbreviation})'}',
-                  'Standard ${formatOffset(r.standardOffsetHours)}',
+                  l10n.standardOffset(formatOffset(r.standardOffsetHours)),
                   if (r.dstHours != 0)
-                    '${r.isWarTime ? 'War time' : 'DST'} +${r.dstHours}h',
-                  'LMT correction ${formatSignedHms(lmt)}',
+                    r.isWarTime
+                        ? l10n.warTimePlus('${r.dstHours}')
+                        : l10n.dstPlus('${r.dstHours}'),
+                  '${l10n.lmtCorrection} ${formatSignedHms(lmt)}',
                 ].join(' · '),
                 style: small,
               ),
               if (r.isWarTime)
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: const Text('Recorded time includes war time (+1h)'),
+                  title: Text(l10n.warTimeSwitch),
                   value: r.dstHours != 0,
                   onChanged: onWarTime,
                 ),
@@ -146,7 +152,7 @@ class TimeZonePanel extends StatelessWidget {
                             : theme.colorScheme.onSurfaceVariant,
                       ),
                       const SizedBox(width: 6),
-                      Expanded(child: Text(n.text, style: small)),
+                      Expanded(child: Text(_noteText(l10n, n), style: small)),
                     ],
                   ),
                 ),
@@ -157,3 +163,13 @@ class TimeZonePanel extends StatelessWidget {
     );
   }
 }
+
+String _noteText(AppLocalizations l10n, TimeNote n) => switch (n.kind) {
+  TimeNoteKind.pre1906 => l10n.tzPre1906,
+  TimeNoteKind.bombayTime => l10n.tzBombay,
+  TimeNoteKind.calcuttaTime => l10n.tzCalcutta,
+  TimeNoteKind.nonExistentTime => l10n.tzNonExistent,
+  TimeNoteKind.ambiguousTime => l10n.tzAmbiguous,
+  TimeNoteKind.warTimeApplied => l10n.tzWarOn,
+  TimeNoteKind.warTimeRemoved => l10n.tzWarOff,
+};

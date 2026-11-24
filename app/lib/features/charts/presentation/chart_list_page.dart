@@ -7,6 +7,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../../core/format/formatters.dart';
+import '../../../l10n/l10n.dart';
 import '../data/chart_repository.dart';
 import '../domain/chart_entry.dart';
 
@@ -40,7 +41,8 @@ class ChartListCubit extends Cubit<ChartListState> {
         );
   }
 
-  Future<int> duplicate(int id) => _repo.duplicate(id);
+  Future<int> duplicate(int id, String suffix) =>
+      _repo.duplicate(id, suffix: suffix);
   Future<void> delete(int id) => _repo.delete(id);
 
   @override
@@ -69,10 +71,10 @@ class _ChartListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Charts'),
+        title: Text(context.l10n.chartsTitle),
         actions: [
           IconButton(
-            tooltip: 'Settings',
+            tooltip: context.l10n.settings,
             icon: const Icon(Icons.tune),
             onPressed: () => context.push(Routes.settings),
           ),
@@ -82,9 +84,9 @@ class _ChartListView extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             child: TextField(
-              decoration: const InputDecoration(
-                hintText: 'Search by name or place',
-                prefixIcon: Icon(Icons.search),
+              decoration: InputDecoration(
+                hintText: context.l10n.searchCharts,
+                prefixIcon: const Icon(Icons.search),
               ),
               onChanged: context.read<ChartListCubit>().search,
             ),
@@ -94,12 +96,14 @@ class _ChartListView extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.push(Routes.newChart),
         icon: const Icon(Icons.add),
-        label: const Text('New chart'),
+        label: Text(context.l10n.newChart),
       ),
       body: BlocBuilder<ChartListCubit, ChartListState>(
         builder: (context, state) {
           if (state.error != null) {
-            return Center(child: Text('Could not load charts: ${state.error}'));
+            return Center(
+              child: Text(context.l10n.loadChartsError('${state.error}')),
+            );
           }
           final charts = state.charts;
           if (charts == null) {
@@ -111,8 +115,8 @@ class _ChartListView extends StatelessWidget {
                 padding: const EdgeInsets.all(32),
                 child: Text(
                   state.query.isEmpty
-                      ? 'No charts yet.\nTap "New chart" to add one.'
-                      : 'No chart matches "${state.query}".',
+                      ? context.l10n.noChartsYet
+                      : context.l10n.noChartMatches(state.query),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -146,7 +150,7 @@ class _ChartTile extends StatelessWidget {
       leading: CircleAvatar(child: Text(initial)),
       title: Text(c.name, maxLines: 1, overflow: TextOverflow.ellipsis),
       subtitle: Text(
-        '${formatDate(c.year, c.month, c.day)} · '
+        '${formatDate(c.year, c.month, c.day, month: context.terms.month)} · '
         '${formatTime(c.hour, c.minute, c.second)} · ${c.place.name}',
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
@@ -154,10 +158,16 @@ class _ChartTile extends StatelessWidget {
       onTap: () => context.push(Routes.chart(c.id!)),
       trailing: PopupMenuButton<_Action>(
         onSelected: (a) => _onAction(context, a),
-        itemBuilder: (_) => const [
-          PopupMenuItem(value: _Action.edit, child: Text('Edit')),
-          PopupMenuItem(value: _Action.duplicate, child: Text('Duplicate')),
-          PopupMenuItem(value: _Action.delete, child: Text('Delete')),
+        itemBuilder: (_) => [
+          PopupMenuItem(value: _Action.edit, child: Text(context.l10n.edit)),
+          PopupMenuItem(
+            value: _Action.duplicate,
+            child: Text(context.l10n.duplicate),
+          ),
+          PopupMenuItem(
+            value: _Action.delete,
+            child: Text(context.l10n.delete),
+          ),
         ],
       ),
     );
@@ -169,24 +179,21 @@ class _ChartTile extends StatelessWidget {
       case _Action.edit:
         await context.push(Routes.editChart(chart.id!));
       case _Action.duplicate:
-        await cubit.duplicate(chart.id!);
+        await cubit.duplicate(chart.id!, context.l10n.copySuffix);
       case _Action.delete:
         final ok = await showDialog<bool>(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('Delete chart?'),
-            content: Text(
-              '"${chart.name}" will be removed from this phone. '
-              'This cannot be undone.',
-            ),
+            title: Text(context.l10n.deleteChartTitle),
+            content: Text(context.l10n.deleteChartBody(chart.name)),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
-                child: const Text('Cancel'),
+                child: Text(context.l10n.cancel),
               ),
               FilledButton(
                 onPressed: () => Navigator.pop(context, true),
-                child: const Text('Delete'),
+                child: Text(context.l10n.delete),
               ),
             ],
           ),

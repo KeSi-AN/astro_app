@@ -5,6 +5,7 @@ import 'router.dart';
 import 'services.dart';
 import 'theme.dart';
 import '../features/settings/settings.dart';
+import '../l10n/l10n.dart';
 
 class AstroApp extends StatefulWidget {
   const AstroApp({super.key, required this.services});
@@ -52,11 +53,22 @@ class _AstroAppState extends State<AstroApp> {
           value: services,
           child: BlocProvider(
             create: (_) => SettingsCubit(services.settings),
-            child: MaterialApp.router(
-              title: 'Astro',
-              theme: appTheme(),
-              debugShowCheckedModeBanner: false,
-              routerConfig: _router,
+            child: BlocBuilder<SettingsCubit, AppSettings>(
+              buildWhen: (a, b) => a.language != b.language,
+              builder: (context, s) => MaterialApp.router(
+                title: 'Astro',
+                theme: appTheme(),
+                debugShowCheckedModeBanner: false,
+                locale: s.locale,
+                // material_ui's own delegates (Flutter's flutter_localizations ones
+                // don't provide material_ui's MaterialLocalizations).
+                localizationsDelegates: const [
+                  AppLocalizations.delegate,
+                  ...GlobalMaterialLocalizations.delegates,
+                ],
+                supportedLocales: AppLocalizations.supportedLocales,
+                routerConfig: _router,
+              ),
             ),
           ),
         );

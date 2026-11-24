@@ -1,6 +1,7 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../l10n/l10n.dart';
 import '../domain/chart_plate.dart';
 import 'chart_geometry.dart';
 
@@ -65,12 +66,16 @@ class ChartPainter extends CustomPainter {
     required this.plate,
     required this.style,
     required this.colors,
+    required this.terms,
+    required this.title,
     this.selected,
   });
 
   final ChartPlate plate;
   final ChartStyle style;
   final ChartColors colors;
+  final AstroTerms terms;
+  final String title;
   final Graha? selected;
 
   @override
@@ -104,7 +109,7 @@ class ChartPainter extends CustomPainter {
           : Rect.fromLTWH(s / 3, s / 3, s / 3, s / 3);
       _text(
         canvas,
-        plate.title,
+        title,
         centre.center,
         s * 0.04,
         colors.number,
@@ -149,7 +154,11 @@ class ChartPainter extends CustomPainter {
       }
       _text(
         canvas,
-        l.item.label,
+        l.item.labelWith(
+          l.item.graha == null
+              ? terms.lagnaShort
+              : terms.grahaShort(l.item.graha!),
+        ),
         l.rect.center,
         fs.toDouble(),
         color,
@@ -199,6 +208,8 @@ class ChartPainter extends CustomPainter {
       old.plate != plate ||
       old.style != style ||
       old.selected != selected ||
+      old.title != title ||
+      old.terms != terms ||
       old.colors.line != colors.line;
 }
 
@@ -209,12 +220,16 @@ class ChartWidget extends StatelessWidget {
     required this.plate,
     required this.style,
     this.selected,
+    this.title,
     this.onGrahaTap,
   });
 
   final ChartPlate plate;
   final ChartStyle style;
   final Graha? selected;
+
+  /// Shown in the centre of South/East charts; defaults to the plate title.
+  final String? title;
   final void Function(Graha? graha, PlateHouse house)? onGrahaTap;
 
   @override
@@ -247,6 +262,8 @@ class ChartWidget extends StatelessWidget {
                 plate: plate,
                 style: style,
                 colors: colors,
+                terms: context.terms,
+                title: title ?? plate.title,
                 selected: selected,
               ),
             ),

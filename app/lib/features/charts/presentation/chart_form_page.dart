@@ -9,6 +9,7 @@ import '../../../app/services.dart';
 import '../../../core/format/formatters.dart';
 import '../../atlas/domain/place.dart';
 import '../../atlas/presentation/place_search_page.dart';
+import '../../../l10n/l10n.dart';
 import '../domain/chart_entry.dart';
 import 'widgets/time_zone_panel.dart';
 
@@ -94,7 +95,7 @@ class _ChartFormPageState extends State<ChartFormPage> {
     double? manual;
     if (_basis == TimeBasis.manual) {
       manual = parseOffsetInput(_manualOffset.text);
-      if (manual == null) return (null, 'Enter the UTC offset, e.g. 5:30');
+      if (manual == null) return (null, context.l10n.enterOffset);
     }
     try {
       return (
@@ -116,7 +117,7 @@ class _ChartFormPageState extends State<ChartFormPage> {
         null,
       );
     } catch (e) {
-      return (null, 'Unknown time zone "${p.zoneName}". Use a manual offset.');
+      return (null, context.l10n.unknownZone(p.zoneName));
     }
   }
 
@@ -171,22 +172,33 @@ class _ChartFormPageState extends State<ChartFormPage> {
       builder: (_) => _PasteDialog(initial: clip),
     );
     if (text == null || !mounted) return;
+    final l10n = context.l10n;
     final r = BirthTextParser.parse(text);
     if (r.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No birth details found in that text.')),
-      );
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(l10n.noDetailsFound)));
       return;
     }
-    final notes = [...r.notes];
+    final notes = [
+      for (final n in r.notes)
+        switch (n.kind) {
+          ParseNoteKind.monthFirstDate => l10n.noteMonthFirst(
+            n.params[0],
+            n.params[1],
+          ),
+          ParseNoteKind.dayFirstDate => l10n.noteDayFirst,
+          ParseNoteKind.afterMidnight => l10n.noteAfterMidnight(n.params[0]),
+          ParseNoteKind.noAmPm => l10n.noteNoAmPm(n.params[0]),
+        },
+    ];
     setState(() {
       if (r.name != null) _name.text = r.name!;
       if (r.gender != null) _gender = r.gender;
       if (r.hasDate) _date.text = formatDateInput(r.year!, r.month!, r.day!);
       if (r.hasTime) _time.text = formatTime(r.hour!, r.minute!, r.second ?? 0);
     });
-    if (!r.hasDate) notes.add('No date found: enter it below.');
-    if (!r.hasTime) notes.add('No time found: enter it below.');
+    if (!r.hasDate) notes.add(l10n.noDateFound);
+    if (!r.hasTime) notes.add(l10n.noTimeFound);
     if (r.place != null) {
       final first = r.place!.split(',').first.trim();
       final found = context.read<AppServices>().atlas.search(
@@ -202,11 +214,9 @@ class _ChartFormPageState extends State<ChartFormPage> {
           _basis = null;
           _warTime = null;
         });
-        notes.add(
-          'Place matched to ${exact.first.displayName}. Tap the place to change it.',
-        );
+        notes.add(l10n.placeMatched(exact.first.displayName));
       } else {
-        notes.add('Place "${r.place}" needs choosing.');
+        notes.add(l10n.placeNeedsChoosing(r.place!));
         await _pickPlace(first);
       }
     }
@@ -217,14 +227,14 @@ class _ChartFormPageState extends State<ChartFormPage> {
     if (!_form.currentState!.validate()) return;
     final (res, err) = _resolve();
     if (_place == null) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Choose the birth place.')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(context.l10n.choosePlace)));
       return;
     }
     if (res == null) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(err ?? 'Check the time zone.')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(err ?? context.l10n.checkTimeZone)),
+      );
       return;
     }
     final d = parseDateInput(_date.text)!;
@@ -267,12 +277,14 @@ class _ChartFormPageState extends State<ChartFormPage> {
     final (res, resErr) = _resolve();
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.id == null ? 'New chart' : 'Edit chart'),
+        title: Text(
+          widget.id == null ? context.l10n.newChart : context.l10n.editChart,
+        ),
         actions: [
           TextButton.icon(
             onPressed: _paste,
             icon: const Icon(Icons.content_paste),
-            label: const Text('Paste details'),
+            label: Text(context.l10n.pasteDetails),
           ),
         ],
       ),
@@ -292,18 +304,21 @@ class _ChartFormPageState extends State<ChartFormPage> {
             TextFormField(
               controller: _name,
               textCapitalization: TextCapitalization.words,
-              decoration: const InputDecoration(
-                labelText: 'Name',
+              decoration: InputDecoration(
+                labelText: context.l10n.name,
                 prefixIcon: Icon(Icons.person_outline),
               ),
               validator: (v) =>
-                  (v ?? '').trim().isEmpty ? 'Enter a name' : null,
+                  (v ?? '').trim().isEmpty ? context.l10n.enterName : null,
             ),
             const SizedBox(height: 12),
             SegmentedButton<String?>(
-              segments: const [
-                ButtonSegment(value: 'male', label: Text('Male')),
-                ButtonSegment(value: 'female', label: Text('Female')),
+              segments: [
+                ButtonSegment(value: 'male', label: Text(context.l10n.male)),
+                ButtonSegment(
+                  value: 'female',
+                  label: Text(context.l10n.female),
+                ),
                 ButtonSegment(value: null, label: Text('—')),
               ],
               selected: {_gender},
@@ -319,14 +334,14 @@ class _ChartFormPageState extends State<ChartFormPage> {
                     controller: _date,
                     keyboardType: TextInputType.datetime,
                     decoration: InputDecoration(
-                      labelText: 'Date (DD/MM/YYYY)',
+                      labelText: context.l10n.dateLabel,
                       suffixIcon: IconButton(
                         icon: const Icon(Icons.calendar_month),
                         onPressed: _pickDate,
                       ),
                     ),
                     validator: (v) => parseDateInput(v ?? '') == null
-                        ? 'DD/MM/YYYY, 1800–2399'
+                        ? context.l10n.dateError
                         : null,
                   ),
                 ),
@@ -337,14 +352,14 @@ class _ChartFormPageState extends State<ChartFormPage> {
                     controller: _time,
                     keyboardType: TextInputType.datetime,
                     decoration: InputDecoration(
-                      labelText: 'Time (24h, HH:MM:SS)',
+                      labelText: context.l10n.timeLabel,
                       suffixIcon: IconButton(
                         icon: const Icon(Icons.schedule),
                         onPressed: _pickTime,
                       ),
                     ),
                     validator: (v) => parseTimeInput(v ?? '') == null
-                        ? 'e.g. 22:45:10'
+                        ? context.l10n.timeError
                         : null,
                   ),
                 ),
@@ -366,7 +381,10 @@ class _ChartFormPageState extends State<ChartFormPage> {
               ),
             ],
             const SizedBox(height: 20),
-            Text('Optional', style: Theme.of(context).textTheme.titleSmall),
+            Text(
+              context.l10n.optional,
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
             const SizedBox(height: 8),
             Row(
               children: [
@@ -374,12 +392,15 @@ class _ChartFormPageState extends State<ChartFormPage> {
                   child: DropdownButtonFormField<String>(
                     initialValue: _marital,
                     isExpanded: true,
-                    decoration: const InputDecoration(
-                      labelText: 'Marital status',
+                    decoration: InputDecoration(
+                      labelText: context.l10n.maritalStatus,
                     ),
                     items: [
                       for (final m in maritalStatuses)
-                        DropdownMenuItem(value: m, child: Text(m)),
+                        DropdownMenuItem(
+                          value: m,
+                          child: Text(context.terms.maritalStatus(m)),
+                        ),
                     ],
                     onChanged: (v) => setState(() => _marital = v),
                   ),
@@ -389,12 +410,17 @@ class _ChartFormPageState extends State<ChartFormPage> {
                   child: DropdownButtonFormField<String>(
                     initialValue: _occupation,
                     isExpanded: true,
-                    decoration: const InputDecoration(labelText: 'Occupation'),
+                    decoration: InputDecoration(
+                      labelText: context.l10n.occupation,
+                    ),
                     items: [
                       for (final o in occupations)
                         DropdownMenuItem(
                           value: o,
-                          child: Text(o, overflow: TextOverflow.ellipsis),
+                          child: Text(
+                            context.terms.occupation(o),
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                     ],
                     onChanged: (v) => setState(() => _occupation = v),
@@ -407,7 +433,7 @@ class _ChartFormPageState extends State<ChartFormPage> {
               controller: _notes,
               minLines: 2,
               maxLines: 6,
-              decoration: const InputDecoration(labelText: 'Notes'),
+              decoration: InputDecoration(labelText: context.l10n.notes),
             ),
           ],
         ),
@@ -415,7 +441,9 @@ class _ChartFormPageState extends State<ChartFormPage> {
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _saving ? null : _save,
         icon: const Icon(Icons.check),
-        label: Text(widget.id == null ? 'Save & open' : 'Save'),
+        label: Text(
+          widget.id == null ? context.l10n.saveAndOpen : context.l10n.save,
+        ),
       ),
     );
   }
@@ -432,8 +460,8 @@ class _PlaceField extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: InputDecorator(
-        decoration: const InputDecoration(
-          labelText: 'Birth place',
+        decoration: InputDecoration(
+          labelText: context.l10n.birthPlace,
           prefixIcon: Icon(Icons.place_outlined),
           suffixIcon: Icon(Icons.search),
         ),
@@ -489,7 +517,7 @@ class _PasteDialogState extends State<_PasteDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Paste birth details'),
+      title: Text(context.l10n.pasteTitle),
       content: SizedBox(
         width: double.maxFinite,
         child: TextField(
@@ -497,19 +525,17 @@ class _PasteDialogState extends State<_PasteDialog> {
           minLines: 6,
           maxLines: 12,
           autofocus: widget.initial.isEmpty,
-          decoration: const InputDecoration(
-            hintText: 'e.g.\nName: Rahul Sharma\nDOB 12/03/1990, 10:45 am\nPlace: Lucknow',
-          ),
+          decoration: InputDecoration(hintText: context.l10n.pasteHint),
         ),
       ),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('Cancel'),
+          child: Text(context.l10n.cancel),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, _text.text),
-          child: const Text('Fill form'),
+          child: Text(context.l10n.fillForm),
         ),
       ],
     );

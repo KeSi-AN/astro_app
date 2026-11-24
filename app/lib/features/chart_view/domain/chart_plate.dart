@@ -63,7 +63,11 @@ class PlateItem {
     if (debilitated) '↓',
   ].join();
 
-  String get label => '$name$markers ${degree.toString().padLeft(2, '0')}';
+  String get label => labelWith(name);
+
+  /// Label with a (localised) planet abbreviation.
+  String labelWith(String abbreviation) =>
+      '$abbreviation$markers ${degree.toString().padLeft(2, '0')}';
 }
 
 enum PlateKind {

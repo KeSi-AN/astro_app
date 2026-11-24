@@ -1,0 +1,301 @@
+{
+  "@@locale": "en",
+  "startError": "Could not start: {error}",
+  "@startError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "chartsTitle": "Charts",
+  "settings": "Settings",
+  "searchCharts": "Search by name or place",
+  "newChart": "New chart",
+  "loadChartsError": "Could not load charts: {error}",
+  "@loadChartsError": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "noChartsYet": "No charts yet.\nTap \"New chart\" to add one.",
+  "noChartMatches": "No chart matches \"{query}\".",
+  "@noChartMatches": {
+    "placeholders": {
+      "query": {}
+    }
+  },
+  "edit": "Edit",
+  "duplicate": "Duplicate",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "deleteChartTitle": "Delete chart?",
+  "deleteChartBody": "\"{name}\" will be removed from this phone. This cannot be undone.",
+  "@deleteChartBody": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "copySuffix": "(copy)",
+  "editChart": "Edit chart",
+  "pasteDetails": "Paste details",
+  "name": "Name",
+  "enterName": "Enter a name",
+  "male": "Male",
+  "female": "Female",
+  "gender": "Gender",
+  "dateLabel": "Date (DD/MM/YYYY)",
+  "dateError": "DD/MM/YYYY, 1800–2399",
+  "timeLabel": "Time (24h, HH:MM:SS)",
+  "timeError": "e.g. 22:45:10",
+  "birthPlace": "Birth place",
+  "optional": "Optional",
+  "maritalStatus": "Marital status",
+  "occupation": "Occupation",
+  "notes": "Notes",
+  "saveAndOpen": "Save & open",
+  "save": "Save",
+  "choosePlace": "Choose the birth place.",
+  "checkTimeZone": "Check the time zone.",
+  "enterOffset": "Enter the UTC offset, e.g. 5:30",
+  "unknownZone": "Unknown time zone \"{zone}\". Use a manual offset.",
+  "@unknownZone": {
+    "placeholders": {
+      "zone": {}
+    }
+  },
+  "noDetailsFound": "No birth details found in that text.",
+  "noDateFound": "No date found: enter it below.",
+  "noTimeFound": "No time found: enter it below.",
+  "placeMatched": "Place matched to {place}. Tap the place to change it.",
+  "@placeMatched": {
+    "placeholders": {
+      "place": {}
+    }
+  },
+  "placeNeedsChoosing": "Place \"{place}\" needs choosing.",
+  "@placeNeedsChoosing": {
+    "placeholders": {
+      "place": {}
+    }
+  },
+  "noteMonthFirst": "Date read as month/day ({a}/{b}), since {b} is not a valid month.",
+  "@noteMonthFirst": {
+    "placeholders": {
+      "a": {},
+      "b": {}
+    }
+  },
+  "noteDayFirst": "Date read as day/month (Indian order). Check it isn't month/day.",
+  "noteAfterMidnight": "Night time read as {time} after midnight. Check the date.",
+  "@noteAfterMidnight": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "noteNoAmPm": "No AM/PM given: time read as 24-hour ({time}).",
+  "@noteNoAmPm": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "pasteTitle": "Paste birth details",
+  "pasteHint": "e.g.\nName: Rahul Sharma\nDOB 12/03/1990, 10:45 am\nPlace: Lucknow",
+  "fillForm": "Fill form",
+  "timeZone": "Time zone",
+  "birthTimeIsIn": "Birth time is in",
+  "utcOffset": "UTC offset",
+  "dstWarHours": "DST / war time (h)",
+  "standardOffset": "Standard {offset}",
+  "@standardOffset": {
+    "placeholders": {
+      "offset": {}
+    }
+  },
+  "dstPlus": "DST +{hours}h",
+  "@dstPlus": {
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "warTimePlus": "War time +{hours}h",
+  "@warTimePlus": {
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "lmtCorrection": "LMT correction",
+  "warTimeSwitch": "Recorded time includes war time (+1h)",
+  "tzPre1906": "Before 1906 India had no single standard time. Local mean time is assumed; switch if the record used Madras or Calcutta time.",
+  "tzBombay": "Bombay kept its own Bombay Time (UTC+4:51) until 1955. If the birth was recorded in Bombay Time, choose it above.",
+  "tzCalcutta": "Calcutta kept its own Calcutta Time (UTC+5:53:20) until 1948. If the birth was recorded in Calcutta Time, choose it above.",
+  "tzNonExistent": "This time did not exist here (clocks were moved forward). Check the recorded time or set the offset manually.",
+  "tzAmbiguous": "Clocks went back around this time, so it may have occurred twice. Confirm whether daylight saving was still on.",
+  "tzWarOn": "War time was in force (clocks 1 hour ahead of IST, UTC+6:30). Turn this off only if the recorded time was in IST.",
+  "tzWarOff": "War-time hour removed: the recorded time is treated as IST (UTC+5:30).",
+  "placeSearchHint": "Town or village (add \", state\" to narrow)",
+  "placeSearchLatin": "Type place names in English letters, e.g. Lucknow.",
+  "clear": "Clear",
+  "noPlaceFound": "No place found. Try another spelling, or enter the coordinates yourself.",
+  "enterCoordinates": "Enter coordinates manually",
+  "geonamesCredit": "Place data © GeoNames (geonames.org), CC BY 4.0",
+  "placeByCoordinates": "Place by coordinates",
+  "placeName": "Place name",
+  "required": "Required",
+  "latitude": "Latitude",
+  "longitudeGeo": "Longitude",
+  "latError": "e.g. 27.15 or 27N09",
+  "lonError": "e.g. 78.0 or 078E00",
+  "zoneError": "An IANA zone like Asia/Kolkata",
+  "use": "Use",
+  "editBirthDetails": "Edit birth details",
+  "tabChart": "Chart",
+  "tabPlanets": "Planets",
+  "tabBhava": "Bhava",
+  "tabDetails": "Details",
+  "tabFriendship": "Friendship",
+  "tabKarakas": "Karakas",
+  "chartNotFound": "Chart not found",
+  "chartLegend": "* retrograde  ^ combust  ◻ vargottama  ↑ exalted  ↓ debilitated",
+  "chalitNorthOnly": "Chalit is always shown North Indian (house-based).",
+  "tapPlanet": "Tap a planet for details.",
+  "navamshaTitle": "Navamsha (D9)",
+  "chalitTitle": "Chalit (Sripati)",
+  "sign": "Sign",
+  "withLord": "{name} (lord {lord})",
+  "@withLord": {
+    "placeholders": {
+      "name": {},
+      "lord": {}
+    }
+  },
+  "degreeInSignLabel": "Longitude",
+  "nakshatraPada": "{nakshatra}, pada {pada}",
+  "@nakshatraPada": {
+    "placeholders": {
+      "nakshatra": {},
+      "pada": {}
+    }
+  },
+  "starSubLords": "Star / sub / sub-sub lord",
+  "houseWholeSign": "House (whole sign)",
+  "chalitBhava": "Chalit bhava",
+  "navamsha": "Navamsha",
+  "dignity": "Dignity",
+  "motion": "Motion",
+  "retrograde": "Retrograde",
+  "direct": "Direct",
+  "speed": "Speed",
+  "speedValue": "{value}°/day",
+  "@speedValue": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "combust": "Combust",
+  "vargottama": "Vargottama",
+  "yes": "Yes",
+  "colPlanet": "Planet",
+  "colDegree": "Degree",
+  "colNakshatra": "Nakshatra",
+  "colStar": "Star",
+  "colSub": "Sub",
+  "flagRetro": "R",
+  "flagCombust": "C",
+  "flagVargottama": "V",
+  "planetsLegend": "R retrograde · C combust · V vargottama. Dignity uses the compound (five-fold) relationship with the sign lord.",
+  "bhavaTitle": "Bhava chalit (Sripati)",
+  "colBhava": "Bhava",
+  "colStart": "Start (sandhi)",
+  "colMadhya": "Madhya",
+  "colEnd": "End",
+  "colPlanets": "Planets",
+  "chalitDiffers": "Planets whose chalit bhava differs from their sign house:",
+  "chalitShift": "{planet}: house {house} → bhava {bhava}",
+  "@chalitShift": {
+    "placeholders": {
+      "planet": {},
+      "house": {},
+      "bhava": {}
+    }
+  },
+  "none": "None",
+  "kpCuspsTitle": "Placidus cusps (KP)",
+  "colCusp": "Cusp",
+  "colLongitude": "Longitude",
+  "birthDetails": "Birth details",
+  "date": "Date",
+  "time": "Time",
+  "place": "Place",
+  "latLon": "Latitude / longitude",
+  "warTime": "War time",
+  "dst": "DST",
+  "hoursValue": "+{hours} h",
+  "@hoursValue": {
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "lmtAtBirth": "LMT at birth",
+  "utAtBirth": "UT (GMT) at birth",
+  "julianDay": "Julian day (UT)",
+  "ayanamsa": "Ayanamsa",
+  "obliquity": "Obliquity",
+  "siderealTime": "Sidereal time",
+  "panchangAtBirth": "Panchang at birth",
+  "hinduWeekday": "Hindu weekday",
+  "tithi": "Tithi",
+  "nakshatra": "Nakshatra",
+  "yoga": "Yoga",
+  "karana": "Karana",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "dayLength": "Day length",
+  "ishtkaal": "Ishtkaal (ghati)",
+  "sunriseRule": "Sunrise rule",
+  "avakhada": "Avakhada chakra",
+  "lagna": "Lagna",
+  "rashi": "Rashi",
+  "nakshatraPadaLabel": "Nakshatra-pada",
+  "varna": "Varna",
+  "vashya": "Vashya",
+  "yoni": "Yoni",
+  "gana": "Gana",
+  "nadi": "Nadi",
+  "tatva": "Tatva",
+  "payaNakshatra": "Paya (nakshatra)",
+  "payaMoon": "Paya (Moon house)",
+  "nameSyllable": "Name syllable",
+  "dashaBalance": "Dasha balance",
+  "sunSignIndian": "Sun sign (Indian)",
+  "sunSignWestern": "Sun sign (Western)",
+  "ymd": "{y}y {m}m {d}d",
+  "@ymd": {
+    "placeholders": {
+      "y": {},
+      "m": {},
+      "d": {}
+    }
+  },
+  "naturalTitle": "Natural (permanent)",
+  "temporalTitle": "Temporal (in this chart)",
+  "compoundTitle": "Five-fold (compound)",
+  "friendshipLegend": "GF great friend · F friend · N neutral · E enemy · GE great enemy",
+  "charaKarakasTitle": "Chara karakas · {scheme}",
+  "@charaKarakasTitle": {
+    "placeholders": {
+      "scheme": {}
+    }
+  },
+  "colKaraka": "Karaka",
+  "colDegreeInSign": "Degree in sign",
+  "rahuBackwards": "Rahu's degree is counted backwards (30° − its degree).",
+  "karakaSchemeHint": "Change to the 8-karaka scheme (with Rahu) in Settings.",
+  "display": "Display",
+  "language": "Language",
+  "languageSystem": "Same as phone",
+  "chartStyle": "Chart style",
+  "showOuterPlanets": "Show Uranus, Neptune, Pluto",
+  "calculation": "Calculation",
+  "rahuKetu": "Rahu / Ketu",
+  "charaKarakas": "Chara karakas",
+  "settingsFootnote": "Defaults match AstroSage: Lahiri, mean node, upper-limb sunrise. Planet positions come from Swiss Ephemeris (Astrodienst, AGPL). Place data © GeoNames, CC BY 4.0."
+}
