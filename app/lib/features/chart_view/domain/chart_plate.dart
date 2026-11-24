@@ -125,28 +125,7 @@ ChartPlate buildPlate(ChartAnalysis a, PlateKind kind, {bool outer = true}) {
       return _plate(kind.label, asc, (sign) => bySign[sign] ?? const []);
 
     case PlateKind.navamsha:
-      final asc = a.lagnaNavamsha;
-      final bySign = <Rashi, List<PlateItem>>{
-        asc: [
-          PlateItem(
-            graha: null,
-            degree: vargaDegree(chart.lagna.longitude, Varga.d9).floor(),
-            vargottama: a.lagnaVargottama,
-          ),
-        ],
-      };
-      for (final g in grahas) {
-        final info = a.grahas[g]!;
-        bySign
-            .putIfAbsent(info.navamshaSign, () => [])
-            .add(
-              item(
-                g,
-                degree: vargaDegree(info.placement.longitude, Varga.d9).floor(),
-              ),
-            );
-      }
-      return _plate('Navamsha (D9)', asc, (s) => bySign[s] ?? const []);
+      return buildVargaPlate(a, Varga.d9, outer: outer);
 
     case PlateKind.chalit:
       // Bhava n holds the planets whose longitude falls in its sandhi range;
@@ -173,6 +152,43 @@ ChartPlate buildPlate(ChartAnalysis a, PlateKind kind, {bool outer = true}) {
         ],
       );
   }
+}
+
+/// Any divisional chart: lagna and grahas placed by their varga sign.
+/// Retrograde/combust come from the birth chart; exalted/debilitated are
+/// judged in the varga sign; vargottama is shown on the navamsha only.
+ChartPlate buildVargaPlate(ChartAnalysis a, Varga v, {bool outer = true}) {
+  final chart = a.chart;
+  final asc = vargaSign(chart.lagna.longitude, v);
+  final bySign = <Rashi, List<PlateItem>>{
+    asc: [
+      PlateItem(
+        graha: null,
+        degree: vargaDegree(chart.lagna.longitude, v).floor(),
+        vargottama: v == Varga.d9 && a.lagnaVargottama,
+      ),
+    ],
+  };
+  for (final g in plateGrahas(outer: outer)) {
+    final info = a.grahas[g]!;
+    final lon = info.placement.longitude;
+    final sign = vargaSign(lon, v);
+    final ex = exaltation[g];
+    bySign
+        .putIfAbsent(sign, () => [])
+        .add(
+          PlateItem(
+            graha: g,
+            degree: vargaDegree(lon, v).floor(),
+            retrograde: info.placement.isRetrograde,
+            combust: info.combust,
+            vargottama: v == Varga.d9 && info.vargottama,
+            exalted: ex != null && ex.$1 == sign,
+            debilitated: ex != null && debilitationSign(g) == sign,
+          ),
+        );
+  }
+  return _plate('${v.label} (${v.code})', asc, (s) => bySign[s] ?? const []);
 }
 
 ChartPlate _plate(

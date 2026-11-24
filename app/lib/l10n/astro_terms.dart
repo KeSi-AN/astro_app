@@ -51,6 +51,12 @@ abstract class AstroTerms {
   String maritalStatus(String english);
   String occupation(String english);
   String month(int m);
+  String varga(Varga v);
+  String yogini(Yogini y);
+
+  /// 1 = maha … 5 = prana.
+  String dashaLevel(int level);
+  String dashaYear(DashaYear y);
 }
 
 class EnglishTerms extends AstroTerms {
@@ -114,6 +120,20 @@ class EnglishTerms extends AstroTerms {
   @override
   String occupation(String english) => english;
   @override
+  String varga(Varga v) => v.label;
+  @override
+  String yogini(Yogini y) => y.label;
+  @override
+  String dashaLevel(int level) => const [
+    'Mahadasha',
+    'Antardasha',
+    'Pratyantar',
+    'Sookshma',
+    'Prana',
+  ][level - 1];
+  @override
+  String dashaYear(DashaYear y) => y.label;
+  @override
   String month(int m) => const [
     'Jan',
     'Feb',
@@ -131,6 +151,52 @@ class EnglishTerms extends AstroTerms {
 }
 
 class HindiTerms extends AstroTerms {
+  @override
+  String varga(Varga v) => const {
+    Varga.d1: 'राशि',
+    Varga.d2: 'होरा',
+    Varga.d3: 'द्रेष्काण',
+    Varga.d4: 'चतुर्थांश',
+    Varga.d7: 'सप्तांश',
+    Varga.d9: 'नवांश',
+    Varga.d10: 'दशमांश',
+    Varga.d12: 'द्वादशांश',
+    Varga.d16: 'षोडशांश',
+    Varga.d20: 'विंशांश',
+    Varga.d24: 'चतुर्विंशांश',
+    Varga.d27: 'सप्तविंशांश',
+    Varga.d30: 'त्रिंशांश',
+    Varga.d40: 'खवेदांश',
+    Varga.d45: 'अक्षवेदांश',
+    Varga.d60: 'षष्ट्यंश',
+  }[v]!;
+  @override
+  String yogini(Yogini y) => const {
+    Yogini.mangala: 'मंगला',
+    Yogini.pingala: 'पिंगला',
+    Yogini.dhanya: 'धान्या',
+    Yogini.bhramari: 'भ्रामरी',
+    Yogini.bhadrika: 'भद्रिका',
+    Yogini.ulka: 'उल्का',
+    Yogini.siddha: 'सिद्धा',
+    Yogini.sankata: 'संकटा',
+  }[y]!;
+  @override
+  String dashaLevel(int level) => const [
+    'महादशा',
+    'अंतर्दशा',
+    'प्रत्यंतर दशा',
+    'सूक्ष्म दशा',
+    'प्राण दशा',
+  ][level - 1];
+  @override
+  String dashaYear(DashaYear y) => switch (y) {
+    DashaYear.julian => '365.25 दिन',
+    DashaYear.tropical => '365.2422 दिन (सायन वर्ष)',
+    DashaYear.sidereal => '365.2564 दिन (नाक्षत्र वर्ष)',
+    DashaYear.savana => '360 दिन (सावन)',
+  };
+
   const HindiTerms();
 
   static const _graha = {

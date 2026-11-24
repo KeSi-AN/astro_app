@@ -3,6 +3,7 @@ library;
 
 export 'src/chart/chart_analysis.dart';
 export 'src/chart/rasi_chart.dart';
+export 'src/dasha/dasha.dart';
 export 'src/ephemeris/ephemeris.dart';
 export 'src/ephemeris/sweph_ephemeris.dart' show SwephEphemeris, swephDataFiles;
 export 'src/model/birth_data.dart';

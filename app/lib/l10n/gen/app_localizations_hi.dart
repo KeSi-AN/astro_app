@@ -640,4 +640,73 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get settingsFootnote =>
       'डिफ़ॉल्ट सेटिंग्स AstroSage के अनुसार हैं: लाहिड़ी, मध्यम राहु, ऊपरी किनारे वाला सूर्योदय। ग्रह स्थितियाँ Swiss Ephemeris (Astrodienst, AGPL) से। स्थान डेटा © GeoNames, CC BY 4.0।';
+
+  @override
+  String get tabVargas => 'वर्ग';
+
+  @override
+  String get tabDasha => 'दशा';
+
+  @override
+  String get vimshottari => 'विंशोत्तरी';
+
+  @override
+  String get yoginiDasha => 'योगिनी';
+
+  @override
+  String get charaDasha => 'चर';
+
+  @override
+  String get today => 'आज';
+
+  @override
+  String get jumpToDate => 'तारीख पर जाएँ';
+
+  @override
+  String get colLord => 'स्वामी';
+
+  @override
+  String get colFrom => 'से';
+
+  @override
+  String get colTo => 'तक';
+
+  @override
+  String get colAge => 'आयु';
+
+  @override
+  String runningAt(Object date) {
+    return '$date को चल रही';
+  }
+
+  @override
+  String get dashaHint => 'उप-दशाएँ देखने के लिए दशा पर टैप करें।';
+
+  @override
+  String get dashaYearSetting => 'दशा वर्ष';
+
+  @override
+  String charaNote(Object direction) {
+    return 'चर दशा (के.एन. राव पद्धति): क्रम लग्न से $direction चलता है; अंतर्दशा अगली राशि से आरंभ होती है।';
+  }
+
+  @override
+  String get forwards => 'सीधा';
+
+  @override
+  String get backwards => 'उल्टा';
+
+  @override
+  String get yoginiNote =>
+      'योगिनी दशा: 36 वर्ष का चक्र, प्रारंभिक योगिनी = नक्षत्र संख्या + 3।';
+
+  @override
+  String get vargaTableTitle => '16 वर्गों में प्रत्येक ग्रह की राशि';
+
+  @override
+  String get vargaTableNote =>
+      'अंक राशि दर्शाते हैं: 1 मेष … 12 मीन; रंगीन = D1 वाली ही राशि। कुंडली देखने के लिए नीचे वर्ग पर टैप करें।';
+
+  @override
+  String get divisional => 'वर्ग कुंडली';
 }

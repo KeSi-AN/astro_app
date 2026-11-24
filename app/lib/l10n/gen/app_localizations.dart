@@ -1243,6 +1243,132 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Defaults match AstroSage: Lahiri, mean node, upper-limb sunrise. Planet positions come from Swiss Ephemeris (Astrodienst, AGPL). Place data © GeoNames, CC BY 4.0.'**
   String get settingsFootnote;
+
+  /// No description provided for @tabVargas.
+  ///
+  /// In en, this message translates to:
+  /// **'Vargas'**
+  String get tabVargas;
+
+  /// No description provided for @tabDasha.
+  ///
+  /// In en, this message translates to:
+  /// **'Dasha'**
+  String get tabDasha;
+
+  /// No description provided for @vimshottari.
+  ///
+  /// In en, this message translates to:
+  /// **'Vimshottari'**
+  String get vimshottari;
+
+  /// No description provided for @yoginiDasha.
+  ///
+  /// In en, this message translates to:
+  /// **'Yogini'**
+  String get yoginiDasha;
+
+  /// No description provided for @charaDasha.
+  ///
+  /// In en, this message translates to:
+  /// **'Chara'**
+  String get charaDasha;
+
+  /// No description provided for @today.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get today;
+
+  /// No description provided for @jumpToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to date'**
+  String get jumpToDate;
+
+  /// No description provided for @colLord.
+  ///
+  /// In en, this message translates to:
+  /// **'Lord'**
+  String get colLord;
+
+  /// No description provided for @colFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get colFrom;
+
+  /// No description provided for @colTo.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get colTo;
+
+  /// No description provided for @colAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get colAge;
+
+  /// No description provided for @runningAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Running on {date}'**
+  String runningAt(Object date);
+
+  /// No description provided for @dashaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a period to open its sub-periods.'**
+  String get dashaHint;
+
+  /// No description provided for @dashaYearSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Dasha year'**
+  String get dashaYearSetting;
+
+  /// No description provided for @charaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Chara dasha per K.N. Rao: sequence runs {direction} from the lagna; antardashas start from the next sign.'**
+  String charaNote(Object direction);
+
+  /// No description provided for @forwards.
+  ///
+  /// In en, this message translates to:
+  /// **'forwards'**
+  String get forwards;
+
+  /// No description provided for @backwards.
+  ///
+  /// In en, this message translates to:
+  /// **'backwards'**
+  String get backwards;
+
+  /// No description provided for @yoginiNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Yogini dasha: 36-year cycle, starting yogini = nakshatra number + 3.'**
+  String get yoginiNote;
+
+  /// No description provided for @vargaTableTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign of each planet in the 16 vargas'**
+  String get vargaTableTitle;
+
+  /// No description provided for @vargaTableNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Numbers are signs: 1 Aries … 12 Pisces; highlighted = same sign as in D1. Tap a varga below to open its chart.'**
+  String get vargaTableNote;
+
+  /// No description provided for @divisional.
+  ///
+  /// In en, this message translates to:
+  /// **'D-charts'**
+  String get divisional;
 }
 
 class _AppLocalizationsDelegate

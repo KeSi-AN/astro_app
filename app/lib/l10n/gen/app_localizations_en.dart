@@ -641,4 +641,73 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsFootnote =>
       'Defaults match AstroSage: Lahiri, mean node, upper-limb sunrise. Planet positions come from Swiss Ephemeris (Astrodienst, AGPL). Place data © GeoNames, CC BY 4.0.';
+
+  @override
+  String get tabVargas => 'Vargas';
+
+  @override
+  String get tabDasha => 'Dasha';
+
+  @override
+  String get vimshottari => 'Vimshottari';
+
+  @override
+  String get yoginiDasha => 'Yogini';
+
+  @override
+  String get charaDasha => 'Chara';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get jumpToDate => 'Go to date';
+
+  @override
+  String get colLord => 'Lord';
+
+  @override
+  String get colFrom => 'From';
+
+  @override
+  String get colTo => 'To';
+
+  @override
+  String get colAge => 'Age';
+
+  @override
+  String runningAt(Object date) {
+    return 'Running on $date';
+  }
+
+  @override
+  String get dashaHint => 'Tap a period to open its sub-periods.';
+
+  @override
+  String get dashaYearSetting => 'Dasha year';
+
+  @override
+  String charaNote(Object direction) {
+    return 'Chara dasha per K.N. Rao: sequence runs $direction from the lagna; antardashas start from the next sign.';
+  }
+
+  @override
+  String get forwards => 'forwards';
+
+  @override
+  String get backwards => 'backwards';
+
+  @override
+  String get yoginiNote =>
+      'Yogini dasha: 36-year cycle, starting yogini = nakshatra number + 3.';
+
+  @override
+  String get vargaTableTitle => 'Sign of each planet in the 16 vargas';
+
+  @override
+  String get vargaTableNote =>
+      'Numbers are signs: 1 Aries … 12 Pisces; highlighted = same sign as in D1. Tap a varga below to open its chart.';
+
+  @override
+  String get divisional => 'D-charts';
 }

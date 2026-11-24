@@ -9,6 +9,52 @@ import '../chart_geometry.dart';
 import '../chart_painter.dart';
 import 'graha_sheet.dart';
 
+/// What the chart tab shows: lagna, Moon or chalit chart, or a varga.
+sealed class ChartChoice {
+  const ChartChoice();
+}
+
+class PlateChoice extends ChartChoice {
+  const PlateChoice(this.kind);
+  final PlateKind kind;
+  @override
+  bool operator ==(Object other) =>
+      other is PlateChoice && other.kind == kind;
+  @override
+  int get hashCode => kind.hashCode;
+}
+
+class VargaChoice extends ChartChoice {
+  const VargaChoice(this.varga);
+  final Varga varga;
+  @override
+  bool operator ==(Object other) =>
+      other is VargaChoice && other.varga == varga;
+  @override
+  int get hashCode => varga.hashCode;
+}
+
+const chartChoices = <ChartChoice>[
+  PlateChoice(PlateKind.lagna),
+  PlateChoice(PlateKind.moon),
+  PlateChoice(PlateKind.chalit),
+  VargaChoice(Varga.d2),
+  VargaChoice(Varga.d3),
+  VargaChoice(Varga.d4),
+  VargaChoice(Varga.d7),
+  VargaChoice(Varga.d9),
+  VargaChoice(Varga.d10),
+  VargaChoice(Varga.d12),
+  VargaChoice(Varga.d16),
+  VargaChoice(Varga.d20),
+  VargaChoice(Varga.d24),
+  VargaChoice(Varga.d27),
+  VargaChoice(Varga.d30),
+  VargaChoice(Varga.d40),
+  VargaChoice(Varga.d45),
+  VargaChoice(Varga.d60),
+];
+
 class ChartTab extends StatefulWidget {
   const ChartTab({super.key, required this.analysis, required this.settings});
   final ChartAnalysis analysis;
@@ -20,7 +66,7 @@ class ChartTab extends StatefulWidget {
 
 class _ChartTabState extends State<ChartTab>
     with AutomaticKeepAliveClientMixin {
-  PlateKind _kind = PlateKind.lagna;
+  ChartChoice _choice = const PlateChoice(PlateKind.lagna);
   Graha? _selected;
 
   @override
@@ -32,32 +78,51 @@ class _ChartTabState extends State<ChartTab>
     final l10n = context.l10n;
     final terms = context.terms;
     final s = widget.settings;
-    final plate = buildPlate(widget.analysis, _kind, outer: s.showOuterPlanets);
+    final a = widget.analysis;
+    final (plate, title, chalit) = switch (_choice) {
+      PlateChoice(:final kind) => (
+        buildPlate(a, kind, outer: s.showOuterPlanets),
+        kind == PlateKind.chalit ? l10n.chalitTitle : terms.plateKind(kind),
+        kind == PlateKind.chalit,
+      ),
+      VargaChoice(:final varga) => (
+        buildVargaPlate(a, varga, outer: s.showOuterPlanets),
+        '${terms.varga(varga)} (${varga.code})',
+        false,
+      ),
+    };
     // Chalit houses don't map to fixed sign cells, so it is always drawn
     // in the house-based North Indian style.
-    final style = _kind == PlateKind.chalit ? ChartStyle.north : s.chartStyle;
-    final title = switch (_kind) {
-      PlateKind.navamsha => l10n.navamshaTitle,
-      PlateKind.chalit => l10n.chalitTitle,
-      _ => terms.plateKind(_kind),
-    };
+    final style = chalit ? ChartStyle.north : s.chartStyle;
     final small = Theme.of(context).textTheme.bodySmall;
+
+    String label(ChartChoice c) => switch (c) {
+      PlateChoice(:final kind) => terms.plateKind(kind),
+      VargaChoice(:final varga) => varga.code,
+    };
 
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
-        Wrap(
-          spacing: 8,
-          children: [
-            for (final k in PlateKind.values)
-              ChoiceChip(
-                label: Text(terms.plateKind(k)),
-                selected: _kind == k,
-                onSelected: (_) => setState(() => _kind = k),
-              ),
-          ],
+        SizedBox(
+          height: 40,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: chartChoices.length,
+            separatorBuilder: (_, _) => const SizedBox(width: 6),
+            itemBuilder: (context, i) {
+              final c = chartChoices[i];
+              return ChoiceChip(
+                label: Text(label(c)),
+                selected: _choice == c,
+                onSelected: (_) => setState(() => _choice = c),
+              );
+            },
+          ),
         ),
-        const SizedBox(height: 12),
+        const SizedBox(height: 8),
+        Text(title, style: Theme.of(context).textTheme.titleSmall),
+        const SizedBox(height: 8),
         ChartWidget(
           plate: plate,
           style: style,
@@ -66,7 +131,7 @@ class _ChartTabState extends State<ChartTab>
           onGrahaTap: (g, house) async {
             if (g == null) return;
             setState(() => _selected = g);
-            await showGrahaSheet(context, widget.analysis, g);
+            await showGrahaSheet(context, a, g);
             if (mounted) setState(() => _selected = null);
           },
         ),
@@ -86,7 +151,7 @@ class _ChartTabState extends State<ChartTab>
             (s) => s.copyWith(chartStyle: v.first),
           ),
         ),
-        if (_kind == PlateKind.chalit)
+        if (chalit)
           Padding(
             padding: const EdgeInsets.only(top: 8),
             child: Text(l10n.chalitNorthOnly, style: small),

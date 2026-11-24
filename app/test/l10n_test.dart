@@ -80,6 +80,18 @@ void main() {
       for (final v in PlateKind.values) {
         hindi(t.plateKind(v), '$v');
       }
+      for (final v in Varga.values) {
+        hindi(t.varga(v), '$v');
+      }
+      for (final v in Yogini.values) {
+        hindi(t.yogini(v), '$v');
+      }
+      for (var l = 1; l <= 5; l++) {
+        hindi(t.dashaLevel(l), 'dasha level $l');
+      }
+      for (final v in DashaYear.values) {
+        hindi(t.dashaYear(v), '$v');
+      }
       for (var m = 1; m <= 12; m++) {
         hindi(t.month(m), 'month $m');
       }

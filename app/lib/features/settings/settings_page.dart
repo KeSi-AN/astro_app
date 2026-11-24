@@ -80,6 +80,13 @@ class SettingsPage extends StatelessWidget {
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(karakaScheme: v)),
               ),
+              _Choice<DashaYear>(
+                title: l10n.dashaYearSetting,
+                value: s.dashaYear,
+                values: DashaYear.values,
+                label: t.dashaYear,
+                onChanged: (v) => cubit.update((s) => s.copyWith(dashaYear: v)),
+              ),
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Text(

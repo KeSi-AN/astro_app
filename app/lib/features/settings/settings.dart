@@ -22,6 +22,7 @@ class AppSettings extends Equatable {
     this.sunriseMode = SunriseMode.upperLimb,
     this.karakaScheme = KarakaScheme.seven,
     this.showOuterPlanets = true,
+    this.dashaYear = DashaYear.julian,
   });
 
   final AppLanguage language;
@@ -31,6 +32,7 @@ class AppSettings extends Equatable {
   final SunriseMode sunriseMode;
   final KarakaScheme karakaScheme;
   final bool showOuterPlanets;
+  final DashaYear dashaYear;
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
@@ -49,6 +51,7 @@ class AppSettings extends Equatable {
     SunriseMode? sunriseMode,
     KarakaScheme? karakaScheme,
     bool? showOuterPlanets,
+    DashaYear? dashaYear,
   }) => AppSettings(
     language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
@@ -57,6 +60,7 @@ class AppSettings extends Equatable {
     sunriseMode: sunriseMode ?? this.sunriseMode,
     karakaScheme: karakaScheme ?? this.karakaScheme,
     showOuterPlanets: showOuterPlanets ?? this.showOuterPlanets,
+    dashaYear: dashaYear ?? this.dashaYear,
   );
 
   Map<String, String> toMap() => {
@@ -67,6 +71,7 @@ class AppSettings extends Equatable {
     'sunriseMode': sunriseMode.name,
     'karakaScheme': karakaScheme.name,
     'showOuterPlanets': '$showOuterPlanets',
+    'dashaYear': dashaYear.name,
   };
 
   static AppSettings fromMap(Map<String, String> m) {
@@ -87,6 +92,7 @@ class AppSettings extends Equatable {
       sunriseMode: pick(SunriseMode.values, 'sunriseMode', d.sunriseMode),
       karakaScheme: pick(KarakaScheme.values, 'karakaScheme', d.karakaScheme),
       showOuterPlanets: m['showOuterPlanets'] != 'false',
+      dashaYear: pick(DashaYear.values, 'dashaYear', d.dashaYear),
     );
   }
 
@@ -99,6 +105,7 @@ class AppSettings extends Equatable {
     sunriseMode,
     karakaScheme,
     showOuterPlanets,
+    dashaYear,
   ];
 }
 
