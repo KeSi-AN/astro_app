@@ -14,6 +14,7 @@ void main() {
   setUpAll(() async => eph = await loadTestEphemeris());
 
   for (final g in loadGoldenCharts()) {
+    if ((g['expected'] as Map)['positions'] == null) continue;
     final tol = (g['tolerancesArcSec'] as Map<String, dynamic>?) ?? const {};
     double tolFor(String key) =>
         ((tol[key] ?? tol['default'] ?? 2) as num).toDouble();

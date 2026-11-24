@@ -106,7 +106,7 @@ class _DashaTabState extends State<DashaTab>
     }
 
     String age(double jd) =>
-        ((jd - c.jdUt) / 365.25).clamp(0, 999).toStringAsFixed(1);
+        jd < c.jdUt ? '—' : ((jd - c.jdUt) / 365.25).toStringAsFixed(1);
 
     final rows = <Widget>[];
     void add(List<DashaPeriod<Object>> periods) {

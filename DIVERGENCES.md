@@ -38,3 +38,18 @@ Checked against three AstroSage charts (Agra 2026, Mumbai 1950 pre-sunrise, Kolk
 | Ishtkaal | ≤ 2 pal (1 pal = 24 s) | Follows from sunrise. |
 | Dasha balance | ≤ 10 days | Follows from AstroSage's Moon being up to ~30″ different (1″ of Moon ≈ 4 hours of Vimshottari balance for a 20-year lord). |
 | Julian day | AstroSage prints the day number of the local civil date, not of the UT moment | Display convention only. |
+
+## Vargas and dashas (Phase 3, checked 2026-11-25, fixture 004)
+
+AstroSage TestChart re-entered through its paste box (Agra 27N10 078E01, 23:21:00).
+
+| Item | Ours | AstroSage | Cause |
+|---|---|---|---|
+| 160 varga cells (16 vargas × lagna + 9 grahas) | 155 match | — | — |
+| Moon D12, D24, D30, D60 | 11, 1, 7, 3 | 10, 12, 3, 2 | Moon is at Aries 25°00′, a division edge in all four; AstroSage's Moon is ~30″ behind ours and falls just below it. Boundary case, not a rule difference. |
+| Mars D7 | Virgo | Leo | Mars at Leo 4°51′ is past the first saptamsha (4°17′8″); BPHS gives Virgo. AstroSage's value would follow from using whole degrees (4°) — looks like an AstroSage quirk. |
+| Vimshottari | — | — | Antardasha dates within 10 days (Moon difference). |
+| Yogini mahadashas | — | — | Same order and end dates (within days). |
+| Yogini antardasha dates | rule dates | one month earlier, except the last of each mahadasha | Every AstroSage antardasha end date except the one equal to the mahadasha end is exactly one month early (e.g. Ulka/Ulka 8/6/28 vs 8/7/28) — an AstroSage display bug (month index). |
+| Chara dasha (K.N. Rao) | 11 of 12 signs identical | — | Order, years and antardasha order match. |
+| Chara Aquarius | Saturn → 11 years | 0 years | Aquarius has two lords; Rahu sits in Aquarius, Saturn in Pisces. K.N. Rao: if one lord is in the sign, use the other (Saturn). AstroSage appears to use Rahu and prints 0 years (it does apply "lord in own sign = 12 years" to Libra). |
