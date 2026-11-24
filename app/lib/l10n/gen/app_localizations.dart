@@ -1615,6 +1615,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bhava bala = lord\'s shadbala + directional strength + aspects on the bhava madhya (virupas).'**
   String get bhavaNote;
+
+  /// No description provided for @showSavOnChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Show SAV bindus in each house'**
+  String get showSavOnChart;
 }
 
 class _AppLocalizationsDelegate

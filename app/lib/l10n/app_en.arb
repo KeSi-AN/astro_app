@@ -374,5 +374,6 @@
   "bhavaLordStrength": "Lord's shadbala",
   "bhavaDig": "Dig",
   "bhavaDrishti": "Drishti",
-  "bhavaNote": "Bhava bala = lord's shadbala + directional strength + aspects on the bhava madhya (virupas)."
+  "bhavaNote": "Bhava bala = lord's shadbala + directional strength + aspects on the bhava madhya (virupas).",
+  "showSavOnChart": "Show SAV bindus in each house"
 }

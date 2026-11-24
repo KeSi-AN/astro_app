@@ -117,27 +117,33 @@ class ChartPainter extends CustomPainter {
       );
     }
 
-    // Sign (North) numbers.
+    // Sign (North) or house (South/East) numbers, with the optional
+    // badge (SAV bindus) after a dot: "5 · 32".
     final numSize = s * 0.032;
     for (final c in cells) {
-      if (style == ChartStyle.north) {
-        _text(
-          canvas,
-          '${c.house.sign.number}',
-          c.numberAt,
-          numSize,
-          colors.number,
-        );
-      } else if (c.house.number != 1) {
-        // Show house numbers small in fixed-sign styles.
-        _text(
-          canvas,
-          '${c.house.number}',
-          c.numberAt,
-          numSize * 0.8,
-          colors.number.withValues(alpha: 0.6),
-        );
-      }
+      final badge = c.house.badge;
+      final north = style == ChartStyle.north;
+      if (!north && c.house.number == 1 && badge == null) continue;
+      final n = north ? '${c.house.sign.number}' : '${c.house.number}';
+      final text = badge == null
+          ? n
+          : (!north && c.house.number == 1
+                ? badge
+                // Number beside the text → stack; above/below → inline.
+                : ((c.textBox.center - c.numberAt).dx.abs() >
+                          (c.textBox.center - c.numberAt).dy.abs()
+                      ? '$n\n$badge'
+                      : '$n · $badge'));
+      _text(
+        canvas,
+        text,
+        c.numberAt,
+        north ? numSize : numSize * 0.8,
+        badge != null
+            ? colors.lagna
+            : (north ? colors.number : colors.number.withValues(alpha: 0.6)),
+        bold: badge != null,
+      );
     }
 
     // Planet labels.

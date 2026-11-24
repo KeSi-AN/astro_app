@@ -838,4 +838,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get bhavaNote =>
       'Bhava bala = lord\'s shadbala + directional strength + aspects on the bhava madhya (virupas).';
+
+  @override
+  String get showSavOnChart => 'Show SAV bindus in each house';
 }

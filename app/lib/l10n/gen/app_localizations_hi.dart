@@ -837,4 +837,7 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get bhavaNote =>
       'भाव बल = भावेश का षड्बल + दिग्बल + भाव मध्य पर दृष्टि (विरूप)।';
+
+  @override
+  String get showSavOnChart => 'प्रत्येक भाव में सर्वाष्टकवर्ग बिंदु दिखाएँ';
 }

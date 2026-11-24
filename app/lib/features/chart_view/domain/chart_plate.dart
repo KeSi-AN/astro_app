@@ -27,8 +27,15 @@ class PlateHouse {
     required this.number,
     required this.sign,
     required this.items,
+    this.badge,
   });
   final int number; // 1..12
+
+  /// Small extra figure drawn in the house (e.g. SAV bindus).
+  final String? badge;
+
+  PlateHouse withBadge(String? b) =>
+      PlateHouse(number: number, sign: sign, items: items, badge: b);
   final Rashi sign;
   final List<PlateItem> items;
 }

@@ -67,6 +67,7 @@ class _ChartTabState extends State<ChartTab>
     with AutomaticKeepAliveClientMixin {
   ChartChoice _choice = const PlateChoice(PlateKind.lagna);
   Graha? _selected;
+  bool _showSav = false;
 
   @override
   bool get wantKeepAlive => true;
@@ -90,6 +91,21 @@ class _ChartTabState extends State<ChartTab>
         false,
       ),
     };
+    // SAV bindus per sign on sign-based D1 charts (Lagna/Moon).
+    final savable =
+        _choice == const PlateChoice(PlateKind.lagna) ||
+        _choice == const PlateChoice(PlateKind.moon);
+    var shown = plate;
+    if (savable && _showSav) {
+      final sav = Ashtakavarga.of(a.chart).sav;
+      shown = ChartPlate(
+        title: plate.title,
+        ascendantSign: plate.ascendantSign,
+        houses: [
+          for (final h in plate.houses) h.withBadge('${sav[h.sign.index]}'),
+        ],
+      );
+    }
     // Chalit houses don't map to fixed sign cells, so it is always drawn
     // in the house-based North Indian style.
     final style = chalit ? ChartStyle.north : s.chartStyle;
@@ -123,7 +139,7 @@ class _ChartTabState extends State<ChartTab>
         Text(title, style: Theme.of(context).textTheme.titleSmall),
         const SizedBox(height: 8),
         ChartWidget(
-          plate: plate,
+          plate: shown,
           style: style,
           title: title,
           selected: _selected,
@@ -136,6 +152,14 @@ class _ChartTabState extends State<ChartTab>
         ),
         const SizedBox(height: 8),
         Text(l10n.chartLegend, style: small),
+        if (savable)
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            dense: true,
+            title: Text(l10n.showSavOnChart),
+            value: _showSav,
+            onChanged: (v) => setState(() => _showSav = v),
+          ),
         const SizedBox(height: 12),
         SegmentedButton<ChartStyle>(
           segments: [
