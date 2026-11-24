@@ -27,3 +27,14 @@ Our atlas is GeoNames; AstroSage uses its own. The same town can differ by a few
 | Agra | 27°11′N 078°01′E | 27°09′N 078°00′E | Lagna 29°15′39″ vs 29°14′14″ Cancer (+1′25″) |
 
 1′ of longitude = 4 s of time ≈ 1′ of lagna. When comparing a chart with AstroSage, enter AstroSage's coordinates via "Enter coordinates manually" in the place search, or expect the lagna (and bhava cusps) to move by about as many arc-minutes as the coordinates differ. Planets are not affected (geocentric).
+
+## Panchang at birth (Phase 2, 2026-11-24)
+
+Checked against three AstroSage charts (Agra 2026, Mumbai 1950 pre-sunrise, Kolkata 1943 war time): tithi, paksha, yoga, karana, Hindu weekday, varna, vashya, yoni, gana, nadi and paya all match.
+
+| Quantity | Difference | Cause |
+|---|---|---|
+| Sunrise / sunset | up to 48 s (Mumbai 1950); usually ≤ 20 s | AstroSage's own sunrise routine. Both use the upper limb with refraction (our default); the "Hindu" disc-centre definition would differ by ~4 minutes. |
+| Ishtkaal | ≤ 2 pal (1 pal = 24 s) | Follows from sunrise. |
+| Dasha balance | ≤ 10 days | Follows from AstroSage's Moon being up to ~30″ different (1″ of Moon ≈ 4 hours of Vimshottari balance for a 20-year lord). |
+| Julian day | AstroSage prints the day number of the local civil date, not of the UT moment | Display convention only. |

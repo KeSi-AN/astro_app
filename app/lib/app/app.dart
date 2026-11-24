@@ -4,6 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import 'router.dart';
 import 'services.dart';
 import 'theme.dart';
+import '../features/settings/settings.dart';
 
 class AstroApp extends StatefulWidget {
   const AstroApp({super.key, required this.services});
@@ -17,6 +18,7 @@ class AstroApp extends StatefulWidget {
 
 class _AstroAppState extends State<AstroApp> {
   late final Future<AppServices> _services = widget.services();
+  final _router = buildRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +50,14 @@ class _AstroAppState extends State<AstroApp> {
         }
         return RepositoryProvider.value(
           value: services,
-          child: MaterialApp.router(
-            title: 'Astro',
-            theme: appTheme(),
-            debugShowCheckedModeBanner: false,
-            routerConfig: buildRouter(),
+          child: BlocProvider(
+            create: (_) => SettingsCubit(services.settings),
+            child: MaterialApp.router(
+              title: 'Astro',
+              theme: appTheme(),
+              debugShowCheckedModeBanner: false,
+              routerConfig: _router,
+            ),
           ),
         );
       },

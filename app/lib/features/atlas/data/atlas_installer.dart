@@ -20,8 +20,9 @@ Future<String> installAtlas() async {
   }
   final tmp = File('${file.path}.tmp');
   await tmp.writeAsBytes(
-      data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
-      flush: true);
+    data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes),
+    flush: true,
+  );
   if (file.existsSync()) file.deleteSync();
   await tmp.rename(file.path);
   await stamp.writeAsString(version, flush: true);

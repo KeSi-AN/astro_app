@@ -7,7 +7,7 @@ import '../domain/chart_entry.dart';
 
 class ChartRepository {
   ChartRepository(this._db, {DateTime Function()? clock})
-      : _clock = clock ?? DateTime.now;
+    : _clock = clock ?? DateTime.now;
 
   final AppDatabase _db;
   final DateTime Function() _clock;
@@ -17,18 +17,22 @@ class ChartRepository {
     final q = _db.select(_db.charts);
     final s = search.trim();
     if (s.isNotEmpty) {
-      final like = '%${s.replaceAllMapped(RegExp(r'[\\%_]'), (m) => '\\${m[0]}')}%';
-      q.where((c) =>
-          c.name.like(like, escapeChar: '\\') |
-          c.placeName.like(like, escapeChar: '\\'));
+      final like =
+          '%${s.replaceAllMapped(RegExp(r'[\\%_]'), (m) => '\\${m[0]}')}%';
+      q.where(
+        (c) =>
+            c.name.like(like, escapeChar: '\\') |
+            c.placeName.like(like, escapeChar: '\\'),
+      );
     }
     q.orderBy([(c) => OrderingTerm.desc(c.updatedAt)]);
     return q.watch().map((rows) => rows.map(_fromRow).toList());
   }
 
   Future<ChartEntry?> get(int id) async {
-    final row = await (_db.select(_db.charts)..where((c) => c.id.equals(id)))
-        .getSingleOrNull();
+    final row = await (_db.select(
+      _db.charts,
+    )..where((c) => c.id.equals(id))).getSingleOrNull();
     return row == null ? null : _fromRow(row);
   }
 
@@ -38,8 +42,12 @@ class ChartRepository {
     final companion = ChartsCompanion(
       name: Value(e.name.trim()),
       gender: Value(e.gender),
-      year: Value(e.year), month: Value(e.month), day: Value(e.day),
-      hour: Value(e.hour), minute: Value(e.minute), second: Value(e.second),
+      year: Value(e.year),
+      month: Value(e.month),
+      day: Value(e.day),
+      hour: Value(e.hour),
+      minute: Value(e.minute),
+      second: Value(e.second),
       placeName: Value(e.place.displayName),
       latitude: Value(e.place.latitude),
       longitude: Value(e.place.longitude),
@@ -56,26 +64,39 @@ class ChartRepository {
       updatedAt: Value(now),
     );
     if (e.id == null) {
-      return _db.into(_db.charts)
+      return _db
+          .into(_db.charts)
           .insert(companion.copyWith(createdAt: Value(now)));
     }
-    await (_db.update(_db.charts)..where((c) => c.id.equals(e.id!)))
-        .write(companion);
+    await (_db.update(
+      _db.charts,
+    )..where((c) => c.id.equals(e.id!))).write(companion);
     return e.id!;
   }
 
   Future<int> duplicate(int id) async {
     final e = await get(id);
     if (e == null) throw StateError('Chart $id not found');
-    return save(ChartEntry(
-      name: '${e.name} (copy)', gender: e.gender,
-      year: e.year, month: e.month, day: e.day,
-      hour: e.hour, minute: e.minute, second: e.second,
-      place: e.place, timeBasis: e.timeBasis,
-      utcOffsetHours: e.utcOffsetHours, dstHours: e.dstHours,
-      warTimeApplied: e.warTimeApplied, maritalStatus: e.maritalStatus,
-      occupation: e.occupation, notes: e.notes,
-    ));
+    return save(
+      ChartEntry(
+        name: '${e.name} (copy)',
+        gender: e.gender,
+        year: e.year,
+        month: e.month,
+        day: e.day,
+        hour: e.hour,
+        minute: e.minute,
+        second: e.second,
+        place: e.place,
+        timeBasis: e.timeBasis,
+        utcOffsetHours: e.utcOffsetHours,
+        dstHours: e.dstHours,
+        warTimeApplied: e.warTimeApplied,
+        maritalStatus: e.maritalStatus,
+        occupation: e.occupation,
+        notes: e.notes,
+      ),
+    );
   }
 
   Future<void> delete(int id) =>
@@ -89,13 +110,19 @@ class ChartRepository {
       id: r.id,
       name: r.name,
       gender: r.gender,
-      year: r.year, month: r.month, day: r.day,
-      hour: r.hour, minute: r.minute, second: r.second,
+      year: r.year,
+      month: r.month,
+      day: r.day,
+      hour: r.hour,
+      minute: r.minute,
+      second: r.second,
       place: Place(
         name: parts.first,
         admin1: r.admin1,
         country: r.country,
-        countryName: parts.length > 1 && parts.last != r.admin1 ? parts.last : '',
+        countryName: parts.length > 1 && parts.last != r.admin1
+            ? parts.last
+            : '',
         latitude: r.latitude,
         longitude: r.longitude,
         zoneName: r.zoneName,

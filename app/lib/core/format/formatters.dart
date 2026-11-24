@@ -1,6 +1,16 @@
 const _monthShort = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
 ];
 
 String _two(int v) => v.toString().padLeft(2, '0');
@@ -44,10 +54,13 @@ List<int>? parseDateInput(String s) {
 
 /// Parses "10:45", "10:45:30", "7.05" (24-hour) → [h, m, s].
 List<int>? parseTimeInput(String s) {
-  final m = RegExp(r'^\s*(\d{1,2})\s*[:.]\s*(\d{1,2})(?:\s*[:.]\s*(\d{1,2}))?\s*$')
-      .firstMatch(s);
+  final m = RegExp(
+    r'^\s*(\d{1,2})\s*[:.]\s*(\d{1,2})(?:\s*[:.]\s*(\d{1,2}))?\s*$',
+  ).firstMatch(s);
   if (m == null) return null;
-  final h = int.parse(m[1]!), mi = int.parse(m[2]!), se = int.parse(m[3] ?? '0');
+  final h = int.parse(m[1]!),
+      mi = int.parse(m[2]!),
+      se = int.parse(m[3] ?? '0');
   if (h > 23 || mi > 59 || se > 59) return null;
   return [h, mi, se];
 }
@@ -55,9 +68,13 @@ List<int>? parseTimeInput(String s) {
 /// Parses an offset like "5:30", "+5.5", "-4:51:00" → hours.
 double? parseOffsetInput(String s) {
   final t = s.trim().replaceAll('−', '-');
-  final m = RegExp(r'^([+-])?(\d{1,2})(?:[:.](\d{1,2}))?(?::(\d{1,2}))?$').firstMatch(t);
+  final m = RegExp(r'^([+-])?(\d{1,2})(?:[:.](\d{1,2}))?(?::(\d{1,2}))?$')
+      .firstMatch(t);
   if (m != null && (t.contains(':') || m[3] == null)) {
-    final v = int.parse(m[2]!) + int.parse(m[3] ?? '0') / 60 + int.parse(m[4] ?? '0') / 3600;
+    final v =
+        int.parse(m[2]!) +
+        int.parse(m[3] ?? '0') / 60 +
+        int.parse(m[4] ?? '0') / 3600;
     return m[1] == '-' ? -v : v;
   }
   final d = double.tryParse(t);

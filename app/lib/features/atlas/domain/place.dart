@@ -31,10 +31,8 @@ class Place extends Equatable {
   final int population;
 
   /// "Agra, Uttar Pradesh, India"
-  String get displayName => [name, admin1, countryName]
-      .where((s) => s.isNotEmpty)
-      .toSet()
-      .join(', ');
+  String get displayName =>
+      [name, admin1, countryName].where((s) => s.isNotEmpty).toSet().join(', ');
 
   /// "Agra district · Uttar Pradesh · India"
   String get detail {
@@ -46,8 +44,15 @@ class Place extends Equatable {
   }
 
   @override
-  List<Object?> get props =>
-      [name, admin2, admin1, country, latitude, longitude, zoneName];
+  List<Object?> get props => [
+    name,
+    admin2,
+    admin1,
+    country,
+    latitude,
+    longitude,
+    zoneName,
+  ];
 }
 
 /// 27.15 → "27°09′N"

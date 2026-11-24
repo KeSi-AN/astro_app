@@ -126,7 +126,31 @@
         false
       ]
     ],
-    "obliquityKind": "mean"
+    "obliquityKind": "mean",
+    "panchang": {
+      "tithi": "Chaturdashi",
+      "paksha": "Shukla",
+      "yoga": "Parigha",
+      "karana": "Vanija",
+      "weekday": "Monday",
+      "sunrise": "06:44:02",
+      "sunset": "17:24:37",
+      "ishtkaal": "41-33-57"
+    },
+    "avakhada": {
+      "varna": "Kshatriya",
+      "vashya": "Chatushpada",
+      "yoni": "Elephant",
+      "gana": "Manushya",
+      "nadi": "Madhya",
+      "dashaLord": "venus",
+      "dashaBalance": "2-5-29",
+      "lagnaLord": "moon",
+      "rasiLord": "mars",
+      "nakshatraLord": "venus",
+      "payaNakshatra": "Gold"
+    },
+    "julianDayKind": "localDate"
   },
   "reference": "astrosage",
   "tolerancesArcSec": {
@@ -138,6 +162,9 @@
     "neptune": 300,
     "pluto": 900,
     "ayanamsa": 15,
-    "obliquity": 5
+    "obliquity": 5,
+    "sunriseSeconds": 60,
+    "ishtkaalPal": 3,
+    "dashaBalanceDays": 10
   }
 }

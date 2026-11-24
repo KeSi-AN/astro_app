@@ -44,20 +44,30 @@ class ChartEntry extends Equatable {
   final DateTime? updatedAt;
 
   BirthData toBirthData() => BirthData(
-        year: year, month: month, day: day,
-        hour: hour, minute: minute, second: second,
-        latitude: place.latitude, longitude: place.longitude,
-        utcOffsetHours: utcOffsetHours, dstHours: dstHours,
-        placeName: place.name,
-      );
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+    second: second,
+    latitude: place.latitude,
+    longitude: place.longitude,
+    utcOffsetHours: utcOffsetHours,
+    dstHours: dstHours,
+    placeName: place.name,
+  );
 
   ChartEntry copyWith({int? id, String? name, DateTime? updatedAt}) =>
       ChartEntry(
         id: id ?? this.id,
         name: name ?? this.name,
         gender: gender,
-        year: year, month: month, day: day,
-        hour: hour, minute: minute, second: second,
+        year: year,
+        month: month,
+        day: day,
+        hour: hour,
+        minute: minute,
+        second: second,
         place: place,
         timeBasis: timeBasis,
         utcOffsetHours: utcOffsetHours,
@@ -72,15 +82,42 @@ class ChartEntry extends Equatable {
 
   @override
   List<Object?> get props => [
-        id, name, gender, year, month, day, hour, minute, second, place,
-        timeBasis, utcOffsetHours, dstHours, warTimeApplied, maritalStatus,
-        occupation, notes,
-      ];
+    id,
+    name,
+    gender,
+    year,
+    month,
+    day,
+    hour,
+    minute,
+    second,
+    place,
+    timeBasis,
+    utcOffsetHours,
+    dstHours,
+    warTimeApplied,
+    maritalStatus,
+    occupation,
+    notes,
+  ];
 }
 
-const maritalStatuses = ['Single', 'Married', 'Divorced', 'Widowed', 'Separated'];
+const maritalStatuses = [
+  'Single',
+  'Married',
+  'Divorced',
+  'Widowed',
+  'Separated',
+];
 const occupations = [
-  'Student', 'Private job', 'Government job', 'Business', 'Self-employed',
-  'Professional (doctor, lawyer, CA…)', 'Homemaker', 'Retired', 'Unemployed',
+  'Student',
+  'Private job',
+  'Government job',
+  'Business',
+  'Self-employed',
+  'Professional (doctor, lawyer, CA…)',
+  'Homemaker',
+  'Retired',
+  'Unemployed',
   'Other',
 ];

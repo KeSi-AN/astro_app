@@ -1,0 +1,167 @@
+{
+  "id": "003_golden_kolkata_1943_wartime",
+  "source": "AstroSage Android v32.6, Planets / Person Details / Avkahada Chakra screens, captured 2026-11-24. Screenshots: REA/astrosage/live/g19, g20, g21.png. Panchang names on that screen were in a legacy Hindi font: iwf.kZek=Purnima, 'kqDy=Shukla, lkSHkkX;=Saubhagya, fof\"V=Vishti.",
+  "settings": {
+    "ayanamsa": "lahiri"
+  },
+  "birth": {
+    "date": "1943-08-15",
+    "time": "14:30:00",
+    "place": "Kolkata",
+    "latitude": "22N34",
+    "longitude": "088E22",
+    "utcOffsetHours": 5.5,
+    "dstHours": 1
+  },
+  "tolerancesArcSec": {
+    "_note": "AstroSage uses its own lower-precision ephemeris (see DIVERGENCES.md).",
+    "default": 60,
+    "jupiter": 240,
+    "saturn": 240,
+    "uranus": 300,
+    "neptune": 300,
+    "pluto": 900,
+    "ayanamsa": 15,
+    "obliquity": 5,
+    "sunriseSeconds": 60,
+    "ishtkaalPal": 3,
+    "dashaBalanceDays": 10
+  },
+  "expected": {
+    "julianDay": 2430952,
+    "ayanamsa": "023-04-09",
+    "obliquity": "023-26-48",
+    "obliquityKind": "mean",
+    "positions": [
+      [
+        "lagna",
+        "Scorpio",
+        "19 45 33",
+        "Jyeshtha",
+        1,
+        false
+      ],
+      [
+        "sun",
+        "Cancer",
+        "28 33 45",
+        "Ashlesha",
+        4,
+        false
+      ],
+      [
+        "moon",
+        "Capricorn",
+        "21 42 14",
+        "Shravana",
+        4,
+        false
+      ],
+      [
+        "mars",
+        "Taurus",
+        "01 53 24",
+        "Krittika",
+        2,
+        false
+      ],
+      [
+        "mercury",
+        "Leo",
+        "22 21 07",
+        "Purva Phalguni",
+        3,
+        false
+      ],
+      [
+        "jupiter",
+        "Cancer",
+        "16 54 55",
+        "Ashlesha",
+        1,
+        false
+      ],
+      [
+        "venus",
+        "Leo",
+        "27 28 33",
+        "Uttara Phalguni",
+        1,
+        false
+      ],
+      [
+        "saturn",
+        "Gemini",
+        "00 54 41",
+        "Mrigashira",
+        3,
+        false
+      ],
+      [
+        "rahu",
+        "Cancer",
+        "22 27 34",
+        "Ashlesha",
+        2,
+        true
+      ],
+      [
+        "ketu",
+        "Capricorn",
+        "22 27 34",
+        "Shravana",
+        4,
+        true
+      ],
+      [
+        "uranus",
+        "Taurus",
+        "15 24 44",
+        "Rohini",
+        2,
+        false
+      ],
+      [
+        "neptune",
+        "Virgo",
+        "07 19 21",
+        "Uttara Phalguni",
+        4,
+        false
+      ],
+      [
+        "pluto",
+        "Cancer",
+        "14 11 04",
+        "Pushya",
+        4,
+        false
+      ]
+    ],
+    "panchang": {
+      "tithi": "Purnima",
+      "paksha": "Shukla",
+      "yoga": "Saubhagya",
+      "karana": "Vishti",
+      "weekday": "Sunday",
+      "sunrise": "06:12:56",
+      "sunset": "19:09:17",
+      "ishtkaal": "20-42-39"
+    },
+    "avakhada": {
+      "varna": "Vaishya",
+      "vashya": "Jalachara",
+      "yoni": "Monkey",
+      "gana": "Deva",
+      "nadi": "Antya",
+      "payaNakshatra": "Copper",
+      "dashaLord": "moon",
+      "dashaBalance": "1-2-20",
+      "lagnaLord": "mars",
+      "rasiLord": "saturn",
+      "nakshatraLord": "moon"
+    },
+    "notes": "War time: AstroSage shows time zone 6.5 and GMT 08:00:00, i.e. the recorded time is taken as war time (+1h), same as our default.",
+    "julianDayKind": "localDate"
+  }
+}

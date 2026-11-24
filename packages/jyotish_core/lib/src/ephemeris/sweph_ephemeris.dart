@@ -146,6 +146,26 @@ class SwephEphemeris implements Ephemeris {
 
   @override
   double meanObliquity(double jdUt) => _eclNut(jdUt).latitude;
+
+  @override
+  double? sunEvent(double jdUtStart, double latitude, double longitude,
+      {required bool rise, SunriseMode mode = SunriseMode.upperLimb}) {
+    var rsmi = rise
+        ? RiseSetTransitFlag.SE_CALC_RISE
+        : RiseSetTransitFlag.SE_CALC_SET;
+    if (mode == SunriseMode.hindu) {
+      rsmi = rsmi | RiseSetTransitFlag.SE_BIT_HINDU_RISING;
+    }
+    return Sweph.swe_rise_trans(
+      jdUtStart,
+      HeavenlyBody.SE_SUN,
+      SwephFlag.SEFLG_SWIEPH,
+      rsmi,
+      GeoPosition(longitude, latitude),
+      0,
+      0,
+    );
+  }
 }
 
 class _FnAssetLoader with AssetLoader {

@@ -41,11 +41,16 @@ class AtlasRepository {
         .toList();
     if (parts.isEmpty || parts.first.length < 2) return const [];
     final escaped = parts.first.replaceAllMapped(
-        RegExp(r'[\\%_]'), (m) => '\\${m[0]}');
+      RegExp(r'[\\%_]'),
+      (m) => '\\${m[0]}',
+    );
     final filters = parts.skip(1).map((s) => s.toLowerCase()).toList();
 
     // Fetch extra rows when filtering, since the filter runs in Dart.
-    final rows = _byPrefix.select(['$escaped%', filters.isEmpty ? limit : 2000]);
+    final rows = _byPrefix.select([
+      '$escaped%',
+      filters.isEmpty ? limit : 2000,
+    ]);
     final out = <Place>[];
     for (final r in rows) {
       final place = Place(
@@ -60,9 +65,10 @@ class AtlasRepository {
         population: r.columnAt(8) as int,
       );
       if (filters.isNotEmpty) {
-        final hay = '${place.admin2} ${place.admin1} ${place.country} '
-                '${place.countryName}'
-            .toLowerCase();
+        final hay =
+            '${place.admin2} ${place.admin1} ${place.country} '
+                    '${place.countryName}'
+                .toLowerCase();
         if (!filters.every(hay.contains)) continue;
       }
       out.add(place);

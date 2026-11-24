@@ -99,10 +99,17 @@ class _ChartFormPageState extends State<ChartFormPage> {
     try {
       return (
         TimeResolver.resolve(
-          zoneName: p.zoneName, longitude: p.longitude, admin1: p.admin1,
-          year: d[0], month: d[1], day: d[2],
-          hour: t[0], minute: t[1], second: t[2],
-          basis: _basis, manualOffsetHours: manual,
+          zoneName: p.zoneName,
+          longitude: p.longitude,
+          admin1: p.admin1,
+          year: d[0],
+          month: d[1],
+          day: d[2],
+          hour: t[0],
+          minute: t[1],
+          second: t[2],
+          basis: _basis,
+          manualOffsetHours: manual,
           manualDstHours: double.tryParse(_manualDst.text) ?? 0,
           applyWarTime: _warTime,
         ),
@@ -114,9 +121,9 @@ class _ChartFormPageState extends State<ChartFormPage> {
   }
 
   Future<void> _pickPlace([String query = '']) async {
-    final p = await Navigator.of(context).push<Place>(MaterialPageRoute(
-      builder: (_) => PlaceSearchPage(initialQuery: query),
-    ));
+    final p = await Navigator.of(context).push<Place>(
+      MaterialPageRoute(builder: (_) => PlaceSearchPage(initialQuery: query)),
+    );
     if (p != null) {
       setState(() {
         _place = p;
@@ -136,8 +143,10 @@ class _ChartFormPageState extends State<ChartFormPage> {
       initialEntryMode: DatePickerEntryMode.calendarOnly,
     );
     if (picked != null) {
-      setState(() => _date.text =
-          formatDateInput(picked.year, picked.month, picked.day));
+      setState(
+        () =>
+            _date.text = formatDateInput(picked.year, picked.month, picked.day),
+      );
     }
   }
 
@@ -164,8 +173,9 @@ class _ChartFormPageState extends State<ChartFormPage> {
     if (text == null || !mounted) return;
     final r = BirthTextParser.parse(text);
     if (r.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('No birth details found in that text.')));
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No birth details found in that text.')),
+      );
       return;
     }
     final notes = [...r.notes];
@@ -179,15 +189,22 @@ class _ChartFormPageState extends State<ChartFormPage> {
     if (!r.hasTime) notes.add('No time found: enter it below.');
     if (r.place != null) {
       final first = r.place!.split(',').first.trim();
-      final found = context.read<AppServices>().atlas.search(r.place!, limit: 5);
-      final exact = found.where((p) => p.name.toLowerCase() == first.toLowerCase());
+      final found = context.read<AppServices>().atlas.search(
+        r.place!,
+        limit: 5,
+      );
+      final exact = found.where(
+        (p) => p.name.toLowerCase() == first.toLowerCase(),
+      );
       if (exact.isNotEmpty) {
         setState(() {
           _place = exact.first;
           _basis = null;
           _warTime = null;
         });
-        notes.add('Place matched to ${exact.first.displayName}. Tap the place to change it.');
+        notes.add(
+          'Place matched to ${exact.first.displayName}. Tap the place to change it.',
+        );
       } else {
         notes.add('Place "${r.place}" needs choosing.');
         await _pickPlace(first);
@@ -200,8 +217,9 @@ class _ChartFormPageState extends State<ChartFormPage> {
     if (!_form.currentState!.validate()) return;
     final (res, err) = _resolve();
     if (_place == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Choose the birth place.')));
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Choose the birth place.')));
       return;
     }
     if (res == null) {
@@ -215,8 +233,12 @@ class _ChartFormPageState extends State<ChartFormPage> {
       id: widget.id,
       name: _name.text.trim(),
       gender: _gender,
-      year: d[0], month: d[1], day: d[2],
-      hour: t[0], minute: t[1], second: t[2],
+      year: d[0],
+      month: d[1],
+      day: d[2],
+      hour: t[0],
+      minute: t[1],
+      second: t[2],
       place: _place!,
       timeBasis: res.basis,
       utcOffsetHours: res.standardOffsetHours,
@@ -261,14 +283,19 @@ class _ChartFormPageState extends State<ChartFormPage> {
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
           children: [
             for (final n in _pasteNotes)
-              _Banner(text: n, onClose: () => setState(() {
-                    _pasteNotes = [..._pasteNotes]..remove(n);
-                  })),
+              _Banner(
+                text: n,
+                onClose: () => setState(() {
+                  _pasteNotes = [..._pasteNotes]..remove(n);
+                }),
+              ),
             TextFormField(
               controller: _name,
               textCapitalization: TextCapitalization.words,
               decoration: const InputDecoration(
-                  labelText: 'Name', prefixIcon: Icon(Icons.person_outline)),
+                labelText: 'Name',
+                prefixIcon: Icon(Icons.person_outline),
+              ),
               validator: (v) =>
                   (v ?? '').trim().isEmpty ? 'Enter a name' : null,
             ),
@@ -283,39 +310,46 @@ class _ChartFormPageState extends State<ChartFormPage> {
               onSelectionChanged: (s) => setState(() => _gender = s.first),
             ),
             const SizedBox(height: 12),
-            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Expanded(
-                flex: 5,
-                child: TextFormField(
-                  controller: _date,
-                  keyboardType: TextInputType.datetime,
-                  decoration: InputDecoration(
-                    labelText: 'Date (DD/MM/YYYY)',
-                    suffixIcon: IconButton(
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: TextFormField(
+                    controller: _date,
+                    keyboardType: TextInputType.datetime,
+                    decoration: InputDecoration(
+                      labelText: 'Date (DD/MM/YYYY)',
+                      suffixIcon: IconButton(
                         icon: const Icon(Icons.calendar_month),
-                        onPressed: _pickDate),
+                        onPressed: _pickDate,
+                      ),
+                    ),
+                    validator: (v) => parseDateInput(v ?? '') == null
+                        ? 'DD/MM/YYYY, 1800–2399'
+                        : null,
                   ),
-                  validator: (v) => parseDateInput(v ?? '') == null
-                      ? 'DD/MM/YYYY, 1800–2399'
-                      : null,
                 ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                flex: 4,
-                child: TextFormField(
-                  controller: _time,
-                  keyboardType: TextInputType.datetime,
-                  decoration: InputDecoration(
-                    labelText: 'Time (24h, HH:MM:SS)',
-                    suffixIcon: IconButton(
-                        icon: const Icon(Icons.schedule), onPressed: _pickTime),
+                const SizedBox(width: 12),
+                Expanded(
+                  flex: 4,
+                  child: TextFormField(
+                    controller: _time,
+                    keyboardType: TextInputType.datetime,
+                    decoration: InputDecoration(
+                      labelText: 'Time (24h, HH:MM:SS)',
+                      suffixIcon: IconButton(
+                        icon: const Icon(Icons.schedule),
+                        onPressed: _pickTime,
+                      ),
+                    ),
+                    validator: (v) => parseTimeInput(v ?? '') == null
+                        ? 'e.g. 22:45:10'
+                        : null,
                   ),
-                  validator: (v) =>
-                      parseTimeInput(v ?? '') == null ? 'e.g. 22:45:10' : null,
                 ),
-              ),
-            ]),
+              ],
+            ),
             const SizedBox(height: 12),
             _PlaceField(place: _place, onTap: () => _pickPlace()),
             if (_place != null) ...[
@@ -334,35 +368,40 @@ class _ChartFormPageState extends State<ChartFormPage> {
             const SizedBox(height: 20),
             Text('Optional', style: Theme.of(context).textTheme.titleSmall),
             const SizedBox(height: 8),
-            Row(children: [
-              Expanded(
-                child: DropdownButtonFormField<String>(
-                  initialValue: _marital,
-                  isExpanded: true,
-                  decoration: const InputDecoration(labelText: 'Marital status'),
-                  items: [
-                    for (final m in maritalStatuses)
-                      DropdownMenuItem(value: m, child: Text(m)),
-                  ],
-                  onChanged: (v) => setState(() => _marital = v),
+            Row(
+              children: [
+                Expanded(
+                  child: DropdownButtonFormField<String>(
+                    initialValue: _marital,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      labelText: 'Marital status',
+                    ),
+                    items: [
+                      for (final m in maritalStatuses)
+                        DropdownMenuItem(value: m, child: Text(m)),
+                    ],
+                    onChanged: (v) => setState(() => _marital = v),
+                  ),
                 ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: DropdownButtonFormField<String>(
-                  initialValue: _occupation,
-                  isExpanded: true,
-                  decoration: const InputDecoration(labelText: 'Occupation'),
-                  items: [
-                    for (final o in occupations)
-                      DropdownMenuItem(
+                const SizedBox(width: 12),
+                Expanded(
+                  child: DropdownButtonFormField<String>(
+                    initialValue: _occupation,
+                    isExpanded: true,
+                    decoration: const InputDecoration(labelText: 'Occupation'),
+                    items: [
+                      for (final o in occupations)
+                        DropdownMenuItem(
                           value: o,
-                          child: Text(o, overflow: TextOverflow.ellipsis)),
-                  ],
-                  onChanged: (v) => setState(() => _occupation = v),
+                          child: Text(o, overflow: TextOverflow.ellipsis),
+                        ),
+                    ],
+                    onChanged: (v) => setState(() => _occupation = v),
+                  ),
                 ),
-              ),
-            ]),
+              ],
+            ),
             const SizedBox(height: 12),
             TextFormField(
               controller: _notes,
@@ -465,11 +504,13 @@ class _PasteDialogState extends State<_PasteDialog> {
       ),
       actions: [
         TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel')),
+          onPressed: () => Navigator.pop(context),
+          child: const Text('Cancel'),
+        ),
         FilledButton(
-            onPressed: () => Navigator.pop(context, _text.text),
-            child: const Text('Fill form')),
+          onPressed: () => Navigator.pop(context, _text.text),
+          child: const Text('Fill form'),
+        ),
       ],
     );
   }

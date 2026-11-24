@@ -12,6 +12,21 @@ class EclipticPosition {
 
 enum HouseSystem { placidus, sripati, porphyry, wholeSign, equal }
 
+/// How sunrise is defined. Indian panchangs differ on this; it shifts
+/// sunrise by a few minutes.
+enum SunriseMode {
+  /// Upper edge of the disc, with atmospheric refraction (almanac sunrise;
+  /// AstroSage and Drik Panchang default). Listed first: our default.
+  upperLimb('Upper limb, with refraction'),
+
+  /// Centre of the disc on the horizon, no refraction (Swiss Ephemeris
+  /// "Hindu rising").
+  hindu('Disc centre, no refraction');
+
+  const SunriseMode(this.label);
+  final String label;
+}
+
 class HousesResult {
   const HousesResult({
     required this.cusps,
@@ -53,4 +68,14 @@ abstract class Ephemeris {
 
   /// Mean obliquity (without nutation) in degrees.
   double meanObliquity(double jdUt);
+
+  /// Next sunrise ([rise] = true) or sunset after [jdUtStart], in JD UT;
+  /// null if the Sun doesn't rise/set that day (polar regions).
+  double? sunEvent(
+    double jdUtStart,
+    double latitude,
+    double longitude, {
+    required bool rise,
+    SunriseMode mode = SunriseMode.upperLimb,
+  });
 }

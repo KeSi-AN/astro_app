@@ -30,7 +30,14 @@ void main() {
       final exp = g['expected'] as Map<String, dynamic>;
 
       test('julian day', () {
-        expect((chart.jdUt + 0.5).floor(), exp['julianDay']);
+        if (exp['julianDayKind'] == 'localDate') {
+          // AstroSage prints the day number of the local civil date.
+          final b = chart.birth;
+          expect(eph.julianDayUt(b.year, b.month, b.day, 12).round(),
+              exp['julianDay']);
+        } else {
+          expect((chart.jdUt + 0.5).floor(), exp['julianDay']);
+        }
       });
 
       test('ayanamsa', () {

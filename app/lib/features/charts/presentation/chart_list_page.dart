@@ -32,7 +32,9 @@ class ChartListCubit extends Cubit<ChartListState> {
 
   void _listen(String query) {
     _sub?.cancel();
-    _sub = _repo.watchAll(search: query).listen(
+    _sub = _repo
+        .watchAll(search: query)
+        .listen(
           (c) => emit(ChartListState(query: query, charts: c)),
           onError: (Object e) => emit(ChartListState(query: query, error: e)),
         );
@@ -68,6 +70,13 @@ class _ChartListView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Charts'),
+        actions: [
+          IconButton(
+            tooltip: 'Settings',
+            icon: const Icon(Icons.tune),
+            onPressed: () => context.push(Routes.settings),
+          ),
+        ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(64),
           child: Padding(
@@ -130,7 +139,9 @@ class _ChartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = chart;
-    final initial = c.name.isEmpty ? '?' : c.name.characters.first.toUpperCase();
+    final initial = c.name.isEmpty
+        ? '?'
+        : c.name.characters.first.toUpperCase();
     return ListTile(
       leading: CircleAvatar(child: Text(initial)),
       title: Text(c.name, maxLines: 1, overflow: TextOverflow.ellipsis),
@@ -164,15 +175,19 @@ class _ChartTile extends StatelessWidget {
           context: context,
           builder: (context) => AlertDialog(
             title: const Text('Delete chart?'),
-            content: Text('"${chart.name}" will be removed from this phone. '
-                'This cannot be undone.'),
+            content: Text(
+              '"${chart.name}" will be removed from this phone. '
+              'This cannot be undone.',
+            ),
             actions: [
               TextButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: const Text('Cancel')),
+                onPressed: () => Navigator.pop(context, false),
+                child: const Text('Cancel'),
+              ),
               FilledButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  child: const Text('Delete')),
+                onPressed: () => Navigator.pop(context, true),
+                child: const Text('Delete'),
+              ),
             ],
           ),
         );

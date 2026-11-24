@@ -10,6 +10,7 @@ import 'core/db/app_database.dart';
 import 'features/atlas/data/atlas_installer.dart';
 import 'features/atlas/data/atlas_repository.dart';
 import 'features/charts/data/chart_repository.dart';
+import 'features/settings/settings.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,8 +24,7 @@ Future<AppServices> _start() async {
     SwephEphemeris.init(
       epheDir: '${support.path}/ephe',
       loadAsset: (f) async =>
-          (await rootBundle.load('packages/sweph/assets/ephe/$f'))
-              .buffer
+          (await rootBundle.load('packages/sweph/assets/ephe/$f')).buffer
               .asUint8List(),
     ),
     installAtlas(),
@@ -35,5 +35,6 @@ Future<AppServices> _start() async {
     charts: ChartRepository(db),
     atlas: AtlasRepository.open(results[1] as String),
     ephemeris: results[0] as Ephemeris,
+    settings: SettingsRepository(db),
   );
 }

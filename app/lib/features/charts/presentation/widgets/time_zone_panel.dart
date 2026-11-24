@@ -50,16 +50,21 @@ class TimeZonePanel extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(children: [
-              const Icon(Icons.public, size: 18),
-              const SizedBox(width: 8),
-              Text('Time zone', style: theme.textTheme.titleSmall),
-              const Spacer(),
-              if (r != null)
-                Text(formatOffset(r.totalOffsetHours),
-                    style: theme.textTheme.titleSmall
-                        ?.copyWith(color: theme.colorScheme.primary)),
-            ]),
+            Row(
+              children: [
+                const Icon(Icons.public, size: 18),
+                const SizedBox(width: 8),
+                Text('Time zone', style: theme.textTheme.titleSmall),
+                const Spacer(),
+                if (r != null)
+                  Text(
+                    formatOffset(r.totalOffsetHours),
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      color: theme.colorScheme.primary,
+                    ),
+                  ),
+              ],
+            ),
             const SizedBox(height: 8),
             DropdownButtonFormField<TimeBasis>(
               key: ValueKey(current),
@@ -74,25 +79,32 @@ class TimeZonePanel extends StatelessWidget {
             ),
             if (current == TimeBasis.manual) ...[
               const SizedBox(height: 8),
-              Row(children: [
-                Expanded(
-                  child: TextFormField(
-                    controller: manualOffset,
-                    decoration: const InputDecoration(
-                        labelText: 'UTC offset', hintText: '5:30'),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: manualOffset,
+                      decoration: const InputDecoration(
+                        labelText: 'UTC offset',
+                        hintText: '5:30',
+                      ),
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: TextFormField(
-                    controller: manualDst,
-                    keyboardType: const TextInputType.numberWithOptions(
-                        decimal: true),
-                    decoration: const InputDecoration(
-                        labelText: 'DST / war time (h)', hintText: '0 or 1'),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: TextFormField(
+                      controller: manualDst,
+                      keyboardType: const TextInputType.numberWithOptions(
+                        decimal: true,
+                      ),
+                      decoration: const InputDecoration(
+                        labelText: 'DST / war time (h)',
+                        hintText: '0 or 1',
+                      ),
+                    ),
                   ),
-                ),
-              ]),
+                ],
+              ),
             ],
             if (error != null) ...[
               const SizedBox(height: 8),
@@ -121,19 +133,22 @@ class TimeZonePanel extends StatelessWidget {
               for (final n in r.notes)
                 Padding(
                   padding: const EdgeInsets.only(top: 6),
-                  child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Icon(
-                      n.level == NoteLevel.warning
-                          ? Icons.warning_amber_rounded
-                          : Icons.info_outline,
-                      size: 16,
-                      color: n.level == NoteLevel.warning
-                          ? Colors.amber
-                          : theme.colorScheme.onSurfaceVariant,
-                    ),
-                    const SizedBox(width: 6),
-                    Expanded(child: Text(n.text, style: small)),
-                  ]),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        n.level == NoteLevel.warning
+                            ? Icons.warning_amber_rounded
+                            : Icons.info_outline,
+                        size: 16,
+                        color: n.level == NoteLevel.warning
+                            ? Colors.amber
+                            : theme.colorScheme.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 6),
+                      Expanded(child: Text(n.text, style: small)),
+                    ],
+                  ),
                 ),
             ],
           ],

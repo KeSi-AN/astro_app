@@ -1,0 +1,167 @@
+{
+  "id": "002_golden_mumbai_1950",
+  "source": "AstroSage Android v32.6, Planets / Person Details / Avkahada Chakra screens, captured 2026-11-24. Screenshots: REA/astrosage/live/g07, g11, g12, g13.png",
+  "settings": {
+    "ayanamsa": "lahiri"
+  },
+  "birth": {
+    "date": "1950-03-03",
+    "time": "05:10:00",
+    "place": "Mumbai",
+    "latitude": "19N04",
+    "longitude": "072E52",
+    "utcOffsetHours": 5.5,
+    "dstHours": 0
+  },
+  "tolerancesArcSec": {
+    "_note": "AstroSage uses its own lower-precision ephemeris (see DIVERGENCES.md).",
+    "default": 60,
+    "jupiter": 240,
+    "saturn": 240,
+    "uranus": 300,
+    "neptune": 300,
+    "pluto": 900,
+    "ayanamsa": 15,
+    "obliquity": 5,
+    "sunriseSeconds": 60,
+    "ishtkaalPal": 3,
+    "dashaBalanceDays": 10
+  },
+  "expected": {
+    "julianDay": 2433344,
+    "ayanamsa": "023-09-38",
+    "obliquity": "023-26-45",
+    "obliquityKind": "mean",
+    "positions": [
+      [
+        "lagna",
+        "Capricorn",
+        "16 00 55",
+        "Shravana",
+        2,
+        false
+      ],
+      [
+        "sun",
+        "Aquarius",
+        "18 40 44",
+        "Shatabhisha",
+        4,
+        false
+      ],
+      [
+        "moon",
+        "Cancer",
+        "29 18 28",
+        "Ashlesha",
+        4,
+        false
+      ],
+      [
+        "mars",
+        "Virgo",
+        "15 37 48",
+        "Hasta",
+        2,
+        true
+      ],
+      [
+        "mercury",
+        "Capricorn",
+        "29 02 41",
+        "Dhanishta",
+        2,
+        false
+      ],
+      [
+        "jupiter",
+        "Capricorn",
+        "27 41 57",
+        "Dhanishta",
+        2,
+        false
+      ],
+      [
+        "venus",
+        "Capricorn",
+        "11 54 31",
+        "Shravana",
+        1,
+        false
+      ],
+      [
+        "saturn",
+        "Leo",
+        "23 12 45",
+        "Purva Phalguni",
+        3,
+        true
+      ],
+      [
+        "rahu",
+        "Pisces",
+        "15 43 14",
+        "Uttara Bhadrapada",
+        4,
+        true
+      ],
+      [
+        "ketu",
+        "Virgo",
+        "15 43 14",
+        "Hasta",
+        2,
+        true
+      ],
+      [
+        "uranus",
+        "Gemini",
+        "07 48 42",
+        "Ardra",
+        1,
+        true
+      ],
+      [
+        "neptune",
+        "Virgo",
+        "23 42 21",
+        "Chitra",
+        1,
+        true
+      ],
+      [
+        "pluto",
+        "Cancer",
+        "23 13 54",
+        "Ashlesha",
+        2,
+        true
+      ]
+    ],
+    "panchang": {
+      "tithi": "Chaturdashi",
+      "paksha": "Shukla",
+      "yoga": "Atiganda",
+      "karana": "Gara",
+      "weekday": "Thursday",
+      "sunrise": "06:56:48",
+      "sunset": "18:44:35",
+      "ishtkaal": "55-33-00"
+    },
+    "avakhada": {
+      "varna": "Brahmin",
+      "vashya": "Jalachara",
+      "yoni": "Cat",
+      "gana": "Rakshasa",
+      "nadi": "Antya",
+      "payaNakshatra": "Silver",
+      "dashaLord": "mercury",
+      "dashaBalance": "0-10-18",
+      "lagnaLord": "saturn",
+      "rasiLord": "moon",
+      "nakshatraLord": "mercury"
+    },
+    "notes": "Born before sunrise: civil Friday, Hindu weekday Thursday. AstroSage uses IST (5.5) for 1950 Mumbai, not Bombay Time.",
+    "julianDayKind": "localDate"
+  }
+}
