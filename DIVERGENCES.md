@@ -53,3 +53,9 @@ AstroSage TestChart re-entered through its paste box (Agra 27N10 078E01, 23:21:0
 | Yogini antardasha dates | rule dates | one month earlier, except the last of each mahadasha | Every AstroSage antardasha end date except the one equal to the mahadasha end is exactly one month early (e.g. Ulka/Ulka 8/6/28 vs 8/7/28) — an AstroSage display bug (month index). |
 | Chara dasha (K.N. Rao) | 11 of 12 signs identical | — | Order, years and antardasha order match. |
 | Chara Aquarius | Saturn → 11 years | 0 years | Aquarius has two lords; Rahu sits in Aquarius, Saturn in Pisces. K.N. Rao: if one lord is in the sign, use the other (Saturn). AstroSage appears to use Rahu and prints 0 years (it does apply "lord in own sign = 12 years" to Libra). |
+
+## Strength (Phase 4, 2026-11-25, fixture 004)
+
+- Ashtakavarga: all 84 BAV cells match AstroSage exactly; SAV total 337.
+- Shadbala: AstroSage shows ranks only. Ours follows BPHS ch. 27 / B.V. Raman with all components shown. Ranks agree for Sun (6) and Saturn (7); the middle five differ (ours Mo1 Ju2 Me3 Ve4 Ma5, AstroSage Ve1 Ma2 Mo3 Ju4 Me5). Choices: Moon paksha doubled, Sun ayana doubled, cheshta kendra from heliocentric angle, year/month lords from Mesha/sign sankranti weekdays, kendradi by Sripati bhava, Jupiter/Mercury drishti in full.
+- Bhava bala ranks: 7 of 12 houses agree with AstroSage.

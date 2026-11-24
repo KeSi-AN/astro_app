@@ -709,4 +709,132 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get divisional => 'वर्ग कुंडली';
+
+  @override
+  String get tabStrength => 'बल';
+
+  @override
+  String get ashtakavarga => 'अष्टकवर्ग';
+
+  @override
+  String get shadbala => 'षड्बल';
+
+  @override
+  String get bhavaBala => 'भाव बल';
+
+  @override
+  String get bavTitle => 'भिन्नाष्टकवर्ग (प्रति राशि बिंदु)';
+
+  @override
+  String get savTitle => 'सर्वाष्टकवर्ग';
+
+  @override
+  String get savByHouse => 'लग्न से भाव अनुसार सर्वाष्टकवर्ग';
+
+  @override
+  String prastaraTitle(Object planet) {
+    return '$planet का प्रस्तार';
+  }
+
+  @override
+  String get avNote =>
+      'राशियाँ: 1 मेष … 12 मीन। कुल 337। 28 या अधिक बिंदु वाले भाव बलवान।';
+
+  @override
+  String get colTotal => 'कुल';
+
+  @override
+  String get contributor => 'दाता';
+
+  @override
+  String get sthanaBala => 'स्थान बल';
+
+  @override
+  String get uchchaBala => 'उच्च';
+
+  @override
+  String get saptavargajaBala => 'सप्तवर्गज';
+
+  @override
+  String get ojayugmaBala => 'ओजयुग्म';
+
+  @override
+  String get kendradiBala => 'केन्द्रादि';
+
+  @override
+  String get drekkanaBala => 'द्रेष्काण';
+
+  @override
+  String get digBala => 'दिग्बल';
+
+  @override
+  String get kalaBala => 'काल बल';
+
+  @override
+  String get nathonnathaBala => 'नतोन्नत';
+
+  @override
+  String get pakshaBala => 'पक्ष';
+
+  @override
+  String get tribhagaBala => 'त्रिभाग';
+
+  @override
+  String get abdaBala => 'अब्द (वर्ष)';
+
+  @override
+  String get masaBala => 'मास';
+
+  @override
+  String get varaBala => 'वार';
+
+  @override
+  String get horaBala => 'होरा';
+
+  @override
+  String get ayanaBala => 'अयन';
+
+  @override
+  String get yuddhaBala => 'युद्ध';
+
+  @override
+  String get cheshtaBala => 'चेष्टा बल';
+
+  @override
+  String get naisargikaBala => 'नैसर्गिक बल';
+
+  @override
+  String get drikBala => 'दृक् बल';
+
+  @override
+  String get totalVirupas => 'कुल (विरूप)';
+
+  @override
+  String get totalRupas => 'कुल (रूप)';
+
+  @override
+  String get requiredRupas => 'आवश्यक (रूप)';
+
+  @override
+  String get strengthRatio => 'अनुपात';
+
+  @override
+  String get strengthRank => 'क्रम';
+
+  @override
+  String get shadbalaNote =>
+      'मान विरूप में (60 = 1 रूप), बृहत् पाराशर होरा शास्त्र अध्याय 27 के अनुसार (बी.वी. रमन की गणना विधि)। अनुपात 1 या अधिक हो तो ग्रह आवश्यक बल पूरा करता है।';
+
+  @override
+  String get bhavaLordStrength => 'भावेश बल';
+
+  @override
+  String get bhavaDig => 'दिग्बल';
+
+  @override
+  String get bhavaDrishti => 'दृष्टि बल';
+
+  @override
+  String get bhavaNote =>
+      'भाव बल = भावेश का षड्बल + दिग्बल + भाव मध्य पर दृष्टि (विरूप)।';
 }

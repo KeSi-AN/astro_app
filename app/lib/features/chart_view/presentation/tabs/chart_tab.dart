@@ -18,8 +18,7 @@ class PlateChoice extends ChartChoice {
   const PlateChoice(this.kind);
   final PlateKind kind;
   @override
-  bool operator ==(Object other) =>
-      other is PlateChoice && other.kind == kind;
+  bool operator ==(Object other) => other is PlateChoice && other.kind == kind;
   @override
   int get hashCode => kind.hashCode;
 }

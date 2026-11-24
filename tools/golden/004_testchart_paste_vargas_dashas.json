@@ -1,6 +1,6 @@
 {
   "id": "004_testchart_paste_vargas_dashas",
-  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char).",
+  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only).",
   "settings": {
     "ayanamsa": "lahiri"
   },
@@ -301,6 +301,129 @@
       "virgo",
       "leo",
       "cancer"
+    ],
+    "bavBySign": {
+      "sun": [
+        5,
+        3,
+        7,
+        2,
+        3,
+        7,
+        2,
+        3,
+        5,
+        3,
+        4,
+        4
+      ],
+      "moon": [
+        6,
+        6,
+        5,
+        4,
+        5,
+        4,
+        3,
+        1,
+        4,
+        6,
+        4,
+        1
+      ],
+      "mars": [
+        2,
+        4,
+        4,
+        2,
+        4,
+        6,
+        1,
+        2,
+        3,
+        3,
+        3,
+        5
+      ],
+      "mercury": [
+        4,
+        4,
+        5,
+        5,
+        4,
+        5,
+        5,
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "jupiter": [
+        1,
+        6,
+        5,
+        5,
+        8,
+        3,
+        4,
+        6,
+        3,
+        3,
+        7,
+        5
+      ],
+      "venus": [
+        3,
+        5,
+        7,
+        5,
+        4,
+        2,
+        5,
+        4,
+        6,
+        3,
+        4,
+        4
+      ],
+      "saturn": [
+        1,
+        5,
+        5,
+        5,
+        4,
+        5,
+        2,
+        1,
+        4,
+        3,
+        2,
+        2
+      ]
+    },
+    "shadbalaRank": {
+      "sun": 6,
+      "moon": 3,
+      "mars": 2,
+      "mercury": 5,
+      "jupiter": 4,
+      "venus": 1,
+      "saturn": 7
+    },
+    "bhavaBalaRank": [
+      7,
+      12,
+      8,
+      5,
+      9,
+      1,
+      10,
+      11,
+      3,
+      2,
+      4,
+      6
     ]
   }
 }

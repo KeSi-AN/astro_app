@@ -710,4 +710,132 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get divisional => 'D-charts';
+
+  @override
+  String get tabStrength => 'Strength';
+
+  @override
+  String get ashtakavarga => 'Ashtakavarga';
+
+  @override
+  String get shadbala => 'Shadbala';
+
+  @override
+  String get bhavaBala => 'Bhava bala';
+
+  @override
+  String get bavTitle => 'Bhinnashtakavarga (bindus per sign)';
+
+  @override
+  String get savTitle => 'Sarvashtakavarga';
+
+  @override
+  String get savByHouse => 'SAV by house from lagna';
+
+  @override
+  String prastaraTitle(Object planet) {
+    return 'Prastara of $planet';
+  }
+
+  @override
+  String get avNote =>
+      'Signs: 1 Aries … 12 Pisces. Total 337. Houses with 28+ bindus are strong.';
+
+  @override
+  String get colTotal => 'Total';
+
+  @override
+  String get contributor => 'From';
+
+  @override
+  String get sthanaBala => 'Sthana bala';
+
+  @override
+  String get uchchaBala => 'Uchcha';
+
+  @override
+  String get saptavargajaBala => 'Saptavargaja';
+
+  @override
+  String get ojayugmaBala => 'Ojayugma';
+
+  @override
+  String get kendradiBala => 'Kendradi';
+
+  @override
+  String get drekkanaBala => 'Drekkana';
+
+  @override
+  String get digBala => 'Dig bala';
+
+  @override
+  String get kalaBala => 'Kala bala';
+
+  @override
+  String get nathonnathaBala => 'Nathonnatha';
+
+  @override
+  String get pakshaBala => 'Paksha';
+
+  @override
+  String get tribhagaBala => 'Tribhaga';
+
+  @override
+  String get abdaBala => 'Abda (year)';
+
+  @override
+  String get masaBala => 'Masa (month)';
+
+  @override
+  String get varaBala => 'Vara (day)';
+
+  @override
+  String get horaBala => 'Hora';
+
+  @override
+  String get ayanaBala => 'Ayana';
+
+  @override
+  String get yuddhaBala => 'Yuddha';
+
+  @override
+  String get cheshtaBala => 'Cheshta bala';
+
+  @override
+  String get naisargikaBala => 'Naisargika bala';
+
+  @override
+  String get drikBala => 'Drik bala';
+
+  @override
+  String get totalVirupas => 'Total (virupas)';
+
+  @override
+  String get totalRupas => 'Total (rupas)';
+
+  @override
+  String get requiredRupas => 'Required (rupas)';
+
+  @override
+  String get strengthRatio => 'Ratio';
+
+  @override
+  String get strengthRank => 'Rank';
+
+  @override
+  String get shadbalaNote =>
+      'Values in virupas (60 = 1 rupa), per BPHS ch. 27 as computed by B.V. Raman. Ratio ≥ 1 means the planet meets its required strength.';
+
+  @override
+  String get bhavaLordStrength => 'Lord\'s shadbala';
+
+  @override
+  String get bhavaDig => 'Dig';
+
+  @override
+  String get bhavaDrishti => 'Drishti';
+
+  @override
+  String get bhavaNote =>
+      'Bhava bala = lord\'s shadbala + directional strength + aspects on the bhava madhya (virupas).';
 }

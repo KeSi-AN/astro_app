@@ -1369,6 +1369,252 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'D-charts'**
   String get divisional;
+
+  /// No description provided for @tabStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Strength'**
+  String get tabStrength;
+
+  /// No description provided for @ashtakavarga.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtakavarga'**
+  String get ashtakavarga;
+
+  /// No description provided for @shadbala.
+  ///
+  /// In en, this message translates to:
+  /// **'Shadbala'**
+  String get shadbala;
+
+  /// No description provided for @bhavaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhava bala'**
+  String get bhavaBala;
+
+  /// No description provided for @bavTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhinnashtakavarga (bindus per sign)'**
+  String get bavTitle;
+
+  /// No description provided for @savTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sarvashtakavarga'**
+  String get savTitle;
+
+  /// No description provided for @savByHouse.
+  ///
+  /// In en, this message translates to:
+  /// **'SAV by house from lagna'**
+  String get savByHouse;
+
+  /// No description provided for @prastaraTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prastara of {planet}'**
+  String prastaraTitle(Object planet);
+
+  /// No description provided for @avNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Signs: 1 Aries … 12 Pisces. Total 337. Houses with 28+ bindus are strong.'**
+  String get avNote;
+
+  /// No description provided for @colTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get colTotal;
+
+  /// No description provided for @contributor.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get contributor;
+
+  /// No description provided for @sthanaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Sthana bala'**
+  String get sthanaBala;
+
+  /// No description provided for @uchchaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Uchcha'**
+  String get uchchaBala;
+
+  /// No description provided for @saptavargajaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Saptavargaja'**
+  String get saptavargajaBala;
+
+  /// No description provided for @ojayugmaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Ojayugma'**
+  String get ojayugmaBala;
+
+  /// No description provided for @kendradiBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Kendradi'**
+  String get kendradiBala;
+
+  /// No description provided for @drekkanaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Drekkana'**
+  String get drekkanaBala;
+
+  /// No description provided for @digBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Dig bala'**
+  String get digBala;
+
+  /// No description provided for @kalaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Kala bala'**
+  String get kalaBala;
+
+  /// No description provided for @nathonnathaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Nathonnatha'**
+  String get nathonnathaBala;
+
+  /// No description provided for @pakshaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Paksha'**
+  String get pakshaBala;
+
+  /// No description provided for @tribhagaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Tribhaga'**
+  String get tribhagaBala;
+
+  /// No description provided for @abdaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Abda (year)'**
+  String get abdaBala;
+
+  /// No description provided for @masaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Masa (month)'**
+  String get masaBala;
+
+  /// No description provided for @varaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Vara (day)'**
+  String get varaBala;
+
+  /// No description provided for @horaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Hora'**
+  String get horaBala;
+
+  /// No description provided for @ayanaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayana'**
+  String get ayanaBala;
+
+  /// No description provided for @yuddhaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Yuddha'**
+  String get yuddhaBala;
+
+  /// No description provided for @cheshtaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Cheshta bala'**
+  String get cheshtaBala;
+
+  /// No description provided for @naisargikaBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Naisargika bala'**
+  String get naisargikaBala;
+
+  /// No description provided for @drikBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Drik bala'**
+  String get drikBala;
+
+  /// No description provided for @totalVirupas.
+  ///
+  /// In en, this message translates to:
+  /// **'Total (virupas)'**
+  String get totalVirupas;
+
+  /// No description provided for @totalRupas.
+  ///
+  /// In en, this message translates to:
+  /// **'Total (rupas)'**
+  String get totalRupas;
+
+  /// No description provided for @requiredRupas.
+  ///
+  /// In en, this message translates to:
+  /// **'Required (rupas)'**
+  String get requiredRupas;
+
+  /// No description provided for @strengthRatio.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratio'**
+  String get strengthRatio;
+
+  /// No description provided for @strengthRank.
+  ///
+  /// In en, this message translates to:
+  /// **'Rank'**
+  String get strengthRank;
+
+  /// No description provided for @shadbalaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Values in virupas (60 = 1 rupa), per BPHS ch. 27 as computed by B.V. Raman. Ratio ≥ 1 means the planet meets its required strength.'**
+  String get shadbalaNote;
+
+  /// No description provided for @bhavaLordStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Lord\'s shadbala'**
+  String get bhavaLordStrength;
+
+  /// No description provided for @bhavaDig.
+  ///
+  /// In en, this message translates to:
+  /// **'Dig'**
+  String get bhavaDig;
+
+  /// No description provided for @bhavaDrishti.
+  ///
+  /// In en, this message translates to:
+  /// **'Drishti'**
+  String get bhavaDrishti;
+
+  /// No description provided for @bhavaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhava bala = lord\'s shadbala + directional strength + aspects on the bhava madhya (virupas).'**
+  String get bhavaNote;
 }
 
 class _AppLocalizationsDelegate

@@ -148,6 +148,24 @@ class SwephEphemeris implements Ephemeris {
   double meanObliquity(double jdUt) => _eclNut(jdUt).latitude;
 
   @override
+  double heliocentricLongitude(double jdUt, Graha graha) => Sweph.swe_calc_ut(
+        jdUt,
+        _bodies[graha]!,
+        SwephFlag.SEFLG_SWIEPH | SwephFlag.SEFLG_HELCTR,
+      ).longitude;
+
+  @override
+  double declination(double jdUt, Graha graha) {
+    final body = graha.isNode ? HeavenlyBody.SE_MEAN_NODE : _bodies[graha]!;
+    final eq = Sweph.swe_calc_ut(
+      jdUt,
+      body,
+      SwephFlag.SEFLG_SWIEPH | SwephFlag.SEFLG_EQUATORIAL,
+    );
+    return graha == Graha.ketu ? -eq.latitude : eq.latitude;
+  }
+
+  @override
   double? sunEvent(double jdUtStart, double latitude, double longitude,
       {required bool rise, SunriseMode mode = SunriseMode.upperLimb}) {
     var rsmi = rise

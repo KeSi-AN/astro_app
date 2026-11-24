@@ -69,6 +69,13 @@ abstract class Ephemeris {
   /// Mean obliquity (without nutation) in degrees.
   double meanObliquity(double jdUt);
 
+  /// Heliocentric tropical longitude of a planet (Mercury–Saturn), used for
+  /// cheshta bala.
+  double heliocentricLongitude(double jdUt, Graha graha);
+
+  /// Equatorial declination in degrees (true, of date).
+  double declination(double jdUt, Graha graha);
+
   /// Next sunrise ([rise] = true) or sunset after [jdUtStart], in JD UT;
   /// null if the Sun doesn't rise/set that day (polar regions).
   double? sunEvent(
