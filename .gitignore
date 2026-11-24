@@ -12,3 +12,5 @@ packages/jyotish_core/native/
 **/android/app/release/
 **/*.keystore
 **/key.properties
+# GeoNames downloads (rebuild with tools/atlas/build_atlas.py)
+tools/atlas/raw/
