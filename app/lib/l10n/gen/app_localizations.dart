@@ -1621,6 +1621,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show SAV bindus in each house'**
   String get showSavOnChart;
+
+  /// No description provided for @tabKp.
+  ///
+  /// In en, this message translates to:
+  /// **'KP'**
+  String get tabKp;
+
+  /// No description provided for @kpAyanamsaSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'KP ayanamsa'**
+  String get kpAyanamsaSetting;
+
+  /// No description provided for @kpPlanets.
+  ///
+  /// In en, this message translates to:
+  /// **'Planets'**
+  String get kpPlanets;
+
+  /// No description provided for @kpCusps.
+  ///
+  /// In en, this message translates to:
+  /// **'Cusps'**
+  String get kpCusps;
+
+  /// No description provided for @kpSignif.
+  ///
+  /// In en, this message translates to:
+  /// **'Significations'**
+  String get kpSignif;
+
+  /// No description provided for @kpRuling.
+  ///
+  /// In en, this message translates to:
+  /// **'Ruling planets'**
+  String get kpRuling;
+
+  /// No description provided for @kpHorary.
+  ///
+  /// In en, this message translates to:
+  /// **'Horary'**
+  String get kpHorary;
+
+  /// No description provided for @colSignLord.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign'**
+  String get colSignLord;
+
+  /// No description provided for @colSubSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Sub-sub'**
+  String get colSubSub;
+
+  /// No description provided for @colHouse.
+  ///
+  /// In en, this message translates to:
+  /// **'House'**
+  String get colHouse;
+
+  /// No description provided for @colL1.
+  ///
+  /// In en, this message translates to:
+  /// **'Star lord occ.'**
+  String get colL1;
+
+  /// No description provided for @colL2.
+  ///
+  /// In en, this message translates to:
+  /// **'Occupies'**
+  String get colL2;
+
+  /// No description provided for @colL3.
+  ///
+  /// In en, this message translates to:
+  /// **'Star lord owns'**
+  String get colL3;
+
+  /// No description provided for @colL4.
+  ///
+  /// In en, this message translates to:
+  /// **'Owns'**
+  String get colL4;
+
+  /// No description provided for @colAllHouses.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get colAllHouses;
+
+  /// No description provided for @houseSignificators.
+  ///
+  /// In en, this message translates to:
+  /// **'House significators'**
+  String get houseSignificators;
+
+  /// No description provided for @colSignificators.
+  ///
+  /// In en, this message translates to:
+  /// **'Planets'**
+  String get colSignificators;
+
+  /// No description provided for @kpSignifNote.
+  ///
+  /// In en, this message translates to:
+  /// **'L1 houses occupied by the star lord, L2 occupied by the planet, L3 owned by the star lord, L4 owned by the planet (Placidus cusps). + = no planet in its stars, or in its own star.'**
+  String get kpSignifNote;
+
+  /// No description provided for @rpAtBirth.
+  ///
+  /// In en, this message translates to:
+  /// **'At birth'**
+  String get rpAtBirth;
+
+  /// No description provided for @rpNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Now (at birth place)'**
+  String get rpNow;
+
+  /// No description provided for @refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get refresh;
+
+  /// No description provided for @rpDayLord.
+  ///
+  /// In en, this message translates to:
+  /// **'Day lord'**
+  String get rpDayLord;
+
+  /// No description provided for @rpAscSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna sign lord'**
+  String get rpAscSign;
+
+  /// No description provided for @rpAscStar.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna star lord'**
+  String get rpAscStar;
+
+  /// No description provided for @rpAscSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna sub lord'**
+  String get rpAscSub;
+
+  /// No description provided for @rpMoonSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon sign lord'**
+  String get rpMoonSign;
+
+  /// No description provided for @rpMoonStar.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon star lord'**
+  String get rpMoonStar;
+
+  /// No description provided for @rpMoonSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon sub lord'**
+  String get rpMoonSub;
+
+  /// No description provided for @horaryNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Horary number (1–249)'**
+  String get horaryNumber;
+
+  /// No description provided for @horaryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Cusps for the moment today when the lagna reaches the start of this number; planets as of now, at the birth place.'**
+  String get horaryHint;
+
+  /// No description provided for @horaryCast.
+  ///
+  /// In en, this message translates to:
+  /// **'Cast horary chart'**
+  String get horaryCast;
+
+  /// No description provided for @horaryAsc.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna {degree}'**
+  String horaryAsc(Object degree);
+
+  /// No description provided for @invalidHorary.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a number from 1 to 249'**
+  String get invalidHorary;
 }
 
 class _AppLocalizationsDelegate

@@ -59,3 +59,17 @@ AstroSage TestChart re-entered through its paste box (Agra 27N10 078E01, 23:21:0
 - Ashtakavarga: all 84 BAV cells match AstroSage exactly; SAV total 337.
 - Shadbala: AstroSage shows ranks only. Ours follows BPHS ch. 27 / B.V. Raman with all components shown. Ranks agree for Sun (6) and Saturn (7); the middle five differ (ours Mo1 Ju2 Me3 Ve4 Ma5, AstroSage Ve1 Ma2 Mo3 Ju4 Me5). Choices: Moon paksha doubled, Sun ayana doubled, cheshta kendra from heliocentric angle, year/month lords from Mesha/sign sankranti weekdays, kendradi by Sripati bhava, Jupiter/Mercury drishti in full.
 - Bhava bala ranks: 7 of 12 houses agree with AstroSage.
+
+## KP (Phase 5, 2026-11-25, fixture 004)
+
+AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Against it, after removing each planet's own ephemeris difference: KP-New (Krishnamurti–Senthilathiban) is 48″ behind, KP-Old (Krishnamurti) 24″ ahead. Our KP default is therefore KP-Old (a separate "KP ayanamsa" setting).
+
+| Item | Result |
+|---|---|
+| Sign, star, sub lords of 9 planets, lagna and 12 cusps | all match |
+| Sub-sub lords | match except Saturn, cusp 2, cusp 8 (sub-subs are minutes wide; AstroSage's Saturn is ~90″ off, cusps ~40″) |
+| Planet significations, 4 levels (Placidus occupancy/ownership, nodes own nothing) | all match |
+| House significators | all match |
+| Ruling planets at birth | all match |
+
+Not yet built: CIL (cuspal interlinks) and 4-step tables, Nakshatra Nadi.

@@ -23,6 +23,7 @@ class AppSettings extends Equatable {
     this.karakaScheme = KarakaScheme.seven,
     this.showOuterPlanets = true,
     this.dashaYear = DashaYear.julian,
+    this.kpAyanamsa = Ayanamsa.kpOld,
   });
 
   final AppLanguage language;
@@ -33,6 +34,9 @@ class AppSettings extends Equatable {
   final KarakaScheme karakaScheme;
   final bool showOuterPlanets;
   final DashaYear dashaYear;
+
+  /// Ayanamsa for KP screens (AstroSage's KP module is closest to KP old).
+  final Ayanamsa kpAyanamsa;
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
@@ -52,6 +56,7 @@ class AppSettings extends Equatable {
     KarakaScheme? karakaScheme,
     bool? showOuterPlanets,
     DashaYear? dashaYear,
+    Ayanamsa? kpAyanamsa,
   }) => AppSettings(
     language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
@@ -61,6 +66,7 @@ class AppSettings extends Equatable {
     karakaScheme: karakaScheme ?? this.karakaScheme,
     showOuterPlanets: showOuterPlanets ?? this.showOuterPlanets,
     dashaYear: dashaYear ?? this.dashaYear,
+    kpAyanamsa: kpAyanamsa ?? this.kpAyanamsa,
   );
 
   Map<String, String> toMap() => {
@@ -72,6 +78,7 @@ class AppSettings extends Equatable {
     'karakaScheme': karakaScheme.name,
     'showOuterPlanets': '$showOuterPlanets',
     'dashaYear': dashaYear.name,
+    'kpAyanamsa': kpAyanamsa.name,
   };
 
   static AppSettings fromMap(Map<String, String> m) {
@@ -93,6 +100,11 @@ class AppSettings extends Equatable {
       karakaScheme: pick(KarakaScheme.values, 'karakaScheme', d.karakaScheme),
       showOuterPlanets: m['showOuterPlanets'] != 'false',
       dashaYear: pick(DashaYear.values, 'dashaYear', d.dashaYear),
+      kpAyanamsa: pick(
+        Ayanamsa.values.where((a) => a != Ayanamsa.user).toList(),
+        'kpAyanamsa',
+        d.kpAyanamsa,
+      ),
     );
   }
 
@@ -106,6 +118,7 @@ class AppSettings extends Equatable {
     karakaScheme,
     showOuterPlanets,
     dashaYear,
+    kpAyanamsa,
   ];
 }
 

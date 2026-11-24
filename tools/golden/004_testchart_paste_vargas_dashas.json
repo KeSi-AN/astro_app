@@ -1,6 +1,6 @@
 {
   "id": "004_testchart_paste_vargas_dashas",
-  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only).",
+  "source": "AstroSage Android v32.6, TestChart re-entered via its 'Type or Paste' box on 2026-11-25 (it picked Agra 27N10 078E01 and dropped the seconds). Screens: REA/astrosage/live/q07 (Shodashvarga table), q08 (Yogini), q09 (Char). Ashtakavarga: q10. Shad/Bhav bala ranks: q11 (AstroSage shows ranks only). KP: k02 (planets), k03 (cusps), k16-k18 (significations), k_rp (ruling planets).",
   "settings": {
     "ayanamsa": "lahiri"
   },
@@ -424,6 +424,361 @@
       2,
       4,
       6
-    ]
+    ],
+    "kp": {
+      "planets": {
+        "lagna": [
+          "119 12 28",
+          "Mo",
+          "Me",
+          "Sa",
+          "Mo"
+        ],
+        "sun": [
+          "217 18 48",
+          "Ma",
+          "Sa",
+          "Me",
+          "Sa"
+        ],
+        "moon": [
+          "025 05 13",
+          "Ma",
+          "Ve",
+          "Me",
+          "Ra"
+        ],
+        "mars": [
+          "124 56 32",
+          "Su",
+          "Ke",
+          "Ma",
+          "Ju"
+        ],
+        "mercury": [
+          "198 06 30",
+          "Ve",
+          "Ra",
+          "Su",
+          "Ve"
+        ],
+        "jupiter": [
+          "122 14 23",
+          "Su",
+          "Ke",
+          "Ve",
+          "Sa"
+        ],
+        "venus": [
+          "180 30 53",
+          "Ve",
+          "Ma",
+          "Me",
+          "Ve"
+        ],
+        "saturn": [
+          "344 01 43",
+          "Ju",
+          "Sa",
+          "Ra",
+          "Me"
+        ],
+        "rahu": [
+          "300 43 07",
+          "Sa",
+          "Ma",
+          "Me",
+          "Su"
+        ],
+        "ketu": [
+          "120 43 07",
+          "Su",
+          "Ke",
+          "Ke",
+          "Me"
+        ]
+      },
+      "cusps": [
+        [
+          "119 12 28",
+          "Mo",
+          "Me",
+          "Sa",
+          "Mo"
+        ],
+        [
+          "144 56 23",
+          "Su",
+          "Ve",
+          "Me",
+          "Mo"
+        ],
+        [
+          "174 30 40",
+          "Me",
+          "Ma",
+          "Ra",
+          "Ju"
+        ],
+        [
+          "206 45 58",
+          "Ve",
+          "Ju",
+          "Ve",
+          "Ve"
+        ],
+        [
+          "239 10 40",
+          "Ma",
+          "Me",
+          "Sa",
+          "Mo"
+        ],
+        [
+          "270 07 07",
+          "Sa",
+          "Su",
+          "Ra",
+          "Me"
+        ],
+        [
+          "299 12 28",
+          "Sa",
+          "Ma",
+          "Sa",
+          "Mo"
+        ],
+        [
+          "324 56 23",
+          "Sa",
+          "Ju",
+          "Me",
+          "Ma"
+        ],
+        [
+          "354 30 40",
+          "Ju",
+          "Me",
+          "Ra",
+          "Ju"
+        ],
+        [
+          "026 45 58",
+          "Ma",
+          "Su",
+          "Su",
+          "Ma"
+        ],
+        [
+          "059 10 40",
+          "Ve",
+          "Ma",
+          "Sa",
+          "Mo"
+        ],
+        [
+          "090 07 07",
+          "Mo",
+          "Ju",
+          "Mo",
+          "Me"
+        ]
+      ],
+      "significations": {
+        "sun": [
+          [
+            8
+          ],
+          [
+            4
+          ],
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            2
+          ]
+        ],
+        "moon": [
+          [
+            3
+          ],
+          [
+            9
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            1,
+            12
+          ]
+        ],
+        "mars": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [],
+          [
+            10,
+            5
+          ]
+        ],
+        "mercury": [
+          [
+            7
+          ],
+          [
+            3
+          ],
+          [],
+          [
+            3
+          ]
+        ],
+        "jupiter": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [],
+          [
+            9
+          ]
+        ],
+        "venus": [
+          [
+            1
+          ],
+          [
+            3
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            11,
+            4
+          ]
+        ],
+        "saturn": [
+          [
+            8
+          ],
+          [
+            8
+          ],
+          [
+            6,
+            7,
+            8
+          ],
+          [
+            6,
+            7,
+            8
+          ]
+        ],
+        "rahu": [
+          [
+            1
+          ],
+          [
+            7
+          ],
+          [
+            10,
+            5
+          ],
+          []
+        ],
+        "ketu": [
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [],
+          []
+        ]
+      },
+      "houseSignificators": [
+        [
+          "Mo",
+          "Ma",
+          "Ju",
+          "Ve",
+          "Ra",
+          "Ke"
+        ],
+        [
+          "Su"
+        ],
+        [
+          "Mo",
+          "Me",
+          "Ve"
+        ],
+        [
+          "Su",
+          "Mo",
+          "Ve"
+        ],
+        [
+          "Ma",
+          "Ve",
+          "Ra"
+        ],
+        [
+          "Su",
+          "Sa"
+        ],
+        [
+          "Su",
+          "Me",
+          "Sa",
+          "Ra"
+        ],
+        [
+          "Su",
+          "Sa"
+        ],
+        [
+          "Mo",
+          "Ju"
+        ],
+        [
+          "Ma",
+          "Ve",
+          "Ra"
+        ],
+        [
+          "Mo",
+          "Ve"
+        ],
+        [
+          "Mo"
+        ]
+      ],
+      "rulingPlanets": {
+        "dayLord": "moon",
+        "ascSignLord": "moon",
+        "ascStarLord": "mercury",
+        "ascSubLord": "saturn",
+        "moonSignLord": "mars",
+        "moonStarLord": "venus",
+        "moonSubLord": "mercury"
+      }
+    }
   }
 }

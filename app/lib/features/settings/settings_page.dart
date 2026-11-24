@@ -80,6 +80,16 @@ class SettingsPage extends StatelessWidget {
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(karakaScheme: v)),
               ),
+              _Choice<Ayanamsa>(
+                title: l10n.kpAyanamsaSetting,
+                value: s.kpAyanamsa,
+                values: Ayanamsa.values
+                    .where((a) => a != Ayanamsa.user)
+                    .toList(),
+                label: t.ayanamsa,
+                onChanged: (v) =>
+                    cubit.update((s) => s.copyWith(kpAyanamsa: v)),
+              ),
               _Choice<DashaYear>(
                 title: l10n.dashaYearSetting,
                 value: s.dashaYear,

@@ -840,4 +840,107 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get showSavOnChart => 'प्रत्येक भाव में सर्वाष्टकवर्ग बिंदु दिखाएँ';
+
+  @override
+  String get tabKp => 'केपी';
+
+  @override
+  String get kpAyanamsaSetting => 'केपी अयनांश';
+
+  @override
+  String get kpPlanets => 'ग्रह';
+
+  @override
+  String get kpCusps => 'भाव संधि';
+
+  @override
+  String get kpSignif => 'कारकत्व';
+
+  @override
+  String get kpRuling => 'शासक ग्रह';
+
+  @override
+  String get kpHorary => 'प्रश्न';
+
+  @override
+  String get colSignLord => 'राशि स्वामी';
+
+  @override
+  String get colSubSub => 'उप-उप';
+
+  @override
+  String get colHouse => 'भाव';
+
+  @override
+  String get colL1 => 'नक्ष. स्वामी स्थिति';
+
+  @override
+  String get colL2 => 'स्थिति';
+
+  @override
+  String get colL3 => 'नक्ष. स्वामी स्वामित्व';
+
+  @override
+  String get colL4 => 'स्वामित्व';
+
+  @override
+  String get colAllHouses => 'सभी';
+
+  @override
+  String get houseSignificators => 'भाव कारक ग्रह';
+
+  @override
+  String get colSignificators => 'ग्रह';
+
+  @override
+  String get kpSignifNote =>
+      'L1 नक्षत्र स्वामी की स्थिति, L2 ग्रह की स्थिति, L3 नक्षत्र स्वामी का स्वामित्व, L4 ग्रह का स्वामित्व (प्लासिडस भाव)। + = इसके नक्षत्र में कोई ग्रह नहीं, या ग्रह अपने ही नक्षत्र में।';
+
+  @override
+  String get rpAtBirth => 'जन्म समय';
+
+  @override
+  String get rpNow => 'अभी (जन्म स्थान पर)';
+
+  @override
+  String get refresh => 'ताज़ा करें';
+
+  @override
+  String get rpDayLord => 'वार स्वामी';
+
+  @override
+  String get rpAscSign => 'लग्न राशि स्वामी';
+
+  @override
+  String get rpAscStar => 'लग्न नक्षत्र स्वामी';
+
+  @override
+  String get rpAscSub => 'लग्न उप स्वामी';
+
+  @override
+  String get rpMoonSign => 'चंद्र राशि स्वामी';
+
+  @override
+  String get rpMoonStar => 'चंद्र नक्षत्र स्वामी';
+
+  @override
+  String get rpMoonSub => 'चंद्र उप स्वामी';
+
+  @override
+  String get horaryNumber => 'प्रश्न संख्या (1–249)';
+
+  @override
+  String get horaryHint =>
+      'आज उस क्षण की भाव संधि जब लग्न इस संख्या के आरंभ पर पहुँचे; ग्रह अभी के, जन्म स्थान पर।';
+
+  @override
+  String get horaryCast => 'प्रश्न कुंडली बनाएँ';
+
+  @override
+  String horaryAsc(Object degree) {
+    return 'लग्न $degree';
+  }
+
+  @override
+  String get invalidHorary => '1 से 249 के बीच संख्या दर्ज करें';
 }

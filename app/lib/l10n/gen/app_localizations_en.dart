@@ -841,4 +841,107 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get showSavOnChart => 'Show SAV bindus in each house';
+
+  @override
+  String get tabKp => 'KP';
+
+  @override
+  String get kpAyanamsaSetting => 'KP ayanamsa';
+
+  @override
+  String get kpPlanets => 'Planets';
+
+  @override
+  String get kpCusps => 'Cusps';
+
+  @override
+  String get kpSignif => 'Significations';
+
+  @override
+  String get kpRuling => 'Ruling planets';
+
+  @override
+  String get kpHorary => 'Horary';
+
+  @override
+  String get colSignLord => 'Sign';
+
+  @override
+  String get colSubSub => 'Sub-sub';
+
+  @override
+  String get colHouse => 'House';
+
+  @override
+  String get colL1 => 'Star lord occ.';
+
+  @override
+  String get colL2 => 'Occupies';
+
+  @override
+  String get colL3 => 'Star lord owns';
+
+  @override
+  String get colL4 => 'Owns';
+
+  @override
+  String get colAllHouses => 'All';
+
+  @override
+  String get houseSignificators => 'House significators';
+
+  @override
+  String get colSignificators => 'Planets';
+
+  @override
+  String get kpSignifNote =>
+      'L1 houses occupied by the star lord, L2 occupied by the planet, L3 owned by the star lord, L4 owned by the planet (Placidus cusps). + = no planet in its stars, or in its own star.';
+
+  @override
+  String get rpAtBirth => 'At birth';
+
+  @override
+  String get rpNow => 'Now (at birth place)';
+
+  @override
+  String get refresh => 'Refresh';
+
+  @override
+  String get rpDayLord => 'Day lord';
+
+  @override
+  String get rpAscSign => 'Lagna sign lord';
+
+  @override
+  String get rpAscStar => 'Lagna star lord';
+
+  @override
+  String get rpAscSub => 'Lagna sub lord';
+
+  @override
+  String get rpMoonSign => 'Moon sign lord';
+
+  @override
+  String get rpMoonStar => 'Moon star lord';
+
+  @override
+  String get rpMoonSub => 'Moon sub lord';
+
+  @override
+  String get horaryNumber => 'Horary number (1–249)';
+
+  @override
+  String get horaryHint =>
+      'Cusps for the moment today when the lagna reaches the start of this number; planets as of now, at the birth place.';
+
+  @override
+  String get horaryCast => 'Cast horary chart';
+
+  @override
+  String horaryAsc(Object degree) {
+    return 'Lagna $degree';
+  }
+
+  @override
+  String get invalidHorary => 'Enter a number from 1 to 249';
 }

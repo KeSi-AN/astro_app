@@ -41,7 +41,8 @@ class GridTable extends StatelessWidget {
           ),
         ),
         children: [
-          TableRow(children: [for (final h in header) cell(h, head)]),
+          if (header.any((h) => h.isNotEmpty))
+            TableRow(children: [for (final h in header) cell(h, head)]),
           for (var r = 0; r < rows.length; r++)
             TableRow(
               children: [
