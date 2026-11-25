@@ -194,3 +194,6 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - Booked a consultation with notes and ₹501. It showed as due (बाकी ₹501), and "Mark paid" turned it to मिला ₹501 ✓.
 - The Today list shows it.
 - Saving a follow-up asks for the notification permission.
+- **2026-11-26:**
+  - A walk-in booked for 02:15 gave an exact alarm at 01:45. The notification "मुलाक़ात: Reminder test" arrived at 01:45:03; check with `adb shell dumpsys notification --noredact | grep astro_app`.
+  - Back up now wrote a valid zip (manifest: schema 3, 3 charts, 1 client, 2 appointments).

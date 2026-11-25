@@ -27,9 +27,9 @@ List<(int id, DateTime at, bool followUp)> reminderTimes(
 
 /// Schedules appointment and follow-up reminders as Android notifications.
 ///
-/// Inexact alarms are used (no exact-alarm permission needed); Android may
-/// deliver them a few minutes late. The notification permission is asked
-/// the first time a reminder is set.
+/// Exact alarms (USE_EXACT_ALARM) so a "30 minutes before" reminder isn't
+/// late; if the phone refuses them, inexact ones (up to an hour late). The
+/// notification permission is asked the first time a reminder is set.
 class Reminders {
   Reminders({FlutterLocalNotificationsPlugin? plugin})
     : _plugin = plugin ?? FlutterLocalNotificationsPlugin();
@@ -67,6 +67,7 @@ class Reminders {
         _asked = true;
         await android?.requestNotificationsPermission();
       }
+      final exact = await android?.canScheduleExactNotifications() ?? false;
       final details = NotificationDetails(
         android: AndroidNotificationDetails(
           _channel,
@@ -81,7 +82,9 @@ class Reminders {
           id: id,
           scheduledDate: tz.TZDateTime.from(at, tz.UTC),
           notificationDetails: details,
-          androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+          androidScheduleMode: exact
+              ? AndroidScheduleMode.exactAllowWhileIdle
+              : AndroidScheduleMode.inexactAllowWhileIdle,
           title: followUp
               ? l10n.followUpReminder(a.who)
               : l10n.appointmentReminder(a.who),

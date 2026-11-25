@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Appointment and follow-up reminders (scheduled, inexact). -->
+    <!-- Appointment and follow-up reminders. USE_EXACT_ALARM is granted
+         automatically to reminder/calendar apps, so they fire on time. -->
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
