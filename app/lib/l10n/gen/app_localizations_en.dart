@@ -1846,4 +1846,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String backupFailed(String error) {
     return 'Backup failed: $error';
   }
+
+  @override
+  String get dashaSystem => 'Dasha system';
+
+  @override
+  String get dashaApplies => 'applies to this chart';
+
+  @override
+  String get dashaNotApplies =>
+      'does not apply to this chart (shown for reference)';
+
+  @override
+  String get dashaApplyUnknown => 'check by hand';
+
+  @override
+  String get otherDashas => 'Other dashas';
+
+  @override
+  String get otherDashasNote =>
+      'Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart.';
 }

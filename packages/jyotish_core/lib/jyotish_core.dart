@@ -4,6 +4,7 @@ library;
 export 'src/chart/chart_analysis.dart';
 export 'src/chart/rasi_chart.dart';
 export 'src/dasha/dasha.dart';
+export 'src/dasha/nakshatra_dashas.dart';
 export 'src/kp/kp.dart';
 export 'src/matching/matching.dart';
 export 'src/ephemeris/ephemeris.dart';

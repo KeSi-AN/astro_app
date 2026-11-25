@@ -555,5 +555,11 @@
   "restoreAction": "वापस लाएँ",
   "notABackup": "यह फ़ाइल इस ऐप का बैकअप नहीं है।",
   "backupTooNew": "यह बैकअप ऐप के नए संस्करण का है। पहले ऐप अपडेट करें।",
-  "backupFailed": "बैकअप नहीं हो सका: {error}"
+  "backupFailed": "बैकअप नहीं हो सका: {error}",
+  "dashaSystem": "दशा पद्धति",
+  "dashaApplies": "इस कुंडली पर लागू",
+  "dashaNotApplies": "इस कुंडली पर लागू नहीं (केवल संदर्भ के लिए)",
+  "dashaApplyUnknown": "स्वयं जाँचें",
+  "otherDashas": "अन्य दशाएँ",
+  "otherDashasNote": "अष्टोत्तरी सदा दिखाई जाती है; सशर्त दशाएँ केवल तब जब उनकी BPHS शर्त इस कुंडली पर पूरी हो।"
 }

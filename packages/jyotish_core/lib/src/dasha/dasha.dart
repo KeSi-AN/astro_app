@@ -90,6 +90,16 @@ List<DashaPeriod<T>> _proportional<T>(
   return out;
 }
 
+/// Splits [p] in proportion to [weight] out of [total], in [order]
+/// starting with [first] (used by the other nakshatra dashas).
+List<DashaPeriod<T>> proportionalSubPeriods<T>(
+  DashaPeriod<T> p,
+  List<T> order,
+  T first,
+  num Function(T) weight,
+  num total,
+) => _proportional(p, order, first, weight, total);
+
 // ---------------------------------------------------------------------------
 // Vimshottari (BPHS ch. 46)
 

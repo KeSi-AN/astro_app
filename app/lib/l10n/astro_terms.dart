@@ -53,6 +53,10 @@ abstract class AstroTerms {
   String month(int m);
   String varga(Varga v);
   String yogini(Yogini y);
+  String nakshatraDasha(NakshatraDashaKind k);
+
+  /// BPHS condition under which [k] applies.
+  String nakshatraDashaRule(NakshatraDashaKind k);
 
   /// 1 = maha … 5 = prana.
   String dashaLevel(int level);
@@ -355,6 +359,24 @@ class EnglishTerms extends AstroTerms {
   @override
   String yogini(Yogini y) => y.label;
   @override
+  String nakshatraDasha(NakshatraDashaKind k) => k.label;
+  @override
+  String nakshatraDashaRule(NakshatraDashaKind k) => switch (k) {
+    NakshatraDashaKind.ashtottari =>
+      'Rahu in a kendra or trikona from the lagna lord, not in lagna',
+    NakshatraDashaKind.shodashottari =>
+      "Lagna in the Moon's hora in Krishna paksha or the Sun's in Shukla (texts differ)",
+    NakshatraDashaKind.dwadashottari => 'Lagna in a navamsha of Venus',
+    NakshatraDashaKind.panchottari => 'Cancer lagna in Cancer dwadashamsha',
+    NakshatraDashaKind.shatabdika => 'Vargottama lagna',
+    NakshatraDashaKind.chaturashitiSama => '10th lord in the 10th house',
+    NakshatraDashaKind.dwisaptatiSama =>
+      'Lagna lord in the 7th, or the 7th lord in lagna',
+    NakshatraDashaKind.shashtihayani => 'Sun in lagna',
+    NakshatraDashaKind.shatTrimshaSama =>
+      "Day birth with lagna in the Sun's hora, or night birth in the Moon's",
+  };
+  @override
   String dashaLevel(int level) => const [
     'Mahadasha',
     'Antardasha',
@@ -605,6 +627,33 @@ class HindiTerms extends AstroTerms {
     Varga.d45: 'अक्षवेदांश',
     Varga.d60: 'षष्ट्यंश',
   }[v]!;
+  @override
+  String nakshatraDasha(NakshatraDashaKind k) => const {
+    NakshatraDashaKind.ashtottari: 'अष्टोत्तरी',
+    NakshatraDashaKind.shodashottari: 'षोडशोत्तरी',
+    NakshatraDashaKind.dwadashottari: 'द्वादशोत्तरी',
+    NakshatraDashaKind.panchottari: 'पंचोत्तरी',
+    NakshatraDashaKind.shatabdika: 'शताब्दिका',
+    NakshatraDashaKind.chaturashitiSama: 'चतुरशीति-सम',
+    NakshatraDashaKind.dwisaptatiSama: 'द्विसप्तति-सम',
+    NakshatraDashaKind.shashtihayani: 'षष्टिहायनी',
+    NakshatraDashaKind.shatTrimshaSama: 'षट्त्रिंशत्-सम',
+  }[k]!;
+  @override
+  String nakshatraDashaRule(NakshatraDashaKind k) => switch (k) {
+    NakshatraDashaKind.ashtottari =>
+      'राहु लग्नेश से केंद्र या त्रिकोण में हो, पर लग्न में नहीं',
+    NakshatraDashaKind.shodashottari =>
+      'कृष्ण पक्ष में लग्न चंद्र होरा में या शुक्ल में सूर्य होरा में (ग्रंथों में मतभेद)',
+    NakshatraDashaKind.dwadashottari => 'लग्न शुक्र के नवांश में',
+    NakshatraDashaKind.panchottari => 'कर्क लग्न, कर्क द्वादशांश में',
+    NakshatraDashaKind.shatabdika => 'वर्गोत्तम लग्न',
+    NakshatraDashaKind.chaturashitiSama => 'दशमेश दशम भाव में',
+    NakshatraDashaKind.dwisaptatiSama => 'लग्नेश सप्तम में या सप्तमेश लग्न में',
+    NakshatraDashaKind.shashtihayani => 'सूर्य लग्न में',
+    NakshatraDashaKind.shatTrimshaSama =>
+      'दिन का जन्म और लग्न सूर्य होरा में, या रात का जन्म और लग्न चंद्र होरा में',
+  };
   @override
   String yogini(Yogini y) => const {
     Yogini.mangala: 'मंगला',

@@ -5,7 +5,34 @@ import '../../../../app/theme.dart';
 import '../../../../l10n/l10n.dart';
 import '../../../settings/settings.dart';
 
-enum DashaKind { vimshottari, yogini, chara }
+/// Dasha systems in the tab: the three AstroSage has, then Ashtottari and
+/// the conditional nakshatra dashas.
+sealed class DashaKind {
+  const DashaKind();
+  static const vimshottari = _Fixed('vimshottari');
+  static const yogini = _Fixed('yogini');
+  static const chara = _Fixed('chara');
+  static final List<DashaKind> all = [
+    vimshottari,
+    yogini,
+    chara,
+    for (final k in NakshatraDashaKind.values) _Nak(k),
+  ];
+}
+
+class _Fixed extends DashaKind {
+  const _Fixed(this.id);
+  final String id;
+}
+
+class _Nak extends DashaKind {
+  const _Nak(this.kind);
+  final NakshatraDashaKind kind;
+  @override
+  bool operator ==(Object o) => o is _Nak && o.kind == kind;
+  @override
+  int get hashCode => kind.hashCode;
+}
 
 /// Dasha timeline: mahadashas with the running period highlighted; tap to
 /// open sub-periods (5 levels for Vimshottari, 3 for Yogini and Chara).
@@ -66,6 +93,13 @@ class _DashaTabState extends State<DashaTab>
         year: year,
       ),
       DashaKind.chara => CharaDasha(chart: c, birthJd: c.jdUt, year: year),
+      _Nak(:final kind) => NakshatraDasha(
+        kind,
+        moonLongitude: moon,
+        birthJd: c.jdUt,
+        year: year,
+      ),
+      _ => throw StateError('unknown dasha'),
     } as DashaSystem<Object>;
   }
 
@@ -174,12 +208,31 @@ class _DashaTabState extends State<DashaTab>
 
     add(sys.mahadashas);
     final path = sys.pathAt(_focus, depth: _depth);
+    final p0 = widget.analysis.panchang;
+    final dayBirth = p0.sunriseJd != null && p0.sunsetJd != null
+        ? c.jdUt >= p0.sunriseJd! && c.jdUt < p0.sunsetJd!
+        : null;
     final note = switch (_kind) {
-      DashaKind.vimshottari => null,
       DashaKind.yogini => l10n.yoginiNote,
       DashaKind.chara => l10n.charaNote(
         (sys as CharaDasha).forward ? l10n.forwards : l10n.backwards,
       ),
+      _Nak(:final kind) => () {
+        final applies = nakshatraDashaApplies(kind, c, dayBirth: dayBirth);
+        return '${t.nakshatraDashaRule(kind)} · ${switch (applies) {
+          true => l10n.dashaApplies,
+          false => l10n.dashaNotApplies,
+          null => l10n.dashaApplyUnknown,
+        }}';
+      }(),
+      _ => null,
+    };
+    String kindLabel(DashaKind k) => switch (k) {
+      DashaKind.vimshottari => l10n.vimshottari,
+      DashaKind.yogini => l10n.yoginiDasha,
+      DashaKind.chara => l10n.charaDasha,
+      _Nak(:final kind) => '${t.nakshatraDasha(kind)} (${kind.totalYears})',
+      _ => '',
     };
 
     return ListView(
@@ -187,24 +240,20 @@ class _DashaTabState extends State<DashaTab>
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: SegmentedButton<DashaKind>(
-            segments: [
-              ButtonSegment(
-                value: DashaKind.vimshottari,
-                label: Text(l10n.vimshottari),
-              ),
-              ButtonSegment(
-                value: DashaKind.yogini,
-                label: Text(l10n.yoginiDasha),
-              ),
-              ButtonSegment(
-                value: DashaKind.chara,
-                label: Text(l10n.charaDasha),
-              ),
+          child: DropdownButtonFormField<DashaKind>(
+            initialValue: _kind,
+            isExpanded: true,
+            decoration: InputDecoration(
+              labelText: l10n.dashaSystem,
+              border: const OutlineInputBorder(),
+              isDense: true,
+            ),
+            items: [
+              for (final k in DashaKind.all)
+                DropdownMenuItem(value: k, child: Text(kindLabel(k))),
             ],
-            selected: {_kind},
-            onSelectionChanged: (v) => setState(() {
-              _kind = v.first;
+            onChanged: (v) => setState(() {
+              _kind = v!;
               _open.clear();
               _openPathAt(_focus);
             }),

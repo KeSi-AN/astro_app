@@ -1841,4 +1841,23 @@ class AppLocalizationsHi extends AppLocalizations {
   String backupFailed(String error) {
     return 'बैकअप नहीं हो सका: $error';
   }
+
+  @override
+  String get dashaSystem => 'दशा पद्धति';
+
+  @override
+  String get dashaApplies => 'इस कुंडली पर लागू';
+
+  @override
+  String get dashaNotApplies => 'इस कुंडली पर लागू नहीं (केवल संदर्भ के लिए)';
+
+  @override
+  String get dashaApplyUnknown => 'स्वयं जाँचें';
+
+  @override
+  String get otherDashas => 'अन्य दशाएँ';
+
+  @override
+  String get otherDashasNote =>
+      'अष्टोत्तरी सदा दिखाई जाती है; सशर्त दशाएँ केवल तब जब उनकी BPHS शर्त इस कुंडली पर पूरी हो।';
 }

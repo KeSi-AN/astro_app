@@ -912,5 +912,11 @@
         "type": "String"
       }
     }
-  }
+  },
+  "dashaSystem": "Dasha system",
+  "dashaApplies": "applies to this chart",
+  "dashaNotApplies": "does not apply to this chart (shown for reference)",
+  "dashaApplyUnknown": "check by hand",
+  "otherDashas": "Other dashas",
+  "otherDashasNote": "Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart."
 }

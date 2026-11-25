@@ -89,6 +89,17 @@ class _Data {
       vim = VimshottariDasha(moonLongitude: moon, birthJd: c.jdUt, year: s.dashaYear);
       yogini = YoginiDasha(moonLongitude: moon, birthJd: c.jdUt, year: s.dashaYear);
       chara = CharaDasha(chart: c, birthJd: c.jdUt, year: s.dashaYear);
+      final p = a.panchang;
+      final dayBirth = p.sunriseJd != null && p.sunsetJd != null
+          ? c.jdUt >= p.sunriseJd! && c.jdUt < p.sunsetJd!
+          : null;
+      // Ashtottari always; the conditional ones only when they apply.
+      otherDashas = [
+        for (final k in NakshatraDashaKind.values)
+          if (k == NakshatraDashaKind.ashtottari ||
+              nakshatraDashaApplies(k, c, dayBirth: dayBirth) == true)
+            NakshatraDasha(k, moonLongitude: moon, birthJd: c.jdUt, year: s.dashaYear),
+      ];
     }
     if (has(ReportSection.ashtakavarga)) av = Ashtakavarga.of(c);
     if (has(ReportSection.shadbala)) sb = Shadbala.of(a, i.ephemeris);
@@ -104,6 +115,7 @@ class _Data {
   VimshottariDasha? vim;
   YoginiDasha? yogini;
   CharaDasha? chara;
+  List<NakshatraDasha> otherDashas = const [];
   Ashtakavarga? av;
   Shadbala? sb;
   KpChart? kp;
@@ -607,6 +619,60 @@ class _Builder {
           ),
         ],
       ),
+      ..._otherDashas(),
+    ];
+  }
+
+  /// Ashtottari and the conditional dashas that apply, two per row.
+  List<pw.Widget> _otherDashas() {
+    final now = _now;
+    const half = (contentWidth - 14) / 2;
+    pw.Widget one(NakshatraDasha sys) {
+      final mahas = sys.mahadashas
+          .where((p) => p.start < a.chart.jdUt + 120 * 365.25)
+          .toList();
+      final running = mahas.indexWhere((p) => p.contains(now));
+      return pw.SizedBox(
+        width: half,
+        child: pw.Column(
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
+          children: [
+            r.subheading('${t.nakshatraDasha(sys.kind)} (${sys.kind.totalYears})'),
+            r.table(
+              ['', l10n.colFrom, l10n.colTo],
+              [
+                for (final p in mahas)
+                  [t.graha(p.lord), date(p.start), date(p.end)],
+              ],
+              widths: const [half - 120, 60, 60],
+              size: 7.5,
+              boldRow: (row) => row == running,
+              color: (row, _) => row == running ? ReportColors.accent : null,
+            ),
+            if (sys.kind != NakshatraDashaKind.ashtottari)
+              r.note(t.nakshatraDashaRule(sys.kind), width: half),
+          ],
+        ),
+      );
+    }
+
+    final list = d.otherDashas;
+    return [
+      pw.NewPage(),
+      r.heading(l10n.otherDashas),
+      for (var n = 0; n < list.length; n += 2)
+        pw.Padding(
+          padding: const pw.EdgeInsets.only(bottom: 8),
+          child: pw.Row(
+            crossAxisAlignment: pw.CrossAxisAlignment.start,
+            children: [
+              one(list[n]),
+              pw.SizedBox(width: 14),
+              if (n + 1 < list.length) one(list[n + 1]) else pw.SizedBox(width: half),
+            ],
+          ),
+        ),
+      r.note(l10n.otherDashasNote),
     ];
   }
 

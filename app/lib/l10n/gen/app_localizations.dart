@@ -3438,6 +3438,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Backup failed: {error}'**
   String backupFailed(String error);
+
+  /// No description provided for @dashaSystem.
+  ///
+  /// In en, this message translates to:
+  /// **'Dasha system'**
+  String get dashaSystem;
+
+  /// No description provided for @dashaApplies.
+  ///
+  /// In en, this message translates to:
+  /// **'applies to this chart'**
+  String get dashaApplies;
+
+  /// No description provided for @dashaNotApplies.
+  ///
+  /// In en, this message translates to:
+  /// **'does not apply to this chart (shown for reference)'**
+  String get dashaNotApplies;
+
+  /// No description provided for @dashaApplyUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'check by hand'**
+  String get dashaApplyUnknown;
+
+  /// No description provided for @otherDashas.
+  ///
+  /// In en, this message translates to:
+  /// **'Other dashas'**
+  String get otherDashas;
+
+  /// No description provided for @otherDashasNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart.'**
+  String get otherDashasNote;
 }
 
 class _AppLocalizationsDelegate
