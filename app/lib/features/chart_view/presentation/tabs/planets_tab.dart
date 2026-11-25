@@ -1,6 +1,8 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../app/theme.dart';
+
 import '../../../../l10n/l10n.dart';
 import '../../domain/report_rows.dart';
 import 'graha_sheet.dart';
@@ -28,8 +30,8 @@ class PlanetsTab extends StatelessWidget {
             return switch (d) {
               Dignity.exalted ||
               Dignity.moolatrikona ||
-              Dignity.own => const Color(0xFF81C784),
-              Dignity.debilitated => const Color(0xFFE57373),
+              Dignity.own => context.look.good,
+              Dignity.debilitated => context.look.bad,
               _ => null,
             };
           },

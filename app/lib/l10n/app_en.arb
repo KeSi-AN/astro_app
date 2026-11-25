@@ -1042,5 +1042,16 @@
   "sutakKidsLabel": "Sutak for children, the old and sick",
   "eclipseNote": "Sutak: 12 hours before a solar eclipse, 9 hours before a lunar one, until it ends; only where the eclipse is visible.",
   "nakshatraShoolLabel": "Nakshatra Shool",
-  "nationalNirayanaDateLabel": "National nirayana date"
+  "nationalNirayanaDateLabel": "National nirayana date",
+  "uiLookSetting": "Look",
+  "uiLookSaffron": "Saffron (almanac)",
+  "uiLookNight": "Night (dark)",
+  "vikramSamvatLine": "{year} Vikram Samvat",
+  "@vikramSamvatLine": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  }
 }

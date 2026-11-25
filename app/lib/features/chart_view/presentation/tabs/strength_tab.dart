@@ -1,6 +1,8 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../app/theme.dart';
+
 import '../../../../l10n/l10n.dart';
 import '../../domain/report_rows.dart';
 import 'table_widgets.dart';
@@ -78,8 +80,8 @@ class _StrengthTabState extends State<StrengthTab>
     final sav = _av.sav;
     final lagna = widget.analysis.chart.lagna.rashi.index;
     Color? strong(int v) => v >= 28
-        ? const Color(0xFF81C784)
-        : (v < 25 ? const Color(0xFFE57373) : null);
+        ? context.look.good
+        : (v < 25 ? context.look.bad : null);
     const contributors = [
       Graha.sun,
       Graha.moon,
@@ -168,8 +170,8 @@ class _StrengthTabState extends State<StrengthTab>
           if (c == 0) return null;
           if (r == rows.length - 2) {
             return s[g[c - 1]]!.ratio >= 1
-                ? const Color(0xFF81C784)
-                : const Color(0xFFE57373);
+                ? context.look.good
+                : context.look.bad;
           }
           if (r >= totalsFrom || rows[r][0].startsWith('=')) {
             return Theme.of(context).colorScheme.primary;

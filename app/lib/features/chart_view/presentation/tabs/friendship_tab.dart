@@ -1,6 +1,8 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../app/theme.dart';
+
 import '../../../../l10n/l10n.dart';
 import 'table_widgets.dart';
 
@@ -21,10 +23,10 @@ class FriendshipTab extends StatelessWidget {
         [for (final c in sevenGrahas) r == c ? null : f(r, c)],
     ];
     Color? colour(Relation? r) => switch (r) {
-      Relation.greatFriend => const Color(0xFF81C784),
-      Relation.friend => const Color(0xFFA5D6A7),
-      Relation.enemy => const Color(0xFFEF9A9A),
-      Relation.greatEnemy => const Color(0xFFE57373),
+      Relation.greatFriend => context.look.good,
+      Relation.friend => context.look.goodSoft,
+      Relation.enemy => context.look.badSoft,
+      Relation.greatEnemy => context.look.bad,
       _ => null,
     };
     Widget section(String title, List<List<Relation?>> grid) {

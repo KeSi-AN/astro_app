@@ -1,6 +1,7 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/theme.dart';
 import '../../../l10n/l10n.dart';
 import '../domain/chart_plate.dart';
 import 'chart_geometry.dart';
@@ -16,15 +17,18 @@ class ChartColors {
     required this.background,
   });
 
-  factory ChartColors.of(ThemeData t) => ChartColors(
-    line: t.colorScheme.primary,
-    text: t.colorScheme.onSurface,
-    number: t.colorScheme.primary.withValues(alpha: 0.8),
-    lagna: t.colorScheme.primary,
-    malefic: const Color(0xFFE57373),
-    benefic: const Color(0xFF81C784),
-    background: t.colorScheme.surface,
-  );
+  factory ChartColors.of(ThemeData t) {
+    final look = t.extension<AppLook>() ?? AppLook.nightLook;
+    return ChartColors(
+      line: look.chartLine,
+      text: t.colorScheme.onSurface,
+      number: look.chartLine.withValues(alpha: 0.8),
+      lagna: t.colorScheme.primary,
+      malefic: look.bad,
+      benefic: look.good,
+      background: t.colorScheme.surface,
+    );
+  }
 
   final Color line, text, number, lagna, malefic, benefic, background;
 }

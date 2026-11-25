@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/widgets.dart' show Locale;
 import 'package:jyotish_core/jyotish_core.dart';
 
+import '../../app/theme.dart';
 import '../../core/db/app_database.dart';
 import '../chart_view/presentation/chart_geometry.dart';
 
@@ -26,6 +27,7 @@ class AppSettings extends Equatable {
     this.kpAyanamsa = Ayanamsa.kpOld,
     this.panchangPlace = '',
     this.letterhead = const Letterhead(),
+    this.uiLook = UiLook.saffron,
   });
 
   final AppLanguage language;
@@ -45,6 +47,9 @@ class AppSettings extends Equatable {
 
   /// The astrologer's details printed on PDF kundlis.
   final Letterhead letterhead;
+
+  /// Saffron (almanac) or the original dark look.
+  final UiLook uiLook;
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
@@ -67,6 +72,7 @@ class AppSettings extends Equatable {
     Ayanamsa? kpAyanamsa,
     String? panchangPlace,
     Letterhead? letterhead,
+    UiLook? uiLook,
   }) => AppSettings(
     language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
@@ -79,6 +85,7 @@ class AppSettings extends Equatable {
     kpAyanamsa: kpAyanamsa ?? this.kpAyanamsa,
     panchangPlace: panchangPlace ?? this.panchangPlace,
     letterhead: letterhead ?? this.letterhead,
+    uiLook: uiLook ?? this.uiLook,
   );
 
   Map<String, String> toMap() => {
@@ -93,6 +100,7 @@ class AppSettings extends Equatable {
     'kpAyanamsa': kpAyanamsa.name,
     'panchangPlace': panchangPlace,
     ...letterhead.toMap(),
+    'uiLook': uiLook.name,
   };
 
   static AppSettings fromMap(Map<String, String> m) {
@@ -121,6 +129,7 @@ class AppSettings extends Equatable {
       ),
       panchangPlace: m['panchangPlace'] ?? '',
       letterhead: Letterhead.fromMap(m),
+      uiLook: pick(UiLook.values, 'uiLook', d.uiLook),
     );
   }
 
@@ -137,6 +146,7 @@ class AppSettings extends Equatable {
     kpAyanamsa,
     panchangPlace,
     letterhead,
+    uiLook,
   ];
 }
 

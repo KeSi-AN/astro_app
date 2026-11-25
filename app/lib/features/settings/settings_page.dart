@@ -5,6 +5,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../chart_view/presentation/chart_geometry.dart';
 import '../../app/router.dart';
+import '../../app/theme.dart';
 import '../../l10n/l10n.dart';
 import 'settings.dart';
 
@@ -34,6 +35,16 @@ class SettingsPage extends StatelessWidget {
                   AppLanguage.hindi => 'हिंदी',
                 },
                 onChanged: (v) => cubit.update((s) => s.copyWith(language: v)),
+              ),
+              _Choice<UiLook>(
+                title: l10n.uiLookSetting,
+                value: s.uiLook,
+                values: UiLook.values,
+                label: (v) => switch (v) {
+                  UiLook.saffron => l10n.uiLookSaffron,
+                  UiLook.night => l10n.uiLookNight,
+                },
+                onChanged: (v) => cubit.update((s) => s.copyWith(uiLook: v)),
               ),
               _Choice<ChartStyle>(
                 title: l10n.chartStyle,

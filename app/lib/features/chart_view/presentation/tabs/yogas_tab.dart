@@ -92,7 +92,7 @@ class _YogasTabState extends State<YogasTab>
       final (text, color) = y.present
           ? (
               l10n.present,
-              y.isDosha ? const Color(0xFFE57373) : const Color(0xFF81C784),
+              y.isDosha ? context.look.bad : context.look.good,
             )
           : y.cancelled
           ? (l10n.cancelled, theme.colorScheme.primary)

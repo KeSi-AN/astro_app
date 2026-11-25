@@ -13,6 +13,7 @@ import '../atlas/domain/place.dart';
 import '../atlas/presentation/place_search_page.dart';
 import '../chart_view/presentation/tabs/table_widgets.dart';
 import '../settings/settings.dart';
+import 'panchang_banner.dart';
 
 enum _Sec {
   day,
@@ -127,7 +128,26 @@ class _PanchangPageState extends State<PanchangPage> {
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
-        Row(
+        if (context.look.saffron)
+          PanchangBanner(
+            day: d,
+            calc: calc,
+            placeName: '${place.displayName} · ${formatOffset(pp.utcOffsetHours)}',
+            notes: _bannerNotes(context, d, calc, pp, settings),
+            onPrev: () => setState(() => _date = _date.subtract(const Duration(days: 1))),
+            onNext: () => setState(() => _date = _date.add(const Duration(days: 1))),
+            onPick: () async {
+              final p = await showDatePicker(
+                context: context,
+                initialDate: _date,
+                firstDate: DateTime(1800),
+                lastDate: DateTime(2399, 12, 31),
+              );
+              if (p != null) setState(() => _date = DateTime.utc(p.year, p.month, p.day));
+            },
+          )
+        else
+          Row(
           children: [
             IconButton(
               icon: const Icon(Icons.chevron_left),
@@ -223,6 +243,36 @@ class _PanchangPageState extends State<PanchangPage> {
         },
       ],
     );
+  }
+
+  /// Festivals of the day, then its notable yogas (as Drik's banner).
+  List<String> _bannerNotes(
+    BuildContext context,
+    DayPanchang d,
+    PanchangCalc calc,
+    PanchangPlace pp,
+    AppSettings settings,
+  ) {
+    final t = context.terms;
+    final key = (_date.year, pp.latitude, pp.longitude, settings.sunriseMode);
+    if (_festivalKey != key) {
+      _festivalKey = key;
+      _festivals = festivalsOfYear(calc, pp, _date.year, sunriseMode: settings.sunriseMode);
+    }
+    const shown = {
+      SpecialTime.sarvarthaSiddhi, SpecialTime.amritaSiddhi, SpecialTime.raviYoga,
+      SpecialTime.raviPushya, SpecialTime.guruPushya, SpecialTime.dwipushkar,
+      SpecialTime.tripushkar, SpecialTime.gandaMoola, SpecialTime.aadal, SpecialTime.vidaal,
+    };
+    return [
+      for (final f in _festivals!)
+        if (f.date == _date) t.festival(f.id),
+      if (bhadra(calc, d.sunrise, d.nextSunrise).isNotEmpty) context.l10n.bhadraLabel,
+      ...{
+        for (final x in specialTimes(calc, d))
+          if (shown.contains(x.value)) t.specialTime(x.value),
+      },
+    ];
   }
 
   String _time(DayPanchang d, double jd) {
@@ -538,7 +588,7 @@ class _PanchangPageState extends State<PanchangPage> {
             ],
         ],
         highlight: (r, c) => c == 2
-            ? (isGoodGowri(g[r].value) ? const Color(0xFF81C784) : const Color(0xFFE57373))
+            ? (isGoodGowri(g[r].value) ? context.look.good : context.look.bad)
             : null,
       ),
     ];
@@ -564,7 +614,7 @@ class _PanchangPageState extends State<PanchangPage> {
             ],
         ],
         highlight: (r, c) => c == 1
-            ? (p[r].value == null ? const Color(0xFF81C784) : const Color(0xFFE57373))
+            ? (p[r].value == null ? context.look.good : context.look.bad)
             : null,
       ),
       const SizedBox(height: 6),
@@ -577,8 +627,8 @@ class _PanchangPageState extends State<PanchangPage> {
     final t = context.terms;
     final signs = moonSignSpans(calc, d.sunrise, d.nextSunrise);
     Color? balaColor(Bala b) => switch (b) {
-      Bala.good => const Color(0xFF81C784),
-      Bala.bad => const Color(0xFFE57373),
+      Bala.good => context.look.good,
+      Bala.bad => context.look.bad,
       Bala.pujaNeeded => Theme.of(context).colorScheme.primary,
     };
     final naks = d.nakshatras;
@@ -619,8 +669,8 @@ class _PanchangPageState extends State<PanchangPage> {
           if (c == 0) return null;
           final g = taraGrade[tarabalam(row, naks[c - 1].index - 1)]!;
           return g.contains('ood') && g != 'notGood'
-              ? const Color(0xFF81C784)
-              : const Color(0xFFE57373);
+              ? context.look.good
+              : context.look.bad;
         },
       ),
     ];
@@ -671,8 +721,8 @@ class _PanchangPageState extends State<PanchangPage> {
           if (ch[r].contains(now)) return Theme.of(context).colorScheme.primary;
           if (c == 3) {
             return isGoodChogadia(ch[r].value)
-                ? const Color(0xFF81C784)
-                : const Color(0xFFE57373);
+                ? context.look.good
+                : context.look.bad;
           }
           return null;
         },
@@ -702,8 +752,8 @@ class _PanchangPageState extends State<PanchangPage> {
           if (mu[r].contains(now)) return Theme.of(context).colorScheme.primary;
           if (c == 3) {
             return goodMuhurtas.contains(mu[r].value)
-                ? const Color(0xFF81C784)
-                : const Color(0xFFE57373);
+                ? context.look.good
+                : context.look.bad;
           }
           return null;
         },

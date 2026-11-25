@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/theme.dart';
+
 import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../../l10n/l10n.dart';
@@ -93,7 +95,7 @@ class AppointmentTile extends StatelessWidget {
                   '${formatMoney(fee)}${a.paid ? ' ✓' : ''}',
                   style: TextStyle(
                     fontSize: 12,
-                    color: a.paid ? const Color(0xFF81C784) : const Color(0xFFE57373),
+                    color: a.paid ? context.look.good : context.look.bad,
                   ),
                 ),
             ],

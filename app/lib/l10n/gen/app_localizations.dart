@@ -3924,6 +3924,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'National nirayana date'**
   String get nationalNirayanaDateLabel;
+
+  /// No description provided for @uiLookSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Look'**
+  String get uiLookSetting;
+
+  /// No description provided for @uiLookSaffron.
+  ///
+  /// In en, this message translates to:
+  /// **'Saffron (almanac)'**
+  String get uiLookSaffron;
+
+  /// No description provided for @uiLookNight.
+  ///
+  /// In en, this message translates to:
+  /// **'Night (dark)'**
+  String get uiLookNight;
+
+  /// No description provided for @vikramSamvatLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{year} Vikram Samvat'**
+  String vikramSamvatLine(String year);
 }
 
 class _AppLocalizationsDelegate

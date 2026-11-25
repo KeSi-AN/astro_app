@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/theme.dart';
+
 import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../../l10n/l10n.dart';
@@ -131,7 +133,7 @@ class _ClientTile extends StatelessWidget {
           if (summary.unpaid > 0)
             Text(
               l10n.dueAmount(formatMoney(summary.unpaid)),
-              style: const TextStyle(fontSize: 12, color: Color(0xFFE57373)),
+              style: TextStyle(fontSize: 12, color: context.look.bad),
             ),
         ],
       ),

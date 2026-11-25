@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/theme.dart';
+
 import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../../l10n/l10n.dart';
@@ -173,7 +175,7 @@ class _Unpaid extends StatelessWidget {
               trailing: Text(
                 formatMoney(total),
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: total > 0 ? const Color(0xFFE57373) : null,
+                  color: total > 0 ? context.look.bad : null,
                 ),
               ),
             ),

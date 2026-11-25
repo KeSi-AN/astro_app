@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
+
+import '../../../app/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/router.dart';
@@ -296,7 +298,7 @@ class _Detail extends StatelessWidget {
                           if (due > 0) l10n.dueAmount(formatMoney(due)),
                         ].join(' · '),
                         style: TextStyle(
-                          color: due > 0 ? const Color(0xFFE57373) : theme.colorScheme.onSurfaceVariant,
+                          color: due > 0 ? context.look.bad : theme.colorScheme.onSurfaceVariant,
                         ),
                       ),
                     ),

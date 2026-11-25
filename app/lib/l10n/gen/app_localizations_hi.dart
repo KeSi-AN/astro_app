@@ -2102,4 +2102,18 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get nationalNirayanaDateLabel => 'राष्ट्रीय निरयण तिथि';
+
+  @override
+  String get uiLookSetting => 'रंग-रूप';
+
+  @override
+  String get uiLookSaffron => 'केसरिया (पंचांग जैसा)';
+
+  @override
+  String get uiLookNight => 'रात्रि (गहरा)';
+
+  @override
+  String vikramSamvatLine(String year) {
+    return 'विक्रम संवत् $year';
+  }
 }

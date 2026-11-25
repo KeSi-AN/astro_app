@@ -2108,4 +2108,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get nationalNirayanaDateLabel => 'National nirayana date';
+
+  @override
+  String get uiLookSetting => 'Look';
+
+  @override
+  String get uiLookSaffron => 'Saffron (almanac)';
+
+  @override
+  String get uiLookNight => 'Night (dark)';
+
+  @override
+  String vikramSamvatLine(String year) {
+    return '$year Vikram Samvat';
+  }
 }

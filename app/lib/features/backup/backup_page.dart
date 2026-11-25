@@ -3,6 +3,8 @@ import 'dart:typed_data';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_ui/material_ui.dart';
+
+import '../../app/theme.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../app/app.dart';
@@ -130,7 +132,7 @@ class _BackupPageState extends State<BackupPage> {
                   : l10n.lastBackup('${formatDay(context, last)} ${formatClock(last)}'),
               style: TextStyle(
                 color: last == null || DateTime.now().difference(last).inDays > 7
-                    ? const Color(0xFFE57373)
+                    ? context.look.bad
                     : theme.colorScheme.onSurfaceVariant,
               ),
             ),

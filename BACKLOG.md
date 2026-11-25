@@ -124,3 +124,8 @@ Teardown: `docs/DRIK_PANCHANG_TEARDOWN.md`.
 - [ ] **Rahu Vasa on Wednesday** (South-West) is inferred from the pattern, not seen in Drik.
 - [ ] **Baana times** come 4–6 minutes before Drik's, because Drik's Lahiri is about 16″ higher than ours (see DIVERGENCES).
 - [ ] **Hindi names** for the Gowri and Anandadi yogas are our transliterations; ask the astrologer if they use other names.
+
+## Saffron (Drik-like) look (branch `drik-style-ui`, 2026-11-26)
+- [ ] **Merge decision.** The new look lives on the `drik-style-ui` branch; `main` and the tag `pre-drik-ui` are the version before it. To keep it: merge the branch into main. To undo: stay on main, or `git checkout pre-drik-ui`. In the app, Settings → रंग-रूप (Look) → रात्रि (Night) brings back the old dark screens without reinstalling.
+- [ ] **Not restyled yet:** the PDF kundli (it has its own colours) and dialogs and pickers, which use Material defaults on cream.
+- [ ] **[astrologer]** Ask if she prefers Saffron or Night, and whether the text is large enough.

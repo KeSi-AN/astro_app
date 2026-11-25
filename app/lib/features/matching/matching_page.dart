@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../app/theme.dart';
+
 import '../../app/services.dart';
 import '../../core/format/formatters.dart';
 import '../../l10n/l10n.dart';
@@ -154,8 +156,8 @@ class _MatchingPageState extends State<MatchingPage> {
       PoruthamResult.bad => l10n.resultBad,
     };
     Color? resColor(PoruthamResult r) => switch (r) {
-      PoruthamResult.good => const Color(0xFF81C784),
-      PoruthamResult.bad => const Color(0xFFE57373),
+      PoruthamResult.good => context.look.good,
+      PoruthamResult.bad => context.look.bad,
       _ => null,
     };
     final porRows = Porutham.values.toList();
@@ -169,8 +171,8 @@ class _MatchingPageState extends State<MatchingPage> {
                 l10n.totalGunas(fmt(total)),
                 style: theme.textTheme.headlineSmall?.copyWith(
                   color: good
-                      ? const Color(0xFF81C784)
-                      : const Color(0xFFE57373),
+                      ? context.look.good
+                      : context.look.bad,
                 ),
               ),
               const SizedBox(height: 4),
@@ -211,8 +213,8 @@ class _MatchingPageState extends State<MatchingPage> {
         highlight: (r, c) {
           if (c != 4) return null;
           final k = m.kootas[r];
-          if (k.points == 0) return const Color(0xFFE57373);
-          if (k.points == k.koota.max) return const Color(0xFF81C784);
+          if (k.points == 0) return context.look.bad;
+          if (k.points == k.koota.max) return context.look.good;
           return null;
         },
       ),

@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 
+import '../../../app/theme.dart';
 import '../../../core/format/formatters.dart';
 import '../../../l10n/l10n.dart';
 import '../domain/appointment.dart';
@@ -38,7 +39,7 @@ String statusLabel(AppLocalizations l10n, AppointmentStatus s) => switch (s) {
 
 Color statusColor(ThemeData t, AppointmentStatus s) => switch (s) {
   AppointmentStatus.scheduled => t.colorScheme.primary,
-  AppointmentStatus.done => const Color(0xFF81C784),
+  AppointmentStatus.done => (t.extension<AppLook>() ?? AppLook.nightLook).good,
   AppointmentStatus.cancelled => t.colorScheme.outline,
-  AppointmentStatus.missed => const Color(0xFFE57373),
+  AppointmentStatus.missed => (t.extension<AppLook>() ?? AppLook.nightLook).bad,
 };

@@ -636,5 +636,9 @@
   "sutakKidsLabel": "बालक, वृद्ध, रोगी हेतु सूतक",
   "eclipseNote": "सूतक: सूर्य ग्रहण से 12 घंटे और चन्द्र ग्रहण से 9 घंटे पहले से ग्रहण समाप्ति तक; केवल जहाँ ग्रहण दिखे।",
   "nakshatraShoolLabel": "नक्षत्र शूल",
-  "nationalNirayanaDateLabel": "राष्ट्रीय निरयण तिथि"
+  "nationalNirayanaDateLabel": "राष्ट्रीय निरयण तिथि",
+  "uiLookSetting": "रंग-रूप",
+  "uiLookSaffron": "केसरिया (पंचांग जैसा)",
+  "uiLookNight": "रात्रि (गहरा)",
+  "vikramSamvatLine": "विक्रम संवत् {year}"
 }

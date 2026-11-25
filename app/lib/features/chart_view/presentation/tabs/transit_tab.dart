@@ -1,6 +1,8 @@
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../app/theme.dart';
+
 import '../../../../core/format/formatters.dart';
 import '../../../../l10n/l10n.dart';
 import '../../../settings/settings.dart';
@@ -117,9 +119,9 @@ class _TransitTabState extends State<TransitTab>
       GocharaResult.bad => l10n.gocharaBad,
     };
     Color? gocharaColor(TransitInfo i) => switch (i.gochara) {
-      GocharaResult.good => const Color(0xFF81C784),
+      GocharaResult.good => context.look.good,
       GocharaResult.goodButVedha => Theme.of(context).colorScheme.primary,
-      GocharaResult.bad => const Color(0xFFE57373),
+      GocharaResult.bad => context.look.bad,
     };
 
     return ListView(
@@ -232,8 +234,8 @@ class _TransitTabState extends State<TransitTab>
             if (c == 7) return gocharaColor(i);
             if (c == 5) {
               return i.savBindus >= 28
-                  ? const Color(0xFF81C784)
-                  : (i.savBindus < 25 ? const Color(0xFFE57373) : null);
+                  ? context.look.good
+                  : (i.savBindus < 25 ? context.look.bad : null);
             }
             return null;
           },

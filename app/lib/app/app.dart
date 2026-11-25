@@ -71,10 +71,10 @@ class _AstroAppState extends State<AstroApp> {
           child: BlocProvider(
             create: (_) => SettingsCubit(services.settings),
             child: BlocBuilder<SettingsCubit, AppSettings>(
-              buildWhen: (a, b) => a.language != b.language,
+              buildWhen: (a, b) => a.language != b.language || a.uiLook != b.uiLook,
               builder: (context, s) => MaterialApp.router(
                 title: 'Astro',
-                theme: appTheme(),
+                theme: appTheme(s.uiLook),
                 debugShowCheckedModeBanner: false,
                 locale: s.locale,
                 // material_ui's own delegates (Flutter's flutter_localizations ones
