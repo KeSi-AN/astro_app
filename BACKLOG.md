@@ -50,3 +50,11 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Guru Chandala** shows "present" for TestChart (Jupiter with Ketu in Leo); AstroSage doesn't list this yoga at all, so it can't be compared.
 - [ ] **More yogas.** About 30 are implemented (all with their source). The plan mentioned ~40; add the ones the astrologer uses most (e.g. Lakshmi, Shubha/Papa Kartari, Nabhasa yogas).
 - [ ] **Mangal dosha cancellation rules** vary by tradition; ours: Mars own/exalted, with Jupiter, with Moon, and the house-and-sign exceptions. **[astrologer]** confirm the list.
+
+## Phase 7: Panchang and muhurta
+- [ ] **[phone] Check against AstroSage** (phone was disconnected while Phase 7 was built): tithi/nakshatra/yoga/karana end times, sunrise/sunset, moonrise/moonset, Rahu Kaal, hora, chogadia, Do Ghati/muhurta, lagna table, Panchak, Bhadra, and the vrat lists (Ekadashi, Purnima, Amavasya, Pradosh, Sankashti, Masik Shivaratri, Sankranti) for 10 dates in 3 cities, as BUILD_PLAN.md asks.
+- [ ] **[phone] Look at the Panchang screen** on the device in both languages.
+- [ ] **[astrologer] Vrat rules.** We use Smarta rules (Ekadashi/Purnima/Amavasya by the tithi at sunrise, Pradosh in the pradosh kaal, Sankashti at moonrise, Shivaratri at midnight). Vaishnava Ekadashi (dashami-viddha rule) and regional Purnima/Amavasya customs differ; add as settings if needed.
+- [ ] **Samvatsara name** (60-year cycle) and **Ritu/Ayana** not shown yet.
+- [ ] **Durmuhurta, Varjyam, Amrit Kaal** (South Indian panchang periods) not built.
+- [ ] **Do Ghati muhurta.** We list the 30 classical muhurtas (15 by day, 15 by night) with a good/avoid mark from Muhurta Chintamani; AstroSage's "Do Ghati" screen may use a different list. Check.

@@ -3,12 +3,14 @@ import 'package:go_router/go_router.dart';
 import '../features/charts/presentation/chart_form_page.dart';
 import '../features/charts/presentation/chart_list_page.dart';
 import '../features/chart_view/presentation/chart_view_page.dart';
+import '../features/panchang/panchang_page.dart';
 import '../features/settings/settings_page.dart';
 
 abstract final class Routes {
   static const charts = '/';
   static const newChart = '/chart/new';
   static const settings = '/settings';
+  static const panchang = '/panchang';
   static String chart(int id) => '/chart/$id';
   static String editChart(int id) => '/chart/$id/edit';
 }
@@ -19,6 +21,10 @@ GoRouter buildRouter() => GoRouter(
       path: Routes.charts,
       builder: (context, state) => const ChartListPage(),
       routes: [
+        GoRoute(
+          path: 'panchang',
+          builder: (context, state) => const PanchangPage(),
+        ),
         GoRoute(
           path: 'settings',
           builder: (context, state) => const SettingsPage(),

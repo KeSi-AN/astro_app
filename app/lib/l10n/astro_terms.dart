@@ -64,6 +64,11 @@ abstract class AstroTerms {
   String jagratadi(Jagratadi j);
   String deeptadi(Deeptadi d);
   String navatara(int i);
+  String lunarMonth(int i);
+  String chogadia(Chogadia c);
+  String muhurta(int i);
+  String kaal(Kaal k);
+  String vrat(Vrat v);
 }
 
 const _yogaText = <String, List<String>>{
@@ -382,6 +387,30 @@ class EnglishTerms extends AstroTerms {
   @override
   String navatara(int i) => navataraNames[i];
   @override
+  String lunarMonth(int i) => lunarMonths[i];
+  @override
+  String chogadia(Chogadia c) =>
+      const ['Udveg', 'Char', 'Labh', 'Amrit', 'Kaal', 'Shubh', 'Rog'][c.index];
+  @override
+  String muhurta(int i) => muhurtaNames[i];
+  @override
+  String kaal(Kaal k) => const [
+    'Rahu Kaal',
+    'Yamaganda',
+    'Gulika Kaal',
+    'Abhijit Muhurta',
+  ][k.index];
+  @override
+  String vrat(Vrat v) => const [
+    'Ekadashi',
+    'Purnima',
+    'Amavasya',
+    'Pradosh',
+    'Sankashti Chaturthi',
+    'Masik Shivaratri',
+    'Sankranti',
+  ][v.index];
+  @override
   String month(int m) => const [
     'Jan',
     'Feb',
@@ -399,6 +428,71 @@ class EnglishTerms extends AstroTerms {
 }
 
 class HindiTerms extends AstroTerms {
+  @override
+  String lunarMonth(int i) => const [
+    'चैत्र',
+    'वैशाख',
+    'ज्येष्ठ',
+    'आषाढ़',
+    'श्रावण',
+    'भाद्रपद',
+    'आश्विन',
+    'कार्तिक',
+    'मार्गशीर्ष',
+    'पौष',
+    'माघ',
+    'फाल्गुन',
+  ][i];
+  @override
+  String chogadia(Chogadia c) =>
+      const ['उद्वेग', 'चर', 'लाभ', 'अमृत', 'काल', 'शुभ', 'रोग'][c.index];
+  @override
+  String muhurta(int i) => const [
+    'रुद्र',
+    'आहि',
+    'मित्र',
+    'पितृ',
+    'वसु',
+    'वाराह',
+    'विश्वेदेवा',
+    'विधि (अभिजित)',
+    'सतमुखी',
+    'पुरुहूत',
+    'वाहिनी',
+    'नक्तनकरा',
+    'वरुण',
+    'अर्यमा',
+    'भग',
+    'गिरीश',
+    'अजपाद',
+    'अहिर्बुध्न्य',
+    'पूषा',
+    'अश्विनी',
+    'यम',
+    'अग्नि',
+    'विधाता',
+    'चण्ड',
+    'अदिति',
+    'जीव',
+    'विष्णु',
+    'द्युमद्गद्युति',
+    'ब्रह्मा',
+    'समुद्र',
+  ][i];
+  @override
+  String kaal(Kaal k) =>
+      const ['राहु काल', 'यमगंड', 'गुलिक काल', 'अभिजित मुहूर्त'][k.index];
+  @override
+  String vrat(Vrat v) => const [
+    'एकादशी',
+    'पूर्णिमा',
+    'अमावस्या',
+    'प्रदोष',
+    'संकष्टी चतुर्थी',
+    'मासिक शिवरात्रि',
+    'संक्रांति',
+  ][v.index];
+
   @override
   String yogaName(String id) => _yogaText[id]?[1] ?? id;
   @override

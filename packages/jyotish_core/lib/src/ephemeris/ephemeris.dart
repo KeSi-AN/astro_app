@@ -85,4 +85,12 @@ abstract class Ephemeris {
     required bool rise,
     SunriseMode mode = SunriseMode.upperLimb,
   });
+
+  /// Next moonrise or moonset after [jdUtStart] (upper limb, refraction).
+  double? moonEvent(
+    double jdUtStart,
+    double latitude,
+    double longitude, {
+    required bool rise,
+  });
 }

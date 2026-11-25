@@ -184,6 +184,19 @@ class SwephEphemeris implements Ephemeris {
       0,
     );
   }
+
+  @override
+  double? moonEvent(double jdUtStart, double latitude, double longitude,
+          {required bool rise}) =>
+      Sweph.swe_rise_trans(
+        jdUtStart,
+        HeavenlyBody.SE_MOON,
+        SwephFlag.SEFLG_SWIEPH,
+        rise ? RiseSetTransitFlag.SE_CALC_RISE : RiseSetTransitFlag.SE_CALC_SET,
+        GeoPosition(longitude, latitude),
+        0,
+        0,
+      );
 }
 
 class _FnAssetLoader with AssetLoader {

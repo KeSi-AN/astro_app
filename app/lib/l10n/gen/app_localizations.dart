@@ -2131,6 +2131,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cycle {n}'**
   String colCycle(Object n);
+
+  /// No description provided for @panchang.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchang'**
+  String get panchang;
+
+  /// No description provided for @choosePanchangPlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a place for the panchang'**
+  String get choosePanchangPlace;
+
+  /// No description provided for @changePlace.
+  ///
+  /// In en, this message translates to:
+  /// **'Change place'**
+  String get changePlace;
+
+  /// No description provided for @secToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get secToday;
+
+  /// No description provided for @secHora.
+  ///
+  /// In en, this message translates to:
+  /// **'Hora'**
+  String get secHora;
+
+  /// No description provided for @secChogadia.
+  ///
+  /// In en, this message translates to:
+  /// **'Chogadia'**
+  String get secChogadia;
+
+  /// No description provided for @secMuhurta.
+  ///
+  /// In en, this message translates to:
+  /// **'Muhurta'**
+  String get secMuhurta;
+
+  /// No description provided for @secLagnaTable.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna table'**
+  String get secLagnaTable;
+
+  /// No description provided for @secPanchakBhadra.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchak & Bhadra'**
+  String get secPanchakBhadra;
+
+  /// No description provided for @secVrat.
+  ///
+  /// In en, this message translates to:
+  /// **'Vrat'**
+  String get secVrat;
+
+  /// No description provided for @untilTime.
+  ///
+  /// In en, this message translates to:
+  /// **'until {time}'**
+  String untilTime(Object time);
+
+  /// No description provided for @thenNext.
+  ///
+  /// In en, this message translates to:
+  /// **'then {name}'**
+  String thenNext(Object name);
+
+  /// No description provided for @moonrise.
+  ///
+  /// In en, this message translates to:
+  /// **'Moonrise'**
+  String get moonrise;
+
+  /// No description provided for @moonset.
+  ///
+  /// In en, this message translates to:
+  /// **'Moonset'**
+  String get moonset;
+
+  /// No description provided for @noRiseSet.
+  ///
+  /// In en, this message translates to:
+  /// **'none today'**
+  String get noRiseSet;
+
+  /// No description provided for @paksha.
+  ///
+  /// In en, this message translates to:
+  /// **'Paksha'**
+  String get paksha;
+
+  /// No description provided for @monthAmanta.
+  ///
+  /// In en, this message translates to:
+  /// **'Month (amanta)'**
+  String get monthAmanta;
+
+  /// No description provided for @monthPurnimanta.
+  ///
+  /// In en, this message translates to:
+  /// **'Month (purnimanta)'**
+  String get monthPurnimanta;
+
+  /// No description provided for @adhikaPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhika'**
+  String get adhikaPrefix;
+
+  /// No description provided for @samvat.
+  ///
+  /// In en, this message translates to:
+  /// **'Samvat'**
+  String get samvat;
+
+  /// No description provided for @samvatValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Vikram {v} · Shaka {s}'**
+  String samvatValue(Object v, Object s);
+
+  /// No description provided for @sunSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Sun sign'**
+  String get sunSign;
+
+  /// No description provided for @moonSign.
+  ///
+  /// In en, this message translates to:
+  /// **'Moon sign'**
+  String get moonSign;
+
+  /// No description provided for @rightNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Right now'**
+  String get rightNow;
+
+  /// No description provided for @currentHora.
+  ///
+  /// In en, this message translates to:
+  /// **'Hora'**
+  String get currentHora;
+
+  /// No description provided for @currentChogadia.
+  ///
+  /// In en, this message translates to:
+  /// **'Chogadia'**
+  String get currentChogadia;
+
+  /// No description provided for @currentLagna.
+  ///
+  /// In en, this message translates to:
+  /// **'Lagna'**
+  String get currentLagna;
+
+  /// No description provided for @currentMuhurta.
+  ///
+  /// In en, this message translates to:
+  /// **'Muhurta'**
+  String get currentMuhurta;
+
+  /// No description provided for @lagnaNature.
+  ///
+  /// In en, this message translates to:
+  /// **'{sign} ({nature})'**
+  String lagnaNature(Object sign, Object nature);
+
+  /// No description provided for @movable.
+  ///
+  /// In en, this message translates to:
+  /// **'movable'**
+  String get movable;
+
+  /// No description provided for @fixed.
+  ///
+  /// In en, this message translates to:
+  /// **'fixed'**
+  String get fixed;
+
+  /// No description provided for @dual.
+  ///
+  /// In en, this message translates to:
+  /// **'dual'**
+  String get dual;
+
+  /// No description provided for @kaalsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Inauspicious & auspicious periods'**
+  String get kaalsTitle;
+
+  /// No description provided for @dayPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get dayPart;
+
+  /// No description provided for @nightPart.
+  ///
+  /// In en, this message translates to:
+  /// **'Night'**
+  String get nightPart;
+
+  /// No description provided for @colTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get colTime;
+
+  /// No description provided for @good.
+  ///
+  /// In en, this message translates to:
+  /// **'good'**
+  String get good;
+
+  /// No description provided for @bad.
+  ///
+  /// In en, this message translates to:
+  /// **'avoid'**
+  String get bad;
+
+  /// No description provided for @panchakTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchak this month'**
+  String get panchakTitle;
+
+  /// No description provided for @bhadraTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhadra this month'**
+  String get bhadraTitle;
+
+  /// No description provided for @nonePeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get nonePeriod;
+
+  /// No description provided for @vratTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vrat dates {year}'**
+  String vratTitle(Object year);
+
+  /// No description provided for @vratNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Smarta rules: Ekadashi, Purnima, Amavasya by the tithi at sunrise; Pradosh at sunset; Sankashti at moonrise; Shivaratri at midnight.'**
+  String get vratNote;
+
+  /// No description provided for @allVrats.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allVrats;
+
+  /// No description provided for @computing.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculating…'**
+  String get computing;
 }
 
 class _AppLocalizationsDelegate

@@ -43,6 +43,35 @@ class Place extends Equatable {
     return parts.join(' · ');
   }
 
+  /// Compact text form for settings: fields separated by '|'.
+  String encode() => [
+    name,
+    admin2,
+    admin1,
+    country,
+    countryName,
+    latitude.toString(),
+    longitude.toString(),
+    zoneName,
+  ].join('|');
+
+  static Place? decode(String s) {
+    final p = s.split('|');
+    if (p.length != 8) return null;
+    final lat = double.tryParse(p[5]), lon = double.tryParse(p[6]);
+    if (lat == null || lon == null) return null;
+    return Place(
+      name: p[0],
+      admin2: p[1],
+      admin1: p[2],
+      country: p[3],
+      countryName: p[4],
+      latitude: lat,
+      longitude: lon,
+      zoneName: p[7],
+    );
+  }
+
   @override
   List<Object?> get props => [
     name,

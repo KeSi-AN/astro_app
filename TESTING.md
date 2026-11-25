@@ -108,4 +108,17 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 **Phone:** Yogas tab (योग): every section. Doshas are always listed; turn on "show absent" to see every yoga checked. Sade Sati highlights the period running now.
 
 ## Phase 7: Panchang and muhurta
-(filled in at the end of Phase 7)
+**Automated** (`packages/jyotish_core/test/panchang_test.dart`)
+- Tithi, nakshatra, yoga and karana spans are contiguous, numbered in order and cover sunrise to the next sunrise.
+- 24 horas starting with the weekday lord in Chaldean order; night horas start at sunset.
+- Chogadia: the standard Sunday (day and night) and Monday sequences.
+- Rahu Kaal by weekday; Abhijit is the 8th of 15 day muhurtas.
+- Lagna table covers the whole day with 12–13 rows.
+- Bhadra periods are Vishti karana; Panchak is the Moon in Aquarius/Pisces and lasts 4–6 days.
+- 2026 vrat list counts (12 Sankrantis, ~24 Ekadashis, 12–13 Purnima/Amavasya/Sankashti/Shivaratri, ~25 Pradosh).
+- Prints the full panchang for 25 Nov 2026 at Agra.
+- `app/test/l10n_test.dart`: Hindi for lunar months, chogadias, the 30 muhurtas, kaals and vrats.
+
+**Not yet compared with AstroSage** (see BACKLOG).
+
+**Phone:** chart list → calendar icon (पंचांग) → choose a place once; step dates; each section.

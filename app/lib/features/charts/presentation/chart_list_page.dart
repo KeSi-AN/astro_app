@@ -74,6 +74,11 @@ class _ChartListView extends StatelessWidget {
         title: Text(context.l10n.chartsTitle),
         actions: [
           IconButton(
+            tooltip: context.l10n.panchang,
+            icon: const Icon(Icons.calendar_month_outlined),
+            onPressed: () => context.push(Routes.panchang),
+          ),
+          IconButton(
             tooltip: context.l10n.settings,
             icon: const Icon(Icons.tune),
             onPressed: () => context.push(Routes.settings),

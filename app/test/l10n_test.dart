@@ -150,6 +150,21 @@ void main() {
       for (var i = 0; i < 9; i++) {
         hindi(t.navatara(i), 'navatara $i');
       }
+      for (var i = 0; i < 12; i++) {
+        hindi(t.lunarMonth(i), 'lunar month $i');
+      }
+      for (final v in Chogadia.values) {
+        hindi(t.chogadia(v), '$v');
+      }
+      for (var i = 0; i < 30; i++) {
+        hindi(t.muhurta(i), 'muhurta $i');
+      }
+      for (final v in Kaal.values) {
+        hindi(t.kaal(v), '$v');
+      }
+      for (final v in Vrat.values) {
+        hindi(t.vrat(v), '$v');
+      }
       for (var m = 1; m <= 12; m++) {
         hindi(t.month(m), 'month $m');
       }

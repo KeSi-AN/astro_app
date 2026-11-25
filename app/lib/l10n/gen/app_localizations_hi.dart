@@ -1113,4 +1113,150 @@ class AppLocalizationsHi extends AppLocalizations {
   String colCycle(Object n) {
     return 'चक्र $n';
   }
+
+  @override
+  String get panchang => 'पंचांग';
+
+  @override
+  String get choosePanchangPlace => 'पंचांग के लिए स्थान चुनें';
+
+  @override
+  String get changePlace => 'स्थान बदलें';
+
+  @override
+  String get secToday => 'दिन';
+
+  @override
+  String get secHora => 'होरा';
+
+  @override
+  String get secChogadia => 'चौघड़िया';
+
+  @override
+  String get secMuhurta => 'मुहूर्त';
+
+  @override
+  String get secLagnaTable => 'लग्न सारणी';
+
+  @override
+  String get secPanchakBhadra => 'पंचक व भद्रा';
+
+  @override
+  String get secVrat => 'व्रत';
+
+  @override
+  String untilTime(Object time) {
+    return '$time तक';
+  }
+
+  @override
+  String thenNext(Object name) {
+    return 'फिर $name';
+  }
+
+  @override
+  String get moonrise => 'चंद्रोदय';
+
+  @override
+  String get moonset => 'चंद्रास्त';
+
+  @override
+  String get noRiseSet => 'आज नहीं';
+
+  @override
+  String get paksha => 'पक्ष';
+
+  @override
+  String get monthAmanta => 'मास (अमांत)';
+
+  @override
+  String get monthPurnimanta => 'मास (पूर्णिमांत)';
+
+  @override
+  String get adhikaPrefix => 'अधिक';
+
+  @override
+  String get samvat => 'संवत';
+
+  @override
+  String samvatValue(Object v, Object s) {
+    return 'विक्रम $v · शक $s';
+  }
+
+  @override
+  String get sunSign => 'सूर्य राशि';
+
+  @override
+  String get moonSign => 'चंद्र राशि';
+
+  @override
+  String get rightNow => 'अभी';
+
+  @override
+  String get currentHora => 'होरा';
+
+  @override
+  String get currentChogadia => 'चौघड़िया';
+
+  @override
+  String get currentLagna => 'लग्न';
+
+  @override
+  String get currentMuhurta => 'मुहूर्त';
+
+  @override
+  String lagnaNature(Object sign, Object nature) {
+    return '$sign ($nature)';
+  }
+
+  @override
+  String get movable => 'चर';
+
+  @override
+  String get fixed => 'स्थिर';
+
+  @override
+  String get dual => 'द्विस्वभाव';
+
+  @override
+  String get kaalsTitle => 'अशुभ व शुभ काल';
+
+  @override
+  String get dayPart => 'दिन';
+
+  @override
+  String get nightPart => 'रात्रि';
+
+  @override
+  String get colTime => 'समय';
+
+  @override
+  String get good => 'शुभ';
+
+  @override
+  String get bad => 'अशुभ';
+
+  @override
+  String get panchakTitle => 'इस माह पंचक';
+
+  @override
+  String get bhadraTitle => 'इस माह भद्रा';
+
+  @override
+  String get nonePeriod => 'कोई नहीं';
+
+  @override
+  String vratTitle(Object year) {
+    return 'व्रत तिथियाँ $year';
+  }
+
+  @override
+  String get vratNote =>
+      'स्मार्त नियम: एकादशी, पूर्णिमा, अमावस्या सूर्योदय की तिथि से; प्रदोष सूर्यास्त से; संकष्टी चंद्रोदय से; शिवरात्रि मध्यरात्रि से।';
+
+  @override
+  String get allVrats => 'सभी';
+
+  @override
+  String get computing => 'गणना हो रही है…';
 }

@@ -486,5 +486,77 @@
     "placeholders": {
       "n": {}
     }
-  }
+  },
+  "panchang": "Panchang",
+  "choosePanchangPlace": "Choose a place for the panchang",
+  "changePlace": "Change place",
+  "secToday": "Day",
+  "secHora": "Hora",
+  "secChogadia": "Chogadia",
+  "secMuhurta": "Muhurta",
+  "secLagnaTable": "Lagna table",
+  "secPanchakBhadra": "Panchak & Bhadra",
+  "secVrat": "Vrat",
+  "untilTime": "until {time}",
+  "@untilTime": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "thenNext": "then {name}",
+  "@thenNext": {
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "moonrise": "Moonrise",
+  "moonset": "Moonset",
+  "noRiseSet": "none today",
+  "paksha": "Paksha",
+  "monthAmanta": "Month (amanta)",
+  "monthPurnimanta": "Month (purnimanta)",
+  "adhikaPrefix": "Adhika",
+  "samvat": "Samvat",
+  "samvatValue": "Vikram {v} · Shaka {s}",
+  "@samvatValue": {
+    "placeholders": {
+      "v": {},
+      "s": {}
+    }
+  },
+  "sunSign": "Sun sign",
+  "moonSign": "Moon sign",
+  "rightNow": "Right now",
+  "currentHora": "Hora",
+  "currentChogadia": "Chogadia",
+  "currentLagna": "Lagna",
+  "currentMuhurta": "Muhurta",
+  "lagnaNature": "{sign} ({nature})",
+  "@lagnaNature": {
+    "placeholders": {
+      "sign": {},
+      "nature": {}
+    }
+  },
+  "movable": "movable",
+  "fixed": "fixed",
+  "dual": "dual",
+  "kaalsTitle": "Inauspicious & auspicious periods",
+  "dayPart": "Day",
+  "nightPart": "Night",
+  "colTime": "Time",
+  "good": "good",
+  "bad": "avoid",
+  "panchakTitle": "Panchak this month",
+  "bhadraTitle": "Bhadra this month",
+  "nonePeriod": "None",
+  "vratTitle": "Vrat dates {year}",
+  "@vratTitle": {
+    "placeholders": {
+      "year": {}
+    }
+  },
+  "vratNote": "Smarta rules: Ekadashi, Purnima, Amavasya by the tithi at sunrise; Pradosh at sunset; Sankashti at moonrise; Shivaratri at midnight.",
+  "allVrats": "All",
+  "computing": "Calculating…"
 }

@@ -24,6 +24,7 @@ class AppSettings extends Equatable {
     this.showOuterPlanets = true,
     this.dashaYear = DashaYear.julian,
     this.kpAyanamsa = Ayanamsa.kpOld,
+    this.panchangPlace = '',
   });
 
   final AppLanguage language;
@@ -37,6 +38,9 @@ class AppSettings extends Equatable {
 
   /// Ayanamsa for KP screens (AstroSage's KP module is closest to KP old).
   final Ayanamsa kpAyanamsa;
+
+  /// Default place for the Panchang screen, encoded by Place.encode().
+  final String panchangPlace;
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
@@ -57,6 +61,7 @@ class AppSettings extends Equatable {
     bool? showOuterPlanets,
     DashaYear? dashaYear,
     Ayanamsa? kpAyanamsa,
+    String? panchangPlace,
   }) => AppSettings(
     language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
@@ -67,6 +72,7 @@ class AppSettings extends Equatable {
     showOuterPlanets: showOuterPlanets ?? this.showOuterPlanets,
     dashaYear: dashaYear ?? this.dashaYear,
     kpAyanamsa: kpAyanamsa ?? this.kpAyanamsa,
+    panchangPlace: panchangPlace ?? this.panchangPlace,
   );
 
   Map<String, String> toMap() => {
@@ -79,6 +85,7 @@ class AppSettings extends Equatable {
     'showOuterPlanets': '$showOuterPlanets',
     'dashaYear': dashaYear.name,
     'kpAyanamsa': kpAyanamsa.name,
+    'panchangPlace': panchangPlace,
   };
 
   static AppSettings fromMap(Map<String, String> m) {
@@ -105,6 +112,7 @@ class AppSettings extends Equatable {
         'kpAyanamsa',
         d.kpAyanamsa,
       ),
+      panchangPlace: m['panchangPlace'] ?? '',
     );
   }
 
@@ -119,6 +127,7 @@ class AppSettings extends Equatable {
     showOuterPlanets,
     dashaYear,
     kpAyanamsa,
+    panchangPlace,
   ];
 }
 

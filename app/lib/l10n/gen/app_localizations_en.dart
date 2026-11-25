@@ -1114,4 +1114,150 @@ class AppLocalizationsEn extends AppLocalizations {
   String colCycle(Object n) {
     return 'Cycle $n';
   }
+
+  @override
+  String get panchang => 'Panchang';
+
+  @override
+  String get choosePanchangPlace => 'Choose a place for the panchang';
+
+  @override
+  String get changePlace => 'Change place';
+
+  @override
+  String get secToday => 'Day';
+
+  @override
+  String get secHora => 'Hora';
+
+  @override
+  String get secChogadia => 'Chogadia';
+
+  @override
+  String get secMuhurta => 'Muhurta';
+
+  @override
+  String get secLagnaTable => 'Lagna table';
+
+  @override
+  String get secPanchakBhadra => 'Panchak & Bhadra';
+
+  @override
+  String get secVrat => 'Vrat';
+
+  @override
+  String untilTime(Object time) {
+    return 'until $time';
+  }
+
+  @override
+  String thenNext(Object name) {
+    return 'then $name';
+  }
+
+  @override
+  String get moonrise => 'Moonrise';
+
+  @override
+  String get moonset => 'Moonset';
+
+  @override
+  String get noRiseSet => 'none today';
+
+  @override
+  String get paksha => 'Paksha';
+
+  @override
+  String get monthAmanta => 'Month (amanta)';
+
+  @override
+  String get monthPurnimanta => 'Month (purnimanta)';
+
+  @override
+  String get adhikaPrefix => 'Adhika';
+
+  @override
+  String get samvat => 'Samvat';
+
+  @override
+  String samvatValue(Object v, Object s) {
+    return 'Vikram $v · Shaka $s';
+  }
+
+  @override
+  String get sunSign => 'Sun sign';
+
+  @override
+  String get moonSign => 'Moon sign';
+
+  @override
+  String get rightNow => 'Right now';
+
+  @override
+  String get currentHora => 'Hora';
+
+  @override
+  String get currentChogadia => 'Chogadia';
+
+  @override
+  String get currentLagna => 'Lagna';
+
+  @override
+  String get currentMuhurta => 'Muhurta';
+
+  @override
+  String lagnaNature(Object sign, Object nature) {
+    return '$sign ($nature)';
+  }
+
+  @override
+  String get movable => 'movable';
+
+  @override
+  String get fixed => 'fixed';
+
+  @override
+  String get dual => 'dual';
+
+  @override
+  String get kaalsTitle => 'Inauspicious & auspicious periods';
+
+  @override
+  String get dayPart => 'Day';
+
+  @override
+  String get nightPart => 'Night';
+
+  @override
+  String get colTime => 'Time';
+
+  @override
+  String get good => 'good';
+
+  @override
+  String get bad => 'avoid';
+
+  @override
+  String get panchakTitle => 'Panchak this month';
+
+  @override
+  String get bhadraTitle => 'Bhadra this month';
+
+  @override
+  String get nonePeriod => 'None';
+
+  @override
+  String vratTitle(Object year) {
+    return 'Vrat dates $year';
+  }
+
+  @override
+  String get vratNote =>
+      'Smarta rules: Ekadashi, Purnima, Amavasya by the tithi at sunrise; Pradosh at sunset; Sankashti at moonrise; Shivaratri at midnight.';
+
+  @override
+  String get allVrats => 'All';
+
+  @override
+  String get computing => 'Calculating…';
 }
