@@ -1,8 +1,12 @@
 import 'package:jyotish_core/jyotish_core.dart';
 
 import '../core/db/app_database.dart';
+import '../features/appointments/data/appointment_repository.dart';
+import '../features/appointments/data/reminders.dart';
 import '../features/atlas/data/atlas_repository.dart';
+import '../features/backup/backup_service.dart';
 import '../features/charts/data/chart_repository.dart';
+import '../features/clients/data/client_repository.dart';
 import '../features/settings/settings.dart';
 
 /// Everything long-lived that screens need, created once at start-up.
@@ -13,6 +17,10 @@ class AppServices {
     required this.atlas,
     required this.ephemeris,
     required this.settings,
+    required this.clients,
+    required this.appointments,
+    required this.reminders,
+    required this.backup,
   });
 
   final AppDatabase db;
@@ -20,4 +28,8 @@ class AppServices {
   final AtlasRepository atlas;
   final Ephemeris ephemeris;
   final SettingsRepository settings;
+  final ClientRepository clients;
+  final AppointmentRepository appointments;
+  final Reminders reminders;
+  final BackupService backup;
 }

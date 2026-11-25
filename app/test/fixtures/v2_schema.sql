@@ -1,0 +1,4 @@
+CREATE TABLE "charts" ("id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "name" TEXT NOT NULL, "gender" TEXT NULL, "year" INTEGER NOT NULL, "month" INTEGER NOT NULL, "day" INTEGER NOT NULL, "hour" INTEGER NOT NULL, "minute" INTEGER NOT NULL, "second" INTEGER NOT NULL DEFAULT 0, "place_name" TEXT NOT NULL, "latitude" REAL NOT NULL, "longitude" REAL NOT NULL, "zone_name" TEXT NOT NULL, "country" TEXT NOT NULL DEFAULT '', "admin1" TEXT NOT NULL DEFAULT '', "time_basis" TEXT NOT NULL, "utc_offset_hours" REAL NOT NULL, "dst_hours" REAL NOT NULL DEFAULT 0.0, "war_time_applied" INTEGER NULL CHECK ("war_time_applied" IN (0, 1)), "marital_status" TEXT NULL, "occupation" TEXT NULL, "notes" TEXT NULL, "created_at" INTEGER NOT NULL, "updated_at" INTEGER NOT NULL)
+CREATE TABLE "settings" ("key" TEXT NOT NULL, "value" TEXT NOT NULL, PRIMARY KEY ("key"))
+CREATE INDEX charts_updated ON charts(updated_at DESC)
+CREATE INDEX charts_name ON charts(name COLLATE NOCASE)

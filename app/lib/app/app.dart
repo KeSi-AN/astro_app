@@ -13,13 +13,25 @@ class AstroApp extends StatefulWidget {
   /// Creates the services (database, atlas, ephemeris) once.
   final Future<AppServices> Function() services;
 
+  /// Starts the app's services again (after a restore replaced the
+  /// database): repositories, cubits and the router are rebuilt.
+  static void restart(BuildContext context) =>
+      context.findAncestorStateOfType<_AstroAppState>()?._restart();
+
   @override
   State<AstroApp> createState() => _AstroAppState();
 }
 
 class _AstroAppState extends State<AstroApp> {
-  late final Future<AppServices> _services = widget.services();
-  final _router = buildRouter();
+  late Future<AppServices> _services = widget.services();
+  var _router = buildRouter();
+  var _generation = 0;
+
+  void _restart() => setState(() {
+    _services = widget.services();
+    _router = buildRouter();
+    _generation++;
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +51,11 @@ class _AstroAppState extends State<AstroApp> {
             ),
           );
         }
-        final services = snap.data;
+        // After a restart the old (closed) services must not be reused
+        // while the new ones start.
+        final services = snap.connectionState == ConnectionState.done
+            ? snap.data
+            : null;
         if (services == null) {
           return MaterialApp(
             theme: appTheme(),
@@ -50,6 +66,7 @@ class _AstroAppState extends State<AstroApp> {
           );
         }
         return RepositoryProvider.value(
+          key: ValueKey(_generation),
           value: services,
           child: BlocProvider(
             create: (_) => SettingsCubit(services.settings),

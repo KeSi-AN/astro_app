@@ -7,9 +7,13 @@ import 'package:path_provider/path_provider.dart';
 import 'app/app.dart';
 import 'app/services.dart';
 import 'core/db/app_database.dart';
+import 'features/appointments/data/appointment_repository.dart';
+import 'features/appointments/data/reminders.dart';
 import 'features/atlas/data/atlas_installer.dart';
 import 'features/atlas/data/atlas_repository.dart';
+import 'features/backup/backup_service.dart';
 import 'features/charts/data/chart_repository.dart';
+import 'features/clients/data/client_repository.dart';
 import 'features/settings/settings.dart';
 
 Future<void> main() async {
@@ -30,9 +34,19 @@ Future<AppServices> _start() async {
     installAtlas(),
   ]);
   final db = AppDatabase();
+  final charts = ChartRepository(db);
   return AppServices(
     db: db,
-    charts: ChartRepository(db),
+    charts: charts,
+    clients: ClientRepository(db, charts),
+    appointments: AppointmentRepository(db),
+    reminders: Reminders(),
+    backup: BackupService(
+      db,
+      databaseFile: AppDatabase.file,
+      storageDir: getApplicationSupportDirectory,
+      tempDir: getTemporaryDirectory,
+    ),
     atlas: AtlasRepository.open(results[1] as String),
     ephemeris: results[0] as Ephemeris,
     settings: SettingsRepository(db),

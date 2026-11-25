@@ -90,3 +90,13 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Section choices are not saved** between app launches (remembered while the app runs).
 - [ ] **[astrologer] Content wishes.** Should it include a remarks/predictions page written by the astrologer, the current transits page, or Avasthas/Upagrahas/Arudhas? Are these the right sections in the right order? The pages are 15 for a full report.
 - [ ] **Matching report PDF** (Ashtakoota + Mangal) is not built; only the birth kundli is.
+
+## Phase 11: Clients, notes, appointments, backup
+- [ ] **[phone] Reminder delivery not yet seen.** Saving a follow-up opened Android's notification-permission prompt, which was left for the user to answer. After allowing, check that the alarm is scheduled (`adb shell dumpsys alarm | grep kesian`) and that a reminder actually arrives. Alarms are inexact (no exact-alarm permission), so they may be a few minutes late.
+- [ ] **[phone] Backup to Drive and restore not tried on the phone**, because the share sheet and file picker show personal apps and files. The unit test covers create → restore, including moving the logo to the new phone's folder. Still to try: Save to Drive, then restore from Drive (the app restarts its services afterwards).
+- [ ] **Automatic backups.** shop_app makes a nightly backup and copies it to Downloads; this app only backs up when asked. The Backup screen turns red after 7 days without one.
+- [ ] **Test data on the phone:** "Test Client" (linked to TestChart, one ₹501 consultation with a follow-up on 25 Dec) and the "Pt. Test Sharma" letterhead. Delete them before handing the phone to the astrologer.
+- [ ] **App name and icon.** The launcher and the permission prompt say "astro_app". Pick a proper name and icon.
+- [ ] **Chart screen doesn't show its client.** There's no way to link a chart to a client from the chart side. Linking is done from the client page (new chart, or link a saved chart).
+- [ ] **Walk-ins.** An appointment without a client can't be turned into a client in one tap.
+- [ ] **Not built:** importing contacts from the phone; merging duplicate clients; a month calendar view; repeating appointments; fee receipts. The "Reports sent" list logs only completed Share and Print actions, not previews.

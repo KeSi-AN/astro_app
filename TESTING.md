@@ -172,3 +172,25 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - The letterhead appears on every page.
 - The print preview shows 1/15 on ISO A4.
 - The PDF was pulled with `adb exec-out run-as com.kesian.astro_app cat cache/share/<name>_kundli.pdf` and checked page by page.
+
+## Phase 11: Clients, notes, appointments, backup
+**Automated** (`app/test/clients_test.dart`)
+- **Upgrade:** a schema 2 database (DDL in `test/fixtures/v2_schema.sql`) opens at schema 3, keeps its charts and can link them.
+- **Family charts:** link and order by relation ("self" first), unlink. Deleting a client keeps the charts and only clears the link.
+- **Client search:** reaches the notes of consultations and charts. Each list row shows the chart count, the next appointment and the unpaid total.
+- **Appointments:** today's list, the unpaid list (cancelled ones excluded), follow-ups, marking paid.
+- **Reminder times:** 30 minutes before the start and 10:00 on the follow-up day, future times only, no start reminder once done.
+- **Money:** Indian digit grouping (₹12,34,567).
+- **Backup round trip:** manifest counts; restore replaces the data; the logo file comes back and the logo path points at the new phone's folder; a non-backup file is rejected.
+
+**Phone:** bottom tabs कुंडलियाँ / ग्राहक / मुलाक़ातें.
+- **Clients:** ग्राहक → नया ग्राहक → save opens the client page. Use + to add a new or saved chart with its relation, and नई मुलाक़ात to book a consultation.
+- **Appointments:** the मुलाक़ातें tab has Today (plus follow-ups this week), Upcoming, Past and Unpaid. Each row's ⋮ menu marks it done, paid, missed or cancelled.
+- **Backup:** Settings → बैकअप → अभी बैकअप लें (share sheet → Save to Drive). बैकअप फ़ाइल से वापस लाएँ restores and restarts the app.
+
+**Checked on the phone (2026-11-25):**
+- The v2 → v3 upgrade kept the 3 charts.
+- Created a client and linked TestChart as स्वयं.
+- Booked a consultation with notes and ₹501. It showed as due (बाकी ₹501), and "Mark paid" turned it to मिला ₹501 ✓.
+- The Today list shows it.
+- Saving a follow-up asks for the notification permission.

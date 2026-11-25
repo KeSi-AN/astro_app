@@ -1540,4 +1540,310 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get ashtakavargaShort => 'Ashtakavarga';
+
+  @override
+  String get clients => 'Clients';
+
+  @override
+  String get appointments => 'Appointments';
+
+  @override
+  String get client => 'Client';
+
+  @override
+  String get newClient => 'New client';
+
+  @override
+  String get editClient => 'Edit client';
+
+  @override
+  String get searchClients => 'Search name, phone or notes';
+
+  @override
+  String get noClientsYet => 'No clients yet. Add one with New client.';
+
+  @override
+  String noClientMatches(String query) {
+    return 'No client matches \"$query\".';
+  }
+
+  @override
+  String get clientNotFound => 'Client not found.';
+
+  @override
+  String chartCount(String n) {
+    return '$n charts';
+  }
+
+  @override
+  String dueAmount(String amount) {
+    return 'Due $amount';
+  }
+
+  @override
+  String paidTotal(String amount) {
+    return 'Paid $amount';
+  }
+
+  @override
+  String get city => 'City';
+
+  @override
+  String get clientNotes => 'Notes';
+
+  @override
+  String get nameRequired => 'Enter a name';
+
+  @override
+  String get deleteClientTitle => 'Delete client?';
+
+  @override
+  String deleteClientBody(String name) {
+    return '$name will be removed. Their charts and consultations stay, without the link.';
+  }
+
+  @override
+  String get call => 'Call';
+
+  @override
+  String get familyCharts => 'Family charts';
+
+  @override
+  String get noFamilyCharts => 'No charts linked yet. Use + to add one.';
+
+  @override
+  String get newChartForClient => 'New chart';
+
+  @override
+  String get linkChart => 'Link a saved chart';
+
+  @override
+  String get relationTitle => 'Relation to the client';
+
+  @override
+  String get changeRelation => 'Change relation';
+
+  @override
+  String get unlinkChart => 'Remove from client';
+
+  @override
+  String get relSelf => 'Self';
+
+  @override
+  String get relSpouse => 'Spouse';
+
+  @override
+  String get relSon => 'Son';
+
+  @override
+  String get relDaughter => 'Daughter';
+
+  @override
+  String get relFather => 'Father';
+
+  @override
+  String get relMother => 'Mother';
+
+  @override
+  String get relBrother => 'Brother';
+
+  @override
+  String get relSister => 'Sister';
+
+  @override
+  String get relOther => 'Other';
+
+  @override
+  String get consultations => 'Consultations';
+
+  @override
+  String get noConsultations => 'No consultations yet.';
+
+  @override
+  String get reportsSent => 'PDF kundlis sent';
+
+  @override
+  String pagesCount(String n) {
+    return '$n pages';
+  }
+
+  @override
+  String get newAppointment => 'New appointment';
+
+  @override
+  String get editAppointment => 'Appointment';
+
+  @override
+  String get noAppointments => 'Nothing here.';
+
+  @override
+  String get noAppointmentsToday => 'No appointments today.';
+
+  @override
+  String get followUpsThisWeek => 'Follow-ups this week';
+
+  @override
+  String get noFollowUps => 'No follow-ups due.';
+
+  @override
+  String get viewToday => 'Today';
+
+  @override
+  String get viewUpcoming => 'Upcoming';
+
+  @override
+  String get viewPast => 'Past';
+
+  @override
+  String get viewUnpaid => 'Unpaid';
+
+  @override
+  String get totalUnpaid => 'Total unpaid';
+
+  @override
+  String get nothingUnpaid => 'All fees are paid.';
+
+  @override
+  String get statusScheduled => 'Booked';
+
+  @override
+  String get statusDone => 'Done';
+
+  @override
+  String get statusCancelled => 'Cancelled';
+
+  @override
+  String get statusMissed => 'Missed';
+
+  @override
+  String get markDone => 'Mark done';
+
+  @override
+  String get markPaid => 'Mark paid';
+
+  @override
+  String get markMissed => 'Mark missed';
+
+  @override
+  String get markCancelled => 'Cancel';
+
+  @override
+  String get noClient => '— No client (walk-in) —';
+
+  @override
+  String get walkInName => 'Name';
+
+  @override
+  String get topic => 'Topic (optional)';
+
+  @override
+  String get needClientOrName => 'Choose a client or type a name.';
+
+  @override
+  String minutesShort(String n) {
+    return '$n min';
+  }
+
+  @override
+  String get remindMe => 'Remind me';
+
+  @override
+  String get remindMeHint =>
+      '30 minutes before, and at 10 am on the follow-up day';
+
+  @override
+  String get sessionNotes => 'Consultation notes';
+
+  @override
+  String get sessionNotesHint =>
+      'Questions asked, what you saw in the chart, remedies advised…';
+
+  @override
+  String get fee => 'Fee';
+
+  @override
+  String get paid => 'Paid';
+
+  @override
+  String get followUpOn => 'Follow up on';
+
+  @override
+  String get deleteAppointmentTitle => 'Delete this appointment?';
+
+  @override
+  String get remindersChannel => 'Appointment reminders';
+
+  @override
+  String appointmentReminder(String who) {
+    return 'Appointment: $who';
+  }
+
+  @override
+  String followUpReminder(String who) {
+    return 'Follow up with $who';
+  }
+
+  @override
+  String get backup => 'Backup';
+
+  @override
+  String get backupSettingsHint =>
+      'Save everything to Google Drive, or restore';
+
+  @override
+  String get backupIntro =>
+      'A backup is one file with all charts, clients, consultations, settings and your logo. Keep it on Google Drive so nothing is lost if the phone is lost or changed.';
+
+  @override
+  String get neverBackedUp => 'No backup made yet on this phone.';
+
+  @override
+  String lastBackup(String when) {
+    return 'Last backup: $when';
+  }
+
+  @override
+  String get backupNow => 'Back up now';
+
+  @override
+  String get backupHint =>
+      'Then choose Drive (Save to Drive), WhatsApp or email in the share sheet.';
+
+  @override
+  String get backupShareText => 'Astro app backup';
+
+  @override
+  String get restoreFromFile => 'Restore from a backup file';
+
+  @override
+  String get restoreHint =>
+      'Pick a backup .zip (from Drive or the phone). Everything on this phone is replaced by the backup.';
+
+  @override
+  String get restoreTitle => 'Restore this backup?';
+
+  @override
+  String restoreBody(
+    String when,
+    String charts,
+    String clients,
+    String appointments,
+  ) {
+    return 'Made on $when: $charts charts, $clients clients, $appointments appointments.\n\nEverything now on this phone will be replaced.';
+  }
+
+  @override
+  String get restoreAction => 'Restore';
+
+  @override
+  String get notABackup => 'That file is not a backup from this app.';
+
+  @override
+  String get backupTooNew =>
+      'This backup is from a newer version of the app. Update the app first.';
+
+  @override
+  String backupFailed(String error) {
+    return 'Backup failed: $error';
+  }
 }

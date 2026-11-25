@@ -729,5 +729,188 @@
   "removeLogo": "Remove logo",
   "saved": "Saved",
   "saveAction": "Save",
-  "ashtakavargaShort": "Ashtakavarga"
+  "ashtakavargaShort": "Ashtakavarga",
+  "clients": "Clients",
+  "appointments": "Appointments",
+  "client": "Client",
+  "newClient": "New client",
+  "editClient": "Edit client",
+  "searchClients": "Search name, phone or notes",
+  "noClientsYet": "No clients yet. Add one with New client.",
+  "noClientMatches": "No client matches \"{query}\".",
+  "@noClientMatches": {
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "clientNotFound": "Client not found.",
+  "chartCount": "{n} charts",
+  "@chartCount": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "dueAmount": "Due {amount}",
+  "@dueAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paidTotal": "Paid {amount}",
+  "@paidTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "city": "City",
+  "clientNotes": "Notes",
+  "nameRequired": "Enter a name",
+  "deleteClientTitle": "Delete client?",
+  "deleteClientBody": "{name} will be removed. Their charts and consultations stay, without the link.",
+  "@deleteClientBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "call": "Call",
+  "familyCharts": "Family charts",
+  "noFamilyCharts": "No charts linked yet. Use + to add one.",
+  "newChartForClient": "New chart",
+  "linkChart": "Link a saved chart",
+  "relationTitle": "Relation to the client",
+  "changeRelation": "Change relation",
+  "unlinkChart": "Remove from client",
+  "relSelf": "Self",
+  "relSpouse": "Spouse",
+  "relSon": "Son",
+  "relDaughter": "Daughter",
+  "relFather": "Father",
+  "relMother": "Mother",
+  "relBrother": "Brother",
+  "relSister": "Sister",
+  "relOther": "Other",
+  "consultations": "Consultations",
+  "noConsultations": "No consultations yet.",
+  "reportsSent": "PDF kundlis sent",
+  "pagesCount": "{n} pages",
+  "@pagesCount": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "newAppointment": "New appointment",
+  "editAppointment": "Appointment",
+  "noAppointments": "Nothing here.",
+  "noAppointmentsToday": "No appointments today.",
+  "followUpsThisWeek": "Follow-ups this week",
+  "noFollowUps": "No follow-ups due.",
+  "viewToday": "Today",
+  "viewUpcoming": "Upcoming",
+  "viewPast": "Past",
+  "viewUnpaid": "Unpaid",
+  "totalUnpaid": "Total unpaid",
+  "nothingUnpaid": "All fees are paid.",
+  "statusScheduled": "Booked",
+  "statusDone": "Done",
+  "statusCancelled": "Cancelled",
+  "statusMissed": "Missed",
+  "markDone": "Mark done",
+  "markPaid": "Mark paid",
+  "markMissed": "Mark missed",
+  "markCancelled": "Cancel",
+  "noClient": "— No client (walk-in) —",
+  "walkInName": "Name",
+  "topic": "Topic (optional)",
+  "needClientOrName": "Choose a client or type a name.",
+  "minutesShort": "{n} min",
+  "@minutesShort": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "remindMe": "Remind me",
+  "remindMeHint": "30 minutes before, and at 10 am on the follow-up day",
+  "sessionNotes": "Consultation notes",
+  "sessionNotesHint": "Questions asked, what you saw in the chart, remedies advised…",
+  "fee": "Fee",
+  "paid": "Paid",
+  "followUpOn": "Follow up on",
+  "deleteAppointmentTitle": "Delete this appointment?",
+  "remindersChannel": "Appointment reminders",
+  "appointmentReminder": "Appointment: {who}",
+  "@appointmentReminder": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "followUpReminder": "Follow up with {who}",
+  "@followUpReminder": {
+    "placeholders": {
+      "who": {
+        "type": "String"
+      }
+    }
+  },
+  "backup": "Backup",
+  "backupSettingsHint": "Save everything to Google Drive, or restore",
+  "backupIntro": "A backup is one file with all charts, clients, consultations, settings and your logo. Keep it on Google Drive so nothing is lost if the phone is lost or changed.",
+  "neverBackedUp": "No backup made yet on this phone.",
+  "lastBackup": "Last backup: {when}",
+  "@lastBackup": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "backupNow": "Back up now",
+  "backupHint": "Then choose Drive (Save to Drive), WhatsApp or email in the share sheet.",
+  "backupShareText": "Astro app backup",
+  "restoreFromFile": "Restore from a backup file",
+  "restoreHint": "Pick a backup .zip (from Drive or the phone). Everything on this phone is replaced by the backup.",
+  "restoreTitle": "Restore this backup?",
+  "restoreBody": "Made on {when}: {charts} charts, {clients} clients, {appointments} appointments.\n\nEverything now on this phone will be replaced.",
+  "@restoreBody": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      },
+      "charts": {
+        "type": "String"
+      },
+      "clients": {
+        "type": "String"
+      },
+      "appointments": {
+        "type": "String"
+      }
+    }
+  },
+  "restoreAction": "Restore",
+  "notABackup": "That file is not a backup from this app.",
+  "backupTooNew": "This backup is from a newer version of the app. Update the app first.",
+  "backupFailed": "Backup failed: {error}",
+  "@backupFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -2893,6 +2893,551 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ashtakavarga'**
   String get ashtakavargaShort;
+
+  /// No description provided for @clients.
+  ///
+  /// In en, this message translates to:
+  /// **'Clients'**
+  String get clients;
+
+  /// No description provided for @appointments.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointments'**
+  String get appointments;
+
+  /// No description provided for @client.
+  ///
+  /// In en, this message translates to:
+  /// **'Client'**
+  String get client;
+
+  /// No description provided for @newClient.
+  ///
+  /// In en, this message translates to:
+  /// **'New client'**
+  String get newClient;
+
+  /// No description provided for @editClient.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit client'**
+  String get editClient;
+
+  /// No description provided for @searchClients.
+  ///
+  /// In en, this message translates to:
+  /// **'Search name, phone or notes'**
+  String get searchClients;
+
+  /// No description provided for @noClientsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No clients yet. Add one with New client.'**
+  String get noClientsYet;
+
+  /// No description provided for @noClientMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No client matches \"{query}\".'**
+  String noClientMatches(String query);
+
+  /// No description provided for @clientNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Client not found.'**
+  String get clientNotFound;
+
+  /// No description provided for @chartCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} charts'**
+  String chartCount(String n);
+
+  /// No description provided for @dueAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Due {amount}'**
+  String dueAmount(String amount);
+
+  /// No description provided for @paidTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid {amount}'**
+  String paidTotal(String amount);
+
+  /// No description provided for @city.
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get city;
+
+  /// No description provided for @clientNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get clientNotes;
+
+  /// No description provided for @nameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a name'**
+  String get nameRequired;
+
+  /// No description provided for @deleteClientTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete client?'**
+  String get deleteClientTitle;
+
+  /// No description provided for @deleteClientBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} will be removed. Their charts and consultations stay, without the link.'**
+  String deleteClientBody(String name);
+
+  /// No description provided for @call.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get call;
+
+  /// No description provided for @familyCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'Family charts'**
+  String get familyCharts;
+
+  /// No description provided for @noFamilyCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'No charts linked yet. Use + to add one.'**
+  String get noFamilyCharts;
+
+  /// No description provided for @newChartForClient.
+  ///
+  /// In en, this message translates to:
+  /// **'New chart'**
+  String get newChartForClient;
+
+  /// No description provided for @linkChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Link a saved chart'**
+  String get linkChart;
+
+  /// No description provided for @relationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Relation to the client'**
+  String get relationTitle;
+
+  /// No description provided for @changeRelation.
+  ///
+  /// In en, this message translates to:
+  /// **'Change relation'**
+  String get changeRelation;
+
+  /// No description provided for @unlinkChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from client'**
+  String get unlinkChart;
+
+  /// No description provided for @relSelf.
+  ///
+  /// In en, this message translates to:
+  /// **'Self'**
+  String get relSelf;
+
+  /// No description provided for @relSpouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Spouse'**
+  String get relSpouse;
+
+  /// No description provided for @relSon.
+  ///
+  /// In en, this message translates to:
+  /// **'Son'**
+  String get relSon;
+
+  /// No description provided for @relDaughter.
+  ///
+  /// In en, this message translates to:
+  /// **'Daughter'**
+  String get relDaughter;
+
+  /// No description provided for @relFather.
+  ///
+  /// In en, this message translates to:
+  /// **'Father'**
+  String get relFather;
+
+  /// No description provided for @relMother.
+  ///
+  /// In en, this message translates to:
+  /// **'Mother'**
+  String get relMother;
+
+  /// No description provided for @relBrother.
+  ///
+  /// In en, this message translates to:
+  /// **'Brother'**
+  String get relBrother;
+
+  /// No description provided for @relSister.
+  ///
+  /// In en, this message translates to:
+  /// **'Sister'**
+  String get relSister;
+
+  /// No description provided for @relOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get relOther;
+
+  /// No description provided for @consultations.
+  ///
+  /// In en, this message translates to:
+  /// **'Consultations'**
+  String get consultations;
+
+  /// No description provided for @noConsultations.
+  ///
+  /// In en, this message translates to:
+  /// **'No consultations yet.'**
+  String get noConsultations;
+
+  /// No description provided for @reportsSent.
+  ///
+  /// In en, this message translates to:
+  /// **'PDF kundlis sent'**
+  String get reportsSent;
+
+  /// No description provided for @pagesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} pages'**
+  String pagesCount(String n);
+
+  /// No description provided for @newAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'New appointment'**
+  String get newAppointment;
+
+  /// No description provided for @editAppointment.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment'**
+  String get editAppointment;
+
+  /// No description provided for @noAppointments.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here.'**
+  String get noAppointments;
+
+  /// No description provided for @noAppointmentsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'No appointments today.'**
+  String get noAppointmentsToday;
+
+  /// No description provided for @followUpsThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow-ups this week'**
+  String get followUpsThisWeek;
+
+  /// No description provided for @noFollowUps.
+  ///
+  /// In en, this message translates to:
+  /// **'No follow-ups due.'**
+  String get noFollowUps;
+
+  /// No description provided for @viewToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get viewToday;
+
+  /// No description provided for @viewUpcoming.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming'**
+  String get viewUpcoming;
+
+  /// No description provided for @viewPast.
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get viewPast;
+
+  /// No description provided for @viewUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Unpaid'**
+  String get viewUnpaid;
+
+  /// No description provided for @totalUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Total unpaid'**
+  String get totalUnpaid;
+
+  /// No description provided for @nothingUnpaid.
+  ///
+  /// In en, this message translates to:
+  /// **'All fees are paid.'**
+  String get nothingUnpaid;
+
+  /// No description provided for @statusScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Booked'**
+  String get statusScheduled;
+
+  /// No description provided for @statusDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get statusDone;
+
+  /// No description provided for @statusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get statusCancelled;
+
+  /// No description provided for @statusMissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed'**
+  String get statusMissed;
+
+  /// No description provided for @markDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark done'**
+  String get markDone;
+
+  /// No description provided for @markPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark paid'**
+  String get markPaid;
+
+  /// No description provided for @markMissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark missed'**
+  String get markMissed;
+
+  /// No description provided for @markCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get markCancelled;
+
+  /// No description provided for @noClient.
+  ///
+  /// In en, this message translates to:
+  /// **'— No client (walk-in) —'**
+  String get noClient;
+
+  /// No description provided for @walkInName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get walkInName;
+
+  /// No description provided for @topic.
+  ///
+  /// In en, this message translates to:
+  /// **'Topic (optional)'**
+  String get topic;
+
+  /// No description provided for @needClientOrName.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a client or type a name.'**
+  String get needClientOrName;
+
+  /// No description provided for @minutesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} min'**
+  String minutesShort(String n);
+
+  /// No description provided for @remindMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me'**
+  String get remindMe;
+
+  /// No description provided for @remindMeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'30 minutes before, and at 10 am on the follow-up day'**
+  String get remindMeHint;
+
+  /// No description provided for @sessionNotes.
+  ///
+  /// In en, this message translates to:
+  /// **'Consultation notes'**
+  String get sessionNotes;
+
+  /// No description provided for @sessionNotesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions asked, what you saw in the chart, remedies advised…'**
+  String get sessionNotesHint;
+
+  /// No description provided for @fee.
+  ///
+  /// In en, this message translates to:
+  /// **'Fee'**
+  String get fee;
+
+  /// No description provided for @paid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get paid;
+
+  /// No description provided for @followUpOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow up on'**
+  String get followUpOn;
+
+  /// No description provided for @deleteAppointmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this appointment?'**
+  String get deleteAppointmentTitle;
+
+  /// No description provided for @remindersChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment reminders'**
+  String get remindersChannel;
+
+  /// No description provided for @appointmentReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment: {who}'**
+  String appointmentReminder(String who);
+
+  /// No description provided for @followUpReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow up with {who}'**
+  String followUpReminder(String who);
+
+  /// No description provided for @backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup'**
+  String get backup;
+
+  /// No description provided for @backupSettingsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Save everything to Google Drive, or restore'**
+  String get backupSettingsHint;
+
+  /// No description provided for @backupIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A backup is one file with all charts, clients, consultations, settings and your logo. Keep it on Google Drive so nothing is lost if the phone is lost or changed.'**
+  String get backupIntro;
+
+  /// No description provided for @neverBackedUp.
+  ///
+  /// In en, this message translates to:
+  /// **'No backup made yet on this phone.'**
+  String get neverBackedUp;
+
+  /// No description provided for @lastBackup.
+  ///
+  /// In en, this message translates to:
+  /// **'Last backup: {when}'**
+  String lastBackup(String when);
+
+  /// No description provided for @backupNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up now'**
+  String get backupNow;
+
+  /// No description provided for @backupHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Then choose Drive (Save to Drive), WhatsApp or email in the share sheet.'**
+  String get backupHint;
+
+  /// No description provided for @backupShareText.
+  ///
+  /// In en, this message translates to:
+  /// **'Astro app backup'**
+  String get backupShareText;
+
+  /// No description provided for @restoreFromFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore from a backup file'**
+  String get restoreFromFile;
+
+  /// No description provided for @restoreHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a backup .zip (from Drive or the phone). Everything on this phone is replaced by the backup.'**
+  String get restoreHint;
+
+  /// No description provided for @restoreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore this backup?'**
+  String get restoreTitle;
+
+  /// No description provided for @restoreBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Made on {when}: {charts} charts, {clients} clients, {appointments} appointments.\n\nEverything now on this phone will be replaced.'**
+  String restoreBody(
+    String when,
+    String charts,
+    String clients,
+    String appointments,
+  );
+
+  /// No description provided for @restoreAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get restoreAction;
+
+  /// No description provided for @notABackup.
+  ///
+  /// In en, this message translates to:
+  /// **'That file is not a backup from this app.'**
+  String get notABackup;
+
+  /// No description provided for @backupTooNew.
+  ///
+  /// In en, this message translates to:
+  /// **'This backup is from a newer version of the app. Update the app first.'**
+  String get backupTooNew;
+
+  /// No description provided for @backupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup failed: {error}'**
+  String backupFailed(String error);
 }
 
 class _AppLocalizationsDelegate

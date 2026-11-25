@@ -61,6 +61,12 @@ class SettingsPage extends StatelessWidget {
                 ),
                 onTap: () => context.push(Routes.letterhead),
               ),
+              ListTile(
+                leading: const Icon(Icons.cloud_upload_outlined),
+                title: Text(l10n.backup),
+                subtitle: Text(l10n.backupSettingsHint),
+                onTap: () => context.push(Routes.backup),
+              ),
               _Header(l10n.calculation),
               _Choice<Ayanamsa>(
                 title: l10n.ayanamsa,

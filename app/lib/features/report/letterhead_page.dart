@@ -6,6 +6,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../../l10n/l10n.dart';
+import '../backup/backup_service.dart';
 import '../settings/settings.dart';
 
 /// The astrologer's name, title, phone, address and logo for PDF kundlis.
@@ -42,7 +43,11 @@ class _LetterheadPageState extends State<LetterheadPage> {
       maxHeight: 800,
     );
     if (x == null) return;
-    final dir = await getApplicationSupportDirectory();
+    // In its own folder so backups carry it (see BackupService.logoFolder).
+    final dir = Directory(
+      '${(await getApplicationSupportDirectory()).path}/${BackupService.logoFolder}',
+    );
+    await dir.create(recursive: true);
     final ext = x.path.toLowerCase().endsWith('.png') ? 'png' : 'jpg';
     // A new name each time so the image cache never shows the old logo.
     final dest =

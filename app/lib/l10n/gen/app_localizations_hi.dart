@@ -1536,4 +1536,309 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get ashtakavargaShort => 'अष्टकवर्ग';
+
+  @override
+  String get clients => 'ग्राहक';
+
+  @override
+  String get appointments => 'मुलाक़ातें';
+
+  @override
+  String get client => 'ग्राहक';
+
+  @override
+  String get newClient => 'नया ग्राहक';
+
+  @override
+  String get editClient => 'ग्राहक बदलें';
+
+  @override
+  String get searchClients => 'नाम, फ़ोन या नोट्स खोजें';
+
+  @override
+  String get noClientsYet => 'अभी कोई ग्राहक नहीं। \'नया ग्राहक\' से जोड़ें।';
+
+  @override
+  String noClientMatches(String query) {
+    return '\"$query\" से कोई ग्राहक नहीं मिला।';
+  }
+
+  @override
+  String get clientNotFound => 'ग्राहक नहीं मिला।';
+
+  @override
+  String chartCount(String n) {
+    return '$n कुंडलियाँ';
+  }
+
+  @override
+  String dueAmount(String amount) {
+    return 'बाकी $amount';
+  }
+
+  @override
+  String paidTotal(String amount) {
+    return 'मिला $amount';
+  }
+
+  @override
+  String get city => 'शहर';
+
+  @override
+  String get clientNotes => 'नोट्स';
+
+  @override
+  String get nameRequired => 'नाम लिखें';
+
+  @override
+  String get deleteClientTitle => 'ग्राहक हटाएँ?';
+
+  @override
+  String deleteClientBody(String name) {
+    return '$name हटा दिए जाएँगे। उनकी कुंडलियाँ और मुलाक़ातें रहेंगी, बस जुड़ाव हटेगा।';
+  }
+
+  @override
+  String get call => 'कॉल';
+
+  @override
+  String get familyCharts => 'परिवार की कुंडलियाँ';
+
+  @override
+  String get noFamilyCharts => 'अभी कोई कुंडली नहीं जुड़ी। + से जोड़ें।';
+
+  @override
+  String get newChartForClient => 'नई कुंडली';
+
+  @override
+  String get linkChart => 'सहेजी कुंडली जोड़ें';
+
+  @override
+  String get relationTitle => 'ग्राहक से संबंध';
+
+  @override
+  String get changeRelation => 'संबंध बदलें';
+
+  @override
+  String get unlinkChart => 'ग्राहक से हटाएँ';
+
+  @override
+  String get relSelf => 'स्वयं';
+
+  @override
+  String get relSpouse => 'पति/पत्नी';
+
+  @override
+  String get relSon => 'पुत्र';
+
+  @override
+  String get relDaughter => 'पुत्री';
+
+  @override
+  String get relFather => 'पिता';
+
+  @override
+  String get relMother => 'माता';
+
+  @override
+  String get relBrother => 'भाई';
+
+  @override
+  String get relSister => 'बहन';
+
+  @override
+  String get relOther => 'अन्य';
+
+  @override
+  String get consultations => 'मुलाक़ातें';
+
+  @override
+  String get noConsultations => 'अभी कोई मुलाक़ात नहीं।';
+
+  @override
+  String get reportsSent => 'भेजी गई PDF कुंडलियाँ';
+
+  @override
+  String pagesCount(String n) {
+    return '$n पृष्ठ';
+  }
+
+  @override
+  String get newAppointment => 'नई मुलाक़ात';
+
+  @override
+  String get editAppointment => 'मुलाक़ात';
+
+  @override
+  String get noAppointments => 'यहाँ कुछ नहीं।';
+
+  @override
+  String get noAppointmentsToday => 'आज कोई मुलाक़ात नहीं।';
+
+  @override
+  String get followUpsThisWeek => 'इस सप्ताह फ़ॉलो-अप';
+
+  @override
+  String get noFollowUps => 'कोई फ़ॉलो-अप बाकी नहीं।';
+
+  @override
+  String get viewToday => 'आज';
+
+  @override
+  String get viewUpcoming => 'आगे';
+
+  @override
+  String get viewPast => 'पिछली';
+
+  @override
+  String get viewUnpaid => 'बाकी';
+
+  @override
+  String get totalUnpaid => 'कुल बाकी';
+
+  @override
+  String get nothingUnpaid => 'सारी फ़ीस मिल गई है।';
+
+  @override
+  String get statusScheduled => 'तय';
+
+  @override
+  String get statusDone => 'हो गई';
+
+  @override
+  String get statusCancelled => 'रद्द';
+
+  @override
+  String get statusMissed => 'नहीं आए';
+
+  @override
+  String get markDone => 'हो गई';
+
+  @override
+  String get markPaid => 'फ़ीस मिली';
+
+  @override
+  String get markMissed => 'नहीं आए';
+
+  @override
+  String get markCancelled => 'रद्द करें';
+
+  @override
+  String get noClient => '— बिना ग्राहक (सीधे आए) —';
+
+  @override
+  String get walkInName => 'नाम';
+
+  @override
+  String get topic => 'विषय (वैकल्पिक)';
+
+  @override
+  String get needClientOrName => 'ग्राहक चुनें या नाम लिखें।';
+
+  @override
+  String minutesShort(String n) {
+    return '$n मिनट';
+  }
+
+  @override
+  String get remindMe => 'याद दिलाएँ';
+
+  @override
+  String get remindMeHint => '30 मिनट पहले, और फ़ॉलो-अप के दिन सुबह 10 बजे';
+
+  @override
+  String get sessionNotes => 'मुलाक़ात के नोट्स';
+
+  @override
+  String get sessionNotesHint =>
+      'पूछे गए प्रश्न, कुंडली में क्या देखा, बताए गए उपाय…';
+
+  @override
+  String get fee => 'फ़ीस';
+
+  @override
+  String get paid => 'मिली';
+
+  @override
+  String get followUpOn => 'फ़ॉलो-अप की तारीख';
+
+  @override
+  String get deleteAppointmentTitle => 'यह मुलाक़ात हटाएँ?';
+
+  @override
+  String get remindersChannel => 'मुलाक़ात अनुस्मारक';
+
+  @override
+  String appointmentReminder(String who) {
+    return 'मुलाक़ात: $who';
+  }
+
+  @override
+  String followUpReminder(String who) {
+    return '$who से फ़ॉलो-अप';
+  }
+
+  @override
+  String get backup => 'बैकअप';
+
+  @override
+  String get backupSettingsHint =>
+      'सब कुछ Google Drive में सहेजें, या वापस लाएँ';
+
+  @override
+  String get backupIntro =>
+      'बैकअप एक फ़ाइल है जिसमें सारी कुंडलियाँ, ग्राहक, मुलाक़ातें, सेटिंग्स और आपका लोगो होता है। इसे Google Drive पर रखें ताकि फ़ोन खोने या बदलने पर कुछ न खोए।';
+
+  @override
+  String get neverBackedUp => 'इस फ़ोन पर अभी तक कोई बैकअप नहीं बना।';
+
+  @override
+  String lastBackup(String when) {
+    return 'पिछला बैकअप: $when';
+  }
+
+  @override
+  String get backupNow => 'अभी बैकअप लें';
+
+  @override
+  String get backupHint =>
+      'फिर शेयर सूची में Drive (Save to Drive), WhatsApp या ईमेल चुनें।';
+
+  @override
+  String get backupShareText => 'एस्ट्रो ऐप बैकअप';
+
+  @override
+  String get restoreFromFile => 'बैकअप फ़ाइल से वापस लाएँ';
+
+  @override
+  String get restoreHint =>
+      'बैकअप .zip चुनें (Drive या फ़ोन से)। इस फ़ोन का सारा डेटा बैकअप से बदल जाएगा।';
+
+  @override
+  String get restoreTitle => 'यह बैकअप वापस लाएँ?';
+
+  @override
+  String restoreBody(
+    String when,
+    String charts,
+    String clients,
+    String appointments,
+  ) {
+    return '$when को बना: $charts कुंडलियाँ, $clients ग्राहक, $appointments मुलाक़ातें।\n\nइस फ़ोन का अभी का सारा डेटा बदल जाएगा।';
+  }
+
+  @override
+  String get restoreAction => 'वापस लाएँ';
+
+  @override
+  String get notABackup => 'यह फ़ाइल इस ऐप का बैकअप नहीं है।';
+
+  @override
+  String get backupTooNew =>
+      'यह बैकअप ऐप के नए संस्करण का है। पहले ऐप अपडेट करें।';
+
+  @override
+  String backupFailed(String error) {
+    return 'बैकअप नहीं हो सका: $error';
+  }
 }

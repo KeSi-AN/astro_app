@@ -22,18 +22,19 @@ class ChartRepository {
       q.where(
         (c) =>
             c.name.like(like, escapeChar: '\\') |
-            c.placeName.like(like, escapeChar: '\\'),
+            c.placeName.like(like, escapeChar: '\\') |
+            c.notes.like(like, escapeChar: '\\'),
       );
     }
     q.orderBy([(c) => OrderingTerm.desc(c.updatedAt)]);
-    return q.watch().map((rows) => rows.map(_fromRow).toList());
+    return q.watch().map((rows) => rows.map(fromRow).toList());
   }
 
   Future<ChartEntry?> get(int id) async {
     final row = await (_db.select(
       _db.charts,
     )..where((c) => c.id.equals(id))).getSingleOrNull();
-    return row == null ? null : _fromRow(row);
+    return row == null ? null : fromRow(row);
   }
 
   /// Inserts or updates; returns the id.
@@ -102,7 +103,8 @@ class ChartRepository {
   Future<void> delete(int id) =>
       (_db.delete(_db.charts)..where((c) => c.id.equals(id))).go();
 
-  ChartEntry _fromRow(Chart r) {
+  /// Maps a database row (also used by the client screens).
+  ChartEntry fromRow(Chart r) {
     // placeName is stored as "Name, State, Country"; keep the first part as
     // the place name for display in compact rows.
     final parts = r.placeName.split(', ');

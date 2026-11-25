@@ -2,12 +2,14 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:printing/printing.dart';
 
 import '../../app/router.dart';
+import '../../app/services.dart';
 import '../../l10n/l10n.dart';
 import '../charts/domain/chart_entry.dart';
 import '../settings/settings.dart';
@@ -179,6 +181,23 @@ class _ReportPreviewPageState extends State<ReportPreviewPage> {
     return '${safe.isEmpty ? 'kundli' : safe}_kundli.pdf';
   }
 
+  /// Records the report on the chart (shown on its client's page).
+  Future<void> _log(String kind) async {
+    final id = widget.entry.id;
+    if (id == null) return;
+    await context.read<AppServices>().clients.logReport(
+      chartId: id,
+      kind: kind,
+      language: widget.languageCode,
+      pages: _pageCount ?? _pages.length,
+    );
+  }
+
+  Future<void> _share(Uint8List pdf) async {
+    final sent = await Printing.sharePdf(bytes: pdf, filename: _fileName);
+    if (sent) await _log('share');
+  }
+
   @override
   void initState() {
     super.initState();
@@ -243,15 +262,18 @@ class _ReportPreviewPageState extends State<ReportPreviewPage> {
             IconButton(
               tooltip: l10n.printPdf,
               icon: const Icon(Icons.print_outlined),
-              onPressed: () => Printing.layoutPdf(
-                name: _fileName,
-                onLayout: (_) async => pdf,
-              ),
+              onPressed: () async {
+                final done = await Printing.layoutPdf(
+                  name: _fileName,
+                  onLayout: (_) async => pdf,
+                );
+                if (done) await _log('print');
+              },
             ),
             IconButton(
               tooltip: l10n.sharePdf,
               icon: const Icon(Icons.share_outlined),
-              onPressed: () => Printing.sharePdf(bytes: pdf, filename: _fileName),
+              onPressed: () => _share(pdf),
             ),
           ],
         ],
@@ -315,7 +337,7 @@ class _ReportPreviewPageState extends State<ReportPreviewPage> {
           : FloatingActionButton.extended(
               icon: const Icon(Icons.share),
               label: Text(l10n.sharePdf),
-              onPressed: () => Printing.sharePdf(bytes: pdf, filename: _fileName),
+              onPressed: () => _share(pdf),
             ),
     );
   }

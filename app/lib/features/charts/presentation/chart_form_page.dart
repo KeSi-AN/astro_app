@@ -10,13 +10,18 @@ import '../../../core/format/formatters.dart';
 import '../../atlas/domain/place.dart';
 import '../../atlas/presentation/place_search_page.dart';
 import '../../../l10n/l10n.dart';
+import '../../clients/domain/client.dart';
 import '../domain/chart_entry.dart';
 import 'widgets/time_zone_panel.dart';
 
 /// New chart (id == null) or edit an existing one.
 class ChartFormPage extends StatefulWidget {
-  const ChartFormPage({super.key, this.id});
+  const ChartFormPage({super.key, this.id, this.clientId, this.relation});
   final int? id;
+
+  /// A new chart made from a client's page is linked to them as [relation].
+  final int? clientId;
+  final String? relation;
 
   @override
   State<ChartFormPage> createState() => _ChartFormPageState();
@@ -260,7 +265,15 @@ class _ChartFormPageState extends State<ChartFormPage> {
       createdAt: _createdAt,
     );
     setState(() => _saving = true);
-    final id = await context.read<AppServices>().charts.save(entry);
+    final services = context.read<AppServices>();
+    final id = await services.charts.save(entry);
+    if (widget.id == null && widget.clientId != null) {
+      await services.clients.link(
+        id,
+        widget.clientId!,
+        Relation.values.asNameMap()[widget.relation] ?? Relation.other,
+      );
+    }
     if (!mounted) return;
     if (widget.id == null) {
       context.pushReplacement(Routes.chart(id));
