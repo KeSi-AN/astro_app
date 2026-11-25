@@ -54,6 +54,21 @@ abstract class AstroTerms {
   String varga(Varga v);
   String yogini(Yogini y);
   String nakshatraDasha(NakshatraDashaKind k);
+  String specialTime(SpecialTime k);
+  String baana(Baana b);
+  String anandadi(int i);
+  String gowri(Gowri g);
+  String bala(Bala b);
+  String tara(Tara t);
+
+  /// Drik's Tarabalam grades: veryGood, good, notGood, bad, totallyBad.
+  String taraGrade(String g);
+  String direction(Direction d);
+  String agnivasa(Agnivasa a);
+  String shivavasa(Shivavasa s);
+  String bhadravasa(Bhadravasa b);
+  String ritu(Ritu r);
+  String samvatsara(int i);
 
   /// BPHS condition under which [k] applies.
   String nakshatraDashaRule(NakshatraDashaKind k);
@@ -361,6 +376,66 @@ class EnglishTerms extends AstroTerms {
   @override
   String nakshatraDasha(NakshatraDashaKind k) => k.label;
   @override
+  String specialTime(SpecialTime k) => const {
+    SpecialTime.brahmaMuhurta: 'Brahma Muhurta',
+    SpecialTime.pratahSandhya: 'Pratah Sandhya',
+    SpecialTime.vijayaMuhurta: 'Vijaya Muhurta',
+    SpecialTime.godhuli: 'Godhuli Muhurta',
+    SpecialTime.sayahnaSandhya: 'Sayahna Sandhya',
+    SpecialTime.nishita: 'Nishita Muhurta',
+    SpecialTime.amritKalam: 'Amrit Kalam',
+    SpecialTime.sarvarthaSiddhi: 'Sarvartha Siddhi Yoga',
+    SpecialTime.amritaSiddhi: 'Amrita Siddhi Yoga',
+    SpecialTime.raviYoga: 'Ravi Yoga',
+    SpecialTime.raviPushya: 'Ravi Pushya Yoga',
+    SpecialTime.guruPushya: 'Guru Pushya Yoga',
+    SpecialTime.dwipushkar: 'Dwipushkar Yoga',
+    SpecialTime.tripushkar: 'Tripushkar Yoga',
+    SpecialTime.durMuhurtam: 'Dur Muhurtam',
+    SpecialTime.varjyam: 'Varjyam',
+    SpecialTime.gandaMoola: 'Ganda Moola',
+  }[k]!;
+  @override
+  String baana(Baana b) => const ['Mrityu', 'Agni', 'Raja', 'Chora', 'Roga'][b.index];
+  @override
+  String anandadi(int i) => anandadiNames[i];
+  @override
+  String gowri(Gowri g) => const [
+    'Uthi', 'Amirdha', 'Rogam', 'Laabam', 'Dhanam', 'Sugam', 'Soram', 'Visham',
+  ][g.index];
+  @override
+  String bala(Bala b) => const ['Good', 'Puja needed', 'Bad'][b.index];
+  @override
+  String tara(Tara t) => const [
+    'Janma', 'Sampat', 'Vipat', 'Kshema', 'Pratyari', 'Sadhaka', 'Naidhana',
+    'Mitra', 'Paramitra',
+  ][t.index];
+  @override
+  String taraGrade(String g) => const {
+    'veryGood': 'Very good', 'good': 'Good', 'notGood': 'Not good',
+    'bad': 'Bad', 'totallyBad': 'Totally bad',
+  }[g]!;
+  @override
+  String direction(Direction d) => const [
+    'East', 'South-East', 'South', 'South-West', 'West', 'North-West',
+    'North', 'North-East',
+  ][d.index];
+  @override
+  String agnivasa(Agnivasa a) => const ['Prithvi', 'Akasha', 'Patala'][a.index];
+  @override
+  String shivavasa(Shivavasa s) => const [
+    'in Shmashana', 'on Kailash', 'with Gowri', 'on Nandi', 'in Sabha',
+    'in Bhojana', 'in Krida',
+  ][s.index];
+  @override
+  String bhadravasa(Bhadravasa b) => const ['Swarga', 'Patala', 'Mrityuloka'][b.index];
+  @override
+  String ritu(Ritu r) => const [
+    'Vasanta', 'Grishma', 'Varsha', 'Sharad', 'Hemanta', 'Shishira',
+  ][r.index];
+  @override
+  String samvatsara(int i) => samvatsaraNames[i];
+  @override
   String nakshatraDashaRule(NakshatraDashaKind k) => switch (k) {
     NakshatraDashaKind.ashtottari =>
       'Rahu in a kendra or trikona from the lagna lord, not in lagna',
@@ -639,6 +714,81 @@ class HindiTerms extends AstroTerms {
     NakshatraDashaKind.shashtihayani: 'षष्टिहायनी',
     NakshatraDashaKind.shatTrimshaSama: 'षट्त्रिंशत्-सम',
   }[k]!;
+  @override
+  String specialTime(SpecialTime k) => const {
+    SpecialTime.brahmaMuhurta: 'ब्रह्म मुहूर्त',
+    SpecialTime.pratahSandhya: 'प्रातः सन्ध्या',
+    SpecialTime.vijayaMuhurta: 'विजय मुहूर्त',
+    SpecialTime.godhuli: 'गोधूलि मुहूर्त',
+    SpecialTime.sayahnaSandhya: 'सायाह्न सन्ध्या',
+    SpecialTime.nishita: 'निशिता मुहूर्त',
+    SpecialTime.amritKalam: 'अमृत काल',
+    SpecialTime.sarvarthaSiddhi: 'सर्वार्थ सिद्धि योग',
+    SpecialTime.amritaSiddhi: 'अमृत सिद्धि योग',
+    SpecialTime.raviYoga: 'रवि योग',
+    SpecialTime.raviPushya: 'रवि पुष्य योग',
+    SpecialTime.guruPushya: 'गुरु पुष्य योग',
+    SpecialTime.dwipushkar: 'द्विपुष्कर योग',
+    SpecialTime.tripushkar: 'त्रिपुष्कर योग',
+    SpecialTime.durMuhurtam: 'दुर्मुहूर्त',
+    SpecialTime.varjyam: 'वर्ज्य',
+    SpecialTime.gandaMoola: 'गण्ड मूल',
+  }[k]!;
+  @override
+  String baana(Baana b) => const ['मृत्यु', 'अग्नि', 'राज', 'चोर', 'रोग'][b.index];
+  @override
+  String anandadi(int i) => const [
+    'आनन्द', 'कालदण्ड', 'धूम्र', 'धाता', 'सौम्य', 'ध्वांक्ष', 'ध्वज', 'श्रीवत्स',
+    'वज्र', 'मुद्गर', 'छत्र', 'मित्र', 'मानस', 'पद्म', 'लुम्बक', 'उत्पात',
+    'मृत्यु', 'काण', 'सिद्धि', 'शुभ', 'अमृत', 'मुसल', 'गद', 'मातंग', 'राक्षस',
+    'चर', 'स्थिर', 'वर्धमान',
+  ][i];
+  @override
+  String gowri(Gowri g) => const [
+    'उत्ति', 'अमृत', 'रोग', 'लाभ', 'धन', 'सुख', 'चोर', 'विष',
+  ][g.index];
+  @override
+  String bala(Bala b) => const ['शुभ', 'पूजा आवश्यक', 'अशुभ'][b.index];
+  @override
+  String tara(Tara t) => const [
+    'जन्म', 'सम्पत्', 'विपत्', 'क्षेम', 'प्रत्यरि', 'साधक', 'नैधन', 'मित्र',
+    'परम मित्र',
+  ][t.index];
+  @override
+  String taraGrade(String g) => const {
+    'veryGood': 'अति शुभ', 'good': 'शुभ', 'notGood': 'अशुभ',
+    'bad': 'बुरा', 'totallyBad': 'अत्यन्त अशुभ',
+  }[g]!;
+  @override
+  String direction(Direction d) => const [
+    'पूर्व', 'आग्नेय (दक्षिण-पूर्व)', 'दक्षिण', 'नैऋत्य (दक्षिण-पश्चिम)', 'पश्चिम',
+    'वायव्य (उत्तर-पश्चिम)', 'उत्तर', 'ईशान (उत्तर-पूर्व)',
+  ][d.index];
+  @override
+  String agnivasa(Agnivasa a) => const ['पृथ्वी', 'आकाश', 'पाताल'][a.index];
+  @override
+  String shivavasa(Shivavasa s) => const [
+    'श्मशान में', 'कैलाश पर', 'गौरी के साथ', 'नन्दी पर', 'सभा में',
+    'भोजन में', 'क्रीड़ा में',
+  ][s.index];
+  @override
+  String bhadravasa(Bhadravasa b) => const ['स्वर्ग', 'पाताल', 'मृत्युलोक'][b.index];
+  @override
+  String ritu(Ritu r) => const [
+    'वसन्त', 'ग्रीष्म', 'वर्षा', 'शरद', 'हेमन्त', 'शिशिर',
+  ][r.index];
+  @override
+  String samvatsara(int i) => const [
+    'प्रभव', 'विभव', 'शुक्ल', 'प्रमोद', 'प्रजापति', 'अंगिरा', 'श्रीमुख', 'भाव',
+    'युवा', 'धाता', 'ईश्वर', 'बहुधान्य', 'प्रमाथी', 'विक्रम', 'वृष', 'चित्रभानु',
+    'सुभानु', 'तारण', 'पार्थिव', 'व्यय', 'सर्वजित्', 'सर्वधारी', 'विरोधी',
+    'विकृति', 'खर', 'नन्दन', 'विजय', 'जय', 'मन्मथ', 'दुर्मुख', 'हेमलम्ब',
+    'विलम्ब', 'विकारी', 'शार्वरी', 'प्लव', 'शुभकृत्', 'शोभकृत्', 'क्रोधी',
+    'विश्वावसु', 'पराभव', 'प्लवंग', 'कीलक', 'सौम्य', 'साधारण', 'विरोधकृत्',
+    'परिधावी', 'प्रमादी', 'आनन्द', 'राक्षस', 'नल', 'पिंगल', 'कालयुक्त',
+    'सिद्धार्थी', 'रौद्र', 'दुर्मति', 'दुन्दुभि', 'रुधिरोद्गारी', 'रक्ताक्षी',
+    'क्रोधन', 'अक्षय',
+  ][i];
   @override
   String nakshatraDashaRule(NakshatraDashaKind k) => switch (k) {
     NakshatraDashaKind.ashtottari =>

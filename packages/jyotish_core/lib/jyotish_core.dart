@@ -15,6 +15,7 @@ export 'src/model/settings.dart';
 export 'src/panchang/birth_panchang.dart';
 export 'src/panchang/day_panchang.dart';
 export 'src/panchang/muhurta.dart';
+export 'src/panchang/day_extras.dart';
 export 'src/panchang/vrat.dart';
 export 'src/phase6/sade_sati.dart';
 export 'src/phase6/special_points.dart';

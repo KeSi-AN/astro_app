@@ -918,5 +918,84 @@
   "dashaNotApplies": "does not apply to this chart (shown for reference)",
   "dashaApplyUnknown": "check by hand",
   "otherDashas": "Other dashas",
-  "otherDashasNote": "Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart."
+  "otherDashasNote": "Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart.",
+  "auspiciousTimings": "Auspicious timings",
+  "inauspiciousTimings": "Inauspicious timings",
+  "anandadiTitle": "Anandadi yoga",
+  "nivasTitle": "Nivas & Shool",
+  "homahutiLabel": "Homahuti",
+  "dishaShoolLabel": "Disha Shool",
+  "rahuVasaLabel": "Rahu Vasa",
+  "agnivasaLabel": "Agnivasa",
+  "bhadravasaLabel": "Bhadravasa",
+  "chandraVasaLabel": "Chandra Vasa",
+  "shivavasaLabel": "Shivavasa",
+  "otherCalendars": "Other calendars & epoch",
+  "kaliyugaLabel": "Kaliyuga",
+  "kaliAharganaLabel": "Kali Ahargana",
+  "rataDieLabel": "Rata Die",
+  "mjdLabel": "Modified Julian day",
+  "julianDateLabel": "Julian date",
+  "nationalCivilDateLabel": "National civil date",
+  "yearsValue": "{n} years",
+  "@yearsValue": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "daysValue": "{n} days",
+  "@daysValue": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "rituTitle": "Ritu & Ayana",
+  "drikRituLabel": "Drik ritu",
+  "vedicRituLabel": "Vedic ritu",
+  "drikAyanaLabel": "Drik ayana",
+  "vedicAyanaLabel": "Vedic ayana",
+  "uttarayana": "Uttarayana",
+  "dakshinayana": "Dakshinayana",
+  "madhyahnaLabel": "Madhyahna",
+  "dinamanaLabel": "Dinamana",
+  "ratrimanaLabel": "Ratrimana",
+  "samvatTitle": "Samvat",
+  "pravishteLabel": "Pravishte / Gate",
+  "shakaSamvatLabel": "Shaka Samvat",
+  "vikramSamvatLabel": "Vikram Samvat",
+  "gujaratiSamvatLabel": "Gujarati Samvat",
+  "suryaNakshatraLabel": "Surya nakshatra",
+  "baanaLabel": "Baana",
+  "fromTime": "from {time}",
+  "@fromTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "secGowri": "Gowri",
+  "secPanchakaRahita": "Panchaka Rahita",
+  "secBala": "Chandra / Tara bala",
+  "shubhaMuhurta": "Shubha muhurta",
+  "panchakaName": "{name} Panchaka",
+  "@panchakaName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "dayHalf": "Day",
+  "nightHalf": "Night",
+  "chandrabalamTitle": "Chandrabalam (12 rashis)",
+  "tarabalamTitle": "Tarabalam (27 nakshatras)",
+  "panchakaRahitaNote": "(tithi + weekday + nakshatra + lagna) ÷ 9: remainder 1 Mrityu, 2 Agni, 4 Raja, 6 Chora, 8 Roga; others are Shubha.",
+  "ahoratri": "all day and night",
+  "lahiriNote": "Ayanamsa",
+  "bhadraLabel": "Bhadra"
 }

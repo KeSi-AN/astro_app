@@ -1866,4 +1866,166 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get otherDashasNote =>
       'Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart.';
+
+  @override
+  String get auspiciousTimings => 'Auspicious timings';
+
+  @override
+  String get inauspiciousTimings => 'Inauspicious timings';
+
+  @override
+  String get anandadiTitle => 'Anandadi yoga';
+
+  @override
+  String get nivasTitle => 'Nivas & Shool';
+
+  @override
+  String get homahutiLabel => 'Homahuti';
+
+  @override
+  String get dishaShoolLabel => 'Disha Shool';
+
+  @override
+  String get rahuVasaLabel => 'Rahu Vasa';
+
+  @override
+  String get agnivasaLabel => 'Agnivasa';
+
+  @override
+  String get bhadravasaLabel => 'Bhadravasa';
+
+  @override
+  String get chandraVasaLabel => 'Chandra Vasa';
+
+  @override
+  String get shivavasaLabel => 'Shivavasa';
+
+  @override
+  String get otherCalendars => 'Other calendars & epoch';
+
+  @override
+  String get kaliyugaLabel => 'Kaliyuga';
+
+  @override
+  String get kaliAharganaLabel => 'Kali Ahargana';
+
+  @override
+  String get rataDieLabel => 'Rata Die';
+
+  @override
+  String get mjdLabel => 'Modified Julian day';
+
+  @override
+  String get julianDateLabel => 'Julian date';
+
+  @override
+  String get nationalCivilDateLabel => 'National civil date';
+
+  @override
+  String yearsValue(String n) {
+    return '$n years';
+  }
+
+  @override
+  String daysValue(String n) {
+    return '$n days';
+  }
+
+  @override
+  String get rituTitle => 'Ritu & Ayana';
+
+  @override
+  String get drikRituLabel => 'Drik ritu';
+
+  @override
+  String get vedicRituLabel => 'Vedic ritu';
+
+  @override
+  String get drikAyanaLabel => 'Drik ayana';
+
+  @override
+  String get vedicAyanaLabel => 'Vedic ayana';
+
+  @override
+  String get uttarayana => 'Uttarayana';
+
+  @override
+  String get dakshinayana => 'Dakshinayana';
+
+  @override
+  String get madhyahnaLabel => 'Madhyahna';
+
+  @override
+  String get dinamanaLabel => 'Dinamana';
+
+  @override
+  String get ratrimanaLabel => 'Ratrimana';
+
+  @override
+  String get samvatTitle => 'Samvat';
+
+  @override
+  String get pravishteLabel => 'Pravishte / Gate';
+
+  @override
+  String get shakaSamvatLabel => 'Shaka Samvat';
+
+  @override
+  String get vikramSamvatLabel => 'Vikram Samvat';
+
+  @override
+  String get gujaratiSamvatLabel => 'Gujarati Samvat';
+
+  @override
+  String get suryaNakshatraLabel => 'Surya nakshatra';
+
+  @override
+  String get baanaLabel => 'Baana';
+
+  @override
+  String fromTime(String time) {
+    return 'from $time';
+  }
+
+  @override
+  String get secGowri => 'Gowri';
+
+  @override
+  String get secPanchakaRahita => 'Panchaka Rahita';
+
+  @override
+  String get secBala => 'Chandra / Tara bala';
+
+  @override
+  String get shubhaMuhurta => 'Shubha muhurta';
+
+  @override
+  String panchakaName(String name) {
+    return '$name Panchaka';
+  }
+
+  @override
+  String get dayHalf => 'Day';
+
+  @override
+  String get nightHalf => 'Night';
+
+  @override
+  String get chandrabalamTitle => 'Chandrabalam (12 rashis)';
+
+  @override
+  String get tarabalamTitle => 'Tarabalam (27 nakshatras)';
+
+  @override
+  String get panchakaRahitaNote =>
+      '(tithi + weekday + nakshatra + lagna) ÷ 9: remainder 1 Mrityu, 2 Agni, 4 Raja, 6 Chora, 8 Roga; others are Shubha.';
+
+  @override
+  String get ahoratri => 'all day and night';
+
+  @override
+  String get lahiriNote => 'Ayanamsa';
+
+  @override
+  String get bhadraLabel => 'Bhadra';
 }

@@ -3474,6 +3474,312 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ashtottari is always shown; the conditional dashas only when their BPHS condition holds for this chart.'**
   String get otherDashasNote;
+
+  /// No description provided for @auspiciousTimings.
+  ///
+  /// In en, this message translates to:
+  /// **'Auspicious timings'**
+  String get auspiciousTimings;
+
+  /// No description provided for @inauspiciousTimings.
+  ///
+  /// In en, this message translates to:
+  /// **'Inauspicious timings'**
+  String get inauspiciousTimings;
+
+  /// No description provided for @anandadiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Anandadi yoga'**
+  String get anandadiTitle;
+
+  /// No description provided for @nivasTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nivas & Shool'**
+  String get nivasTitle;
+
+  /// No description provided for @homahutiLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Homahuti'**
+  String get homahutiLabel;
+
+  /// No description provided for @dishaShoolLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Disha Shool'**
+  String get dishaShoolLabel;
+
+  /// No description provided for @rahuVasaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rahu Vasa'**
+  String get rahuVasaLabel;
+
+  /// No description provided for @agnivasaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Agnivasa'**
+  String get agnivasaLabel;
+
+  /// No description provided for @bhadravasaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhadravasa'**
+  String get bhadravasaLabel;
+
+  /// No description provided for @chandraVasaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Chandra Vasa'**
+  String get chandraVasaLabel;
+
+  /// No description provided for @shivavasaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shivavasa'**
+  String get shivavasaLabel;
+
+  /// No description provided for @otherCalendars.
+  ///
+  /// In en, this message translates to:
+  /// **'Other calendars & epoch'**
+  String get otherCalendars;
+
+  /// No description provided for @kaliyugaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Kaliyuga'**
+  String get kaliyugaLabel;
+
+  /// No description provided for @kaliAharganaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Kali Ahargana'**
+  String get kaliAharganaLabel;
+
+  /// No description provided for @rataDieLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Rata Die'**
+  String get rataDieLabel;
+
+  /// No description provided for @mjdLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Modified Julian day'**
+  String get mjdLabel;
+
+  /// No description provided for @julianDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Julian date'**
+  String get julianDateLabel;
+
+  /// No description provided for @nationalCivilDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'National civil date'**
+  String get nationalCivilDateLabel;
+
+  /// No description provided for @yearsValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} years'**
+  String yearsValue(String n);
+
+  /// No description provided for @daysValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} days'**
+  String daysValue(String n);
+
+  /// No description provided for @rituTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ritu & Ayana'**
+  String get rituTitle;
+
+  /// No description provided for @drikRituLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Drik ritu'**
+  String get drikRituLabel;
+
+  /// No description provided for @vedicRituLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Vedic ritu'**
+  String get vedicRituLabel;
+
+  /// No description provided for @drikAyanaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Drik ayana'**
+  String get drikAyanaLabel;
+
+  /// No description provided for @vedicAyanaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Vedic ayana'**
+  String get vedicAyanaLabel;
+
+  /// No description provided for @uttarayana.
+  ///
+  /// In en, this message translates to:
+  /// **'Uttarayana'**
+  String get uttarayana;
+
+  /// No description provided for @dakshinayana.
+  ///
+  /// In en, this message translates to:
+  /// **'Dakshinayana'**
+  String get dakshinayana;
+
+  /// No description provided for @madhyahnaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Madhyahna'**
+  String get madhyahnaLabel;
+
+  /// No description provided for @dinamanaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Dinamana'**
+  String get dinamanaLabel;
+
+  /// No description provided for @ratrimanaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Ratrimana'**
+  String get ratrimanaLabel;
+
+  /// No description provided for @samvatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Samvat'**
+  String get samvatTitle;
+
+  /// No description provided for @pravishteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pravishte / Gate'**
+  String get pravishteLabel;
+
+  /// No description provided for @shakaSamvatLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Shaka Samvat'**
+  String get shakaSamvatLabel;
+
+  /// No description provided for @vikramSamvatLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Vikram Samvat'**
+  String get vikramSamvatLabel;
+
+  /// No description provided for @gujaratiSamvatLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Gujarati Samvat'**
+  String get gujaratiSamvatLabel;
+
+  /// No description provided for @suryaNakshatraLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Surya nakshatra'**
+  String get suryaNakshatraLabel;
+
+  /// No description provided for @baanaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Baana'**
+  String get baanaLabel;
+
+  /// No description provided for @fromTime.
+  ///
+  /// In en, this message translates to:
+  /// **'from {time}'**
+  String fromTime(String time);
+
+  /// No description provided for @secGowri.
+  ///
+  /// In en, this message translates to:
+  /// **'Gowri'**
+  String get secGowri;
+
+  /// No description provided for @secPanchakaRahita.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchaka Rahita'**
+  String get secPanchakaRahita;
+
+  /// No description provided for @secBala.
+  ///
+  /// In en, this message translates to:
+  /// **'Chandra / Tara bala'**
+  String get secBala;
+
+  /// No description provided for @shubhaMuhurta.
+  ///
+  /// In en, this message translates to:
+  /// **'Shubha muhurta'**
+  String get shubhaMuhurta;
+
+  /// No description provided for @panchakaName.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} Panchaka'**
+  String panchakaName(String name);
+
+  /// No description provided for @dayHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get dayHalf;
+
+  /// No description provided for @nightHalf.
+  ///
+  /// In en, this message translates to:
+  /// **'Night'**
+  String get nightHalf;
+
+  /// No description provided for @chandrabalamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chandrabalam (12 rashis)'**
+  String get chandrabalamTitle;
+
+  /// No description provided for @tarabalamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tarabalam (27 nakshatras)'**
+  String get tarabalamTitle;
+
+  /// No description provided for @panchakaRahitaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'(tithi + weekday + nakshatra + lagna) ÷ 9: remainder 1 Mrityu, 2 Agni, 4 Raja, 6 Chora, 8 Roga; others are Shubha.'**
+  String get panchakaRahitaNote;
+
+  /// No description provided for @ahoratri.
+  ///
+  /// In en, this message translates to:
+  /// **'all day and night'**
+  String get ahoratri;
+
+  /// No description provided for @lahiriNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayanamsa'**
+  String get lahiriNote;
+
+  /// No description provided for @bhadraLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhadra'**
+  String get bhadraLabel;
 }
 
 class _AppLocalizationsDelegate

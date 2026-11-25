@@ -101,3 +101,19 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Chart screen doesn't show its client.** There's no way to link a chart to a client from the chart side. Linking is done from the client page (new chart, or link a saved chart).
 - [ ] **Walk-ins.** An appointment without a client can't be turned into a client in one tap.
 - [ ] **Not built:** importing contacts from the phone; merging duplicate clients; a month calendar view; repeating appointments; fee receipts. The "Reports sent" list logs only completed Share and Print actions, not previews.
+
+## More dashas (2026-11-26)
+- [ ] **No reference to check against.** Neither AstroSage nor Drik Panchang shows Ashtottari or the conditional dashas, so they are pinned only by hand-worked tests. Check one chart against Jagannatha Hora or Parashara's Light if the astrologer has either.
+- [ ] **[astrologer] Ashtottari variant.** We count from Ardra with Abhijit (the common BPHS reading). Some schools start from Krittika or apply it to everyone; ask which.
+- [ ] **Shodashottari condition** is shown as "check by hand" because texts differ (Moon's hora in Krishna paksha vs Sun's hora in Shukla).
+- [ ] **Not built:** Kalachakra, Narayana, Sthira, Shoola, Mudda (Varshphal) and Lal Kitab dashas. The conditional dashas go to two levels only in the PDF (all levels in the tab).
+
+## Drik Panchang features (2026-11-26)
+Teardown: `docs/DRIK_PANCHANG_TEARDOWN.md`.
+- [x] **Built:** Dur Muhurtam, Varjyam, Amrit Kalam, Brahma, Pratah/Sayahna Sandhya, Vijaya, Godhuli, Nishita, Sarvartha/Amrita Siddhi, Ravi Yoga, Ravi/Guru Pushya, Dwi/Tripushkar, Ganda Moola, Baana, Anandadi, nivas & shool, ritu & ayana, samvat names, Pravishte, epochs, Gowri, Panchaka Rahita, Chandrabalam and Tarabalam. The Day view, Gowri, Panchaka Rahita and Bala were checked on the phone against Drik for 26 Nov, and the engine was checked against 26 Nov – 1 Dec.
+- [ ] **Not built:** Aadal and Vidaal yoga, Tamil yoga, Jeevanama/Netrama, Kumbha Chakra. Their per-nakshatra tables can't be inferred from 6 days; capture a full month or find the source tables.
+- [ ] **Not built:** Brihaspati samvatsara, Mantri Mandala, National Nirayana date, Panjika yoga, Pancha Pakshi, Jain Pachchakkhan, the festival list, eclipses (with sutak) and regional calendars.
+- [ ] **Not phone-tested:** Dwipushkar, Tripushkar and Amrita Siddhi. They didn't occur in the 6 captured days; check one when it comes up.
+- [ ] **Rahu Vasa on Wednesday** (South-West) is inferred from the pattern, not seen in Drik.
+- [ ] **Baana times** come 4–6 minutes before Drik's, because Drik's Lahiri is about 16″ higher than ours (see DIVERGENCES).
+- [ ] **Hindi names** for the Gowri and Anandadi yogas are our transliterations; ask the astrologer if they use other names.

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:birth_input/birth_input.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jyotish_core/jyotish_core.dart';
@@ -12,7 +14,18 @@ import '../atlas/presentation/place_search_page.dart';
 import '../chart_view/presentation/tabs/table_widgets.dart';
 import '../settings/settings.dart';
 
-enum _Sec { day, hora, chogadia, muhurta, lagna, panchakBhadra, vrat }
+enum _Sec {
+  day,
+  hora,
+  chogadia,
+  gowri,
+  muhurta,
+  lagna,
+  panchakaRahita,
+  bala,
+  panchakBhadra,
+  vrat,
+}
 
 /// Daily panchang and muhurta tools for any date and place.
 class PanchangPage extends StatefulWidget {
@@ -174,8 +187,11 @@ class _PanchangPageState extends State<PanchangPage> {
               (_Sec.day, l10n.secToday),
               (_Sec.hora, l10n.secHora),
               (_Sec.chogadia, l10n.secChogadia),
+              (_Sec.gowri, l10n.secGowri),
               (_Sec.muhurta, l10n.secMuhurta),
               (_Sec.lagna, l10n.secLagnaTable),
+              (_Sec.panchakaRahita, l10n.secPanchakaRahita),
+              (_Sec.bala, l10n.secBala),
               (_Sec.panchakBhadra, l10n.secPanchakBhadra),
               (_Sec.vrat, l10n.secVrat),
             ])
@@ -191,8 +207,11 @@ class _PanchangPageState extends State<PanchangPage> {
           _Sec.day => _dayView(context, d, eph, calc),
           _Sec.hora => _horaView(context, d),
           _Sec.chogadia => _chogadiaView(context, d),
+          _Sec.gowri => _gowriView(context, d),
           _Sec.muhurta => _muhurtaView(context, d),
           _Sec.lagna => _lagnaView(context, d, eph, calc),
+          _Sec.panchakaRahita => _panchakaRahitaView(context, d, eph, calc),
+          _Sec.bala => _balaView(context, d, calc),
           _Sec.panchakBhadra => _panchakView(context, d, calc),
           _Sec.vrat => _vratView(context, calc, pp, settings),
         },
@@ -224,6 +243,13 @@ class _PanchangPageState extends State<PanchangPage> {
             ? name(x.index)
             : '${name(x.index)} ${l10n.untilTime(_time(d, x.end))}',
     ].join(', ');
+    // "A until 10:05, B" for values that change during the day.
+    String timed<T>(List<TimeSpan<T>> list, String Function(T) name) => [
+      for (final (i, x) in list.indexed)
+        i == list.length - 1 || x.end >= d.nextSunrise
+            ? name(x.value)
+            : '${name(x.value)} ${l10n.untilTime(_time(d, x.end))}',
+    ].join(', ');
     final m = d.month;
     String month(int i) =>
         '${m.adhika ? '${l10n.adhikaPrefix} ' : ''}${t.lunarMonth(i)}';
@@ -238,7 +264,19 @@ class _PanchangPageState extends State<PanchangPage> {
       (l10n.hinduWeekday, t.weekday(d.weekday)),
       (l10n.monthAmanta, month(m.amanta)),
       (l10n.monthPurnimanta, month(m.purnimanta)),
-      (l10n.samvat, l10n.samvatValue('${d.vikram}', '${d.shaka}')),
+      (
+        l10n.shakaSamvatLabel,
+        '${d.shaka} ${t.samvatsara(shakaSamvatsara(d.shaka))}',
+      ),
+      (
+        l10n.vikramSamvatLabel,
+        '${d.vikram} ${t.samvatsara(vikramSamvatsara(d.vikram))}',
+      ),
+      (
+        l10n.gujaratiSamvatLabel,
+        '${gujaratiYear(d)} ${t.samvatsara(gujaratiSamvatsara(gujaratiYear(d)))}',
+      ),
+      (l10n.pravishteLabel, '${pravishte(calc, d)}'),
       (l10n.sunrise, _time(d, d.sunrise)),
       (l10n.sunset, _time(d, d.sunset)),
       (
@@ -247,9 +285,15 @@ class _PanchangPageState extends State<PanchangPage> {
       ),
       (l10n.moonset, d.moonset == null ? l10n.noRiseSet : _time(d, d.moonset!)),
       (l10n.sunSign, t.rashi(d.sunSign)),
-      (l10n.moonSign, t.rashi(d.moonSign)),
+      (l10n.moonSign, timed(moonSignSpans(calc, d.sunrise, d.nextSunrise), t.rashi)),
+      (
+        l10n.suryaNakshatraLabel,
+        timed(
+          sunPadas(calc, d.sunrise, d.nextSunrise),
+          (p) => '${t.nakshatra(Nakshatra.values[p ~/ 4])} ${p % 4 + 1}',
+        ),
+      ),
     ];
-    final kaals = dayKaals(d);
     final widgets = <Widget>[KeyValueCard(title: l10n.panchang, rows: rows)];
 
     // "Right now" when looking at today and the current time is within it.
@@ -299,21 +343,234 @@ class _PanchangPageState extends State<PanchangPage> {
       );
     }
 
-    widgets.add(
+    widgets.addAll(_dayExtras(context, d, calc, timed));
+    return widgets;
+  }
+
+  /// Drik-style extra cards: ritu, auspicious and inauspicious times,
+  /// Anandadi yoga, nivas & shool, other calendars.
+  List<Widget> _dayExtras(
+    BuildContext context,
+    DayPanchang d,
+    PanchangCalc calc,
+    String Function<T>(List<TimeSpan<T>>, String Function(T)) timed,
+  ) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final eph = calc.eph;
+    String range(double s, double e) {
+      final all = s <= d.sunrise + 1e-4 && e >= d.nextSunrise - 1e-4;
+      return all ? l10n.ahoratri : '${_time(d, s)} – ${_time(d, e)}';
+    }
+
+    String hms(double days) {
+      final secs = (days * 86400).round();
+      return '${secs ~/ 3600}:${(secs % 3600 ~/ 60).toString().padLeft(2, '0')}:'
+          '${(secs % 60).toString().padLeft(2, '0')}';
+    }
+
+    final trop = calc.sun(d.sunrise) + eph.ayanamsa(d.sunrise, calc.settings);
+    String ayana(bool u) => u ? l10n.uttarayana : l10n.dakshinayana;
+    final special = specialTimes(calc, d);
+    final good = special.where((x) => x.value.good).toList();
+    final bad = special.where((x) => !x.value.good).toList();
+    final kaals = dayKaals(d);
+    final bh = bhadra(calc, d.sunrise, d.nextSunrise);
+    final baana = baanas(calc, d);
+    final nivas = Nivas.of(calc, d);
+    final w = sundayIndex(d);
+    final jd0 = civilJd(eph, d.date);
+    final (jy, jm, jdd) = julianCalendarDate(jd0);
+    final (ny, nm, nd) = nationalCivilDate(d.date);
+    final anand = anandadiYogas(calc, d);
+
+    return [
       KeyValueCard(
-        title: l10n.kaalsTitle,
+        title: l10n.rituTitle,
         rows: [
-          for (final k in Kaal.values)
+          (l10n.drikRituLabel, t.ritu(drikRitu(trop))),
+          (l10n.vedicRituLabel, t.ritu(vedicRitu(d.sunSign))),
+          (l10n.drikAyanaLabel, ayana(isUttarayana(trop))),
+          (l10n.vedicAyanaLabel, ayana(isUttarayana(calc.sun(d.sunrise)))),
+          (l10n.madhyahnaLabel, _time(d, (d.sunrise + d.sunset) / 2)),
+          (l10n.dinamanaLabel, hms(d.dayLength)),
+          (l10n.ratrimanaLabel, hms(d.nightLength)),
+        ],
+      ),
+      KeyValueCard(
+        title: l10n.auspiciousTimings,
+        rows: [
+          if (kaals[Kaal.abhijit] != null)
             (
-              t.kaal(k),
-              kaals[k] == null
-                  ? l10n.nonePeriod
-                  : '${_time(d, kaals[k]!.start)} – ${_time(d, kaals[k]!.end)}',
+              t.kaal(Kaal.abhijit),
+              range(kaals[Kaal.abhijit]!.start, kaals[Kaal.abhijit]!.end),
+            ),
+          for (final x in good) (t.specialTime(x.value), range(x.start, x.end)),
+        ],
+      ),
+      KeyValueCard(
+        title: l10n.inauspiciousTimings,
+        rows: [
+          for (final k in [Kaal.rahu, Kaal.yamaganda, Kaal.gulika])
+            (t.kaal(k), range(kaals[k]!.start, kaals[k]!.end)),
+          for (final x in bad) (t.specialTime(x.value), range(x.start, x.end)),
+          for (final x in bh)
+            (l10n.bhadraLabel, range(max(x.start, d.sunrise), min(x.end, d.nextSunrise))),
+          for (final x in baana)
+            (
+              l10n.baanaLabel,
+              x.start <= d.sunrise + 1e-4
+                  ? '${t.baana(x.value)} ${l10n.untilTime(_time(d, x.end))}'
+                  : '${t.baana(x.value)} ${l10n.fromTime(_time(d, x.start))}',
             ),
         ],
       ),
-    );
-    return widgets;
+      KeyValueCard(
+        title: l10n.anandadiTitle,
+        rows: [
+          for (final x in anand)
+            (
+              goodAnandadi.contains(x.value) ? '✓' : '✗',
+              x.end >= d.nextSunrise - 1e-4
+                  ? t.anandadi(x.value)
+                  : '${t.anandadi(x.value)} ${l10n.untilTime(_time(d, x.end))}',
+            ),
+        ],
+      ),
+      KeyValueCard(
+        title: l10n.nivasTitle,
+        rows: [
+          (l10n.homahutiLabel, timed(nivas.homahutis, t.graha)),
+          (l10n.dishaShoolLabel, t.direction(dishaShool[w])),
+          (l10n.rahuVasaLabel, t.direction(rahuVasa[w])),
+          (l10n.agnivasaLabel, timed(nivas.agnivasas, t.agnivasa)),
+          for (final b in nivas.bhadravasas)
+            (l10n.bhadravasaLabel, '${t.bhadravasa(b.value)} · ${range(b.start, b.end)}'),
+          (l10n.chandraVasaLabel, timed(nivas.chandraVasas, t.direction)),
+          (l10n.shivavasaLabel, timed(nivas.shivavasas, t.shivavasa)),
+        ],
+      ),
+      KeyValueCard(
+        title: l10n.otherCalendars,
+        rows: [
+          (l10n.kaliyugaLabel, l10n.yearsValue('${d.shaka + 3179}')),
+          (l10n.kaliAharganaLabel, l10n.daysValue('${kaliAhargana(jd0)}')),
+          (l10n.lahiriNote, eph.ayanamsa(d.sunrise, calc.settings).toStringAsFixed(6)),
+          (l10n.rataDieLabel, '${rataDie(jd0)}'),
+          (l10n.julianDay, jd0.toStringAsFixed(1)),
+          (l10n.mjdLabel, '${(jd0 - 2400000.5).round()}'),
+          (l10n.julianDateLabel, formatDate(jy, jm, jdd, month: t.month)),
+          (
+            l10n.nationalCivilDateLabel,
+            '${t.lunarMonth(nm - 1)} ${nd.toString().padLeft(2, '0')}, $ny',
+          ),
+        ],
+      ),
+    ];
+  }
+
+  List<Widget> _gowriView(BuildContext context, DayPanchang d) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final g = gowriPanchangam(d);
+    return [
+      GridTable(
+        header: ['', l10n.colTime, l10n.secGowri],
+        rows: [
+          for (final (i, x) in g.indexed)
+            [
+              i < 8 ? l10n.dayHalf : l10n.nightHalf,
+              '${_time(d, x.start)} – ${_time(d, x.end)}',
+              t.gowri(x.value),
+            ],
+        ],
+        highlight: (r, c) => c == 2
+            ? (isGoodGowri(g[r].value) ? const Color(0xFF81C784) : const Color(0xFFE57373))
+            : null,
+      ),
+    ];
+  }
+
+  List<Widget> _panchakaRahitaView(
+    BuildContext context,
+    DayPanchang d,
+    Ephemeris eph,
+    PanchangCalc calc,
+  ) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final p = panchakaRahita(d, lagnaTable(d, eph, calc));
+    return [
+      GridTable(
+        header: [l10n.colTime, ''],
+        rows: [
+          for (final x in p)
+            [
+              '${_time(d, x.start)} – ${_time(d, x.end)}',
+              x.value == null ? l10n.shubhaMuhurta : l10n.panchakaName(t.baana(x.value!)),
+            ],
+        ],
+        highlight: (r, c) => c == 1
+            ? (p[r].value == null ? const Color(0xFF81C784) : const Color(0xFFE57373))
+            : null,
+      ),
+      const SizedBox(height: 6),
+      Text(l10n.panchakaRahitaNote, style: Theme.of(context).textTheme.bodySmall),
+    ];
+  }
+
+  List<Widget> _balaView(BuildContext context, DayPanchang d, PanchangCalc calc) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final signs = moonSignSpans(calc, d.sunrise, d.nextSunrise);
+    Color? balaColor(Bala b) => switch (b) {
+      Bala.good => const Color(0xFF81C784),
+      Bala.bad => const Color(0xFFE57373),
+      Bala.pujaNeeded => Theme.of(context).colorScheme.primary,
+    };
+    final naks = d.nakshatras;
+    String taraText(Tara x) => '${t.tara(x)} (${t.taraGrade(taraGrade[x]!)})';
+    return [
+      Text(l10n.chandrabalamTitle, style: Theme.of(context).textTheme.titleSmall),
+      const SizedBox(height: 6),
+      GridTable(
+        header: [
+          l10n.rashi,
+          for (final s in signs)
+            '${t.rashiShort(s.value)}${s.end < d.nextSunrise ? ' ${l10n.untilTime(_time(d, s.end))}' : ''}',
+        ],
+        rows: [
+          for (final r in Rashi.values)
+            [t.rashi(r), for (final s in signs) t.bala(chandrabalam(r, s.value))],
+        ],
+        highlight: (row, c) =>
+            c == 0 ? null : balaColor(chandrabalam(Rashi.values[row], signs[c - 1].value)),
+      ),
+      const SizedBox(height: 16),
+      Text(l10n.tarabalamTitle, style: Theme.of(context).textTheme.titleSmall),
+      const SizedBox(height: 6),
+      GridTable(
+        header: [
+          l10n.colNakshatra,
+          for (final n in naks)
+            '${t.nakshatra(Nakshatra.values[n.index - 1])}${n.end < d.nextSunrise ? ' ${l10n.untilTime(_time(d, n.end))}' : ''}',
+        ],
+        rows: [
+          for (final b in Nakshatra.values)
+            [
+              t.nakshatra(b),
+              for (final n in naks) taraText(tarabalam(b.index, n.index - 1)),
+            ],
+        ],
+        highlight: (row, c) {
+          if (c == 0) return null;
+          final g = taraGrade[tarabalam(row, naks[c - 1].index - 1)]!;
+          return g.contains('ood') && g != 'notGood'
+              ? const Color(0xFF81C784)
+              : const Color(0xFFE57373);
+        },
+      ),
+    ];
   }
 
   List<Widget> _horaView(BuildContext context, DayPanchang d) {

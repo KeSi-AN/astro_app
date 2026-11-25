@@ -1860,4 +1860,166 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get otherDashasNote =>
       'अष्टोत्तरी सदा दिखाई जाती है; सशर्त दशाएँ केवल तब जब उनकी BPHS शर्त इस कुंडली पर पूरी हो।';
+
+  @override
+  String get auspiciousTimings => 'शुभ समय';
+
+  @override
+  String get inauspiciousTimings => 'अशुभ समय';
+
+  @override
+  String get anandadiTitle => 'आनन्दादि योग';
+
+  @override
+  String get nivasTitle => 'निवास और शूल';
+
+  @override
+  String get homahutiLabel => 'होमाहुति';
+
+  @override
+  String get dishaShoolLabel => 'दिशा शूल';
+
+  @override
+  String get rahuVasaLabel => 'राहु वास';
+
+  @override
+  String get agnivasaLabel => 'अग्निवास';
+
+  @override
+  String get bhadravasaLabel => 'भद्रा वास';
+
+  @override
+  String get chandraVasaLabel => 'चन्द्र वास';
+
+  @override
+  String get shivavasaLabel => 'शिववास';
+
+  @override
+  String get otherCalendars => 'अन्य पंचांग और युग';
+
+  @override
+  String get kaliyugaLabel => 'कलियुग';
+
+  @override
+  String get kaliAharganaLabel => 'कलि अहर्गण';
+
+  @override
+  String get rataDieLabel => 'राटा डाई';
+
+  @override
+  String get mjdLabel => 'संशोधित जूलियन दिन';
+
+  @override
+  String get julianDateLabel => 'जूलियन तिथि';
+
+  @override
+  String get nationalCivilDateLabel => 'राष्ट्रीय शक तिथि';
+
+  @override
+  String yearsValue(String n) {
+    return '$n वर्ष';
+  }
+
+  @override
+  String daysValue(String n) {
+    return '$n दिन';
+  }
+
+  @override
+  String get rituTitle => 'ऋतु और अयन';
+
+  @override
+  String get drikRituLabel => 'दृक् ऋतु';
+
+  @override
+  String get vedicRituLabel => 'वैदिक ऋतु';
+
+  @override
+  String get drikAyanaLabel => 'दृक् अयन';
+
+  @override
+  String get vedicAyanaLabel => 'वैदिक अयन';
+
+  @override
+  String get uttarayana => 'उत्तरायण';
+
+  @override
+  String get dakshinayana => 'दक्षिणायन';
+
+  @override
+  String get madhyahnaLabel => 'मध्याह्न';
+
+  @override
+  String get dinamanaLabel => 'दिनमान';
+
+  @override
+  String get ratrimanaLabel => 'रात्रिमान';
+
+  @override
+  String get samvatTitle => 'संवत्';
+
+  @override
+  String get pravishteLabel => 'प्रविष्टे / गते';
+
+  @override
+  String get shakaSamvatLabel => 'शक संवत्';
+
+  @override
+  String get vikramSamvatLabel => 'विक्रम संवत्';
+
+  @override
+  String get gujaratiSamvatLabel => 'गुजराती संवत्';
+
+  @override
+  String get suryaNakshatraLabel => 'सूर्य नक्षत्र';
+
+  @override
+  String get baanaLabel => 'बाण';
+
+  @override
+  String fromTime(String time) {
+    return '$time से';
+  }
+
+  @override
+  String get secGowri => 'गौरी';
+
+  @override
+  String get secPanchakaRahita => 'पंचक रहित';
+
+  @override
+  String get secBala => 'चन्द्र / तारा बल';
+
+  @override
+  String get shubhaMuhurta => 'शुभ मुहूर्त';
+
+  @override
+  String panchakaName(String name) {
+    return '$name पंचक';
+  }
+
+  @override
+  String get dayHalf => 'दिन';
+
+  @override
+  String get nightHalf => 'रात्रि';
+
+  @override
+  String get chandrabalamTitle => 'चन्द्र बल (12 राशियाँ)';
+
+  @override
+  String get tarabalamTitle => 'तारा बल (27 नक्षत्र)';
+
+  @override
+  String get panchakaRahitaNote =>
+      '(तिथि + वार + नक्षत्र + लग्न) ÷ 9: शेष 1 मृत्यु, 2 अग्नि, 4 राज, 6 चोर, 8 रोग पंचक; बाकी शुभ।';
+
+  @override
+  String get ahoratri => 'अहोरात्र';
+
+  @override
+  String get lahiriNote => 'अयनांश';
+
+  @override
+  String get bhadraLabel => 'भद्रा';
 }

@@ -197,3 +197,25 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - **2026-11-26:**
   - A walk-in booked for 02:15 gave an exact alarm at 01:45. The notification "मुलाक़ात: Reminder test" arrived at 01:45:03; check with `adb shell dumpsys notification --noredact | grep astro_app`.
   - Back up now wrote a valid zip (manifest: schema 3, 3 charts, 1 client, 2 appointments).
+
+## More dashas and the Drik panchang (2026-11-26)
+**Automated**
+- `jyotish_core/test/nakshatra_dashas_test.dart`:
+  - The 28-segment wheel with Abhijit.
+  - Ashtottari start lord and balance at the start of Ardra, mid Pushya, mid Abhijit and Ashwini.
+  - Antardashas fill their mahadasha.
+  - Count-based starts for every conditional dasha.
+  - The cycle totals (108, 116, 112, 105, 100, 84, 72, 60, 36).
+- `jyotish_core/test/day_extras_test.dart`: against Drik Panchang, New Delhi, 26 Nov – 1 Dec 2026, times within 2 minutes (Baana within 7).
+  - Every special time on 26 Nov, plus Sarvartha Siddhi, Ravi Pushya, Ravi Yoga, Ganda Moola, Varjyam and Amrit Kalam on 27 Nov – 1 Dec.
+  - Baana, Anandadi and every nivas.
+  - Samvat names, Pravishte, ritu and the epochs.
+  - All 15 Panchaka Rahita segments, and Gowri day and night.
+  - Chandrabalam and Tarabalam grades.
+
+**Phone:**
+- Chart → Dasha tab: the dropdown lists all 12 systems; a conditional dasha shows its BPHS rule and whether it applies.
+- PDF: an "Other dashas" page.
+- Panchang → दिन has the new cards: ritu & ayana, auspicious and inauspicious times, Anandadi, nivas & shool, other calendars. New chips: गौरी, पंचक रहित, चन्द्र / तारा बल.
+
+**Checked on the phone (2026-11-26):** the Day view, Gowri, Panchaka Rahita and Chandra/Tara bala for 26 Nov match Drik Panchang's screens.

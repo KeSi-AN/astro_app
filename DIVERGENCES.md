@@ -114,3 +114,17 @@ AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Again
 ## Matching (Phase 8, 2026-11-25, fixtures 006–008)
 
 All eight kootas match for three couples (15, 24.5 and 26/36). AstroSage's **yoni table is not the common one**: Cat×Monkey 2, Elephant×Cat 3, Elephant×Monkey 2, where the common table gives 3, 2, 3. We use AstroSage's values for these cells and the common table for the rest. Other cells may differ too; this is not yet checked (BACKLOG).
+
+## Drik Panchang (Android 2.6.7), panchang extras, checked 2026-11-26 (New Delhi, 26 Nov – 1 Dec 2026)
+
+| Item | Result |
+|---|---|
+| Dur Muhurtam, Varjyam, Amrit Kalam, Brahma, Pratah/Sayahna Sandhya, Vijaya, Nishita | within 1–2 min |
+| Godhuli (Sun's centre at horizon → Sun 6° below) | within 1 min (rule inferred) |
+| Sarvartha Siddhi, Ravi Yoga, Ravi Pushya, Ganda Moola | same nakshatra spans, within 1–2 min |
+| Gowri Panchangam, Panchaka Rahita | all segments within 1 min |
+| Chandrabalam, Tarabalam | identical |
+| Anandadi, Homahuti, Agnivasa, Shivavasa, Chandra Vasa, Bhadravasa, Disha Shool, Rahu Vasa | identical |
+| Samvat names, Pravishte, Kali Ahargana, Rata Die, Julian date, National civil date | identical |
+| **Lahiri ayanamsa** | Drik 24.239619°, ours 24.235264° (−15.7″). Ours matches AstroSage; Drik appears to include nutation. |
+| **Baana** | changes 4–6 min before Drik (follows the Sun's sidereal degree, so the ayanamsa gap shows) |
