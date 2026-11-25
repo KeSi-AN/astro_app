@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../chart_view/presentation/chart_geometry.dart';
+import '../../app/router.dart';
 import '../../l10n/l10n.dart';
 import 'settings.dart';
 
@@ -46,6 +48,18 @@ class SettingsPage extends StatelessWidget {
                 value: s.showOuterPlanets,
                 onChanged: (v) =>
                     cubit.update((s) => s.copyWith(showOuterPlanets: v)),
+              ),
+              ListTile(
+                leading: const Icon(Icons.badge_outlined),
+                title: Text(l10n.letterhead),
+                subtitle: Text(
+                  s.letterhead.isEmpty
+                      ? l10n.letterheadHint
+                      : [s.letterhead.name, s.letterhead.phone]
+                            .where((x) => x.isNotEmpty)
+                            .join(' · '),
+                ),
+                onTap: () => context.push(Routes.letterhead),
               ),
               _Header(l10n.calculation),
               _Choice<Ayanamsa>(

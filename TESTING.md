@@ -156,3 +156,19 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 **Phone:** chart → Transit tab (गोचर): step by day/month/year or swipe on the chart; Today; gochara table colours; search (e.g. Saturn over natal Moon, next 30 years) and "Show".
 
 **Checked on the phone (2026-11-25):** the Transit tab works in Hindi. Saturn's sign changes match AstroSage's Sade Sati dates to within a day.
+
+## Phase 10: PDF kundli
+**Automated** (`app/test/report_test.dart`, needs `packages/jyotish_core/native/sweph.dll`)
+- Latin text (with ° ′ ″ ·) uses the embedded Roboto; Devanagari is detected as needing images.
+- Full English kundli: 15–25 pages, valid PDF, written to `app/build/report_test_en.pdf` to look at.
+- Full Hindi kundli: 15–25 pages, more than 50 strings drawn as images, none left pending after the passes. Written to `app/build/report_test_hi.pdf`. On the PC the Hindi shows as boxes, because the test font has no Devanagari; check Hindi on the phone.
+- One section only gives the cover plus one page.
+
+**Phone:** Settings → Letterhead (लेटरहेड): name, title, phone, address and logo, then Save. Open a chart → PDF icon → tick the sections, pick the language → PDF बनाएँ. The preview shows the page count and how long it took; Print opens Android's print screen (A4), and Share opens the share sheet (WhatsApp).
+
+**Checked on the phone (2026-11-25):**
+- The Hindi kundli for TestChart: 15 pages in 4.1 s (debug build), about 1.9 MB.
+- Devanagari is correctly shaped in the charts, tables and yoga text.
+- The letterhead appears on every page.
+- The print preview shows 1/15 on ISO A4.
+- The PDF was pulled with `adb exec-out run-as com.kesian.astro_app cat cache/share/<name>_kundli.pdf` and checked page by page.

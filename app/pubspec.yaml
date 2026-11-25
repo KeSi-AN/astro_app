@@ -49,6 +49,9 @@ dependencies:
   sqlite3: ^3.9.2
   birth_input:
     path: ../packages/birth_input
+  pdf: ^3.13.1
+  printing: ^5.15.1
+  image_picker: ^1.2.4
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +80,7 @@ flutter:
   generate: true
   assets:
     - assets/atlas/
+    - assets/fonts/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

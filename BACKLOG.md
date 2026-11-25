@@ -80,3 +80,13 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **[astrologer] Gochara rules.** Good houses and vedha pairs follow Phaladeepika ch. 26 (Sun–Saturn and Moon–Mercury exempt from vedha). Some astrologers also use gochara from the lagna or Kakshya (Ashtakavarga sub-divisions); add if wanted.
 - [ ] **Transit search** covers sign changes and exact crossings over natal planets/lagna. Not yet: aspects onto natal points, house ingress from the lagna, nakshatra changes.
 - [ ] **Transit on Moon chart / varga charts** (only the lagna chart is overlaid).
+
+## Phase 10: PDF kundli
+- [ ] **Replace the test letterhead on the phone.** "Pt. Test Sharma" was typed in Settings → Letterhead during testing. Put in the astrologer's real name, phone, address and logo.
+- [ ] **[phone] Logo picking not tried.** It wasn't tried, because the gallery picker would show personal photos on screen. Pick a PNG or JPEG logo and check it on the cover (64 pt) and in the page header (26 pt). HEIC/WebP files may be skipped silently (an unsupported format means no logo).
+- [ ] **Release-build timing.** A full Hindi report (15 pages) took 4.1 s on the Moto in a debug build, and English took about 1.2 s on the PC. Time it again in a release build (BUILD_PLAN target: under 5 s).
+- [ ] **Hindi text is drawn as images** (the pdf package can't shape Devanagari). It looks right and prints sharply (288 dpi), but Hindi words can't be searched or copied in the PDF, and the file is about 1.9 MB against about 90 KB for English. A shaping engine (HarfBuzz) for the PDF would fix both.
+- [ ] **[phone] English report and South/East chart styles** were checked only on the PC render, not on the phone.
+- [ ] **Section choices are not saved** between app launches (remembered while the app runs).
+- [ ] **[astrologer] Content wishes.** Should it include a remarks/predictions page written by the astrologer, the current transits page, or Avasthas/Upagrahas/Arudhas? Are these the right sections in the right order? The pages are 15 for a full report.
+- [ ] **Matching report PDF** (Ashtakoota + Mangal) is not built; only the birth kundli is.

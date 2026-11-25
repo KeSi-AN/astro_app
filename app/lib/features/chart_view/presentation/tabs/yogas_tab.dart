@@ -4,6 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../../../app/theme.dart';
 import '../../../../l10n/l10n.dart';
 import 'dasha_tab.dart' show dateOfJd, jdOf;
+import '../../domain/report_rows.dart';
 import 'table_widgets.dart';
 
 enum _Sec { yogas, sadeSati, avastha, upagraha, arudha, navatara }
@@ -76,36 +77,8 @@ class _YogasTabState extends State<YogasTab>
     );
   }
 
-  String _detail(YogaResult y) {
-    final l10n = context.l10n;
-    final t = context.terms;
-    final parts = <String>[];
-    for (final (k, v) in y.detail) {
-      switch (k) {
-        case 'lagna' || 'moon' || 'venus':
-          final ref = switch (k) {
-            'lagna' => l10n.refLagna,
-            'moon' => l10n.refMoon,
-            _ => l10n.refVenus,
-          };
-          parts.add(l10n.mangalFrom(ref, v));
-        case 'marsStrong':
-          parts.add(l10n.cancelMarsStrong);
-        case 'withJupiter':
-          parts.add(l10n.cancelWithJupiter);
-        case 'withMoon':
-          parts.add(l10n.cancelWithMoon);
-        case 'signException':
-          parts.add(l10n.cancelSignException(v));
-        case 'type':
-          if (y.found) parts.add(l10n.kaalSarpType(v));
-      }
-    }
-    if (y.planets.isNotEmpty && y.found && y.id != 'mangal') {
-      parts.add(y.planets.map(t.graha).join(', '));
-    }
-    return parts.join(' · ');
-  }
+  String _detail(YogaResult y) =>
+      yogaDetail(context.l10n, context.terms, y);
 
   List<Widget> _yogaList(BuildContext context) {
     final l10n = context.l10n;

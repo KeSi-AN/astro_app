@@ -25,6 +25,7 @@ class AppSettings extends Equatable {
     this.dashaYear = DashaYear.julian,
     this.kpAyanamsa = Ayanamsa.kpOld,
     this.panchangPlace = '',
+    this.letterhead = const Letterhead(),
   });
 
   final AppLanguage language;
@@ -41,6 +42,9 @@ class AppSettings extends Equatable {
 
   /// Default place for the Panchang screen, encoded by Place.encode().
   final String panchangPlace;
+
+  /// The astrologer's details printed on PDF kundlis.
+  final Letterhead letterhead;
 
   CalcSettings get calc => CalcSettings(ayanamsa: ayanamsa, nodeType: nodeType);
 
@@ -62,6 +66,7 @@ class AppSettings extends Equatable {
     DashaYear? dashaYear,
     Ayanamsa? kpAyanamsa,
     String? panchangPlace,
+    Letterhead? letterhead,
   }) => AppSettings(
     language: language ?? this.language,
     chartStyle: chartStyle ?? this.chartStyle,
@@ -73,6 +78,7 @@ class AppSettings extends Equatable {
     dashaYear: dashaYear ?? this.dashaYear,
     kpAyanamsa: kpAyanamsa ?? this.kpAyanamsa,
     panchangPlace: panchangPlace ?? this.panchangPlace,
+    letterhead: letterhead ?? this.letterhead,
   );
 
   Map<String, String> toMap() => {
@@ -86,6 +92,7 @@ class AppSettings extends Equatable {
     'dashaYear': dashaYear.name,
     'kpAyanamsa': kpAyanamsa.name,
     'panchangPlace': panchangPlace,
+    ...letterhead.toMap(),
   };
 
   static AppSettings fromMap(Map<String, String> m) {
@@ -113,6 +120,7 @@ class AppSettings extends Equatable {
         d.kpAyanamsa,
       ),
       panchangPlace: m['panchangPlace'] ?? '',
+      letterhead: Letterhead.fromMap(m),
     );
   }
 
@@ -128,7 +136,65 @@ class AppSettings extends Equatable {
     dashaYear,
     kpAyanamsa,
     panchangPlace,
+    letterhead,
   ];
+}
+
+/// Letterhead for reports: set once in Settings.
+class Letterhead extends Equatable {
+  const Letterhead({
+    this.name = '',
+    this.title = '',
+    this.phone = '',
+    this.address = '',
+    this.logoPath = '',
+  });
+
+  final String name;
+
+  /// A line under the name, e.g. "Vedic Astrologer".
+  final String title;
+  final String phone;
+  final String address;
+
+  /// Logo image copied into the app's files folder ('' = none).
+  final String logoPath;
+
+  bool get isEmpty =>
+      name.isEmpty && title.isEmpty && phone.isEmpty && address.isEmpty;
+
+  Letterhead copyWith({
+    String? name,
+    String? title,
+    String? phone,
+    String? address,
+    String? logoPath,
+  }) => Letterhead(
+    name: name ?? this.name,
+    title: title ?? this.title,
+    phone: phone ?? this.phone,
+    address: address ?? this.address,
+    logoPath: logoPath ?? this.logoPath,
+  );
+
+  Map<String, String> toMap() => {
+    'lhName': name,
+    'lhTitle': title,
+    'lhPhone': phone,
+    'lhAddress': address,
+    'lhLogo': logoPath,
+  };
+
+  static Letterhead fromMap(Map<String, String> m) => Letterhead(
+    name: m['lhName'] ?? '',
+    title: m['lhTitle'] ?? '',
+    phone: m['lhPhone'] ?? '',
+    address: m['lhAddress'] ?? '',
+    logoPath: m['lhLogo'] ?? '',
+  );
+
+  @override
+  List<Object?> get props => [name, title, phone, address, logoPath];
 }
 
 class SettingsRepository {

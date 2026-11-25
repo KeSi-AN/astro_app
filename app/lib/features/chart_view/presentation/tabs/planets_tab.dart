@@ -2,6 +2,7 @@ import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../l10n/l10n.dart';
+import '../../domain/report_rows.dart';
 import 'graha_sheet.dart';
 import 'table_widgets.dart';
 
@@ -14,57 +15,12 @@ class PlanetsTab extends StatelessWidget {
     final l10n = context.l10n;
     final t = context.terms;
     final a = analysis;
-    final lagna = a.chart.lagna;
-    String flags(GrahaInfo i) => [
-      if (i.placement.isRetrograde) l10n.flagRetro,
-      if (i.combust) l10n.flagCombust,
-      if (i.vargottama) l10n.flagVargottama,
-    ].join(' ');
-    String nak(Placement p) => '${t.nakshatra(p.nakshatra)} ${p.pada}';
-    final rows = <List<String>>[
-      [
-        t.lagna,
-        '',
-        t.rashiShort(lagna.rashi),
-        Dms.of(lagna.degreeInSign).degrees,
-        nak(lagna),
-        t.grahaShort(lagna.nakshatraLord),
-        t.grahaShort(a.lagnaSubLords[1]),
-        '',
-        t.rashiShort(a.lagnaNavamsha),
-      ],
-      for (final g in Graha.values)
-        () {
-          final i = a.grahas[g]!;
-          final p = i.placement;
-          return [
-            t.graha(g),
-            flags(i),
-            t.rashiShort(p.rashi),
-            Dms.of(p.degreeInSign).degrees,
-            nak(p),
-            t.grahaShort(p.nakshatraLord),
-            t.grahaShort(i.subLord),
-            i.dignity == null ? '' : t.dignity(i.dignity!),
-            t.rashiShort(i.navamshaSign),
-          ];
-        }(),
-    ];
+    final (header, rows) = planetTable(l10n, t, a);
     return ListView(
       padding: const EdgeInsets.all(12),
       children: [
         GridTable(
-          header: [
-            l10n.colPlanet,
-            '',
-            l10n.sign,
-            l10n.colDegree,
-            l10n.colNakshatra,
-            l10n.colStar,
-            l10n.colSub,
-            l10n.dignity,
-            'D9',
-          ],
+          header: header,
           rows: rows,
           highlight: (r, c) {
             if (c != 7 || r == 0) return null;

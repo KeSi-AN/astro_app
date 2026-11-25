@@ -658,5 +658,76 @@
   "eventOver": "exact over target",
   "retroMark": "(R)",
   "noEvents": "No events in this period.",
-  "goToDate": "Show"
+  "goToDate": "Show",
+  "reportTitle": "Janam Kundli",
+  "reportCharts": "Birth charts",
+  "reportPage": "Page {page} of {total}",
+  "@reportPage": {
+    "placeholders": {
+      "page": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "reportPreparedOn": "Prepared on {date}",
+  "@reportPreparedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "reportRunning": "Running now: {path} (until {date})",
+  "@reportRunning": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "pdfKundli": "PDF kundli",
+  "reportInclude": "Include",
+  "reportLanguage": "Report language",
+  "makePdf": "Make PDF",
+  "makingPdf": "Making the PDF…",
+  "reportReady": "{pages} pages · made in {seconds} s",
+  "@reportReady": {
+    "placeholders": {
+      "pages": {
+        "type": "String"
+      },
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "sharePdf": "Share",
+  "printPdf": "Print",
+  "reportFailed": "Could not make the PDF: {error}",
+  "@reportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "letterhead": "Letterhead (PDF)",
+  "letterheadHint": "Printed at the top of every page of the PDF kundli.",
+  "letterheadMissing": "Your letterhead is empty. Add your name, phone and logo in Settings → Letterhead.",
+  "lhName": "Your name",
+  "lhTitle": "Title line (e.g. Vedic Astrologer)",
+  "lhPhone": "Phone",
+  "lhAddress": "Address",
+  "lhLogo": "Logo",
+  "chooseLogo": "Choose logo",
+  "removeLogo": "Remove logo",
+  "saved": "Saved",
+  "saveAction": "Save",
+  "ashtakavargaShort": "Ashtakavarga"
 }

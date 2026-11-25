@@ -2,6 +2,7 @@ import 'package:jyotish_core/jyotish_core.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../../l10n/l10n.dart';
+import '../../domain/report_rows.dart';
 import 'table_widgets.dart';
 
 enum _Section { ashtakavarga, shadbala, bhava }
@@ -156,39 +157,7 @@ class _StrengthTabState extends State<StrengthTab>
     final t = context.terms;
     final g = sevenGrahas;
     final s = _sb.grahas;
-    String f(double v) => v.toStringAsFixed(1);
-    List<String> row(String label, double Function(GrahaShadbala) pick) => [
-      label,
-      for (final p in g) f(pick(s[p]!)),
-    ];
-    final ranks = _sb.ranks;
-    final rows = <List<String>>[
-      row(l10n.uchchaBala, (x) => x.uchcha),
-      row(l10n.saptavargajaBala, (x) => x.saptavargaja),
-      row(l10n.ojayugmaBala, (x) => x.ojayugma),
-      row(l10n.kendradiBala, (x) => x.kendradi),
-      row(l10n.drekkanaBala, (x) => x.drekkana),
-      row('= ${l10n.sthanaBala}', (x) => x.sthana),
-      row(l10n.digBala, (x) => x.dig),
-      row(l10n.nathonnathaBala, (x) => x.nathonnatha),
-      row(l10n.pakshaBala, (x) => x.paksha),
-      row(l10n.tribhagaBala, (x) => x.tribhaga),
-      row(l10n.abdaBala, (x) => x.abda),
-      row(l10n.masaBala, (x) => x.masa),
-      row(l10n.varaBala, (x) => x.vara),
-      row(l10n.horaBala, (x) => x.hora),
-      row(l10n.ayanaBala, (x) => x.ayana),
-      row(l10n.yuddhaBala, (x) => x.yuddha),
-      row('= ${l10n.kalaBala}', (x) => x.kala),
-      row(l10n.cheshtaBala, (x) => x.cheshta),
-      row(l10n.naisargikaBala, (x) => x.naisargika),
-      row(l10n.drikBala, (x) => x.drik),
-      row(l10n.totalVirupas, (x) => x.total),
-      [l10n.totalRupas, for (final p in g) s[p]!.rupas.toStringAsFixed(2)],
-      [l10n.requiredRupas, for (final p in g) s[p]!.requiredRupas.toString()],
-      [l10n.strengthRatio, for (final p in g) s[p]!.ratio.toStringAsFixed(2)],
-      [l10n.strengthRank, for (final p in g) '${ranks[p]}'],
-    ];
+    final rows = shadbalaRows(l10n, _sb);
     final totalsFrom = rows.length - 5;
     return [
       GridTable(

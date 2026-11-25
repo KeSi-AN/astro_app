@@ -5,12 +5,14 @@ import '../features/charts/presentation/chart_list_page.dart';
 import '../features/chart_view/presentation/chart_view_page.dart';
 import '../features/matching/matching_page.dart';
 import '../features/panchang/panchang_page.dart';
+import '../features/report/letterhead_page.dart';
 import '../features/settings/settings_page.dart';
 
 abstract final class Routes {
   static const charts = '/';
   static const newChart = '/chart/new';
   static const settings = '/settings';
+  static const letterhead = '/settings/letterhead';
   static const panchang = '/panchang';
   static const matching = '/matching';
   static String chart(int id) => '/chart/$id';
@@ -34,6 +36,12 @@ GoRouter buildRouter() => GoRouter(
         GoRoute(
           path: 'settings',
           builder: (context, state) => const SettingsPage(),
+          routes: [
+            GoRoute(
+              path: 'letterhead',
+              builder: (context, state) => const LetterheadPage(),
+            ),
+          ],
         ),
         GoRoute(
           path: 'chart/new',

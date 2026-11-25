@@ -1447,4 +1447,97 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goToDate => 'Show';
+
+  @override
+  String get reportTitle => 'Janam Kundli';
+
+  @override
+  String get reportCharts => 'Birth charts';
+
+  @override
+  String reportPage(String page, String total) {
+    return 'Page $page of $total';
+  }
+
+  @override
+  String reportPreparedOn(String date) {
+    return 'Prepared on $date';
+  }
+
+  @override
+  String reportRunning(String path, String date) {
+    return 'Running now: $path (until $date)';
+  }
+
+  @override
+  String get pdfKundli => 'PDF kundli';
+
+  @override
+  String get reportInclude => 'Include';
+
+  @override
+  String get reportLanguage => 'Report language';
+
+  @override
+  String get makePdf => 'Make PDF';
+
+  @override
+  String get makingPdf => 'Making the PDF…';
+
+  @override
+  String reportReady(String pages, String seconds) {
+    return '$pages pages · made in $seconds s';
+  }
+
+  @override
+  String get sharePdf => 'Share';
+
+  @override
+  String get printPdf => 'Print';
+
+  @override
+  String reportFailed(String error) {
+    return 'Could not make the PDF: $error';
+  }
+
+  @override
+  String get letterhead => 'Letterhead (PDF)';
+
+  @override
+  String get letterheadHint =>
+      'Printed at the top of every page of the PDF kundli.';
+
+  @override
+  String get letterheadMissing =>
+      'Your letterhead is empty. Add your name, phone and logo in Settings → Letterhead.';
+
+  @override
+  String get lhName => 'Your name';
+
+  @override
+  String get lhTitle => 'Title line (e.g. Vedic Astrologer)';
+
+  @override
+  String get lhPhone => 'Phone';
+
+  @override
+  String get lhAddress => 'Address';
+
+  @override
+  String get lhLogo => 'Logo';
+
+  @override
+  String get chooseLogo => 'Choose logo';
+
+  @override
+  String get removeLogo => 'Remove logo';
+
+  @override
+  String get saved => 'Saved';
+
+  @override
+  String get saveAction => 'Save';
+
+  @override
+  String get ashtakavargaShort => 'Ashtakavarga';
 }

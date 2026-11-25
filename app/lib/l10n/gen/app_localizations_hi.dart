@@ -1444,4 +1444,96 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get goToDate => 'दिखाएँ';
+
+  @override
+  String get reportTitle => 'जन्म कुंडली';
+
+  @override
+  String get reportCharts => 'कुंडली चक्र';
+
+  @override
+  String reportPage(String page, String total) {
+    return 'पृष्ठ $page / $total';
+  }
+
+  @override
+  String reportPreparedOn(String date) {
+    return '$date को तैयार';
+  }
+
+  @override
+  String reportRunning(String path, String date) {
+    return 'अभी चल रही: $path ($date तक)';
+  }
+
+  @override
+  String get pdfKundli => 'PDF कुंडली';
+
+  @override
+  String get reportInclude => 'शामिल करें';
+
+  @override
+  String get reportLanguage => 'रिपोर्ट की भाषा';
+
+  @override
+  String get makePdf => 'PDF बनाएँ';
+
+  @override
+  String get makingPdf => 'PDF बन रही है…';
+
+  @override
+  String reportReady(String pages, String seconds) {
+    return '$pages पृष्ठ · $seconds सेकंड में बनी';
+  }
+
+  @override
+  String get sharePdf => 'भेजें';
+
+  @override
+  String get printPdf => 'प्रिंट';
+
+  @override
+  String reportFailed(String error) {
+    return 'PDF नहीं बन सकी: $error';
+  }
+
+  @override
+  String get letterhead => 'लेटरहेड (PDF)';
+
+  @override
+  String get letterheadHint => 'PDF कुंडली के हर पृष्ठ के ऊपर छपता है।';
+
+  @override
+  String get letterheadMissing =>
+      'आपका लेटरहेड खाली है। सेटिंग्स → लेटरहेड में अपना नाम, फ़ोन और लोगो जोड़ें।';
+
+  @override
+  String get lhName => 'आपका नाम';
+
+  @override
+  String get lhTitle => 'पद (जैसे वैदिक ज्योतिषी)';
+
+  @override
+  String get lhPhone => 'फ़ोन';
+
+  @override
+  String get lhAddress => 'पता';
+
+  @override
+  String get lhLogo => 'लोगो';
+
+  @override
+  String get chooseLogo => 'लोगो चुनें';
+
+  @override
+  String get removeLogo => 'लोगो हटाएँ';
+
+  @override
+  String get saved => 'सहेजा गया';
+
+  @override
+  String get saveAction => 'सहेजें';
+
+  @override
+  String get ashtakavargaShort => 'अष्टकवर्ग';
 }

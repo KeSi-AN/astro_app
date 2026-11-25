@@ -2731,6 +2731,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show'**
   String get goToDate;
+
+  /// No description provided for @reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Janam Kundli'**
+  String get reportTitle;
+
+  /// No description provided for @reportCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'Birth charts'**
+  String get reportCharts;
+
+  /// No description provided for @reportPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Page {page} of {total}'**
+  String reportPage(String page, String total);
+
+  /// No description provided for @reportPreparedOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepared on {date}'**
+  String reportPreparedOn(String date);
+
+  /// No description provided for @reportRunning.
+  ///
+  /// In en, this message translates to:
+  /// **'Running now: {path} (until {date})'**
+  String reportRunning(String path, String date);
+
+  /// No description provided for @pdfKundli.
+  ///
+  /// In en, this message translates to:
+  /// **'PDF kundli'**
+  String get pdfKundli;
+
+  /// No description provided for @reportInclude.
+  ///
+  /// In en, this message translates to:
+  /// **'Include'**
+  String get reportInclude;
+
+  /// No description provided for @reportLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Report language'**
+  String get reportLanguage;
+
+  /// No description provided for @makePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Make PDF'**
+  String get makePdf;
+
+  /// No description provided for @makingPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Making the PDF…'**
+  String get makingPdf;
+
+  /// No description provided for @reportReady.
+  ///
+  /// In en, this message translates to:
+  /// **'{pages} pages · made in {seconds} s'**
+  String reportReady(String pages, String seconds);
+
+  /// No description provided for @sharePdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get sharePdf;
+
+  /// No description provided for @printPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Print'**
+  String get printPdf;
+
+  /// No description provided for @reportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not make the PDF: {error}'**
+  String reportFailed(String error);
+
+  /// No description provided for @letterhead.
+  ///
+  /// In en, this message translates to:
+  /// **'Letterhead (PDF)'**
+  String get letterhead;
+
+  /// No description provided for @letterheadHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Printed at the top of every page of the PDF kundli.'**
+  String get letterheadHint;
+
+  /// No description provided for @letterheadMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Your letterhead is empty. Add your name, phone and logo in Settings → Letterhead.'**
+  String get letterheadMissing;
+
+  /// No description provided for @lhName.
+  ///
+  /// In en, this message translates to:
+  /// **'Your name'**
+  String get lhName;
+
+  /// No description provided for @lhTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title line (e.g. Vedic Astrologer)'**
+  String get lhTitle;
+
+  /// No description provided for @lhPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get lhPhone;
+
+  /// No description provided for @lhAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get lhAddress;
+
+  /// No description provided for @lhLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Logo'**
+  String get lhLogo;
+
+  /// No description provided for @chooseLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose logo'**
+  String get chooseLogo;
+
+  /// No description provided for @removeLogo.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove logo'**
+  String get removeLogo;
+
+  /// No description provided for @saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get saved;
+
+  /// No description provided for @saveAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveAction;
+
+  /// No description provided for @ashtakavargaShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtakavarga'**
+  String get ashtakavargaShort;
 }
 
 class _AppLocalizationsDelegate

@@ -7,6 +7,7 @@ import '../../../app/router.dart';
 import '../../../app/services.dart';
 import '../../charts/domain/chart_entry.dart';
 import '../../../l10n/l10n.dart';
+import '../../report/report_page.dart';
 import '../../settings/settings.dart';
 import 'tabs/bhava_tab.dart';
 import 'tabs/chart_tab.dart';
@@ -89,6 +90,20 @@ class _ChartViewPageState extends State<ChartViewPage> {
                   await context.push(Routes.editChart(e.id!));
                   _load();
                 },
+              ),
+            if (e != null)
+              BlocBuilder<SettingsCubit, AppSettings>(
+                builder: (context, s) => IconButton(
+                  tooltip: context.l10n.pdfKundli,
+                  icon: const Icon(Icons.picture_as_pdf_outlined),
+                  onPressed: () => showReportOptions(
+                    context,
+                    entry: e,
+                    analysis: _analyse(e, s),
+                    settings: s,
+                    ephemeris: context.read<AppServices>().ephemeris,
+                  ),
+                ),
               ),
             IconButton(
               tooltip: context.l10n.settings,
