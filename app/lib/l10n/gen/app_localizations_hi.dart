@@ -2022,4 +2022,84 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get bhadraLabel => 'भद्रा';
+
+  @override
+  String get tamilYogaLabel => 'तमिल योग';
+
+  @override
+  String get jeevanamaLabel => 'जीवनम';
+
+  @override
+  String get netramaLabel => 'नेत्रम';
+
+  @override
+  String get kumbhaChakraLabel => 'कुम्भ चक्र';
+
+  @override
+  String mantriMandalaTitle(String year) {
+    return 'विक्रम संवत् $year का मंत्रिमंडल';
+  }
+
+  @override
+  String get brihaspatiSamvatsaraLabel => 'बार्हस्पत्य संवत्सर';
+
+  @override
+  String get secFestivals => 'त्योहार';
+
+  @override
+  String get secEclipses => 'ग्रहण';
+
+  @override
+  String festivalsTitle(String year) {
+    return '$year के त्योहार';
+  }
+
+  @override
+  String get festivalsNote =>
+      'तिथि सही समय (सूर्योदय, मध्याह्न, अपराह्न, प्रदोष, निशीथ या चंद्रोदय) पर देखकर, इस स्थान के लिए। दिन खोलने के लिए त्योहार पर टैप करें।';
+
+  @override
+  String eclipsesTitle(String year) {
+    return '$year के ग्रहण';
+  }
+
+  @override
+  String get eclipseMaximum => 'परमग्रास';
+
+  @override
+  String get eclipseVisibility => 'यहाँ';
+
+  @override
+  String get eclipseNotVisible => 'दिखाई नहीं देगा';
+
+  @override
+  String get eclipseVisibleFrom => 'दिखाई देगा';
+
+  @override
+  String get eclipseRisesEclipsed => 'ग्रस्तोदय';
+
+  @override
+  String get eclipseSetsEclipsed => 'ग्रस्तास्त';
+
+  @override
+  String get eclipseMagnitude => 'ग्रास मान';
+
+  @override
+  String get sutakLabel => 'सूतक';
+
+  @override
+  String get noSutak => 'नहीं (उपच्छाया)';
+
+  @override
+  String get sutakKidsLabel => 'बालक, वृद्ध, रोगी हेतु सूतक';
+
+  @override
+  String get eclipseNote =>
+      'सूतक: सूर्य ग्रहण से 12 घंटे और चन्द्र ग्रहण से 9 घंटे पहले से ग्रहण समाप्ति तक; केवल जहाँ ग्रहण दिखे।';
+
+  @override
+  String get nakshatraShoolLabel => 'नक्षत्र शूल';
+
+  @override
+  String get nationalNirayanaDateLabel => 'राष्ट्रीय निरयण तिथि';
 }

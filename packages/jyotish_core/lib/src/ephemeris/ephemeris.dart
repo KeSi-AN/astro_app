@@ -43,6 +43,52 @@ class HousesResult {
 /// The only place the app touches an astronomy library. Everything else
 /// works from these numbers, so the library can be swapped later
 /// (e.g. Swiss Ephemeris Pro licence or a clean-room JPL reader).
+enum EclipseKind { solar, lunar }
+
+enum EclipseType { total, annular, hybrid, partial, penumbral }
+
+/// An eclipse as seen from one place. Times are JD UT; contacts the place
+/// can't see (body below the horizon) are null.
+class EclipseEvent {
+  const EclipseEvent({
+    required this.kind,
+    required this.type,
+    required this.maximum,
+    required this.visible,
+    this.begin,
+    this.end,
+    this.totalBegin,
+    this.totalEnd,
+    this.penumbralBegin,
+    this.penumbralEnd,
+    this.bodyRise,
+    this.bodySet,
+    this.magnitude = 0,
+  });
+
+  final EclipseKind kind;
+  final EclipseType type;
+
+  /// Greatest eclipse (global for an invisible one).
+  final double maximum;
+  final bool visible;
+
+  /// Solar: first and last contact. Lunar: umbral (partial) phase.
+  final double? begin, end;
+
+  /// Total (or annular) phase.
+  final double? totalBegin, totalEnd;
+
+  /// Lunar penumbral phase.
+  final double? penumbralBegin, penumbralEnd;
+
+  /// Sun/Moon rising or setting while the eclipse is on.
+  final double? bodyRise, bodySet;
+
+  /// Solar: fraction of the Sun's diameter covered; lunar: umbral magnitude.
+  final double magnitude;
+}
+
 abstract class Ephemeris {
   /// Julian day in UT for a Gregorian calendar date and UT decimal hours.
   double julianDayUt(int year, int month, int day, double utHours);
@@ -93,4 +139,13 @@ abstract class Ephemeris {
     double longitude, {
     required bool rise,
   });
+
+  /// The next solar or lunar eclipse (globally) after [jdUtStart], with
+  /// what [latitude]/[longitude] sees of it.
+  EclipseEvent nextEclipse(
+    EclipseKind kind,
+    double jdUtStart,
+    double latitude,
+    double longitude,
+  );
 }

@@ -997,5 +997,50 @@
   "panchakaRahitaNote": "(tithi + weekday + nakshatra + lagna) ÷ 9: remainder 1 Mrityu, 2 Agni, 4 Raja, 6 Chora, 8 Roga; others are Shubha.",
   "ahoratri": "all day and night",
   "lahiriNote": "Ayanamsa",
-  "bhadraLabel": "Bhadra"
+  "bhadraLabel": "Bhadra",
+  "tamilYogaLabel": "Tamil yoga",
+  "jeevanamaLabel": "Jeevanama",
+  "netramaLabel": "Netrama",
+  "kumbhaChakraLabel": "Kumbha Chakra",
+  "mantriMandalaTitle": "Mantri Mandala of Vikram {year}",
+  "@mantriMandalaTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "brihaspatiSamvatsaraLabel": "Brihaspati samvatsara",
+  "secFestivals": "Festivals",
+  "secEclipses": "Eclipses",
+  "festivalsTitle": "Festivals of {year}",
+  "@festivalsTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "festivalsNote": "Dates by the tithi at the right time of day (sunrise, midday, afternoon, pradosh, midnight or moonrise), for this place. Tap a festival to open its day.",
+  "eclipsesTitle": "Eclipses of {year}",
+  "@eclipsesTitle": {
+    "placeholders": {
+      "year": {
+        "type": "String"
+      }
+    }
+  },
+  "eclipseMaximum": "Greatest eclipse",
+  "eclipseVisibility": "Here",
+  "eclipseNotVisible": "not visible",
+  "eclipseVisibleFrom": "Visible",
+  "eclipseRisesEclipsed": "Rises eclipsed",
+  "eclipseSetsEclipsed": "Sets eclipsed",
+  "eclipseMagnitude": "Magnitude",
+  "sutakLabel": "Sutak",
+  "noSutak": "none (penumbral)",
+  "sutakKidsLabel": "Sutak for children, the old and sick",
+  "eclipseNote": "Sutak: 12 hours before a solar eclipse, 9 hours before a lunar one, until it ends; only where the eclipse is visible.",
+  "nakshatraShoolLabel": "Nakshatra Shool",
+  "nationalNirayanaDateLabel": "National nirayana date"
 }

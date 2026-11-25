@@ -111,9 +111,16 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 ## Drik Panchang features (2026-11-26)
 Teardown: `docs/DRIK_PANCHANG_TEARDOWN.md`.
 - [x] **Built:** Dur Muhurtam, Varjyam, Amrit Kalam, Brahma, Pratah/Sayahna Sandhya, Vijaya, Godhuli, Nishita, Sarvartha/Amrita Siddhi, Ravi Yoga, Ravi/Guru Pushya, Dwi/Tripushkar, Ganda Moola, Baana, Anandadi, nivas & shool, ritu & ayana, samvat names, Pravishte, epochs, Gowri, Panchaka Rahita, Chandrabalam and Tarabalam. The Day view, Gowri, Panchaka Rahita and Bala were checked on the phone against Drik for 26 Nov, and the engine was checked against 26 Nov – 1 Dec.
-- [ ] **Not built:** Aadal and Vidaal yoga, Tamil yoga, Jeevanama/Netrama, Kumbha Chakra. Their per-nakshatra tables can't be inferred from 6 days; capture a full month or find the source tables.
-- [ ] **Not built:** Brihaspati samvatsara, Mantri Mandala, National Nirayana date, Panjika yoga, Pancha Pakshi, Jain Pachchakkhan, the festival list, eclipses (with sutak) and regional calendars.
-- [ ] **Not phone-tested:** Dwipushkar, Tripushkar and Amrita Siddhi. They didn't occur in the 6 captured days; check one when it comes up.
+- [x] **Built and checked against 45 Drik days, its 2026 festival list and two Mantri Mandalas (second pass, 2026-11-26):**
+  - Aadal/Vidaal, Tamil yoga, Jeevanama, Netrama, Kumbha Chakra and Nakshatra Shool.
+  - Brihaspati samvatsara, Mantri Mandala and National Nirayana date.
+  - 46 festivals and eclipses with sutak.
+  - Tripushkar (29 Dec, 3 and 9 Jan) matched.
+- [ ] **Dwipushkar and Amrita Siddhi** didn't occur in the 45 captured days.
+- [ ] **Not built:** Panjika yoga, Pancha Pakshi, Jain Pachchakkhan, regional calendars, and Drik's long tail of about 640 minor, regional, Jain and ISKCON observances. We have the 46 major North Indian festivals.
+- [ ] **[astrologer] Festival list.** Which further festivals and vrats should be added (Navratri days, Shraddha dates, Sankashti names, Jayantis)? They are easy to add as rules (month, tithi, kala).
+- [ ] **Sutak for children, the old and sick** when the Moon rises eclipsed (3 Mar 2026): we give the same start as the full sutak (06:20). Drik's figure for that case isn't known.
+- [ ] **Eclipse magnitude** for a partial view is Swiss Ephemeris' value at greatest local eclipse.
 - [ ] **Rahu Vasa on Wednesday** (South-West) is inferred from the pattern, not seen in Drik.
 - [ ] **Baana times** come 4–6 minutes before Drik's, because Drik's Lahiri is about 16″ higher than ours (see DIVERGENCES).
 - [ ] **Hindi names** for the Gowri and Anandadi yogas are our transliterations; ask the astrologer if they use other names.

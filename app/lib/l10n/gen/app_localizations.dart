@@ -3780,6 +3780,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bhadra'**
   String get bhadraLabel;
+
+  /// No description provided for @tamilYogaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Tamil yoga'**
+  String get tamilYogaLabel;
+
+  /// No description provided for @jeevanamaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Jeevanama'**
+  String get jeevanamaLabel;
+
+  /// No description provided for @netramaLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Netrama'**
+  String get netramaLabel;
+
+  /// No description provided for @kumbhaChakraLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Kumbha Chakra'**
+  String get kumbhaChakraLabel;
+
+  /// No description provided for @mantriMandalaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mantri Mandala of Vikram {year}'**
+  String mantriMandalaTitle(String year);
+
+  /// No description provided for @brihaspatiSamvatsaraLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Brihaspati samvatsara'**
+  String get brihaspatiSamvatsaraLabel;
+
+  /// No description provided for @secFestivals.
+  ///
+  /// In en, this message translates to:
+  /// **'Festivals'**
+  String get secFestivals;
+
+  /// No description provided for @secEclipses.
+  ///
+  /// In en, this message translates to:
+  /// **'Eclipses'**
+  String get secEclipses;
+
+  /// No description provided for @festivalsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Festivals of {year}'**
+  String festivalsTitle(String year);
+
+  /// No description provided for @festivalsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates by the tithi at the right time of day (sunrise, midday, afternoon, pradosh, midnight or moonrise), for this place. Tap a festival to open its day.'**
+  String get festivalsNote;
+
+  /// No description provided for @eclipsesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Eclipses of {year}'**
+  String eclipsesTitle(String year);
+
+  /// No description provided for @eclipseMaximum.
+  ///
+  /// In en, this message translates to:
+  /// **'Greatest eclipse'**
+  String get eclipseMaximum;
+
+  /// No description provided for @eclipseVisibility.
+  ///
+  /// In en, this message translates to:
+  /// **'Here'**
+  String get eclipseVisibility;
+
+  /// No description provided for @eclipseNotVisible.
+  ///
+  /// In en, this message translates to:
+  /// **'not visible'**
+  String get eclipseNotVisible;
+
+  /// No description provided for @eclipseVisibleFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Visible'**
+  String get eclipseVisibleFrom;
+
+  /// No description provided for @eclipseRisesEclipsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Rises eclipsed'**
+  String get eclipseRisesEclipsed;
+
+  /// No description provided for @eclipseSetsEclipsed.
+  ///
+  /// In en, this message translates to:
+  /// **'Sets eclipsed'**
+  String get eclipseSetsEclipsed;
+
+  /// No description provided for @eclipseMagnitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Magnitude'**
+  String get eclipseMagnitude;
+
+  /// No description provided for @sutakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sutak'**
+  String get sutakLabel;
+
+  /// No description provided for @noSutak.
+  ///
+  /// In en, this message translates to:
+  /// **'none (penumbral)'**
+  String get noSutak;
+
+  /// No description provided for @sutakKidsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Sutak for children, the old and sick'**
+  String get sutakKidsLabel;
+
+  /// No description provided for @eclipseNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Sutak: 12 hours before a solar eclipse, 9 hours before a lunar one, until it ends; only where the eclipse is visible.'**
+  String get eclipseNote;
+
+  /// No description provided for @nakshatraShoolLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Nakshatra Shool'**
+  String get nakshatraShoolLabel;
+
+  /// No description provided for @nationalNirayanaDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'National nirayana date'**
+  String get nationalNirayanaDateLabel;
 }
 
 class _AppLocalizationsDelegate

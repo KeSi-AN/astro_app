@@ -32,7 +32,9 @@ enum SpecialTime {
   // Inauspicious
   durMuhurtam(false),
   varjyam(false),
-  gandaMoola(false);
+  gandaMoola(false),
+  aadal(false),
+  vidaal(false);
 
   const SpecialTime(this.good);
   final bool good;
@@ -107,10 +109,13 @@ List<TimeSpan<SpecialTime>> specialTimes(PanchangCalc calc, DayPanchang d) {
   }
 
   // Nakshatra windows (Varjyam, Amrit Kalam) that start within the day.
-  for (final n in d.nakshatras) {
+  // Mula has a second Varjyam at ghati 56.
+  final naks = calc.spansBetween(PanchangElement.nakshatra, d.sunrise - 1.2, d.nextSunrise);
+  for (final n in naks) {
     final len = n.end - n.start;
     for (final (k, g) in [
       (SpecialTime.varjyam, varjyamGhati[n.index - 1]),
+      if (n.index == 19) (SpecialTime.varjyam, 56),
       (SpecialTime.amritKalam, amritKalamGhati[n.index - 1]),
     ]) {
       final s = n.start + len * g / 60;
@@ -119,7 +124,6 @@ List<TimeSpan<SpecialTime>> specialTimes(PanchangCalc calc, DayPanchang d) {
   }
 
   // Weekday/nakshatra yogas, clipped to the day.
-  final sunNak = Nakshatra.ofLongitude(calc.sun(d.sunrise)).index;
   for (final n in d.nakshatras) {
     final s = _overlapStart(n.start, d.sunrise);
     final e = _overlapEnd(n.end, d.nextSunrise);
@@ -129,7 +133,6 @@ List<TimeSpan<SpecialTime>> specialTimes(PanchangCalc calc, DayPanchang d) {
     if (i == 7 && w == 0) add(SpecialTime.raviPushya, s, e);
     if (i == 7 && w == 4) add(SpecialTime.guruPushya, s, e);
     if (gandaMoolaNakshatras.contains(i)) add(SpecialTime.gandaMoola, s, e);
-    if (raviYogaCounts.contains(nakshatraCount(sunNak, i))) add(SpecialTime.raviYoga, s, e);
     // Dwipushkar / Tripushkar: Sun, Tue or Sat + Bhadra tithi + nakshatra.
     if (w == 0 || w == 2 || w == 6) {
       final dwi = const {4, 13, 22}.contains(i);
@@ -143,7 +146,81 @@ List<TimeSpan<SpecialTime>> specialTimes(PanchangCalc calc, DayPanchang d) {
       }
     }
   }
+  // Ravi Yoga: count (27 nakshatras) from the Sun's nakshatra, which may
+  // change during the day.
+  const nakSpan = 360 / 27;
+  for (final (s, e, _, _, moonNak) in sunMoonSpans(calc, d.sunrise, d.nextSunrise)) {
+    final sunNow = (norm360(calc.sun((s + e) / 2)) / nakSpan).floor();
+    if (raviYogaCounts.contains(nakshatraCount(sunNow, moonNak))) {
+      add(SpecialTime.raviYoga, s, e);
+    }
+  }
+
+  // Aadal and Vidaal: count (28 nakshatras, with Abhijit) from the Sun's
+  // nakshatra to the Moon's; ≡ 0 or 2 (mod 7) Aadal, ≡ 3 or 6 Vidaal.
+  SpecialTime? prevKind;
+  for (final (s, e, sunSeg, moonSeg, _) in sunMoonSpans(calc, d.sunrise, d.nextSunrise)) {
+    final c = (moonSeg - sunSeg) % 28 + 1;
+    final r = c % 7;
+    final k = r == 0 || r == 2
+        ? SpecialTime.aadal
+        : (r == 3 || r == 6 ? SpecialTime.vidaal : null);
+    // Join with the previous piece when the same yoga simply continues.
+    if (k != null && k == prevKind && out.last.value == k && (out.last.end - s).abs() < 1e-6) {
+      out[out.length - 1] = TimeSpan(k, out.last.start, e);
+    } else if (k != null) {
+      add(k, s, e);
+    }
+    prevKind = k;
+  }
   out.sort((a, b) => a.start.compareTo(b.start));
+  // Join back-to-back spans of the same yoga (e.g. Ganda Moola over two
+  // nakshatras is shown as one span, as Drik does).
+  final merged = <TimeSpan<SpecialTime>>[];
+  for (final x in out) {
+    final i = merged.lastIndexWhere((m) => m.value == x.value);
+    if (i >= 0 && (merged[i].end - x.start).abs() < 1e-6 && x.value != SpecialTime.durMuhurtam) {
+      merged[i] = TimeSpan(x.value, merged[i].start, x.end);
+    } else {
+      merged.add(x);
+    }
+  }
+  return merged;
+}
+
+/// Stretches of [from, to) with a fixed Sun nakshatra and Moon nakshatra:
+/// (start, end, Sun's 28-wheel segment, Moon's 28-wheel segment, Moon's
+/// 27-nakshatra index).
+List<(double, double, int, int, int)> sunMoonSpans(PanchangCalc calc, double from, double to) {
+  final moon = moonSegments(calc, from, to);
+  // Sun's nakshatra changes at most once a day or so.
+  const span = 360 / 27;
+  final cuts = <double>{from, to};
+  var t = from;
+  while (t < to) {
+    final lon = norm360(calc.sun(t));
+    final next = _sunReach(calc, t + 1e-7, ((lon / span).floor() + 1) * span % 360);
+    if (next < to) cuts.add(next);
+    t = next + 1e-6;
+  }
+  for (final (_, s, e) in moon) {
+    if (s > from && s < to) cuts.add(s);
+    if (e > from && e < to) cuts.add(e);
+  }
+  // The 27-nakshatra boundary inside Abhijit (Uttarashadha/Shravana).
+  for (final n in calc.spansBetween(PanchangElement.nakshatra, from, to)) {
+    if (n.start > from && n.start < to) cuts.add(n.start);
+  }
+  final list = cuts.toList()..sort();
+  final out = <(double, double, int, int, int)>[];
+  for (var i = 0; i + 1 < list.length; i++) {
+    final mid = (list[i] + list[i + 1]) / 2;
+    final sunNak = (norm360(calc.sun(mid)) / span).floor();
+    final sunSeg = sunNak < 21 ? sunNak : sunNak + 1; // Sun never sits in Abhijit for this count
+    final m = moon.lastWhere((x) => x.$2 <= mid, orElse: () => moon.first);
+    final moonNak = (norm360(calc.moon(mid)) / span).floor();
+    out.add((list[i], list[i + 1], sunSeg, m.$1, moonNak));
+  }
   return out;
 }
 
@@ -192,8 +269,18 @@ const anandadiNames = [
   'Musala', 'Gada', 'Matanga', 'Rakshasa', 'Chara', 'Sthira', 'Vardhamana',
 ];
 
-/// Auspicious Anandadi yogas (Drik marks the rest with a cross).
-const goodAnandadi = {0, 3, 4, 6, 7, 10, 11, 12, 13, 18, 19, 20, 26, 27};
+/// Auspicious Anandadi yogas: those whose Tamil yoga is Siddha or Amrita.
+const goodAnandadi = {0, 3, 4, 6, 7, 10, 11, 12, 13, 18, 19, 20, 23, 25, 26, 27};
+
+enum TamilYoga { siddha, amrita, marana }
+
+/// Tamil yoga is a grouping of the Anandadi yoga (Drik Panchang, all 28
+/// seen 26 Nov – 24 Dec 2026).
+TamilYoga tamilYogaOf(int anandadi) {
+  if (const {11, 12, 18, 20, 23, 26}.contains(anandadi)) return TamilYoga.amrita;
+  if (goodAnandadi.contains(anandadi)) return TamilYoga.siddha;
+  return TamilYoga.marana;
+}
 
 /// Starting segment (28-wheel, Abhijit = 21) for each weekday, Sunday first.
 const _anandadiStart = [0, 4, 8, 12, 16, 20, 24];
@@ -406,6 +493,16 @@ Direction chandraVasa(Rashi moonSign) => const [
   Direction.east, Direction.south, Direction.west, Direction.north,
 ][moonSign.index % 4];
 
+/// Nakshatra Shool: travel towards this direction is avoided while the Moon
+/// is in Jyeshtha (east), Purva Bhadrapada (south), Rohini (west) or Uttara
+/// Phalguni (north) (Drik Panchang, Dec 2026 – Jan 2027).
+Direction? nakshatraShool(int moonNak) => const {
+  17: Direction.east,
+  24: Direction.south,
+  3: Direction.west,
+  11: Direction.north,
+}[moonNak];
+
 enum Agnivasa { prithvi, akasha, patala }
 
 /// (tithi 1–30 + weekday Sun = 1 + 1) mod 4.
@@ -451,7 +548,6 @@ class Nivas {
 
   static Nivas of(PanchangCalc calc, DayPanchang d) {
     final w = sundayIndex(d);
-    final sunNak = Nakshatra.ofLongitude(calc.sun(d.sunrise)).index;
     List<TimeSpan<T>> merge<T>(List<TimeSpan<T>> l) {
       final out = <TimeSpan<T>>[];
       for (final x in l) {
@@ -470,8 +566,12 @@ class Nivas {
     Rashi signAt(double t) => signs.lastWhere((x) => x.start <= t, orElse: () => signs.first).value;
     return Nivas._(
       merge([
-        for (final n in d.nakshatras)
-          TimeSpan(homahuti(sunNak, n.index - 1), cs(n.start), ce(n.end)),
+        for (final (s, e, _, _, m) in sunMoonSpans(calc, d.sunrise, d.nextSunrise))
+          TimeSpan(
+            homahuti((norm360(calc.sun((s + e) / 2)) / (360 / 27)).floor(), m),
+            s,
+            e,
+          ),
       ]),
       merge([
         for (final t in d.tithis) TimeSpan(agnivasa(t.index, w), cs(t.start), ce(t.end)),
@@ -534,6 +634,84 @@ List<TimeSpan<int>> sunPadas(PanchangCalc calc, double from, double to) {
 }
 
 // ---------------------------------------------------------------------------
+// Kumbha Chakra, Jeevanama, Netrama
+
+/// Where the Moon's nakshatra falls on the pot, counting from the Sun's
+/// nakshatra: 1 mouth, 2–5 east, 6–9 south, 10–13 west, 14–17 north,
+/// 18–21 womb, 22–24 bottom, 25–27 throat.
+enum KumbhaPart { mouth, east, south, west, north, womb, bottom, throat }
+
+KumbhaPart kumbhaPart(int sunNak, int moonNak) {
+  final c = nakshatraCount(sunNak, moonNak);
+  if (c == 1) return KumbhaPart.mouth;
+  if (c <= 17) return KumbhaPart.values[1 + (c - 2) ~/ 4];
+  if (c <= 21) return KumbhaPart.womb;
+  if (c <= 24) return KumbhaPart.bottom;
+  return KumbhaPart.throat;
+}
+
+/// Auspicious parts of the pot (Muhurta Chintamani's Kalasha chakra; Drik
+/// marks north and womb bad, bottom good).
+bool isGoodKumbha(KumbhaPart p) => const {
+  KumbhaPart.south, KumbhaPart.west, KumbhaPart.bottom, KumbhaPart.throat,
+}.contains(p);
+
+/// Jeevanama ("life"), by the count from the Sun's nakshatra to the
+/// Moon's: 2 full, 1 half, 0 none (Drik Panchang, Nov 2026 – Jan 2027).
+int jeevanamaOf(int sunNak, int moonNak) {
+  final c = nakshatraCount(sunNak, moonNak);
+  if (c == 1 || c == 2 || c == 10 || c == 19 || c == 27) return 0;
+  if (c >= 11 && c <= 18) return 2;
+  return 1;
+}
+
+/// Netrama ("eyes"), by the same count: 2, 1 or 0 (blind).
+int netramaOf(int sunNak, int moonNak) {
+  final c = nakshatraCount(sunNak, moonNak);
+  if (c >= 9 && c <= 20) return 2;
+  if ((c >= 5 && c <= 8) || (c >= 21 && c <= 24)) return 1;
+  return 0;
+}
+
+/// Moon-nakshatra-based values over the day (Tamil yoga, Kumbha, life, eyes).
+class MoonDayValues {
+  MoonDayValues._(this.tamil, this.kumbha, this.jeevan, this.netra);
+  final List<TimeSpan<TamilYoga>> tamil;
+  final List<TimeSpan<KumbhaPart>> kumbha;
+  final List<TimeSpan<int>> jeevan, netra;
+
+  static MoonDayValues of(PanchangCalc calc, DayPanchang d) {
+    final spans = sunMoonSpans(calc, d.sunrise, d.nextSunrise);
+    List<TimeSpan<T>> merge<T>(Iterable<TimeSpan<T>> l) {
+      final out = <TimeSpan<T>>[];
+      for (final x in l) {
+        if (out.isNotEmpty && out.last.value == x.value) {
+          out[out.length - 1] = TimeSpan(x.value, out.last.start, x.end);
+        } else {
+          out.add(x);
+        }
+      }
+      return out;
+    }
+
+    const span = 360 / 27;
+    int sunNakAt(double t) => (norm360(calc.sun(t)) / span).floor();
+    return MoonDayValues._(
+      merge([for (final a in anandadiYogas(calc, d)) TimeSpan(tamilYogaOf(a.value), a.start, a.end)]),
+      merge([
+        for (final (s, e, _, _, m) in spans) TimeSpan(kumbhaPart(sunNakAt((s + e) / 2), m), s, e),
+      ]),
+      merge([
+        for (final (s, e, _, _, m) in spans) TimeSpan(jeevanamaOf(sunNakAt((s + e) / 2), m), s, e),
+      ]),
+      merge([
+        for (final (s, e, _, _, m) in spans) TimeSpan(netramaOf(sunNakAt((s + e) / 2), m), s, e),
+      ]),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Calendars, ritu, epochs
 
 const samvatsaraNames = [
@@ -577,10 +755,30 @@ bool isUttarayana(double lon) {
 /// enters the sign is day 1 (as Drik Panchang counts, even for a sankranti
 /// after sunset).
 int pravishte(PanchangCalc calc, DayPanchang d) {
-  final sun = norm360(calc.sun(d.sunrise));
-  final sankranti = _sunReach(calc, d.sunrise - (sun % 30) / 0.9856 - 2, sun - sun % 30);
+  // The Sun's sign at the end of the civil day (local midnight).
+  final midnight = calc.eph.julianDayUt(d.date.year, d.date.month, d.date.day, 0) -
+      d.place.utcOffsetHours / 24 + 1;
+  final sun = norm360(calc.sun(midnight));
+  final sankranti = _sunReach(calc, midnight - (sun % 30) / 0.9856 - 2, sun - sun % 30);
   double localDay(double jd) => (jd + 0.5 + d.place.utcOffsetHours / 24).floorToDouble();
-  return (localDay(d.sunrise) - localDay(sankranti)).round() + 1;
+  return (localDay(midnight - 1e-6) - localDay(sankranti)).round() + 1;
+}
+
+/// National Nirayana (sidereal solar) date as Drik Panchang shows it:
+/// (Shaka year, month 1 = Chaitra … 12, day). Each month (Mesha = Vaishakha)
+/// starts the civil day before the sankranti day, so the day number is one
+/// more than [pravishte].
+(int, int, int) nationalNirayanaDate(PanchangCalc calc, DayPanchang d) {
+  final next = DateTime.utc(d.date.year, d.date.month, d.date.day).add(const Duration(days: 1));
+  final dn = DayPanchang.of(calc, d.place, next);
+  final endOfNext = calc.eph.julianDayUt(next.year, next.month, next.day, 0) -
+      d.place.utcOffsetHours / 24 + 1;
+  final sign = Rashi.ofLongitude(calc.sun(endOfNext)).index;
+  final month = (sign + 1) % 12 + 1; // Mesha → Vaishakha (2)
+  // Shaka year turns at Vaishakha 1.
+  final meshaThisYear = _sunReach(calc, calc.eph.julianDayUt(next.year, 3, 20, 0), 0);
+  final shaka = next.year - (endOfNext >= meshaThisYear ? 78 : 79);
+  return (shaka, month, pravishte(calc, dn));
 }
 
 /// Julian day number at 0h UT of the civil date.

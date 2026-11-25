@@ -2028,4 +2028,84 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bhadraLabel => 'Bhadra';
+
+  @override
+  String get tamilYogaLabel => 'Tamil yoga';
+
+  @override
+  String get jeevanamaLabel => 'Jeevanama';
+
+  @override
+  String get netramaLabel => 'Netrama';
+
+  @override
+  String get kumbhaChakraLabel => 'Kumbha Chakra';
+
+  @override
+  String mantriMandalaTitle(String year) {
+    return 'Mantri Mandala of Vikram $year';
+  }
+
+  @override
+  String get brihaspatiSamvatsaraLabel => 'Brihaspati samvatsara';
+
+  @override
+  String get secFestivals => 'Festivals';
+
+  @override
+  String get secEclipses => 'Eclipses';
+
+  @override
+  String festivalsTitle(String year) {
+    return 'Festivals of $year';
+  }
+
+  @override
+  String get festivalsNote =>
+      'Dates by the tithi at the right time of day (sunrise, midday, afternoon, pradosh, midnight or moonrise), for this place. Tap a festival to open its day.';
+
+  @override
+  String eclipsesTitle(String year) {
+    return 'Eclipses of $year';
+  }
+
+  @override
+  String get eclipseMaximum => 'Greatest eclipse';
+
+  @override
+  String get eclipseVisibility => 'Here';
+
+  @override
+  String get eclipseNotVisible => 'not visible';
+
+  @override
+  String get eclipseVisibleFrom => 'Visible';
+
+  @override
+  String get eclipseRisesEclipsed => 'Rises eclipsed';
+
+  @override
+  String get eclipseSetsEclipsed => 'Sets eclipsed';
+
+  @override
+  String get eclipseMagnitude => 'Magnitude';
+
+  @override
+  String get sutakLabel => 'Sutak';
+
+  @override
+  String get noSutak => 'none (penumbral)';
+
+  @override
+  String get sutakKidsLabel => 'Sutak for children, the old and sick';
+
+  @override
+  String get eclipseNote =>
+      'Sutak: 12 hours before a solar eclipse, 9 hours before a lunar one, until it ends; only where the eclipse is visible.';
+
+  @override
+  String get nakshatraShoolLabel => 'Nakshatra Shool';
+
+  @override
+  String get nationalNirayanaDateLabel => 'National nirayana date';
 }

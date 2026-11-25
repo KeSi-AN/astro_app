@@ -25,6 +25,8 @@ enum _Sec {
   bala,
   panchakBhadra,
   vrat,
+  festivals,
+  eclipses,
 }
 
 /// Daily panchang and muhurta tools for any date and place.
@@ -194,6 +196,8 @@ class _PanchangPageState extends State<PanchangPage> {
               (_Sec.bala, l10n.secBala),
               (_Sec.panchakBhadra, l10n.secPanchakBhadra),
               (_Sec.vrat, l10n.secVrat),
+              (_Sec.festivals, l10n.secFestivals),
+              (_Sec.eclipses, l10n.secEclipses),
             ])
               ChoiceChip(
                 label: Text(label),
@@ -214,6 +218,8 @@ class _PanchangPageState extends State<PanchangPage> {
           _Sec.bala => _balaView(context, d, calc),
           _Sec.panchakBhadra => _panchakView(context, d, calc),
           _Sec.vrat => _vratView(context, calc, pp, settings),
+          _Sec.festivals => _festivalView(context, calc, pp, settings),
+          _Sec.eclipses => _eclipseView(context, calc, pp),
         },
       ],
     );
@@ -277,6 +283,20 @@ class _PanchangPageState extends State<PanchangPage> {
         '${gujaratiYear(d)} ${t.samvatsara(gujaratiSamvatsara(gujaratiYear(d)))}',
       ),
       (l10n.pravishteLabel, '${pravishte(calc, d)}'),
+      (
+        l10n.brihaspatiSamvatsaraLabel,
+        () {
+          final (i, s, e) = brihaspatiSamvatsara(d.sunrise);
+          String day(double jd) {
+            final x = DateTime.fromMillisecondsSinceEpoch(
+              ((jd - 2440587.5) * 86400000 + d.place.utcOffsetHours * 3600000).round(),
+              isUtc: true,
+            );
+            return formatDate(x.year, x.month, x.day, month: t.month);
+          }
+          return '${t.samvatsara(i)} (${day(s)} – ${day(e)})';
+        }(),
+      ),
       (l10n.sunrise, _time(d, d.sunrise)),
       (l10n.sunset, _time(d, d.sunset)),
       (
@@ -383,6 +403,7 @@ class _PanchangPageState extends State<PanchangPage> {
     final (jy, jm, jdd) = julianCalendarDate(jd0);
     final (ny, nm, nd) = nationalCivilDate(d.date);
     final anand = anandadiYogas(calc, d);
+    final moonVals = MoonDayValues.of(calc, d);
 
     return [
       KeyValueCard(
@@ -435,6 +456,9 @@ class _PanchangPageState extends State<PanchangPage> {
                   ? t.anandadi(x.value)
                   : '${t.anandadi(x.value)} ${l10n.untilTime(_time(d, x.end))}',
             ),
+          (l10n.tamilYogaLabel, timed(moonVals.tamil, t.tamilYoga)),
+          (l10n.jeevanamaLabel, timed(moonVals.jeevan, t.jeevanama)),
+          (l10n.netramaLabel, timed(moonVals.netra, t.netrama)),
         ],
       ),
       KeyValueCard(
@@ -442,12 +466,34 @@ class _PanchangPageState extends State<PanchangPage> {
         rows: [
           (l10n.homahutiLabel, timed(nivas.homahutis, t.graha)),
           (l10n.dishaShoolLabel, t.direction(dishaShool[w])),
+          for (final n in d.nakshatras)
+            if (nakshatraShool(n.index - 1) != null)
+              (
+                l10n.nakshatraShoolLabel,
+                '${t.direction(nakshatraShool(n.index - 1)!)} · '
+                    '${range(max(n.start, d.sunrise), min(n.end, d.nextSunrise))}',
+              ),
           (l10n.rahuVasaLabel, t.direction(rahuVasa[w])),
           (l10n.agnivasaLabel, timed(nivas.agnivasas, t.agnivasa)),
           for (final b in nivas.bhadravasas)
             (l10n.bhadravasaLabel, '${t.bhadravasa(b.value)} · ${range(b.start, b.end)}'),
           (l10n.chandraVasaLabel, timed(nivas.chandraVasas, t.direction)),
           (l10n.shivavasaLabel, timed(nivas.shivavasas, t.shivavasa)),
+          (
+            l10n.kumbhaChakraLabel,
+            timed(
+              moonVals.kumbha,
+              (KumbhaPart k) => '${t.kumbhaPart(k)} ${isGoodKumbha(k) ? '✓' : '✗'}',
+            ),
+          ),
+        ],
+      ),
+      KeyValueCard(
+        title: l10n.mantriMandalaTitle('${d.vikram}'),
+        rows: [
+          for (final e in mantriMandala(calc, d.place, d.vikram - 57).entries.toList()
+            ..sort((a, b) => a.key.index.compareTo(b.key.index)))
+            (t.mantriOffice(e.key), t.graha(e.value)),
         ],
       ),
       KeyValueCard(
@@ -464,6 +510,13 @@ class _PanchangPageState extends State<PanchangPage> {
             l10n.nationalCivilDateLabel,
             '${t.lunarMonth(nm - 1)} ${nd.toString().padLeft(2, '0')}, $ny',
           ),
+          () {
+            final (y, mo, dd) = nationalNirayanaDate(calc, d);
+            return (
+              l10n.nationalNirayanaDateLabel,
+              '${t.lunarMonth(mo - 1)} ${dd.toString().padLeft(2, '0')}, $y',
+            );
+          }(),
         ],
       ),
     ];
@@ -731,6 +784,98 @@ class _PanchangPageState extends State<PanchangPage> {
     return [
       table(l10n.panchakTitle, panchak(calc, from, to)),
       table(l10n.bhadraTitle, bhadra(calc, from, to)),
+    ];
+  }
+
+  List<FestivalDay>? _festivals;
+  Object? _festivalKey;
+
+  List<Widget> _festivalView(
+    BuildContext context,
+    PanchangCalc calc,
+    PanchangPlace pp,
+    AppSettings settings,
+  ) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final key = (_date.year, pp.latitude, pp.longitude, settings.sunriseMode);
+    if (_festivalKey != key) {
+      _festivalKey = key;
+      _festivals = festivalsOfYear(calc, pp, _date.year, sunriseMode: settings.sunriseMode);
+    }
+    final style = tabular(Theme.of(context).textTheme.bodyMedium!);
+    return [
+      Text(l10n.festivalsTitle('${_date.year}'), style: Theme.of(context).textTheme.titleSmall),
+      const SizedBox(height: 6),
+      for (final f in _festivals!)
+        ListTile(
+          dense: true,
+          contentPadding: EdgeInsets.zero,
+          leading: Text(
+            formatDate(f.date.year, f.date.month, f.date.day, month: t.month),
+            style: style,
+          ),
+          title: Text(t.festival(f.id)),
+          trailing: Text(t.weekday(f.date.weekday), style: style),
+          onTap: () => setState(() {
+            _date = f.date;
+            _sec = _Sec.day;
+          }),
+        ),
+      const SizedBox(height: 8),
+      Text(l10n.festivalsNote, style: Theme.of(context).textTheme.bodySmall),
+    ];
+  }
+
+  List<Widget> _eclipseView(BuildContext context, PanchangCalc calc, PanchangPlace pp) {
+    final l10n = context.l10n;
+    final t = context.terms;
+    final eph = calc.eph;
+    final from = eph.julianDayUt(_date.year, 1, 1, 0) - pp.utcOffsetHours / 24;
+    final to = eph.julianDayUt(_date.year + 1, 1, 1, 0) - pp.utcOffsetHours / 24;
+    final list = eclipsesBetween(eph, pp, from, to);
+    String dt(double? jd) {
+      if (jd == null) return '—';
+      final x = DateTime.fromMillisecondsSinceEpoch(
+        ((jd - 2440587.5) * 86400000 + pp.utcOffsetHours * 3600000).round(),
+        isUtc: true,
+      );
+      return '${formatDate(x.year, x.month, x.day, month: t.month)} '
+          '${x.hour.toString().padLeft(2, '0')}:${x.minute.toString().padLeft(2, '0')}';
+    }
+
+    return [
+      Text(l10n.eclipsesTitle('${_date.year}'), style: Theme.of(context).textTheme.titleSmall),
+      const SizedBox(height: 6),
+      if (list.isEmpty) Text(l10n.nonePeriod),
+      for (final x in list)
+        KeyValueCard(
+          title: '${t.eclipseKind(x.event.kind)} · ${t.eclipseType(x.event.type)}',
+          rows: [
+            (l10n.eclipseMaximum, dt(x.event.maximum)),
+            if (!x.event.visible)
+              (l10n.eclipseVisibility, l10n.eclipseNotVisible)
+            else ...[
+              (l10n.eclipseVisibleFrom, '${dt(x.visibleStart)} – ${dt(x.visibleEnd)}'),
+              if (x.event.bodyRise != null)
+                (l10n.eclipseRisesEclipsed, dt(x.event.bodyRise)),
+              if (x.event.bodySet != null)
+                (l10n.eclipseSetsEclipsed, dt(x.event.bodySet)),
+              if (x.event.magnitude > 0)
+                (l10n.eclipseMagnitude, x.event.magnitude.toStringAsFixed(3)),
+              (
+                l10n.sutakLabel,
+                x.sutakStart == null
+                    ? l10n.noSutak
+                    : '${dt(x.sutakStart)} – ${dt(x.sutakEnd)}',
+              ),
+              if (x.sutakKidsStart != null)
+                (l10n.sutakKidsLabel, '${dt(x.sutakKidsStart)} – ${dt(x.sutakEnd)}'),
+            ],
+          ],
+        ),
+      const SizedBox(height: 8),
+      Text(l10n.eclipseNote, style: Theme.of(context).textTheme.bodySmall),
     ];
   }
 

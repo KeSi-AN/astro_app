@@ -219,3 +219,21 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - Panchang → दिन has the new cards: ritu & ayana, auspicious and inauspicious times, Anandadi, nivas & shool, other calendars. New chips: गौरी, पंचक रहित, चन्द्र / तारा बल.
 
 **Checked on the phone (2026-11-26):** the Day view, Gowri, Panchaka Rahita and Chandra/Tara bala for 26 Nov match Drik Panchang's screens.
+
+## Drik Panchang, second pass (2026-11-26)
+**Automated**
+- `jyotish_core/test/drik_days_test.dart`: 38 days of Drik Panchang, New Delhi, 26 Nov 2026 – 9 Jan 2027 (`tools/drik/drik_days.json`).
+  - Every special time: count and start/end within 2 minutes (7 near the Sun changing nakshatra).
+  - Aadal/Vidaal.
+  - Anandadi and Tamil yoga, Kumbha Chakra, Jeevanama, Netrama.
+  - Homahuti, Agnivasa, Shivavasa, Chandra Vasa.
+  - Pravishte, Disha Shool, Rahu Vasa, National Nirayana date.
+- `jyotish_core/test/festivals_test.dart`:
+  - The 46 festivals of 2026 on Drik's dates.
+  - Eclipses of 2025–26 at New Delhi with visibility and sutak (7 Sep 2025 sutak 12:57, for children and the sick 18:35; 3 Mar 2026 sutak 06:20, moonrise 18:24).
+  - The Mantri Mandala of Vikram 2082 and 2083.
+  - The Brihaspati samvatsara changes on 25 Apr 2025 and 21 Apr 2026.
+
+**Phone (2026-11-26):**
+- The Panchang Day view for 26 Nov shows Tamil yoga Marana, full life, two eyes, Kumbha North ✗, the Mantri Mandala of 2083, Raudra samvatsara and National Nirayana Margashirsha 12, all as Drik.
+- The new त्योहार (festivals) and ग्रहण (eclipses) chips list 2026 correctly.

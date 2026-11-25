@@ -128,3 +128,12 @@ All eight kootas match for three couples (15, 24.5 and 26/36). AstroSage's **yon
 | Samvat names, Pravishte, Kali Ahargana, Rata Die, Julian date, National civil date | identical |
 | **Lahiri ayanamsa** | Drik 24.239619°, ours 24.235264° (−15.7″). Ours matches AstroSage; Drik appears to include nutation. |
 | **Baana** | changes 4–6 min before Drik (follows the Sun's sidereal degree, so the ayanamsa gap shows) |
+
+### Second pass (45 days, festivals, eclipses)
+| Item | Result |
+|---|---|
+| Aadal/Vidaal, Tamil yoga, Kumbha Chakra, Jeevanama, Netrama, Homahuti, nivas | identical on all 38 complete days |
+| Times set by the Sun entering a nakshatra (Ravi Yoga, Aadal start on 3/16/29 Dec) | ours 4–6 min earlier (the ayanamsa gap) |
+| 46 festivals of 2026 | all on Drik's dates |
+| Eclipses of 2026 | same list and types |
+| Mantri Mandala 2082, 2083; Brihaspati samvatsara changes | identical (samvatsara period fitted to Drik's two changes) |

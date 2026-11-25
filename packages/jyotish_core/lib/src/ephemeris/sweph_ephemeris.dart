@@ -186,6 +186,81 @@ class SwephEphemeris implements Ephemeris {
   }
 
   @override
+  EclipseEvent nextEclipse(
+    EclipseKind kind,
+    double jdUtStart,
+    double latitude,
+    double longitude,
+  ) {
+    final geo = GeoPosition(longitude, latitude);
+    const flags = SwephFlag.SEFLG_SWIEPH;
+    if (kind == EclipseKind.lunar) {
+      final g = Sweph.swe_lun_eclipse_when(
+        jdUtStart, flags, EclipseFlag.SE_ECL_ALLTYPES_LUNAR, false);
+      final gt = g.times!;
+      // Local search from just before it: the same eclipse if visible.
+      final l = Sweph.swe_lun_eclipse_when_loc(gt[0] - 0.3, flags, geo, false);
+      final lt = l.times!;
+      final visible = (lt[0] - gt[0]).abs() < 0.1;
+      if (!visible) {
+        return EclipseEvent(
+          kind: kind,
+          type: _type(g.eclipseType!),
+          maximum: gt[0],
+          visible: false,
+          begin: _t(gt, 2), end: _t(gt, 3),
+          totalBegin: _t(gt, 4), totalEnd: _t(gt, 5),
+          penumbralBegin: _t(gt, 6), penumbralEnd: _t(gt, 7),
+        );
+      }
+      return EclipseEvent(
+        kind: kind,
+        // Named by its global type (a total eclipse may be seen only in part).
+        type: _type(g.eclipseType!),
+        maximum: gt[0],
+        visible: true,
+        // Lunar contacts happen at the same instant everywhere; the place
+        // only limits what it sees (moonrise/moonset during the eclipse).
+        begin: _t(gt, 2), end: _t(gt, 3),
+        totalBegin: _t(gt, 4), totalEnd: _t(gt, 5),
+        penumbralBegin: _t(gt, 6), penumbralEnd: _t(gt, 7),
+        bodyRise: _t(lt, 8), bodySet: _t(lt, 9),
+        magnitude: l.attributes![0],
+      );
+    }
+    final g = Sweph.swe_sol_eclipse_when_glob(
+      jdUtStart, flags, EclipseFlag.SE_ECL_ALLTYPES_SOLAR, false);
+    final gt = g.times!;
+    final l = Sweph.swe_sol_eclipse_when_loc(gt[0] - 0.3, flags, geo, false);
+    final lt = l.times!;
+    final visible = (lt[0] - gt[0]).abs() < 0.3;
+    if (!visible) {
+      return EclipseEvent(
+        kind: kind,
+        type: _type(g.eclipseType!),
+        maximum: gt[0],
+        visible: false,
+        begin: _t(gt, 2), end: _t(gt, 3),
+        totalBegin: _t(gt, 4), totalEnd: _t(gt, 5),
+      );
+    }
+    final f = l.eclipseType ?? g.eclipseType!;
+    return EclipseEvent(
+      kind: kind,
+      // What the place sees: partial unless it is in the central path.
+      type: f.has(EclipseFlag.SE_ECL_TOTAL) || f.has(EclipseFlag.SE_ECL_ANNULAR)
+          ? _type(f)
+          : EclipseType.partial,
+      maximum: lt[0],
+      visible: true,
+      begin: _t(lt, 1), end: _t(lt, 4),
+      totalBegin: _t(lt, 2), totalEnd: _t(lt, 3),
+      bodyRise: _t(lt, 5), bodySet: _t(lt, 6),
+      magnitude: l.attributes![0],
+    );
+  }
+
+  @override
   double? moonEvent(double jdUtStart, double latitude, double longitude,
           {required bool rise}) =>
       Sweph.swe_rise_trans(
@@ -198,6 +273,20 @@ class SwephEphemeris implements Ephemeris {
         0,
       );
 }
+
+extension on EclipseFlag {
+  bool has(EclipseFlag f) => value & f.value != 0;
+}
+
+EclipseType _type(EclipseFlag f) {
+  if (f.has(EclipseFlag.SE_ECL_ANNULAR_TOTAL)) return EclipseType.hybrid;
+  if (f.has(EclipseFlag.SE_ECL_TOTAL)) return EclipseType.total;
+  if (f.has(EclipseFlag.SE_ECL_ANNULAR)) return EclipseType.annular;
+  if (f.has(EclipseFlag.SE_ECL_PARTIAL)) return EclipseType.partial;
+  return EclipseType.penumbral;
+}
+
+double? _t(List<double> l, int i) => i < l.length && l[i] > 0 ? l[i] : null;
 
 class _FnAssetLoader with AssetLoader {
   _FnAssetLoader(this._fn);

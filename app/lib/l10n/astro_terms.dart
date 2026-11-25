@@ -69,6 +69,14 @@ abstract class AstroTerms {
   String bhadravasa(Bhadravasa b);
   String ritu(Ritu r);
   String samvatsara(int i);
+  String tamilYoga(TamilYoga y);
+  String kumbhaPart(KumbhaPart p);
+  String jeevanama(int v);
+  String netrama(int v);
+  String eclipseKind(EclipseKind k);
+  String eclipseType(EclipseType t);
+  String mantriOffice(MantriOffice o);
+  String festival(String id);
 
   /// BPHS condition under which [k] applies.
   String nakshatraDashaRule(NakshatraDashaKind k);
@@ -394,6 +402,8 @@ class EnglishTerms extends AstroTerms {
     SpecialTime.durMuhurtam: 'Dur Muhurtam',
     SpecialTime.varjyam: 'Varjyam',
     SpecialTime.gandaMoola: 'Ganda Moola',
+    SpecialTime.aadal: 'Aadal Yoga',
+    SpecialTime.vidaal: 'Vidaal Yoga',
   }[k]!;
   @override
   String baana(Baana b) => const ['Mrityu', 'Agni', 'Raja', 'Chora', 'Roga'][b.index];
@@ -435,6 +445,31 @@ class EnglishTerms extends AstroTerms {
   ][r.index];
   @override
   String samvatsara(int i) => samvatsaraNames[i];
+  @override
+  String tamilYoga(TamilYoga y) => const ['Siddha', 'Amrita', 'Marana'][y.index];
+  @override
+  String kumbhaPart(KumbhaPart p) => const [
+    'Mouth', 'East', 'South', 'West', 'North', 'Womb', 'Bottom', 'Throat',
+  ][p.index];
+  @override
+  String jeevanama(int v) => const ['Lifeless', 'Half life', 'Full life'][v];
+  @override
+  String netrama(int v) => const ['Blind', 'One eye', 'Two eyes'][v];
+  @override
+  String eclipseKind(EclipseKind k) => const ['Solar eclipse', 'Lunar eclipse'][k.index];
+  @override
+  String eclipseType(EclipseType t) => const [
+    'Total', 'Annular', 'Hybrid', 'Partial', 'Penumbral',
+  ][t.index];
+  @override
+  String mantriOffice(MantriOffice o) => const [
+    'Raja (King)', 'Mantri (Minister)', 'Senadhipati (Commander)',
+    'Sasyadhipati (Kharif crops)', 'Dhanyadhipati (Rabi crops)',
+    'Dhanadhipati (Wealth)', 'Meghadhipati (Rain)', 'Rasadhipati (Liquids)',
+    'Nirasadhipati (Metals)', 'Phaladhipati (Fruits)',
+  ][o.index];
+  @override
+  String festival(String id) => const {'makarSankranti': 'Makar Sankranti', 'mauniAmavasya': 'Mauni Amavasya', 'vasantPanchami': 'Vasant Panchami', 'rathaSaptami': 'Ratha Saptami', 'mahaShivaratri': 'Maha Shivaratri', 'holikaDahan': 'Holika Dahan', 'holi': 'Holi', 'chaitraNavratri': 'Chaitra Navratri begins', 'ramNavami': 'Ram Navami', 'hanumanJayanti': 'Hanuman Jayanti', 'akshayaTritiya': 'Akshaya Tritiya', 'buddhaPurnima': 'Buddha Purnima', 'vatSavitri': 'Vat Savitri Vrat', 'gangaDussehra': 'Ganga Dussehra', 'nirjalaEkadashi': 'Nirjala Ekadashi', 'rathYatra': 'Jagannath Rath Yatra', 'devshayaniEkadashi': 'Devshayani Ekadashi', 'guruPurnima': 'Guru Purnima', 'hariyaliTeej': 'Hariyali Teej', 'nagPanchami': 'Nag Panchami', 'rakshaBandhan': 'Raksha Bandhan', 'kajariTeej': 'Kajari Teej', 'janmashtami': 'Krishna Janmashtami', 'hartalikaTeej': 'Hartalika Teej', 'ganeshChaturthi': 'Ganesh Chaturthi', 'rishiPanchami': 'Rishi Panchami', 'anantChaturdashi': 'Anant Chaturdashi', 'sarvaPitruAmavasya': 'Sarva Pitru Amavasya', 'sharadNavratri': 'Sharad Navratri begins', 'durgaAshtami': 'Durga Ashtami', 'mahaNavami': 'Maha Navami', 'dussehra': 'Dussehra', 'sharadPurnima': 'Sharad Purnima', 'karwaChauth': 'Karwa Chauth', 'ahoiAshtami': 'Ahoi Ashtami', 'dhanteras': 'Dhanteras', 'narakChaturdashi': 'Narak Chaturdashi', 'diwali': 'Diwali (Lakshmi Puja)', 'govardhanPuja': 'Govardhan Puja', 'bhaiDooj': 'Bhai Dooj', 'chhathPuja': 'Chhath Puja', 'devUthaniEkadashi': 'Dev Uthani Ekadashi', 'kartikPurnima': 'Kartik Purnima', 'vivahPanchami': 'Vivah Panchami', 'gitaJayanti': 'Gita Jayanti', 'dattaJayanti': 'Datta Jayanti'}[id] ?? id;
   @override
   String nakshatraDashaRule(NakshatraDashaKind k) => switch (k) {
     NakshatraDashaKind.ashtottari =>
@@ -733,6 +768,8 @@ class HindiTerms extends AstroTerms {
     SpecialTime.durMuhurtam: 'दुर्मुहूर्त',
     SpecialTime.varjyam: 'वर्ज्य',
     SpecialTime.gandaMoola: 'गण्ड मूल',
+    SpecialTime.aadal: 'आडल योग',
+    SpecialTime.vidaal: 'विडाल योग',
   }[k]!;
   @override
   String baana(Baana b) => const ['मृत्यु', 'अग्नि', 'राज', 'चोर', 'रोग'][b.index];
@@ -777,6 +814,29 @@ class HindiTerms extends AstroTerms {
   String ritu(Ritu r) => const [
     'वसन्त', 'ग्रीष्म', 'वर्षा', 'शरद', 'हेमन्त', 'शिशिर',
   ][r.index];
+  @override
+  String tamilYoga(TamilYoga y) => const ['सिद्ध', 'अमृत', 'मरण'][y.index];
+  @override
+  String kumbhaPart(KumbhaPart p) => const [
+    'मुख', 'पूर्व', 'दक्षिण', 'पश्चिम', 'उत्तर', 'गर्भ', 'तल', 'कण्ठ',
+  ][p.index];
+  @override
+  String jeevanama(int v) => const ['निर्जीव', 'अर्ध जीव', 'पूर्ण जीव'][v];
+  @override
+  String netrama(int v) => const ['अन्ध', 'एक नेत्र', 'दो नेत्र'][v];
+  @override
+  String eclipseKind(EclipseKind k) => const ['सूर्य ग्रहण', 'चन्द्र ग्रहण'][k.index];
+  @override
+  String eclipseType(EclipseType t) => const [
+    'पूर्ण', 'वलयाकार', 'संकर', 'खण्ड', 'उपच्छाया',
+  ][t.index];
+  @override
+  String mantriOffice(MantriOffice o) => const [
+    'राजा', 'मंत्री', 'सेनाधिपति', 'सस्याधिपति (खरीफ)', 'धान्याधिपति (रबी)',
+    'धनाधिपति', 'मेघाधिपति', 'रसाधिपति', 'नीरसाधिपति', 'फलाधिपति',
+  ][o.index];
+  @override
+  String festival(String id) => const {'makarSankranti': 'मकर संक्रांति', 'mauniAmavasya': 'मौनी अमावस्या', 'vasantPanchami': 'वसंत पंचमी', 'rathaSaptami': 'रथ सप्तमी', 'mahaShivaratri': 'महाशिवरात्रि', 'holikaDahan': 'होलिका दहन', 'holi': 'होली', 'chaitraNavratri': 'चैत्र नवरात्रि आरम्भ', 'ramNavami': 'राम नवमी', 'hanumanJayanti': 'हनुमान जयंती', 'akshayaTritiya': 'अक्षय तृतीया', 'buddhaPurnima': 'बुद्ध पूर्णिमा', 'vatSavitri': 'वट सावित्री व्रत', 'gangaDussehra': 'गंगा दशहरा', 'nirjalaEkadashi': 'निर्जला एकादशी', 'rathYatra': 'जगन्नाथ रथ यात्रा', 'devshayaniEkadashi': 'देवशयनी एकादशी', 'guruPurnima': 'गुरु पूर्णिमा', 'hariyaliTeej': 'हरियाली तीज', 'nagPanchami': 'नाग पंचमी', 'rakshaBandhan': 'रक्षा बंधन', 'kajariTeej': 'कजरी तीज', 'janmashtami': 'कृष्ण जन्माष्टमी', 'hartalikaTeej': 'हरतालिका तीज', 'ganeshChaturthi': 'गणेश चतुर्थी', 'rishiPanchami': 'ऋषि पंचमी', 'anantChaturdashi': 'अनंत चतुर्दशी', 'sarvaPitruAmavasya': 'सर्व पितृ अमावस्या', 'sharadNavratri': 'शारदीय नवरात्रि आरम्भ', 'durgaAshtami': 'दुर्गा अष्टमी', 'mahaNavami': 'महा नवमी', 'dussehra': 'दशहरा', 'sharadPurnima': 'शरद पूर्णिमा', 'karwaChauth': 'करवा चौथ', 'ahoiAshtami': 'अहोई अष्टमी', 'dhanteras': 'धनतेरस', 'narakChaturdashi': 'नरक चतुर्दशी', 'diwali': 'दीपावली (लक्ष्मी पूजा)', 'govardhanPuja': 'गोवर्धन पूजा', 'bhaiDooj': 'भाई दूज', 'chhathPuja': 'छठ पूजा', 'devUthaniEkadashi': 'देवउठनी एकादशी', 'kartikPurnima': 'कार्तिक पूर्णिमा', 'vivahPanchami': 'विवाह पंचमी', 'gitaJayanti': 'गीता जयंती', 'dattaJayanti': 'दत्त जयंती'}[id] ?? id;
   @override
   String samvatsara(int i) => const [
     'प्रभव', 'विभव', 'शुक्ल', 'प्रमोद', 'प्रजापति', 'अंगिरा', 'श्रीमुख', 'भाव',

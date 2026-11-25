@@ -1,0 +1,6193 @@
+{
+ "source": "Drik Panchang Android 2.6.7, New Delhi, captured 2026-11-26 by screen text (uiautomator); minutes from local midnight of the date, null = to next sunrise",
+ "days": [
+  {
+   "date": "2026-11-26",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     412,
+     1067
+    ]
+   ],
+   "Varjyam": [
+    [
+     1515,
+     1601
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     601,
+     686
+    ],
+    [
+     1814,
+     1900
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     623,
+     665
+    ],
+    [
+     876,
+     918
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1042,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     305,
+     358
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1422,
+     1476
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     834,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     332,
+     412
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1067
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Mrityu",
+     1067
+    ],
+    [
+     "Kana",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Sabha",
+     795
+    ],
+    [
+     "in Krida",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     431
+    ],
+    [
+     "West",
+     null,
+     431
+    ]
+   ],
+   "Pravishte/Gate": "11",
+   "Disha Shool": "South",
+   "Rahu Vasa": "South",
+   "Weekday": "Guruwara",
+   "National Nirayana Date": "Margashirsha 12, 1948 Shaka"
+  },
+  {
+   "date": "2026-11-27",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1559,
+     1646
+    ]
+   ],
+   "Amrit Kalam": [],
+   "Dur Muhurtam": [
+    [
+     539,
+     581
+    ],
+    [
+     750,
+     792
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     908,
+     1854
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     305,
+     359
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1422,
+     1476
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     834,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     332,
+     413
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     908
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Padma",
+     908
+    ],
+    [
+     "Lumbaka",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "North",
+     908
+    ],
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     588
+    ],
+    [
+     "Patala",
+     1839
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     588
+    ],
+    [
+     "on Kailash",
+     1839
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "12",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Margashirsha 13, 1948 Shaka"
+  },
+  {
+   "date": "2026-11-28",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     770,
+     1855
+    ]
+   ],
+   "Varjyam": [
+    [
+     1213,
+     1301
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     639,
+     726
+    ],
+    [
+     1745,
+     1833
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     414,
+     456
+    ],
+    [
+     456,
+     498
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     306,
+     360
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1422,
+     1476
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     834,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     333,
+     414
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     770
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Chhatra",
+     770
+    ],
+    [
+     "Mitra",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     770
+    ],
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     770
+    ],
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1676
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Nandi",
+     1676
+    ],
+    [
+     "in Bhojana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     442
+    ],
+    [
+     "North",
+     null,
+     442
+    ]
+   ],
+   "Pravishte/Gate": "13",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Margashirsha 14, 1948 Shaka"
+  },
+  {
+   "date": "2026-11-29",
+   "Aadal Yoga": [
+    [
+     659,
+     1855
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     415,
+     659
+    ]
+   ],
+   "Varjyam": [
+    [
+     1386,
+     1477
+    ]
+   ],
+   "Amrit Kalam": [],
+   "Dur Muhurtam": [
+    [
+     960,
+     1002
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     415,
+     659
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     659,
+     1855
+    ]
+   ],
+   "Ravi Pushya Yoga": [
+    [
+     415,
+     659
+    ]
+   ],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     659,
+     1855
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1068
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     307,
+     361
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1423,
+     1477
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     834,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     334,
+     415
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     659
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Shrivatsa",
+     659
+    ],
+    [
+     "Vajra",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     659
+    ],
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     1546
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "14",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Margashirsha 15, 1948 Shaka"
+  },
+  {
+   "date": "2026-11-30",
+   "Aadal Yoga": [
+    [
+     415,
+     582
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1281,
+     1374
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     491,
+     582
+    ],
+    [
+     1840,
+     1934
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     751,
+     793
+    ],
+    [
+     876,
+     918
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     415,
+     582
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     null,
+     null
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1068
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     307,
+     361
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1423,
+     1477
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     834,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     334,
+     415
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     582
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Saumya",
+     582
+    ],
+    [
+     "Dhwanksha",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     582
+    ],
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     1451
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Shmashana",
+     1451
+    ],
+    [
+     "with Gowri",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     582
+    ],
+    [
+     "East",
+     null,
+     582
+    ]
+   ],
+   "Pravishte/Gate": "15",
+   "Disha Shool": "East",
+   "Rahu Vasa": "North-West",
+   "Weekday": "Somawara",
+   "National Nirayana Date": "Margashirsha 16, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-01",
+   "Aadal Yoga": [
+    [
+     540,
+     1857
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1018,
+     1114
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1592,
+     1688
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     542,
+     584
+    ],
+    [
+     1369,
+     1423
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     416,
+     540
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1068
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     308,
+     362
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1423,
+     1478
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     835,
+     876
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     335,
+     416
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     540
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Kaladanda",
+     540
+    ],
+    [
+     "Dhumra",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     540
+    ],
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     540
+    ],
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1393
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "16",
+   "Disha Shool": "North",
+   "Rahu Vasa": "West",
+   "Weekday": "Mangalawara",
+   "National Nirayana Date": "Margashirsha 17, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-03",
+   "Aadal Yoga": [
+    [
+     453,
+     563
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     418,
+     453
+    ],
+    [
+     563,
+     1859
+    ]
+   ],
+   "Varjyam": [
+    [
+     1088,
+     1188
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1688,
+     1788
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     626,
+     668
+    ],
+    [
+     877,
+     919
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     309,
+     364
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1424,
+     1478
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     835,
+     877
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     336,
+     418
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     563
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Matanga",
+     563
+    ],
+    [
+     "Rakshasa",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     1383
+    ],
+    [
+     "on Kailash",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "18",
+   "Disha Shool": "South",
+   "Rahu Vasa": "South",
+   "Weekday": "Guruwara",
+   "National Nirayana Date": "Margashirsha 19, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-04",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     419,
+     622
+    ]
+   ],
+   "Varjyam": [
+    [
+     1131,
+     1233
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1741,
+     1843
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     544,
+     585
+    ],
+    [
+     752,
+     794
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     310,
+     364
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1424,
+     1479
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     835,
+     877
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1125
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     337,
+     419
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     622
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Amrita",
+     622
+    ],
+    [
+     "Mushala",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     1424
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Kailash",
+     1424
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     1382
+    ],
+    [
+     "West",
+     null,
+     1382
+    ]
+   ],
+   "Pravishte/Gate": "19",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Margashirsha 20, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-06",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     818,
+     1861
+    ]
+   ],
+   "Varjyam": [
+    [
+     1184,
+     1289
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1812,
+     1917
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     961,
+     1002
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1041,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     311,
+     366
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1425,
+     1480
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     836,
+     878
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1126
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     338,
+     420
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     818
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Lumbaka",
+     818
+    ],
+    [
+     "Utpata",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Throat",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Ketu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1582
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     1582
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "21",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Margashirsha 22, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-08",
+   "Aadal Yoga": [
+    [
+     421,
+     1096
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1470,
+     1577
+    ]
+   ],
+   "Amrit Kalam": [],
+   "Dur Muhurtam": [
+    [
+     546,
+     588
+    ],
+    [
+     1372,
+     1426
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     1096,
+     1862
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1042,
+     1069
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     313,
+     367
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1426,
+     1481
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     837,
+     878
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1044,
+     1126
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     340,
+     421
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1096
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Vajra",
+     1096
+    ],
+    [
+     "Mudgara",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Throat",
+     1096
+    ],
+    [
+     "Mouth",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Ketu",
+     1096
+    ],
+    [
+     "Sun",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1821
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1821
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "23",
+   "Disha Shool": "North",
+   "Rahu Vasa": "West",
+   "Weekday": "Mangalawara",
+   "National Nirayana Date": "Margashirsha 24, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-11",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     424,
+     1624
+    ]
+   ],
+   "Varjyam": [
+    [
+     648,
+     757
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1299,
+     1407
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     548,
+     589
+    ],
+    [
+     755,
+     796
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     1624,
+     1864
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1042,
+     1070
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     314,
+     369
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1427,
+     1482
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     838,
+     879
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1045,
+     1127
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     342,
+     424
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     1624
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Vardhamana",
+     1624
+    ],
+    [
+     "Ananda",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Sun",
+     1624
+    ],
+    [
+     "Budha",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     682
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     682
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "26",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Margashirsha 27, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-12",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     726,
+     835
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1378,
+     1486
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     424,
+     466
+    ],
+    [
+     466,
+     507
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     1812,
+     1865
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     424,
+     1812
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1043,
+     1070
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     315,
+     370
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1428,
+     1482
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     838,
+     880
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1045,
+     1127
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     342,
+     424
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1405
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Rakshasa",
+     1405
+    ],
+    [
+     "Chara",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     1812
+    ],
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Budha",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Sabha",
+     846
+    ],
+    [
+     "in Krida",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     591
+    ],
+    [
+     "South",
+     null,
+     591
+    ]
+   ],
+   "Pravishte/Gate": "27",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Margashirsha 28, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-13",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     480,
+     1866
+    ]
+   ],
+   "Varjyam": [
+    [
+     642,
+     750
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1290,
+     1398
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     963,
+     1004
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1043,
+     1070
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     316,
+     370
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1428,
+     1483
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     839,
+     880
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1046,
+     1128
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     343,
+     425
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     480
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Mushala",
+     480
+    ],
+    [
+     "Gada",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Budha",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1007
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     1007
+    ],
+    [
+     "on Kailash",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "28",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Margashirsha 29, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-14",
+   "Aadal Yoga": [
+    [
+     552,
+     1866
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     426,
+     552
+    ]
+   ],
+   "Varjyam": [
+    [
+     819,
+     925
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1459,
+     1566
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     756,
+     798
+    ],
+    [
+     880,
+     922
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     426,
+     552
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     552,
+     1866
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1043,
+     1071
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     316,
+     371
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1429,
+     1483
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     839,
+     880
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1046,
+     1128
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     344,
+     426
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     552
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Siddhi",
+     552
+    ],
+    [
+     "Shubha",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "East",
+     552
+    ],
+    [
+     "South",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Budha",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1155
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Kailash",
+     1155
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     1355
+    ],
+    [
+     "West",
+     null,
+     1355
+    ]
+   ],
+   "Pravishte/Gate": "29",
+   "Disha Shool": "East",
+   "Rahu Vasa": "North-West",
+   "Weekday": "Somawara",
+   "National Nirayana Date": "Margashirsha 30, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-16",
+   "Aadal Yoga": [
+    [
+     629,
+     842
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1250,
+     1351
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1861,
+     1963
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     716,
+     757
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     629,
+     842
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1044,
+     1071
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     317,
+     372
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1430,
+     1484
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     840,
+     881
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1047,
+     1129
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     345,
+     427
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     842
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Manasa",
+     842
+    ],
+    [
+     "Padma",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shukra",
+     629
+    ],
+    [
+     "Budha",
+     842
+    ],
+    [
+     "Shukra",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1365
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     1365
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "1",
+   "Disha Shool": "North",
+   "Rahu Vasa": "South-West",
+   "Weekday": "Budhawara",
+   "National Nirayana Date": "Pausha 02, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-18",
+   "Aadal Yoga": [
+    [
+     428,
+     970
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     970,
+     1869
+    ]
+   ],
+   "Varjyam": [
+    [
+     1684,
+     1779
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     674,
+     772
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     552,
+     593
+    ],
+    [
+     758,
+     800
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     970,
+     1869
+    ]
+   ],
+   "Amrit Siddhi Yoga": [
+    [
+     970,
+     1869
+    ]
+   ],
+   "Ravi Yoga": [
+    [
+     970,
+     1869
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     970,
+     1869
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1045,
+     1072
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     318,
+     373
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1431,
+     1485
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     841,
+     882
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1047,
+     1130
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     346,
+     428
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     970
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Ketu/Dhwaja",
+     970
+    ],
+    [
+     "Shrivatsa",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     970
+    ],
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shukra",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1394
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1394
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "3",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Pausha 04, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-19",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     429,
+     958
+    ]
+   ],
+   "Varjyam": [],
+   "Amrit Kalam": [
+    [
+     815,
+     910
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     429,
+     470
+    ],
+    [
+     470,
+     511
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     null,
+     null
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     null,
+     null
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1045,
+     1073
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     319,
+     374
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1431,
+     1486
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     841,
+     883
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1048,
+     1130
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     346,
+     429
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     958
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Dhata/Prajapati",
+     958
+    ],
+    [
+     "Saumya",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "South",
+     958
+    ],
+    [
+     "West",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     958
+    ],
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shukra",
+     958
+    ],
+    [
+     "Shani",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1329
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Sabha",
+     1329
+    ],
+    [
+     "in Krida",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     958
+    ],
+    [
+     "East",
+     null,
+     958
+    ]
+   ],
+   "Pravishte/Gate": "4",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Pausha 05, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-20",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     666,
+     757
+    ],
+    [
+     1428,
+     1517
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     482,
+     574
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     966,
+     1007
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     429,
+     895
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     429,
+     895
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     429,
+     895
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1046,
+     1073
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     320,
+     374
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1432,
+     1486
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     842,
+     883
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1048,
+     1130
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     347,
+     429
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     895
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Ananda",
+     895
+    ],
+    [
+     "Kaladanda",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     895
+    ],
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shani",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     1214
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     1214
+    ],
+    [
+     "on Kailash",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "5",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Pausha 06, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-21",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     788,
+     1870
+    ]
+   ],
+   "Varjyam": [
+    [
+     1437,
+     1523
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     522,
+     611
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     760,
+     801
+    ],
+    [
+     884,
+     925
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1046,
+     1074
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     320,
+     375
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1432,
+     1487
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     842,
+     884
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1049,
+     1131
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     347,
+     430
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     788
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Chara",
+     788
+    ],
+    [
+     "Sthira",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shani",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Kailash",
+     1056
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     1116
+    ],
+    [
+     "South",
+     null,
+     1116
+    ]
+   ],
+   "Pravishte/Gate": "6",
+   "Disha Shool": "East",
+   "Rahu Vasa": "North-West",
+   "Weekday": "Somawara",
+   "National Nirayana Date": "Pausha 07, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-22",
+   "Aadal Yoga": [
+    [
+     645,
+     1871
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     430,
+     645
+    ]
+   ],
+   "Varjyam": [
+    [
+     1492,
+     1577
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     515,
+     602
+    ],
+    [
+     1747,
+     1831
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     554,
+     595
+    ],
+    [
+     1378,
+     1433
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     430,
+     645
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     645,
+     1871
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1047,
+     1074
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     321,
+     375
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1433,
+     1487
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     843,
+     884
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1049,
+     1131
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     348,
+     430
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     645
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Gada",
+     645
+    ],
+    [
+     "Matanga",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Shani",
+     645
+    ],
+    [
+     "Chandra",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     863
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Nandi",
+     863
+    ],
+    [
+     "in Bhojana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "7",
+   "Disha Shool": "North",
+   "Rahu Vasa": "West",
+   "Weekday": "Mangalawara",
+   "National Nirayana Date": "Pausha 08, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-23",
+   "Aadal Yoga": [
+    [
+     431,
+     476
+    ],
+    [
+     1733,
+     1871
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     769,
+     853
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1272,
+     1356
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     720,
+     761
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     431,
+     1733
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     431,
+     476
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1047,
+     1075
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     321,
+     376
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1433,
+     1488
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     843,
+     885
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1050,
+     1132
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     348,
+     431
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     476
+    ],
+    [
+     "Amrita",
+     1733
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Shubha",
+     476
+    ],
+    [
+     "Amrita",
+     1733
+    ],
+    [
+     "Mushala",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "West",
+     476
+    ],
+    [
+     "North",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Chandra",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1857
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     647
+    ],
+    [
+     "in Shmashana",
+     1857
+    ],
+    [
+     "with Gowri",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     1105
+    ],
+    [
+     "West",
+     null,
+     1105
+    ]
+   ],
+   "Pravishte/Gate": "8",
+   "Disha Shool": "North",
+   "Rahu Vasa": "South-West",
+   "Weekday": "Budhawara",
+   "National Nirayana Date": "Pausha 09, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-24",
+   "Aadal Yoga": [
+    [
+     431,
+     1547
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     1547,
+     1871
+    ]
+   ],
+   "Varjyam": [
+    [
+     732,
+     815
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1024,
+     1108
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     637,
+     679
+    ],
+    [
+     885,
+     926
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     1547,
+     1871
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1048,
+     1075
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     322,
+     376
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1434,
+     1488
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     844,
+     885
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1050,
+     1132
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     349,
+     431
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1547
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Kana",
+     1547
+    ],
+    [
+     "Siddhi",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Chandra",
+     1547
+    ],
+    [
+     "Mangal",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1627
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1627
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "9",
+   "Disha Shool": "South",
+   "Rahu Vasa": "South",
+   "Weekday": "Guruwara",
+   "National Nirayana Date": "Pausha 10, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-25",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     431,
+     1370
+    ]
+   ],
+   "Varjyam": [
+    [
+     738,
+     822
+    ],
+    [
+     1797,
+     1883
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1243,
+     1327
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     555,
+     597
+    ],
+    [
+     762,
+     803
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     431,
+     1370
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1048,
+     1076
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     322,
+     377
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1434,
+     1489
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     844,
+     886
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1051,
+     1133
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     349,
+     431
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1370
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Lumbaka",
+     1370
+    ],
+    [
+     "Utpata",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1405
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Sabha",
+     1405
+    ],
+    [
+     "in Krida",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     1052
+    ],
+    [
+     "North",
+     null,
+     1052
+    ]
+   ],
+   "Pravishte/Gate": "10",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Pausha 11, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-26",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [],
+   "Amrit Kalam": [
+    [
+     870,
+     956
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     432,
+     473
+    ],
+    [
+     473,
+     514
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     1212,
+     1872
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1049,
+     1076
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     322,
+     377
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1435,
+     1489
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     845,
+     886
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1051,
+     1134
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     350,
+     432
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     1212
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Mitra",
+     1212
+    ],
+    [
+     "Manasa",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "North",
+     1212
+    ],
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1204
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     1204
+    ],
+    [
+     "on Kailash",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "11",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Pausha 12, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-27",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     1084,
+     1873
+    ]
+   ],
+   "Varjyam": [
+    [
+     472,
+     559
+    ],
+    [
+     1758,
+     1848
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     997,
+     1084
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     969,
+     1011
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     null,
+     null
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1049,
+     1077
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     323,
+     378
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1435,
+     1490
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     845,
+     887
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1052,
+     1134
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     350,
+     432
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1084
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Vajra",
+     1084
+    ],
+    [
+     "Mudgara",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Full Life",
+     1084
+    ],
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Mangal",
+     1084
+    ],
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     1032
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Kailash",
+     1032
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     1084
+    ],
+    [
+     "East",
+     null,
+     1084
+    ]
+   ],
+   "Pravishte/Gate": "12",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Pausha 13, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-28",
+   "Aadal Yoga": [
+    [
+     992,
+     1873
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     433,
+     992
+    ]
+   ],
+   "Varjyam": [
+    [
+     1456,
+     1549
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     858,
+     948
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     763,
+     805
+    ],
+    [
+     887,
+     929
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     992,
+     1873
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     433,
+     992
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1050,
+     1077
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     323,
+     378
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1435,
+     1490
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     846,
+     887
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1053,
+     1135
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     351,
+     433
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     992
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Dhwanksha",
+     992
+    ],
+    [
+     "Ketu/Dhwaja",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     992
+    ],
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Nandi",
+     897
+    ],
+    [
+     "in Bhojana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "13",
+   "Disha Shool": "East",
+   "Rahu Vasa": "North-West",
+   "Weekday": "Somawara",
+   "National Nirayana Date": "Pausha 14, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-29",
+   "Aadal Yoga": [
+    [
+     433,
+     768
+    ],
+    [
+     943,
+     1873
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     768,
+     943
+    ]
+   ],
+   "Varjyam": [
+    [
+     1373,
+     1468
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     572,
+     665
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     557,
+     598
+    ],
+    [
+     1381,
+     1436
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     433,
+     768
+    ],
+    [
+     943,
+     1873
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [
+    [
+     943,
+     1873
+    ]
+   ],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1051,
+     1078
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     324,
+     378
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1436,
+     1491
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     847,
+     888
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1053,
+     1135
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     351,
+     433
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     943
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Dhumra",
+     943
+    ],
+    [
+     "Dhata/Prajapati",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     768
+    ],
+    [
+     "Lifeless",
+     943
+    ],
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     804
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     804
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     1297
+    ],
+    [
+     "South",
+     null,
+     1297
+    ]
+   ],
+   "Pravishte/Gate": "14",
+   "Disha Shool": "North",
+   "Rahu Vasa": "West",
+   "Weekday": "Mangalawara",
+   "National Nirayana Date": "Pausha 15, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-30",
+   "Aadal Yoga": [
+    [
+     433,
+     936
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1453,
+     1552
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     506,
+     602
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     723,
+     764
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     936,
+     1874
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [
+    [
+     433,
+     936
+    ]
+   ],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1051,
+     1079
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     324,
+     379
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1436,
+     1491
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     847,
+     888
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1054,
+     1136
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     351,
+     433
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     936
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Vardhamana",
+     936
+    ],
+    [
+     "Ananda",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Two Eyes",
+     936
+    ],
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Shmashana",
+     756
+    ],
+    [
+     "with Gowri",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "15",
+   "Disha Shool": "North",
+   "Rahu Vasa": "South-West",
+   "Weekday": "Budhawara",
+   "National Nirayana Date": "Pausha 16, 1948 Shaka"
+  },
+  {
+   "date": "2026-12-31",
+   "Aadal Yoga": [
+    [
+     973,
+     1874
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1478,
+     1579
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     604,
+     702
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     641,
+     682
+    ],
+    [
+     889,
+     930
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1052,
+     1079
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     324,
+     379
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1437,
+     1492
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     848,
+     889
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1055,
+     1137
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     352,
+     434
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     973
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Rakshasa",
+     973
+    ],
+    [
+     "Chara",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Womb",
+     973
+    ],
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Guru",
+     973
+    ],
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     752
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     752
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     1726
+    ],
+    [
+     "West",
+     null,
+     1726
+    ]
+   ],
+   "Pravishte/Gate": "16",
+   "Disha Shool": "South",
+   "Rahu Vasa": "South",
+   "Weekday": "Guruwara",
+   "National Nirayana Date": "Pausha 17, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-01",
+   "Aadal Yoga": [
+    [
+     434,
+     1049
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     1049,
+     1874
+    ]
+   ],
+   "Varjyam": [
+    [
+     1411,
+     1514
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     645,
+     746
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     558,
+     600
+    ],
+    [
+     765,
+     807
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1053,
+     1080
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     325,
+     379
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1437,
+     1492
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     848,
+     890
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1055,
+     1137
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     352,
+     434
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1049
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Mushala",
+     1049
+    ],
+    [
+     "Gada",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Sabha",
+     789
+    ],
+    [
+     "in Krida",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "17",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Pausha 18, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-02",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     434,
+     1159
+    ]
+   ],
+   "Varjyam": [
+    [
+     1527,
+     1632
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     591,
+     694
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     434,
+     476
+    ],
+    [
+     476,
+     517
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     434,
+     1159
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1053,
+     1081
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     325,
+     380
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1438,
+     1492
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     849,
+     890
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1056,
+     1138
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     352,
+     434
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     1159
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Siddhi",
+     1159
+    ],
+    [
+     "Shubha",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Bottom",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Rahu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Akasha",
+     864
+    ],
+    [
+     "Patala",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Krida",
+     864
+    ],
+    [
+     "on Kailash",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "18",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Pausha 19, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-03",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1563,
+     1669
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     718,
+     823
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     974,
+     1015
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [
+    [
+     968,
+     1297
+    ]
+   ],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1054,
+     1081
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     325,
+     380
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1438,
+     1493
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     849,
+     891
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1057,
+     1138
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     353,
+     434
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1297
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Utpata",
+     1297
+    ],
+    [
+     "Mrityu",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Bottom",
+     1297
+    ],
+    [
+     "Throat",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "One Eye",
+     1297
+    ],
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Rahu",
+     1297
+    ],
+    [
+     "Ketu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     968
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Kailash",
+     968
+    ],
+    [
+     "on Nandi",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "West",
+     900
+    ],
+    [
+     "North",
+     null,
+     900
+    ]
+   ],
+   "Pravishte/Gate": "19",
+   "Disha Shool": "West",
+   "Rahu Vasa": "North",
+   "Weekday": "Raviwara",
+   "National Nirayana Date": "Pausha 20, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-04",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     1454,
+     1875
+    ]
+   ],
+   "Varjyam": [
+    [
+     1831,
+     1938
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     762,
+     869
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     767,
+     808
+    ],
+    [
+     891,
+     933
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     435,
+     1454
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     1454,
+     1875
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1055,
+     1082
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     326,
+     380
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1439,
+     1493
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     850,
+     891
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1057,
+     1139
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     353,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Amrita",
+     1454
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Manasa",
+     1454
+    ],
+    [
+     "Padma",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Throat",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Ketu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1095
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "on Nandi",
+     1095
+    ],
+    [
+     "in Bhojana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "20",
+   "Disha Shool": "East",
+   "Rahu Vasa": "North-West",
+   "Weekday": "Somawara",
+   "National Nirayana Date": "Pausha 21, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-05",
+   "Aadal Yoga": [
+    [
+     1627,
+     1875
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     435,
+     1627
+    ]
+   ],
+   "Varjyam": [],
+   "Amrit Kalam": [
+    [
+     1036,
+     1143
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     559,
+     601
+    ],
+    [
+     1385,
+     1439
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     null,
+     null
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1055,
+     1083
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     326,
+     380
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1439,
+     1494
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     850,
+     892
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1058,
+     1140
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     353,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Marana",
+     1627
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Mudgara",
+     1627
+    ],
+    [
+     "Chhatra",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Throat",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Half Life",
+     1627
+    ],
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Ketu",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1239
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Bhojana",
+     1239
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "North",
+     1627
+    ],
+    [
+     "East",
+     null,
+     1627
+    ]
+   ],
+   "Pravishte/Gate": "21",
+   "Disha Shool": "North",
+   "Rahu Vasa": "West",
+   "Weekday": "Mangalawara",
+   "National Nirayana Date": "Pausha 22, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-06",
+   "Aadal Yoga": [
+    [
+     435,
+     1808
+    ]
+   ],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     727,
+     835
+    ],
+    [
+     1700,
+     1808
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1375,
+     1483
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     726,
+     768
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [
+    [
+     435,
+     1808
+    ]
+   ],
+   "Godhuli Muhurta": [
+    [
+     1056,
+     1084
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     326,
+     380
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1440,
+     1494
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     851,
+     892
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1059,
+     1141
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     353,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     1808
+    ],
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Ketu/Dhwaja",
+     1808
+    ],
+    [
+     "Shrivatsa",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Throat",
+     1808
+    ],
+    [
+     "Mouth",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Ketu",
+     1808
+    ],
+    [
+     "Sun",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1393
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Shmashana",
+     1393
+    ],
+    [
+     "with Gowri",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "22",
+   "Disha Shool": "North",
+   "Rahu Vasa": "South-West",
+   "Weekday": "Budhawara",
+   "National Nirayana Date": "Pausha 23, 1948 Shaka",
+   "note": "Drik shows Nishita start as '12:00 PM' (a display slip for 12:00 AM)"
+  },
+  {
+   "date": "2027-01-07",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [],
+   "Varjyam": [
+    [
+     1017,
+     1126
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1667,
+     1776
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     643,
+     685
+    ],
+    [
+     893,
+     935
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1057,
+     1084
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     326,
+     381
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1440,
+     1495
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     851,
+     893
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1060,
+     1141
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     353,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Dhata/Prajapati",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Mouth",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Sun",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1553
+    ],
+    [
+     "in Shmashana",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "23",
+   "Disha Shool": "South",
+   "Rahu Vasa": "South",
+   "Weekday": "Guruwara",
+   "National Nirayana Date": "Pausha 24, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-08",
+   "Aadal Yoga": [
+    [
+     552,
+     1770
+    ]
+   ],
+   "Vidaal Yoga": [
+    [
+     1770,
+     1875
+    ]
+   ],
+   "Varjyam": [
+    [
+     1093,
+     1202
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1743,
+     1851
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     560,
+     602
+    ],
+    [
+     769,
+     810
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1058,
+     1085
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     326,
+     381
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1441,
+     1495
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     852,
+     894
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1060,
+     1142
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     354,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     552
+    ],
+    [
+     "Siddha",
+     1770
+    ],
+    [
+     "Marana",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Vardhamana",
+     552
+    ],
+    [
+     "Ananda",
+     1770
+    ],
+    [
+     "Kaladanda",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "Mouth",
+     552
+    ],
+    [
+     "East",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Sun",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Prithvi",
+     1713
+    ],
+    [
+     "Akasha",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "in Shmashana",
+     1713
+    ],
+    [
+     "with Gowri",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "East",
+     958
+    ],
+    [
+     "South",
+     null,
+     958
+    ]
+   ],
+   "Pravishte/Gate": "24",
+   "Disha Shool": "West",
+   "Rahu Vasa": "South-East",
+   "Weekday": "Shukrawara",
+   "National Nirayana Date": "Pausha 25, 1948 Shaka"
+  },
+  {
+   "date": "2027-01-09",
+   "Aadal Yoga": [],
+   "Vidaal Yoga": [
+    [
+     435,
+     843
+    ]
+   ],
+   "Varjyam": [
+    [
+     1005,
+     1112
+    ]
+   ],
+   "Amrit Kalam": [
+    [
+     1651,
+     1759
+    ]
+   ],
+   "Dur Muhurtam": [
+    [
+     435,
+     477
+    ],
+    [
+     477,
+     519
+    ]
+   ],
+   "Sarvartha Siddhi Yoga": [
+    [
+     735,
+     1875
+    ]
+   ],
+   "Amrit Siddhi Yoga": [],
+   "Ravi Yoga": [],
+   "Ravi Pushya Yoga": [],
+   "Guru Pushya Yoga": [],
+   "Dwipushkar Yoga": [],
+   "Tripushkar Yoga": [
+    [
+     435,
+     735
+    ]
+   ],
+   "Ganda Moola": [],
+   "Godhuli Muhurta": [
+    [
+     1058,
+     1086
+    ]
+   ],
+   "Brahma Muhurta": [
+    [
+     327,
+     381
+    ]
+   ],
+   "Nishita Muhurta": [
+    [
+     1441,
+     1495
+    ]
+   ],
+   "Vijaya Muhurta": [
+    [
+     853,
+     894
+    ]
+   ],
+   "Sayahna Sandhya": [
+    [
+     1061,
+     1143
+    ]
+   ],
+   "Pratah Sandhya": [
+    [
+     354,
+     435
+    ]
+   ],
+   "Tamil Yoga": [
+    [
+     "Siddha",
+     843
+    ],
+    [
+     "Amrita",
+     null
+    ]
+   ],
+   "Anandadi Yoga": [
+    [
+     "Chara",
+     843
+    ],
+    [
+     "Sthira",
+     null
+    ]
+   ],
+   "Kumbha Chakra": [
+    [
+     "East",
+     null
+    ]
+   ],
+   "Jeevanama": [
+    [
+     "Lifeless",
+     735
+    ],
+    [
+     "Half Life",
+     null
+    ]
+   ],
+   "Netrama": [
+    [
+     "Blind",
+     null
+    ]
+   ],
+   "Homahuti": [
+    [
+     "Sun",
+     null
+    ]
+   ],
+   "Agnivasa": [
+    [
+     "Patala",
+     1867
+    ],
+    [
+     "Prithvi",
+     null
+    ]
+   ],
+   "Shivavasa": [
+    [
+     "with Gowri",
+     1867
+    ],
+    [
+     "in Sabha",
+     null
+    ]
+   ],
+   "Chandra Vasa": [
+    [
+     "South",
+     null
+    ]
+   ],
+   "Pravishte/Gate": "25",
+   "Disha Shool": "East",
+   "Rahu Vasa": "East",
+   "Weekday": "Shaniwara",
+   "National Nirayana Date": "Pausha 26, 1948 Shaka"
+  }
+ ]
+}
