@@ -12,7 +12,7 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **[decision] Swiss Ephemeris licence.** AGPL is fine while this is a private tool. Before any public or paid release: buy the Professional licence (CHF 700) or replace `SwephEphemeris` behind the `Ephemeris` interface.
 
 ## Phase 1: Chart entry, atlas, saved charts
-- [ ] **[phone] War-time birth (1942–45).** Unit-tested only; not tried end to end on the phone (enter one, check the time-zone panel toggle).
+- [x] **[phone] War-time birth (1942–45).** Checked on the phone 2026-11-25: Kolkata 1943 pasted in shows UTC+06:30 with the war-time switch on; Mumbai 1950 shows the Bombay Time warning.
 - [ ] **Place names are Latin script only.** GeoNames has no Devanagari names, so typing "लखनऊ" finds nothing (the app says to type in English letters). A transliteration table for Indian place names would fix it.
 - [ ] **Release APK size.** The debug APK is ~224 MB (debug + 24 MB atlas). Make a release build with ABI splits and check its size.
 - [ ] **Paste dialog reads the clipboard.** It pre-fills from the phone clipboard; take care when taking screenshots so nothing private shows.
@@ -63,18 +63,20 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Durmuhurta, Varjyam, Amrit Kaal** (South Indian periods) not built.
 
 ## Phase 8: Matching
-- [ ] **[phone] Compare with AstroSage** for at least 10 couples (BUILD_PLAN asks 10): per-koota points, total, Mangal and the porutham list. **1 of 10 done** (fixture 006: 15/36, all kootas match after setting Cat×Monkey yoni to 2). To be continued alongside Phase 9 testing.
+- [ ] **[phone] Compare with AstroSage** for at least 10 couples (BUILD_PLAN asks 10): per-koota points, total, Mangal and the porutham list. **3 of 10 done** (fixtures 006–008: 15, 24.5 and 26/36, every koota matches). The in-app Matching screen also showed 15/36 for couple 1 on the phone.
+- [ ] **AstroSage's yoni table is not the standard one.** Three cells checked so far differ from the common table: Cat×Monkey 2, Elephant×Cat 3, Elephant×Monkey 2 (the common table gives 3, 2, 3). We now use AstroSage's values for these, but its other 88 pairs are unknown. Pick couples whose yoni pair hasn't been seen yet (the YONI tab names the animals). We assume the table is symmetric; that is unverified.
 - [ ] **Mangal 'low' level.** AstroSage grades Mangal dosha (e.g. "Low Mangal Dosha" for the girl in fixture 006, where ours says cancelled). Find AstroSage's grading rule.
 - [ ] **War-time chart in AstroSage matching.** The girl in fixture 006 was entered without war time / Kolkata; re-check with the correct place.
-- [ ] **[phone] Look at the Matching screen** on the device in both languages.
+- [ ] **[phone] Look at the Matching screen in English.** Checked in Hindi on 2026-11-25 (15/36, same as AstroSage).
 - [ ] **[astrologer] Table variants.** Vashya and Gana tables differ slightly between books (e.g. boy Deva / girl Rakshasa 1 or 0; Vashya half-points). Ours: the common Drik/AstroSage-style tables. Confirm once compared with AstroSage.
 - [ ] **[astrologer] Cancellations (parihara).** Implemented as notes only: Nadi (same rashi different nakshatra; same nakshatra different rashi or pada) and Bhakoot (same lord or mutual natural friends). Other traditions add more (e.g. Gana dosha cancelled by good Graha Maitri).
 - [ ] **Porutham rules** (Dina, Mahendra, Stree Deergha thresholds, Rasi count) follow common Tamil practice; verify against AstroSage's Porutham screen or the astrologer.
 - [ ] **Enter a partner without saving** (matching currently picks two saved charts).
 
 ## Phase 9: Transits
-- [ ] **[phone] Look at the Transit tab** on the device in both languages (phone disconnected while building): chart with ▸ transit labels, day/month/year stepping, swipe on the chart, gochara table, search.
-- [ ] **[phone] Compare with AstroSage** "Transit Today" and its Sade Sati dates (already matched in Phase 6) for one chart; and the Saturn/Jupiter ingress dates of 2026–2030.
+- [x] **[phone] Transit tab** checked on the phone 2026-11-25 in Hindi: ▸ transit labels, stepping, gochara table and search work.
+- [x] **[phone] Saturn sign changes** from the transit search match AstroSage's Sade Sati dates to within a day.
+- [ ] **[phone] Compare with AstroSage "Transit Today"** planet by planet, and Jupiter's 2026–2030 ingress dates.
 - [ ] **[astrologer] Gochara rules.** Good houses and vedha pairs follow Phaladeepika ch. 26 (Sun–Saturn and Moon–Mercury exempt from vedha). Some astrologers also use gochara from the lagna or Kakshya (Ashtakavarga sub-divisions); add if wanted.
 - [ ] **Transit search** covers sign changes and exact crossings over natal planets/lagna. Not yet: aspects onto natal points, house ingress from the lagna, nakshatra changes.
 - [ ] **Transit on Moon chart / varga charts** (only the lagna chart is overlaid).

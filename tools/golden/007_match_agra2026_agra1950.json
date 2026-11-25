@@ -1,0 +1,33 @@
+{
+  "id": "007_match_agra2026_agra1950",
+  "source": "AstroSage Android v32.6 Matching, 2026-11-25. Both places Agra 27N09 078E00 +5.5. Boy Bharani (Elephant), girl Ashlesha (Cat). Screens REA/astrosage/live/c2_form, c2_details.",
+  "boy": {
+    "date": "2026-11-23",
+    "time": "23:21:37",
+    "latitude": "27N09",
+    "longitude": "078E00",
+    "utcOffsetHours": 5.5,
+    "place": "Agra"
+  },
+  "girl": {
+    "date": "1950-03-03",
+    "time": "05:10:00",
+    "latitude": "27N09",
+    "longitude": "078E00",
+    "utcOffsetHours": 5.5,
+    "place": "Agra"
+  },
+  "expected": {
+    "kootas": [
+      0,
+      1,
+      1.5,
+      3,
+      4,
+      0,
+      7,
+      8
+    ],
+    "total": 24.5
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "008_match_agra1943_agra2026",
+  "source": "AstroSage Android v32.6 Matching, 2026-11-25. Both places Agra 27N09 078E00 +5.5 (the paste said Kolkata but AstroSage kept Agra). Boy Shravana (Monkey), girl Bharani (Elephant). Screens REA/astrosage/live/c3_form, c3_details, c3_yoni.",
+  "boy": {
+    "date": "1943-08-15",
+    "time": "14:30:00",
+    "latitude": "27N09",
+    "longitude": "078E00",
+    "utcOffsetHours": 5.5,
+    "place": "Agra"
+  },
+  "girl": {
+    "date": "2026-11-23",
+    "time": "23:21:00",
+    "latitude": "27N09",
+    "longitude": "078E00",
+    "utcOffsetHours": 5.5,
+    "place": "Agra"
+  },
+  "expected": {
+    "kootas": [
+      0,
+      1,
+      1.5,
+      2,
+      0.5,
+      6,
+      7,
+      8
+    ],
+    "total": 26
+  }
+}

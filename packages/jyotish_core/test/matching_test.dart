@@ -24,6 +24,10 @@ void main() {
       }
     }
     // Sworn enemies score 0.
+    // Cells checked against AstroSage.
+    expect(yoniPoints('Cat', 'Monkey'), 2);
+    expect(yoniPoints('Elephant', 'Cat'), 3);
+    expect(yoniPoints('Monkey', 'Elephant'), 2);
     for (final (a, b) in [('Horse', 'Buffalo'), ('Elephant', 'Lion'),
         ('Sheep', 'Monkey'), ('Serpent', 'Mongoose'), ('Dog', 'Deer'),
         ('Cat', 'Rat'), ('Cow', 'Tiger')]) {
@@ -54,6 +58,20 @@ void main() {
     expect(m.kootas[Koota.nadi.index].cancelled, isFalse);
     expect(m.bhakootDosha, isFalse);
   });
+
+  for (final id in ['007', '008']) {
+    test('AstroSage couple $id', () {
+      final g = loadGoldenCharts()
+          .firstWhere((x) => (x['id'] as String).startsWith(id));
+      ChartAnalysis side(String k) => ChartAnalysis.of(
+          RasiChart.calculate(eph, birthFromGolden({'birth': g[k]})), eph);
+      final m = Ashtakoota.of(side('boy'), side('girl'));
+      final e = g['expected'] as Map<String, dynamic>;
+      expect([for (final k in m.kootas) k.points],
+          [for (final v in e['kootas'] as List) (v as num).toDouble()]);
+      expect(m.total, (e['total'] as num).toDouble());
+    });
+  }
 
   test('totals stay within 0–36 and swapping roles changes only one-way kootas', () {
     final a = chartOf('001'), b = chartOf('003');

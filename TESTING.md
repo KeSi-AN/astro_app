@@ -139,9 +139,10 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - All ten poruthams evaluated.
 - `app/test/l10n_test.dart`: Hindi for kootas, poruthams and rajju.
 
-- AstroSage couple (fixture 006): all eight kootas and the 15/36 total match after setting Cat×Monkey yoni to 2.
+- AstroSage couples (fixtures 006–008): all eight kootas and the totals match, 15, 24.5 and 26/36. Fixtures 007 and 008 are run by the `AstroSage couple` tests and hold both birth details.
+- Yoni cells checked against AstroSage: Cat×Monkey 2, Elephant×Cat 3, Elephant×Monkey 2.
 
-**More AstroSage couples pending** (see BACKLOG).
+**Phone (2026-11-25):** the Matching screen shows 15/36 for couple 1, as AstroSage. **7 more AstroSage couples are pending** (see BACKLOG).
 
 **Phone:** chart list → heart icon (कुंडली मिलान) → pick boy and girl.
 
@@ -153,3 +154,5 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - Crossings land exactly on the target (< 0.0001°), include retrograde passes; the Sun has 12 sign ingresses a year; Rahu's are all retrograde.
 
 **Phone:** chart → Transit tab (गोचर): step by day/month/year or swipe on the chart; Today; gochara table colours; search (e.g. Saturn over natal Moon, next 30 years) and "Show".
+
+**Checked on the phone (2026-11-25):** the Transit tab works in Hindi. Saturn's sign changes match AstroSage's Sade Sati dates to within a day.

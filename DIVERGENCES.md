@@ -110,3 +110,7 @@ AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Again
 | Ekadashi 2026 (24) | all match after adding AstroSage's rules: dashami-viddha (dashami at arunodaya, 96 min before sunrise, moves the fast a day on) and kshaya tithi kept on the day it begins |
 | Purnima, Pradosh, Masik Shivaratri 2026 | all captured dates match |
 | **Do Ghati** | AstroSage lists 30 muhurtas named Raudra, Shveta, Maitra… grouped by prahar; ours uses the Muhurta Chintamani names (Rudra, Ahi, Mitra…). Same 30 time slots. (BACKLOG) |
+
+## Matching (Phase 8, 2026-11-25, fixtures 006–008)
+
+All eight kootas match for three couples (15, 24.5 and 26/36). AstroSage's **yoni table is not the common one**: Cat×Monkey 2, Elephant×Cat 3, Elephant×Monkey 2, where the common table gives 3, 2, 3. We use AstroSage's values for these cells and the common table for the rest. Other cells may differ too; this is not yet checked (BACKLOG).
