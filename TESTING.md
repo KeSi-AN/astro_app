@@ -129,3 +129,16 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
   - 2026 Ekadashi (24), Purnima, Pradosh, Masik Shivaratri dates.
 
 **Phone:** chart list → calendar icon (पंचांग) → choose a place once; step dates; each section.
+
+## Phase 8: Matching
+**Automated** (`packages/jyotish_core/test/matching_test.dart`)
+- Yoni table is symmetric, 4 on the diagonal, sworn enemies 0.
+- Rajju cycle and Vedha pairs.
+- Hand-worked couple (fixture 002 boy × 003 girl): kootas 1, 2, 1.5, 3, 0.5, 1, 7, 0 = 16/36; Nadi dosha not cancelled.
+- Totals and each koota within range; symmetric kootas unchanged when roles swap.
+- All ten poruthams evaluated.
+- `app/test/l10n_test.dart`: Hindi for kootas, poruthams and rajju.
+
+**Not yet compared with AstroSage** (see BACKLOG).
+
+**Phone:** chart list → heart icon (कुंडली मिलान) → pick boy and girl.

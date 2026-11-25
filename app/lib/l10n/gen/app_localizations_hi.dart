@@ -1259,4 +1259,91 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get computing => 'गणना हो रही है…';
+
+  @override
+  String get matching => 'कुंडली मिलान';
+
+  @override
+  String get boy => 'वर';
+
+  @override
+  String get girl => 'कन्या';
+
+  @override
+  String get chooseChart => 'सहेजी कुंडली चुनें';
+
+  @override
+  String get needTwoCharts => 'मिलान के लिए कम से कम दो कुंडलियाँ सहेजें।';
+
+  @override
+  String get ashtakoota => 'अष्टकूट (गुण मिलान)';
+
+  @override
+  String get colKoota => 'कूट';
+
+  @override
+  String get colMax => 'अधिकतम';
+
+  @override
+  String get colObtained => 'प्राप्त';
+
+  @override
+  String totalGunas(Object got) {
+    return 'कुल: $got / 36';
+  }
+
+  @override
+  String get verdictGood => 'अच्छा मिलान (18 या अधिक)';
+
+  @override
+  String get verdictPoor => '18 से कम: नियम के अनुसार अनुशंसित नहीं';
+
+  @override
+  String get nadiDosha => 'नाड़ी दोष';
+
+  @override
+  String get bhakootDosha => 'भकूट दोष';
+
+  @override
+  String doshaCancelled(Object dosha) {
+    return '$dosha है, पर शास्त्रीय अपवाद से भंग';
+  }
+
+  @override
+  String doshaPresent(Object dosha) {
+    return '$dosha है';
+  }
+
+  @override
+  String get mangalTitle => 'मांगलिक दोष';
+
+  @override
+  String get mangalBoth => 'दोनों मांगलिक या दोनों नहीं: अनुकूल';
+
+  @override
+  String get mangalOne => 'केवल एक मांगलिक: उपाय या भंग कारक आवश्यक';
+
+  @override
+  String get poruthamTitle => '10 पोरुथम (दक्षिण भारतीय)';
+
+  @override
+  String get colRajju => 'रज्जु';
+
+  @override
+  String get resultGood => 'उत्तम';
+
+  @override
+  String get resultAverage => 'मध्यम';
+
+  @override
+  String get resultBad => 'अशुभ';
+
+  @override
+  String poruthamCount(Object n) {
+    return '10 में से $n अनुकूल';
+  }
+
+  @override
+  String get matchingNote =>
+      'अष्टकूट मुहूर्त चिंतामणि अनुसार। गणना चंद्र राशि व नक्षत्र से। भंग केवल टिप्पणी के रूप में; अंक नहीं बदलते।';
 }

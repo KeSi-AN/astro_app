@@ -2401,6 +2401,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Calculating…'**
   String get computing;
+
+  /// No description provided for @matching.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching'**
+  String get matching;
+
+  /// No description provided for @boy.
+  ///
+  /// In en, this message translates to:
+  /// **'Boy'**
+  String get boy;
+
+  /// No description provided for @girl.
+  ///
+  /// In en, this message translates to:
+  /// **'Girl'**
+  String get girl;
+
+  /// No description provided for @chooseChart.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a saved chart'**
+  String get chooseChart;
+
+  /// No description provided for @needTwoCharts.
+  ///
+  /// In en, this message translates to:
+  /// **'Save at least two charts to match them.'**
+  String get needTwoCharts;
+
+  /// No description provided for @ashtakoota.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtakoota (Guna Milan)'**
+  String get ashtakoota;
+
+  /// No description provided for @colKoota.
+  ///
+  /// In en, this message translates to:
+  /// **'Koota'**
+  String get colKoota;
+
+  /// No description provided for @colMax.
+  ///
+  /// In en, this message translates to:
+  /// **'Max'**
+  String get colMax;
+
+  /// No description provided for @colObtained.
+  ///
+  /// In en, this message translates to:
+  /// **'Got'**
+  String get colObtained;
+
+  /// No description provided for @totalGunas.
+  ///
+  /// In en, this message translates to:
+  /// **'Total: {got} / 36'**
+  String totalGunas(Object got);
+
+  /// No description provided for @verdictGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good match (18 or more)'**
+  String get verdictGood;
+
+  /// No description provided for @verdictPoor.
+  ///
+  /// In en, this message translates to:
+  /// **'Below 18: not recommended by the rule'**
+  String get verdictPoor;
+
+  /// No description provided for @nadiDosha.
+  ///
+  /// In en, this message translates to:
+  /// **'Nadi dosha'**
+  String get nadiDosha;
+
+  /// No description provided for @bhakootDosha.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhakoot dosha'**
+  String get bhakootDosha;
+
+  /// No description provided for @doshaCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'{dosha} present but cancelled by a classical exception'**
+  String doshaCancelled(Object dosha);
+
+  /// No description provided for @doshaPresent.
+  ///
+  /// In en, this message translates to:
+  /// **'{dosha} present'**
+  String doshaPresent(Object dosha);
+
+  /// No description provided for @mangalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mangal dosha'**
+  String get mangalTitle;
+
+  /// No description provided for @mangalBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'Both or neither are manglik: compatible'**
+  String get mangalBoth;
+
+  /// No description provided for @mangalOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Only one is manglik: needs remedies or a cancelling factor'**
+  String get mangalOne;
+
+  /// No description provided for @poruthamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'10 Porutham (South Indian)'**
+  String get poruthamTitle;
+
+  /// No description provided for @colRajju.
+  ///
+  /// In en, this message translates to:
+  /// **'Rajju'**
+  String get colRajju;
+
+  /// No description provided for @resultGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get resultGood;
+
+  /// No description provided for @resultAverage.
+  ///
+  /// In en, this message translates to:
+  /// **'Average'**
+  String get resultAverage;
+
+  /// No description provided for @resultBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Not good'**
+  String get resultBad;
+
+  /// No description provided for @poruthamCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} of 10 agree'**
+  String poruthamCount(Object n);
+
+  /// No description provided for @matchingNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtakoota per Muhurta Chintamani. Counts are from the Moon\'s sign and nakshatra. Cancellations are shown as notes; the score is not changed.'**
+  String get matchingNote;
 }
 
 class _AppLocalizationsDelegate

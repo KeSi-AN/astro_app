@@ -1260,4 +1260,92 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get computing => 'Calculating…';
+
+  @override
+  String get matching => 'Matching';
+
+  @override
+  String get boy => 'Boy';
+
+  @override
+  String get girl => 'Girl';
+
+  @override
+  String get chooseChart => 'Choose a saved chart';
+
+  @override
+  String get needTwoCharts => 'Save at least two charts to match them.';
+
+  @override
+  String get ashtakoota => 'Ashtakoota (Guna Milan)';
+
+  @override
+  String get colKoota => 'Koota';
+
+  @override
+  String get colMax => 'Max';
+
+  @override
+  String get colObtained => 'Got';
+
+  @override
+  String totalGunas(Object got) {
+    return 'Total: $got / 36';
+  }
+
+  @override
+  String get verdictGood => 'Good match (18 or more)';
+
+  @override
+  String get verdictPoor => 'Below 18: not recommended by the rule';
+
+  @override
+  String get nadiDosha => 'Nadi dosha';
+
+  @override
+  String get bhakootDosha => 'Bhakoot dosha';
+
+  @override
+  String doshaCancelled(Object dosha) {
+    return '$dosha present but cancelled by a classical exception';
+  }
+
+  @override
+  String doshaPresent(Object dosha) {
+    return '$dosha present';
+  }
+
+  @override
+  String get mangalTitle => 'Mangal dosha';
+
+  @override
+  String get mangalBoth => 'Both or neither are manglik: compatible';
+
+  @override
+  String get mangalOne =>
+      'Only one is manglik: needs remedies or a cancelling factor';
+
+  @override
+  String get poruthamTitle => '10 Porutham (South Indian)';
+
+  @override
+  String get colRajju => 'Rajju';
+
+  @override
+  String get resultGood => 'Good';
+
+  @override
+  String get resultAverage => 'Average';
+
+  @override
+  String get resultBad => 'Not good';
+
+  @override
+  String poruthamCount(Object n) {
+    return '$n of 10 agree';
+  }
+
+  @override
+  String get matchingNote =>
+      'Ashtakoota per Muhurta Chintamani. Counts are from the Moon\'s sign and nakshatra. Cancellations are shown as notes; the score is not changed.';
 }

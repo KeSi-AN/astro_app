@@ -165,6 +165,15 @@ void main() {
       for (final v in Vrat.values) {
         hindi(t.vrat(v), '$v');
       }
+      for (final v in Koota.values) {
+        hindi(t.koota(v), '$v');
+      }
+      for (final v in Porutham.values) {
+        hindi(t.porutham(v), '$v');
+      }
+      for (final v in Rajju.values) {
+        hindi(t.rajju(v), '$v');
+      }
       for (var m = 1; m <= 12; m++) {
         hindi(t.month(m), 'month $m');
       }

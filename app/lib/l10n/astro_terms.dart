@@ -69,6 +69,9 @@ abstract class AstroTerms {
   String muhurta(int i);
   String kaal(Kaal k);
   String vrat(Vrat v);
+  String koota(Koota k);
+  String porutham(Porutham p);
+  String rajju(Rajju r);
 }
 
 const _yogaText = <String, List<String>>{
@@ -387,6 +390,33 @@ class EnglishTerms extends AstroTerms {
   @override
   String navatara(int i) => navataraNames[i];
   @override
+  String koota(Koota k) => const [
+    'Varna',
+    'Vashya',
+    'Tara',
+    'Yoni',
+    'Graha Maitri',
+    'Gana',
+    'Bhakoot',
+    'Nadi',
+  ][k.index];
+  @override
+  String porutham(Porutham p) => const [
+    'Dina',
+    'Gana',
+    'Mahendra',
+    'Stree Deergha',
+    'Yoni',
+    'Rasi',
+    'Rasi Adhipati',
+    'Vasya',
+    'Rajju',
+    'Vedha',
+  ][p.index];
+  @override
+  String rajju(Rajju r) =>
+      const ['Pada', 'Kati', 'Nabhi', 'Kanta', 'Siro'][r.index];
+  @override
   String lunarMonth(int i) => lunarMonths[i];
   @override
   String chogadia(Chogadia c) =>
@@ -428,6 +458,33 @@ class EnglishTerms extends AstroTerms {
 }
 
 class HindiTerms extends AstroTerms {
+  @override
+  String koota(Koota k) => const [
+    'वर्ण',
+    'वश्य',
+    'तारा',
+    'योनि',
+    'ग्रह मैत्री',
+    'गण',
+    'भकूट',
+    'नाड़ी',
+  ][k.index];
+  @override
+  String porutham(Porutham p) => const [
+    'दिन',
+    'गण',
+    'माहेंद्र',
+    'स्त्री दीर्घ',
+    'योनि',
+    'राशि',
+    'राशि अधिपति',
+    'वश्य',
+    'रज्जु',
+    'वेध',
+  ][p.index];
+  @override
+  String rajju(Rajju r) => const ['पाद', 'कटि', 'नाभि', 'कंठ', 'शिर'][r.index];
+
   @override
   String lunarMonth(int i) => const [
     'चैत्र',

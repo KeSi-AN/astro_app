@@ -558,5 +558,51 @@
   },
   "vratNote": "Smarta rules: Ekadashi, Purnima, Amavasya by the tithi at sunrise; Pradosh at sunset; Sankashti at moonrise; Shivaratri at midnight.",
   "allVrats": "All",
-  "computing": "Calculating…"
+  "computing": "Calculating…",
+  "matching": "Matching",
+  "boy": "Boy",
+  "girl": "Girl",
+  "chooseChart": "Choose a saved chart",
+  "needTwoCharts": "Save at least two charts to match them.",
+  "ashtakoota": "Ashtakoota (Guna Milan)",
+  "colKoota": "Koota",
+  "colMax": "Max",
+  "colObtained": "Got",
+  "totalGunas": "Total: {got} / 36",
+  "@totalGunas": {
+    "placeholders": {
+      "got": {}
+    }
+  },
+  "verdictGood": "Good match (18 or more)",
+  "verdictPoor": "Below 18: not recommended by the rule",
+  "nadiDosha": "Nadi dosha",
+  "bhakootDosha": "Bhakoot dosha",
+  "doshaCancelled": "{dosha} present but cancelled by a classical exception",
+  "@doshaCancelled": {
+    "placeholders": {
+      "dosha": {}
+    }
+  },
+  "doshaPresent": "{dosha} present",
+  "@doshaPresent": {
+    "placeholders": {
+      "dosha": {}
+    }
+  },
+  "mangalTitle": "Mangal dosha",
+  "mangalBoth": "Both or neither are manglik: compatible",
+  "mangalOne": "Only one is manglik: needs remedies or a cancelling factor",
+  "poruthamTitle": "10 Porutham (South Indian)",
+  "colRajju": "Rajju",
+  "resultGood": "Good",
+  "resultAverage": "Average",
+  "resultBad": "Not good",
+  "poruthamCount": "{n} of 10 agree",
+  "@poruthamCount": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "matchingNote": "Ashtakoota per Muhurta Chintamani. Counts are from the Moon's sign and nakshatra. Cancellations are shown as notes; the score is not changed."
 }
