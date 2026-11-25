@@ -42,14 +42,14 @@ void main() {
     expect(isVedha(Nakshatra.ashwini, Nakshatra.bharani), isFalse);
   });
 
-  test('Mumbai 1950 (boy) × Kolkata 1943 (girl), worked by hand: 16/36', () {
+  test('Mumbai 1950 (boy) × Kolkata 1943 (girl): 15/36, as AstroSage', () {
     // Boy: Moon Cancer, Ashlesha 4 — Brahmin, Jalachara, Cat, Rakshasa, Antya.
     // Girl: Moon Capricorn 21°, Shravana 4 — Vaishya, Jalachara, Monkey,
     // Deva, Antya.
     final m = Ashtakoota.of(chartOf('002'), chartOf('003'));
     final p = [for (final k in m.kootas) k.points];
-    expect(p, [1, 2, 1.5, 3, 0.5, 1, 7, 0]);
-    expect(m.total, 16);
+    expect(p, [1, 2, 1.5, 2, 0.5, 1, 7, 0]);
+    expect(m.total, 15);
     expect(m.nadiDosha, isTrue);
     expect(m.kootas[Koota.nadi.index].cancelled, isFalse);
     expect(m.bhakootDosha, isFalse);

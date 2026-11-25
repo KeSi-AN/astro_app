@@ -1,0 +1,19 @@
+{
+  "id": "006_match_mumbai1950_kolkata1943",
+  "source": "AstroSage Android v32.6 Matching, boy = fixture 002 data, girl = 15-08-1943 14:30 entered with the pickers (place left as Agra 27N09 078E00 because AstroSage's girl place was not changed). Screens REA/astrosage/live/m_12, m_13. Note: girl's place differs from fixture 003 (Kolkata); Moon sign/nakshatra are the same.",
+  "expected": {
+    "kootas": [
+      1,
+      2,
+      1.5,
+      2,
+      0.5,
+      1,
+      7,
+      0
+    ],
+    "total": 15,
+    "boyMangal": "none",
+    "girlMangal": "low"
+  }
+}

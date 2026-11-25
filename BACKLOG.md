@@ -63,7 +63,9 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Durmuhurta, Varjyam, Amrit Kaal** (South Indian periods) not built.
 
 ## Phase 8: Matching
-- [ ] **[phone] Compare with AstroSage** for at least 10 couples (BUILD_PLAN asks 10): per-koota points, total, Mangal and the porutham list. The phone was disconnected while Phase 8 was built; only the hand-worked example is tested.
+- [ ] **[phone] Compare with AstroSage** for at least 10 couples (BUILD_PLAN asks 10): per-koota points, total, Mangal and the porutham list. **1 of 10 done** (fixture 006: 15/36, all kootas match after setting Cat×Monkey yoni to 2). To be continued alongside Phase 9 testing.
+- [ ] **Mangal 'low' level.** AstroSage grades Mangal dosha (e.g. "Low Mangal Dosha" for the girl in fixture 006, where ours says cancelled). Find AstroSage's grading rule.
+- [ ] **War-time chart in AstroSage matching.** The girl in fixture 006 was entered without war time / Kolkata; re-check with the correct place.
 - [ ] **[phone] Look at the Matching screen** on the device in both languages.
 - [ ] **[astrologer] Table variants.** Vashya and Gana tables differ slightly between books (e.g. boy Deva / girl Rakshasa 1 or 0; Vashya half-points). Ours: the common Drik/AstroSage-style tables. Confirm once compared with AstroSage.
 - [ ] **[astrologer] Cancellations (parihara).** Implemented as notes only: Nadi (same rashi different nakshatra; same nakshatra different rashi or pada) and Bhakoot (same lord or mutual natural friends). Other traditions add more (e.g. Gana dosha cancelled by good Graha Maitri).
