@@ -151,7 +151,9 @@ class ChartPainter extends CustomPainter {
       final isLagna = l.item.graha == null;
       final crowded = l.rect.height < s * 0.045;
       final fs = (crowded ? l.rect.height * 0.85 : s * 0.037).clamp(7.0, 16.0);
-      final color = isLagna ? colors.lagna : colors.text;
+      final color = isLagna
+          ? colors.lagna
+          : (l.item.transit ? colors.benefic : colors.text);
       if (selected != null && l.item.graha == selected) {
         canvas.drawRRect(
           RRect.fromRectAndRadius(l.rect.deflate(1), const Radius.circular(4)),

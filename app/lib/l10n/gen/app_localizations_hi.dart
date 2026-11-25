@@ -1346,4 +1346,102 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get matchingNote =>
       'अष्टकूट मुहूर्त चिंतामणि अनुसार। गणना चंद्र राशि व नक्षत्र से। भंग केवल टिप्पणी के रूप में; अंक नहीं बदलते।';
+
+  @override
+  String get tabTransit => 'गोचर';
+
+  @override
+  String transitOn(Object date) {
+    return '$date का गोचर';
+  }
+
+  @override
+  String get stepDay => 'दिन';
+
+  @override
+  String get stepMonth => 'माह';
+
+  @override
+  String get stepYear => 'वर्ष';
+
+  @override
+  String get transitChartTitle => 'जन्म कुंडली पर गोचर';
+
+  @override
+  String get transitNote => 'भीतर: जन्म के ग्रह। ▸ चिह्नित: गोचर के ग्रह।';
+
+  @override
+  String get colFromLagna => 'लग्न से';
+
+  @override
+  String get colFromMoon => 'चंद्र से';
+
+  @override
+  String get colSav => 'सर्वा.';
+
+  @override
+  String get colBav => 'भिन्ना.';
+
+  @override
+  String get colGochara => 'गोचर फल';
+
+  @override
+  String get gocharaGood => 'शुभ';
+
+  @override
+  String gocharaVedha(Object planet) {
+    return 'शुभ, पर $planet से वेध';
+  }
+
+  @override
+  String get gocharaBad => 'अशुभ';
+
+  @override
+  String get gocharaNote =>
+      'जन्म चंद्र से गोचर (फलदीपिका 26), वेध सहित; राशि में सर्वाष्टकवर्ग 28 या अधिक हो तो शुभ फल को बल।';
+
+  @override
+  String get transitSearch => 'गोचर खोज';
+
+  @override
+  String get searchPlanet => 'ग्रह';
+
+  @override
+  String get searchTarget => 'किस पर';
+
+  @override
+  String searchYears(Object n) {
+    return 'अगले $n वर्ष';
+  }
+
+  @override
+  String get searchRun => 'खोजें';
+
+  @override
+  String get targetSigns => 'राशि परिवर्तन';
+
+  @override
+  String targetNatal(Object planet) {
+    return 'जन्म $planet';
+  }
+
+  @override
+  String get targetLagna => 'जन्म लग्न';
+
+  @override
+  String eventEnters(Object sign) {
+    return '$sign में प्रवेश';
+  }
+
+  @override
+  String get eventOver => 'लक्ष्य पर ठीक';
+
+  @override
+  String get retroMark => '(व)';
+
+  @override
+  String get noEvents => 'इस अवधि में कोई घटना नहीं।';
+
+  @override
+  String get goToDate => 'दिखाएँ';
 }

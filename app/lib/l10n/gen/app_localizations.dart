@@ -2557,6 +2557,180 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ashtakoota per Muhurta Chintamani. Counts are from the Moon\'s sign and nakshatra. Cancellations are shown as notes; the score is not changed.'**
   String get matchingNote;
+
+  /// No description provided for @tabTransit.
+  ///
+  /// In en, this message translates to:
+  /// **'Transit'**
+  String get tabTransit;
+
+  /// No description provided for @transitOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Transits on {date}'**
+  String transitOn(Object date);
+
+  /// No description provided for @stepDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get stepDay;
+
+  /// No description provided for @stepMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get stepMonth;
+
+  /// No description provided for @stepYear.
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get stepYear;
+
+  /// No description provided for @transitChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Transit on natal'**
+  String get transitChartTitle;
+
+  /// No description provided for @transitNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Inner ring: natal planets. Outer labels marked ▸ are transiting planets.'**
+  String get transitNote;
+
+  /// No description provided for @colFromLagna.
+  ///
+  /// In en, this message translates to:
+  /// **'From lagna'**
+  String get colFromLagna;
+
+  /// No description provided for @colFromMoon.
+  ///
+  /// In en, this message translates to:
+  /// **'From Moon'**
+  String get colFromMoon;
+
+  /// No description provided for @colSav.
+  ///
+  /// In en, this message translates to:
+  /// **'SAV'**
+  String get colSav;
+
+  /// No description provided for @colBav.
+  ///
+  /// In en, this message translates to:
+  /// **'BAV'**
+  String get colBav;
+
+  /// No description provided for @colGochara.
+  ///
+  /// In en, this message translates to:
+  /// **'Gochara'**
+  String get colGochara;
+
+  /// No description provided for @gocharaGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get gocharaGood;
+
+  /// No description provided for @gocharaVedha.
+  ///
+  /// In en, this message translates to:
+  /// **'Good, but vedha by {planet}'**
+  String gocharaVedha(Object planet);
+
+  /// No description provided for @gocharaBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Unfavourable'**
+  String get gocharaBad;
+
+  /// No description provided for @gocharaNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Gochara from the natal Moon (Phaladeepika 26) with vedha; SAV ≥ 28 in a sign supports good results.'**
+  String get gocharaNote;
+
+  /// No description provided for @transitSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Transit search'**
+  String get transitSearch;
+
+  /// No description provided for @searchPlanet.
+  ///
+  /// In en, this message translates to:
+  /// **'Planet'**
+  String get searchPlanet;
+
+  /// No description provided for @searchTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Over'**
+  String get searchTarget;
+
+  /// No description provided for @searchYears.
+  ///
+  /// In en, this message translates to:
+  /// **'Next {n} years'**
+  String searchYears(Object n);
+
+  /// No description provided for @searchRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchRun;
+
+  /// No description provided for @targetSigns.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign changes'**
+  String get targetSigns;
+
+  /// No description provided for @targetNatal.
+  ///
+  /// In en, this message translates to:
+  /// **'Natal {planet}'**
+  String targetNatal(Object planet);
+
+  /// No description provided for @targetLagna.
+  ///
+  /// In en, this message translates to:
+  /// **'Natal lagna'**
+  String get targetLagna;
+
+  /// No description provided for @eventEnters.
+  ///
+  /// In en, this message translates to:
+  /// **'enters {sign}'**
+  String eventEnters(Object sign);
+
+  /// No description provided for @eventOver.
+  ///
+  /// In en, this message translates to:
+  /// **'exact over target'**
+  String get eventOver;
+
+  /// No description provided for @retroMark.
+  ///
+  /// In en, this message translates to:
+  /// **'(R)'**
+  String get retroMark;
+
+  /// No description provided for @noEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'No events in this period.'**
+  String get noEvents;
+
+  /// No description provided for @goToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Show'**
+  String get goToDate;
 }
 
 class _AppLocalizationsDelegate

@@ -25,6 +25,7 @@ export 'src/rules/relationships.dart';
 export 'src/rules/vimshottari.dart';
 export 'src/strength/ashtakavarga.dart';
 export 'src/strength/shadbala.dart';
+export 'src/transit/transit.dart';
 export 'src/util/dms.dart';
 export 'src/util/years.dart';
 export 'src/varga/varga.dart';

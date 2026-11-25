@@ -1348,4 +1348,103 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get matchingNote =>
       'Ashtakoota per Muhurta Chintamani. Counts are from the Moon\'s sign and nakshatra. Cancellations are shown as notes; the score is not changed.';
+
+  @override
+  String get tabTransit => 'Transit';
+
+  @override
+  String transitOn(Object date) {
+    return 'Transits on $date';
+  }
+
+  @override
+  String get stepDay => 'Day';
+
+  @override
+  String get stepMonth => 'Month';
+
+  @override
+  String get stepYear => 'Year';
+
+  @override
+  String get transitChartTitle => 'Transit on natal';
+
+  @override
+  String get transitNote =>
+      'Inner ring: natal planets. Outer labels marked ▸ are transiting planets.';
+
+  @override
+  String get colFromLagna => 'From lagna';
+
+  @override
+  String get colFromMoon => 'From Moon';
+
+  @override
+  String get colSav => 'SAV';
+
+  @override
+  String get colBav => 'BAV';
+
+  @override
+  String get colGochara => 'Gochara';
+
+  @override
+  String get gocharaGood => 'Good';
+
+  @override
+  String gocharaVedha(Object planet) {
+    return 'Good, but vedha by $planet';
+  }
+
+  @override
+  String get gocharaBad => 'Unfavourable';
+
+  @override
+  String get gocharaNote =>
+      'Gochara from the natal Moon (Phaladeepika 26) with vedha; SAV ≥ 28 in a sign supports good results.';
+
+  @override
+  String get transitSearch => 'Transit search';
+
+  @override
+  String get searchPlanet => 'Planet';
+
+  @override
+  String get searchTarget => 'Over';
+
+  @override
+  String searchYears(Object n) {
+    return 'Next $n years';
+  }
+
+  @override
+  String get searchRun => 'Search';
+
+  @override
+  String get targetSigns => 'Sign changes';
+
+  @override
+  String targetNatal(Object planet) {
+    return 'Natal $planet';
+  }
+
+  @override
+  String get targetLagna => 'Natal lagna';
+
+  @override
+  String eventEnters(Object sign) {
+    return 'enters $sign';
+  }
+
+  @override
+  String get eventOver => 'exact over target';
+
+  @override
+  String get retroMark => '(R)';
+
+  @override
+  String get noEvents => 'No events in this period.';
+
+  @override
+  String get goToDate => 'Show';
 }

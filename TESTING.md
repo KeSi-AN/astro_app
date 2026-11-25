@@ -134,11 +134,22 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 **Automated** (`packages/jyotish_core/test/matching_test.dart`)
 - Yoni table is symmetric, 4 on the diagonal, sworn enemies 0.
 - Rajju cycle and Vedha pairs.
-- Hand-worked couple (fixture 002 boy × 003 girl): kootas 1, 2, 1.5, 3, 0.5, 1, 7, 0 = 16/36; Nadi dosha not cancelled.
+- Couple (fixture 002 boy × 003 girl): kootas 1, 2, 1.5, 2, 0.5, 1, 7, 0 = 15/36, as AstroSage; Nadi dosha not cancelled.
 - Totals and each koota within range; symmetric kootas unchanged when roles swap.
 - All ten poruthams evaluated.
 - `app/test/l10n_test.dart`: Hindi for kootas, poruthams and rajju.
 
-**Not yet compared with AstroSage** (see BACKLOG).
+- AstroSage couple (fixture 006): all eight kootas and the 15/36 total match after setting Cat×Monkey yoni to 2.
+
+**More AstroSage couples pending** (see BACKLOG).
 
 **Phone:** chart list → heart icon (कुंडली मिलान) → pick boy and girl.
+
+## Phase 9: Transits
+**Automated** (`packages/jyotish_core/test/transit_test.dart`)
+- Transit at the birth moment equals the natal chart (positions and houses); Moon is 1st from itself.
+- SAV and BAV bindus in the transit table come from the natal Ashtakavarga.
+- Gochara: Saturn in the 3rd from the Moon is good (finds a real date by searching ingresses).
+- Crossings land exactly on the target (< 0.0001°), include retrograde passes; the Sun has 12 sign ingresses a year; Rahu's are all retrograde.
+
+**Phone:** chart → Transit tab (गोचर): step by day/month/year or swipe on the chart; Today; gochara table colours; search (e.g. Saturn over natal Moon, next 30 years) and "Show".

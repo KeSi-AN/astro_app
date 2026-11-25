@@ -17,6 +17,7 @@ import 'tabs/karakas_tab.dart';
 import 'tabs/kp_tab.dart';
 import 'tabs/planets_tab.dart';
 import 'tabs/strength_tab.dart';
+import 'tabs/transit_tab.dart';
 import 'tabs/vargas_tab.dart';
 import 'tabs/yogas_tab.dart';
 
@@ -75,7 +76,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
   Widget build(BuildContext context) {
     final e = _entry;
     return DefaultTabController(
-      length: 11,
+      length: 12,
       child: Scaffold(
         appBar: AppBar(
           title: Text(e?.name ?? ''),
@@ -102,6 +103,7 @@ class _ChartViewPageState extends State<ChartViewPage> {
               Tab(text: context.l10n.tabChart),
               Tab(text: context.l10n.tabPlanets),
               Tab(text: context.l10n.tabDasha),
+              Tab(text: context.l10n.tabTransit),
               Tab(text: context.l10n.tabVargas),
               Tab(text: context.l10n.tabStrength),
               Tab(text: context.l10n.tabKp),
@@ -125,6 +127,11 @@ class _ChartViewPageState extends State<ChartViewPage> {
                       ChartTab(analysis: a, settings: s),
                       PlanetsTab(analysis: a),
                       DashaTab(analysis: a, settings: s),
+                      TransitTab(
+                        analysis: a,
+                        settings: s,
+                        ephemeris: context.read<AppServices>().ephemeris,
+                      ),
                       VargasTab(analysis: a, settings: s),
                       StrengthTab(
                         analysis: a,

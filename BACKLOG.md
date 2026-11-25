@@ -71,3 +71,10 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **[astrologer] Cancellations (parihara).** Implemented as notes only: Nadi (same rashi different nakshatra; same nakshatra different rashi or pada) and Bhakoot (same lord or mutual natural friends). Other traditions add more (e.g. Gana dosha cancelled by good Graha Maitri).
 - [ ] **Porutham rules** (Dina, Mahendra, Stree Deergha thresholds, Rasi count) follow common Tamil practice; verify against AstroSage's Porutham screen or the astrologer.
 - [ ] **Enter a partner without saving** (matching currently picks two saved charts).
+
+## Phase 9: Transits
+- [ ] **[phone] Look at the Transit tab** on the device in both languages (phone disconnected while building): chart with ▸ transit labels, day/month/year stepping, swipe on the chart, gochara table, search.
+- [ ] **[phone] Compare with AstroSage** "Transit Today" and its Sade Sati dates (already matched in Phase 6) for one chart; and the Saturn/Jupiter ingress dates of 2026–2030.
+- [ ] **[astrologer] Gochara rules.** Good houses and vedha pairs follow Phaladeepika ch. 26 (Sun–Saturn and Moon–Mercury exempt from vedha). Some astrologers also use gochara from the lagna or Kakshya (Ashtakavarga sub-divisions); add if wanted.
+- [ ] **Transit search** covers sign changes and exact crossings over natal planets/lagna. Not yet: aspects onto natal points, house ingress from the lagna, nakshatra changes.
+- [ ] **Transit on Moon chart / varga charts** (only the lagna chart is overlaid).

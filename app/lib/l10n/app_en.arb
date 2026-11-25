@@ -604,5 +604,59 @@
       "n": {}
     }
   },
-  "matchingNote": "Ashtakoota per Muhurta Chintamani. Counts are from the Moon's sign and nakshatra. Cancellations are shown as notes; the score is not changed."
+  "matchingNote": "Ashtakoota per Muhurta Chintamani. Counts are from the Moon's sign and nakshatra. Cancellations are shown as notes; the score is not changed.",
+  "tabTransit": "Transit",
+  "transitOn": "Transits on {date}",
+  "@transitOn": {
+    "placeholders": {
+      "date": {}
+    }
+  },
+  "stepDay": "Day",
+  "stepMonth": "Month",
+  "stepYear": "Year",
+  "transitChartTitle": "Transit on natal",
+  "transitNote": "Inner ring: natal planets. Outer labels marked ▸ are transiting planets.",
+  "colFromLagna": "From lagna",
+  "colFromMoon": "From Moon",
+  "colSav": "SAV",
+  "colBav": "BAV",
+  "colGochara": "Gochara",
+  "gocharaGood": "Good",
+  "gocharaVedha": "Good, but vedha by {planet}",
+  "@gocharaVedha": {
+    "placeholders": {
+      "planet": {}
+    }
+  },
+  "gocharaBad": "Unfavourable",
+  "gocharaNote": "Gochara from the natal Moon (Phaladeepika 26) with vedha; SAV ≥ 28 in a sign supports good results.",
+  "transitSearch": "Transit search",
+  "searchPlanet": "Planet",
+  "searchTarget": "Over",
+  "searchYears": "Next {n} years",
+  "@searchYears": {
+    "placeholders": {
+      "n": {}
+    }
+  },
+  "searchRun": "Search",
+  "targetSigns": "Sign changes",
+  "targetNatal": "Natal {planet}",
+  "@targetNatal": {
+    "placeholders": {
+      "planet": {}
+    }
+  },
+  "targetLagna": "Natal lagna",
+  "eventEnters": "enters {sign}",
+  "@eventEnters": {
+    "placeholders": {
+      "sign": {}
+    }
+  },
+  "eventOver": "exact over target",
+  "retroMark": "(R)",
+  "noEvents": "No events in this period.",
+  "goToDate": "Show"
 }

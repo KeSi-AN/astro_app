@@ -49,7 +49,11 @@ class PlateItem {
     this.vargottama = false,
     this.exalted = false,
     this.debilitated = false,
+    this.transit = false,
   });
+
+  /// Drawn as a transiting planet (different colour, ▸ prefix).
+  final bool transit;
 
   /// null = the lagna marker.
   final Graha? graha;
@@ -74,7 +78,7 @@ class PlateItem {
 
   /// Label with a (localised) planet abbreviation.
   String labelWith(String abbreviation) =>
-      '$abbreviation$markers ${degree.toString().padLeft(2, '0')}';
+      '${transit ? '▸' : ''}$abbreviation$markers ${degree.toString().padLeft(2, '0')}';
 }
 
 enum PlateKind {
