@@ -70,7 +70,8 @@ List<TimeSpan<Chogadia>> chogadias(DayPanchang d) {
 enum Kaal { rahu, yamaganda, gulika, abhijit }
 
 /// Rahu Kaal, Yamaganda, Gulika Kaal (one eighth of daylight each, by
-/// weekday) and Abhijit muhurta (the 8th of 15 daytime muhurtas).
+/// weekday) and Abhijit muhurta (the 8th of 15 daytime muhurtas; not
+/// counted on Wednesdays, by tradition).
 Map<Kaal, TimeSpan<Kaal>> dayKaals(DayPanchang d) {
   // 1-based eighth of the day, indexed by weekday Sun..Sat.
   const rahu = [8, 2, 7, 5, 6, 4, 3];
@@ -85,7 +86,8 @@ Map<Kaal, TimeSpan<Kaal>> dayKaals(DayPanchang d) {
     Kaal.rahu: eighth(Kaal.rahu, rahu[w]),
     Kaal.yamaganda: eighth(Kaal.yamaganda, yama[w]),
     Kaal.gulika: eighth(Kaal.gulika, gulika[w]),
-    Kaal.abhijit: TimeSpan(Kaal.abhijit, d.sunrise + 7 * m, d.sunrise + 8 * m),
+    if (d.weekday != DateTime.wednesday)
+      Kaal.abhijit: TimeSpan(Kaal.abhijit, d.sunrise + 7 * m, d.sunrise + 8 * m),
   };
 }
 

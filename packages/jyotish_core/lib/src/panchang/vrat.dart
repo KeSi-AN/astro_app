@@ -21,11 +21,14 @@ class VratDay {
   final double? at;
 }
 
-/// Vrat and festival days of [year] at [place] (Smarta rules):
-/// Ekadashi — tithi 11/26 at sunrise; Purnima/Amavasya — tithi 15/30 at
-/// sunrise; Pradosh — tithi 13/28 at sunset or 6 ghatis after; Sankashti — tithi 19 at
-/// moonrise; Masik Shivaratri — tithi 29 at local midnight. When a tithi
-/// holds at no observation time (kshaya) the day it begins is used.
+/// Vrat and festival days of [year] at [place], following the rules that
+/// reproduce AstroSage's 2026 New Delhi lists:
+/// Ekadashi — tithi 11/26 at sunrise, moved to the next day when dashami
+/// still runs at arunodaya (96 min before sunrise; "dashami-viddha");
+/// Purnima/Amavasya — tithi 15/30 at sunrise; Pradosh — tithi 13/28 at
+/// sunset or within 6 ghatis after; Sankashti — tithi 19 at moonrise;
+/// Masik Shivaratri — tithi 29 at local midnight. A tithi that holds at no
+/// sunrise (kshaya) is observed on the day it begins.
 List<VratDay> vratDays(
   PanchangCalc calc,
   PanchangPlace place,
@@ -45,6 +48,7 @@ List<VratDay> vratDays(
 
   final days = DateTime.utc(year + 1).difference(DateTime.utc(year)).inDays;
   int? prevSunriseTithi;
+  DateTime? prevDate;
   for (var i = -1; i <= days; i++) {
     final date = DateTime.utc(year, 1, 1).add(Duration(days: i));
     final midnight = eph.julianDayUt(date.year, date.month, date.day, 0) -
@@ -64,18 +68,36 @@ List<VratDay> vratDays(
         ? null
         : calc.indexAt(PanchangElement.tithi, moonrise);
 
+    // Sunrise tithis. A tithi skipped between two sunrises (kshaya) belongs
+    // to the previous day, when it began.
+    void sunriseVrat(int t, DateTime d) {
+      if (d.year != year) return;
+      if (t == 11 || t == 26) {
+        // Dashami-viddha: dashami at arunodaya pushes the fast a day on.
+        final arunodaya = rise - 96 / 1440;
+        final atArunodaya = calc.indexAt(PanchangElement.tithi, arunodaya);
+        if (d == date && atArunodaya == t - 1) {
+          final nextRise = eph.sunEvent(rise + 0.5, place.latitude,
+                  place.longitude, rise: true, mode: sunriseMode) ??
+              rise + 1;
+          final atNext = calc.indexAt(PanchangElement.tithi, nextRise);
+          if (atNext == t || atNext == t + 1) {
+            add(Vrat.ekadashi, date.add(const Duration(days: 1)), t);
+            return;
+          }
+        }
+        add(Vrat.ekadashi, d, t);
+      }
+      if (t == 15) add(Vrat.purnima, d, t);
+      if (t == 30) add(Vrat.amavasya, d, t);
+    }
+
+    if (prevSunriseTithi != null && prevDate != null) {
+      final gap = (atRise - prevSunriseTithi - 1) % 30;
+      if (gap == 1) sunriseVrat((prevSunriseTithi % 30) + 1, prevDate);
+    }
     if (i >= 0 && i < days) {
-      // Sunrise tithis, including a skipped (kshaya) one between sunrises.
-      final sunriseTithis = <int>{atRise};
-      if (prevSunriseTithi != null) {
-        final gap = (atRise - prevSunriseTithi - 1) % 30;
-        if (gap == 1) sunriseTithis.add((prevSunriseTithi % 30) + 1);
-      }
-      for (final t in sunriseTithis) {
-        if (t == 11 || t == 26) add(Vrat.ekadashi, date, t);
-        if (t == 15) add(Vrat.purnima, date, t);
-        if (t == 30) add(Vrat.amavasya, date, t);
-      }
+      sunriseVrat(atRise, date);
       // Pradosh: trayodashi during the pradosh kaal (sunset + 6 ghatis).
       final atPradoshEnd = calc.indexAt(PanchangElement.tithi, set + 0.1);
       for (final t in {atSet, atPradoshEnd}) {
@@ -102,6 +124,7 @@ List<VratDay> vratDays(
       }
     }
     prevSunriseTithi = atRise;
+    prevDate = date;
   }
   out.sort((a, b) => a.date.compareTo(b.date));
   return out;

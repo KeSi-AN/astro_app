@@ -29,6 +29,7 @@ Stored in `tools/golden/*.json`. Each file records where its numbers came from (
 | 001_testchart_agra | 23-11-2026 23:21:37 Agra (27N09 078E00) | Planets, ayanamsa, obliquity, panchang, Avakhada |
 | 002_golden_mumbai_1950 | 03-03-1950 05:10 Mumbai, before sunrise | Planets, panchang (Hindu weekday = previous day), Avakhada |
 | 003_golden_kolkata_1943_wartime | 15-08-1943 14:30 Kolkata, war time | Planets with +1h war time, panchang, Avakhada |
+| 005_panchang_delhi_2026_11_25 | New Delhi, 25 Nov 2026 (panchang, not a birth chart) | Day panchang, kaals, horas, chogadias, Bhadra, Panchak, Rahu Kaal week, 2026 vrat lists |
 | 004_testchart_paste_vargas_dashas | 23-11-2026 23:21:00 Agra (27N10 078E01) | 16-varga table, Yogini, Chara, Ashtakavarga, bala ranks, all KP tables |
 
 To add a chart: enter it in AstroSage with **Save unticked**, copy the numbers into a new JSON file following an existing one, and run the tests. Every test file loops over all fixtures that carry the relevant section.
@@ -119,6 +120,12 @@ Allowed differences (AstroSage uses a lower-precision ephemeris) are set per fix
 - Prints the full panchang for 25 Nov 2026 at Agra.
 - `app/test/l10n_test.dart`: Hindi for lunar months, chogadias, the 30 muhurtas, kaals and vrats.
 
-**Not yet compared with AstroSage** (see BACKLOG).
+- `packages/jyotish_core/test/golden_panchang_test.dart`, fixture 005 (New Delhi, 25 Nov 2026) against AstroSage, within 2 min:
+  - sun/moon rise and set;
+  - tithi, nakshatra, yoga and karana end times; months; weekday;
+  - Rahu Kaal, Yamaganda, Gulika (and Rahu Kaal for the next 7 days); no Abhijit on Wednesday;
+  - hora lords and times, chogadia day and night;
+  - Bhadra periods for November; Panchak start;
+  - 2026 Ekadashi (24), Purnima, Pradosh, Masik Shivaratri dates.
 
 **Phone:** chart list → calendar icon (पंचांग) → choose a place once; step dates; each section.

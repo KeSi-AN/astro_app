@@ -92,3 +92,21 @@ AstroSage's KP module ignores the chart's ayanamsa and uses a KP ayanamsa. Again
 | Kaal Sarp | both absent |
 | Named yogas | 7 of AstroSage's 8 present in ours; Maala not implemented (definition unknown). Ours also shows Guru Chandala, which AstroSage doesn't check. |
 | Sade Sati / Small Panoti | 12 periods: same signs, kinds and order; dates within 3 days (Saturn's position and ingress timing) |
+
+## Panchang and muhurta (Phase 7, 2026-11-25, fixture 005: New Delhi)
+
+| Item | Result |
+|---|---|
+| Sunrise, sunset | same minute |
+| Moonrise, moonset | within 2 min |
+| Tithi, nakshatra, yoga, karana end times | within 2 min |
+| Amanta / purnimanta month, weekday | match |
+| Rahu Kaal, Yamaganda, Gulika (day and the following week) | within 1 min |
+| Abhijit | not shown on Wednesday (as AstroSage) |
+| Horas, chogadias (day and night) | same order, within 1 min |
+| Bhadra (8 periods in November) | within 2 min |
+| Panchak start | same minute (17 Nov 15:30) |
+| **Panchak end** | ours 22 Nov 05:55 (Moon leaves Revati); AstroSage 21 Nov 06:51 (sunrise). AstroSage's rule unknown (BACKLOG). |
+| Ekadashi 2026 (24) | all match after adding AstroSage's rules: dashami-viddha (dashami at arunodaya, 96 min before sunrise, moves the fast a day on) and kshaya tithi kept on the day it begins |
+| Purnima, Pradosh, Masik Shivaratri 2026 | all captured dates match |
+| **Do Ghati** | AstroSage lists 30 muhurtas named Raudra, Shveta, Maitra… grouped by prahar; ours uses the Muhurta Chintamani names (Rudra, Ahi, Mitra…). Same 30 time slots. (BACKLOG) |

@@ -306,7 +306,9 @@ class _PanchangPageState extends State<PanchangPage> {
           for (final k in Kaal.values)
             (
               t.kaal(k),
-              '${_time(d, kaals[k]!.start)} – ${_time(d, kaals[k]!.end)}',
+              kaals[k] == null
+                  ? l10n.nonePeriod
+                  : '${_time(d, kaals[k]!.start)} – ${_time(d, kaals[k]!.end)}',
             ),
         ],
       ),
@@ -531,7 +533,7 @@ class _PanchangPageState extends State<PanchangPage> {
           title: Text(
             v.vrat == Vrat.sankranti
                 ? '${t.vrat(v.vrat)} – ${t.rashi(v.sign!)}'
-                : '${t.vrat(v.vrat)} (${t.tithi(v.tithi)}, ${t.paksha(v.tithi)})',
+                : '${t.vrat(v.vrat)} (${t.paksha(v.tithi)})',
           ),
           trailing: Text(t.weekday(v.date.weekday), style: style),
         ),

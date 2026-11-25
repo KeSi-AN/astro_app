@@ -52,9 +52,12 @@ Legend: **[astrologer]** needs the astrologer's input · **[phone]** needs a che
 - [ ] **Mangal dosha cancellation rules** vary by tradition; ours: Mars own/exalted, with Jupiter, with Moon, and the house-and-sign exceptions. **[astrologer]** confirm the list.
 
 ## Phase 7: Panchang and muhurta
-- [ ] **[phone] Check against AstroSage** (phone was disconnected while Phase 7 was built): tithi/nakshatra/yoga/karana end times, sunrise/sunset, moonrise/moonset, Rahu Kaal, hora, chogadia, Do Ghati/muhurta, lagna table, Panchak, Bhadra, and the vrat lists (Ekadashi, Purnima, Amavasya, Pradosh, Sankashti, Masik Shivaratri, Sankranti) for 10 dates in 3 cities, as BUILD_PLAN.md asks.
-- [ ] **[phone] Look at the Panchang screen** on the device in both languages.
-- [ ] **[astrologer] Vrat rules.** We use Smarta rules (Ekadashi/Purnima/Amavasya by the tithi at sunrise, Pradosh in the pradosh kaal, Sankashti at moonrise, Shivaratri at midnight). Vaishnava Ekadashi (dashami-viddha rule) and regional Purnima/Amavasya customs differ; add as settings if needed.
-- [ ] **Samvatsara name** (60-year cycle) and **Ritu/Ayana** not shown yet.
-- [ ] **Durmuhurta, Varjyam, Amrit Kaal** (South Indian panchang periods) not built.
-- [ ] **Do Ghati muhurta.** We list the 30 classical muhurtas (15 by day, 15 by night) with a good/avoid mark from Muhurta Chintamani; AstroSage's "Do Ghati" screen may use a different list. Check.
+- [x] Checked against AstroSage (fixture 005, New Delhi): times within 1–2 min, all 24 Ekadashis, Purnima, Pradosh, Shivaratri, Bhadra, horas, chogadias. Viewed on the phone in Hindi.
+- [ ] **Panchak end time.** AstroSage ends Panchak on 21 Nov at sunrise; ours ends when the Moon leaves Revati (22 Nov 05:55). Ask the astrologer which they follow; capture another month to see AstroSage's rule.
+- [ ] **Do Ghati names.** AstroSage uses a different list of 30 muhurta names grouped by prahar (Pratah, Sangav, Madhyahna, Aparahna, Sayan, Pradosh, Ratri, Nishita, Arunodaya). Ours uses the Muhurta Chintamani names. Add AstroSage's list and the prahar column if the astrologer reads it that way.
+- [ ] **Dushta muhurta, Kantaka/Mrityu, Yamaghanta, Kalavela, Disha Shoola, Tarabala/Chandrabala** (shown by AstroSage) are not built yet.
+- [ ] **Sankashti and Amavasya/Sankranti lists** were not captured from AstroSage; only internal checks.
+- [ ] **Pradosh June–July 2026** not captured from AstroSage (screens skipped).
+- [ ] **[astrologer] Vrat tradition.** The rules now match AstroSage (viddha Ekadashi). If the astrologer follows a different tradition, add a setting.
+- [ ] **Samvatsara name** (60-year cycle), **Ritu/Ayana** not shown yet (AstroSage shows Ritu).
+- [ ] **Durmuhurta, Varjyam, Amrit Kaal** (South Indian periods) not built.
