@@ -1,0 +1,13 @@
+— हिंदी —
+नमस्ते! आपके लिए बनाए गए ज्योतिष ऐप का परीक्षण संस्करण भेज रहा हूँ।
+1) JyotishApp.apk खोलकर इंस्टॉल करें (फ़ोन पूछे तो "अज्ञात ऐप" की अनुमति दें; Play Protect चेतावनी आए तो "Install anyway")।
+2) साथ में भेजी मार्गदर्शिका (PDF) में ऐप चलाने के चरण और सभी सुविधाओं की सूची है।
+3) कुछ दिन रोज़ के काम में इस्तेमाल करें और बताएँ: क्या परिणाम आपके अभी के सॉफ़्टवेयर से मिलते हैं, क्या कमी है, और क्या बदलना चाहिए। मार्गदर्शिका के अंत में कुछ प्रश्न भी हैं।
+ऐप बिना इंटरनेट चलता है, आपका डेटा आपके फ़ोन में ही रहता है। धन्यवाद!
+
+— English —
+Hello! Here is the test version of the astrology app made for you.
+1) Open JyotishApp.apk and install it (allow "unknown apps" if the phone asks; if Play Protect warns, tap "Install anyway").
+2) The guide (PDF) has the steps to use the app and the full list of features.
+3) Please use it in your daily work for a few days and tell us: do the results match your current software, what is missing, and what should change. The guide ends with a few questions.
+The app works offline; your data stays on your phone. Thank you!

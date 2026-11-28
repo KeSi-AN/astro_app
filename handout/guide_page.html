@@ -1,0 +1,411 @@
+<title>Jyotish App Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi&display=swap">
+<style>
+/* Layout: one reading column of almanac-style section cards under a date-banner style header. */
+:root {
+  --bg: #fff2cf; --card: #ffe3a3; --band: #f6c86c; --rule: #d9a54a;
+  --ink: #3b2412; --muted: #7a5a33; --red: #b3261e; --maroon: #6e1410;
+  --banner: #7d7816; --banner-ink: #ffffff; --banner-accent: #f6d27a; --note: #fff8e6;
+  --font-body: "Noto Sans Devanagari", "Nirmala UI", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Tiro Devanagari Hindi", "Noto Sans Devanagari", Georgia, serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #17130c; --card: #221c12; --band: #3a2f18; --rule: #5a4724;
+  --ink: #f3e6cc; --muted: #c9b48c; --red: #f08a7e; --maroon: #f6c86c;
+  --banner: #3f3c0b; --banner-ink: #fff8e6; --banner-accent: #f6d27a; --note: #2b2316; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #17130c; --card: #221c12; --band: #3a2f18; --rule: #5a4724;
+  --ink: #f3e6cc; --muted: #c9b48c; --red: #f08a7e; --maroon: #f6c86c;
+  --banner: #3f3c0b; --banner-ink: #fff8e6; --banner-accent: #f6d27a; --note: #2b2316; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; }
+.wrap { max-width: 760px; margin: 0 auto; padding-block: 16px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.lang { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 12px; }
+.lang button { font: inherit; font-weight: 600; padding: 6px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--card); color: var(--ink); }
+.lang button[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.lang button:focus-visible { outline: 3px solid var(--banner-accent); outline-offset: 2px; }
+.cover { background: var(--banner); color: var(--banner-ink); border-radius: 8px; padding: 20px 22px; margin-bottom: 16px; }
+.cover h1 { font-family: var(--font-display); color: var(--banner-accent); font-size: clamp(26px, 6vw, 36px); line-height: 1.2; margin: 6px 0 10px; text-wrap: balance; }
+.cover .kicker { font-size: 13px; letter-spacing: .05em; text-transform: uppercase; opacity: .9; }
+.cover .sub { margin: 0; }
+section { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; margin-bottom: 14px; overflow: hidden; }
+h2 { margin: 0; background: var(--band); color: var(--maroon); font-size: 19px; padding: 9px 14px; border-bottom: 1px solid var(--rule); text-wrap: balance; }
+h3 { color: var(--red); font-size: 16.5px; margin: 16px 14px 4px; }
+section > p, section > ol, section > ul { margin: 8px 14px 12px; }
+ol, ul { padding-left: 22px; display: grid; gap: 4px; }
+li::marker { color: var(--red); font-weight: 700; }
+b { color: var(--maroon); }
+.note { background: var(--note); border-left: 4px solid var(--red); padding: 8px 12px; border-radius: 3px; }
+@media (prefers-reduced-motion: no-preference) { .lang button { transition: background .15s, color .15s; } }
+</style>
+<div class="wrap">
+  <div class="lang" role="group" aria-label="Language / भाषा">
+    <button type="button" id="btn-hi" data-lang="hi" aria-pressed="true">हिंदी</button>
+    <button type="button" id="btn-en" data-lang="en" aria-pressed="false">English</button>
+  </div>
+  <div id="hi" lang="hi">
+<header class="cover">
+  <div class="kicker">आपकी राय के लिए परीक्षण संस्करण</div>
+  <h1>ज्योतिष ऐप — मार्गदर्शिका</h1>
+  <p class="sub">आपके रोज़ के काम के लिए वैदिक ज्योतिष ऐप: कुंडली, दशा, गोचर, केपी, कुंडली मिलान, पंचांग, आपके नाम वाली PDF कुंडली, और आपके ग्राहक व मुलाक़ातें — सब फ़ोन पर, बिना इंटरनेट के।</p>
+</header>
+
+<section>
+<h2>1. ऐप इंस्टॉल करें</h2>
+<ol>
+  <li>WhatsApp पर मिली फ़ाइल <b>JyotishApp.apk</b> खोलें।</li>
+  <li>फ़ोन पूछे तो WhatsApp (या फ़ाइल मैनेजर) के लिए <b>“अज्ञात ऐप इंस्टॉल करें”</b> की अनुमति दें और <b>Install</b> दबाएँ।</li>
+  <li>Google Play Protect चेतावनी दिखाए तो <b>More details → Install anyway</b> दबाएँ। यह परीक्षण ऐप अभी Play Store पर नहीं है, इसलिए यह सामान्य है।</li>
+  <li>ऐप खोलें (फ़ोन पर इसका नाम अभी <b>astro_app</b> है)। पहली बार खुलने में कुछ सेकंड लगते हैं — स्थानों की सूची तैयार होती है।</li>
+</ol>
+<p class="note">ऐप पूरी तरह बिना इंटरनेट चलता है। कुछ भी इंटरनेट पर नहीं जाता; आपका डेटा आपके फ़ोन में ही रहता है।</p>
+</section>
+
+<section>
+<h2>2. पहली बार की सेटिंग (2 मिनट)</h2>
+<ol>
+  <li>कुंडलियाँ सूची में ऊपर दाएँ <b>सेटिंग्स</b> (⚙) आइकन दबाएँ।</li>
+  <li><b>भाषा</b> → <b>हिंदी</b> चुनें।</li>
+  <li><b>रंग-रूप</b> → <b>केसरिया (पंचांग जैसा)</b> या <b>रात्रि (गहरा)</b>। दोनों देखें और बताएँ कौन सा अच्छा लगा।</li>
+  <li><b>लेटरहेड (PDF)</b> → अपना नाम, पद (जैसे “वैदिक ज्योतिषी”), फ़ोन, पता और लोगो डालें। ये PDF कुंडली के हर पृष्ठ पर छपते हैं। <b>सहेजें</b> दबाएँ।</li>
+  <li>गणना की सेटिंग पहले से AstroSage जैसी है (लाहिड़ी अयनांश, मध्यम राहु, सूर्य का ऊपरी किनारा)। अलग पद्धति अपनाते हों तभी बदलें।</li>
+</ol>
+</section>
+
+<section>
+<h2>3. प्रशिक्षण — ऐप के साथ एक सामान्य दिन</h2>
+
+<h3>चरण 1 · कुंडली बनाएँ</h3>
+<ol>
+  <li><b>कुंडलियाँ</b> टैब पर <b>+ नई कुंडली</b> दबाएँ।</li>
+  <li>नाम, लिंग, जन्म तिथि और समय भरें।</li>
+  <li><b>स्थान:</b> शहर का नाम अंग्रेज़ी अक्षरों में लिखें (जैसे <i>Lucknow</i>, <i>Agra</i>) और सूची से चुनें। टाइम ज़ोन, पुराना बॉम्बे/कलकत्ता समय और युद्ध-काल (1942–45) का समय अपने आप लग जाता है — नीचे दिखता है कि क्या लगाया गया।</li>
+  <li>आसान तरीका: <b>विवरण पेस्ट करें</b> — जैसे “Ramesh male born 12-03-1990 at 10:45 am in Agra” पेस्ट करें, फ़ॉर्म अपने आप भर जाएगा।</li>
+  <li><b>सहेजें और खोलें</b> दबाएँ।</li>
+</ol>
+
+<h3>चरण 2 · कुंडली देखें</h3>
+<p>कुंडली में ऊपर टैब हैं — सब देखने के लिए उन्हें बगल में खिसकाएँ:</p>
+<ul>
+  <li><b>कुंडली</b> — लग्न, चंद्र, चलित और सभी वर्ग कुंडलियाँ (D2–D60)। उत्तर, दक्षिण या पूर्व भारतीय शैली। किसी भी ग्रह पर टैप करें तो उसका पूरा विवरण। स्विच चालू करें तो हर भाव में सर्वाष्टकवर्ग बिंदु।</li>
+  <li><b>ग्रह</b> — राशि, अंश, नक्षत्र-पद, नक्षत्र स्वामी व उप-स्वामी, उच्च/नीच/स्वगृही, नवांश; वक्री, अस्त और वर्गोत्तम चिह्नित।</li>
+  <li><b>दशा</b> — आज चल रही दशा रंगीन दिखती है। किसी दशा पर टैप करें तो अंतर, प्रत्यंतर, सूक्ष्म और प्राण दशा खुलती है। किसी भी दिन के लिए “तारीख पर जाएँ”।</li>
+  <li><b>गोचर</b> — आज के ग्रह जन्म कुंडली पर, चंद्र से गोचर फल (वेध सहित) और अष्टकवर्ग बिंदु। दिन, महीना या वर्ष आगे-पीछे करें, या खोजें (“शनि मेरे चंद्र पर कब आएगा?”)।</li>
+  <li><b>वर्ग, बल, केपी, योग, भाव, विवरण, मैत्री, कारक</b> — नीचे सुविधाओं की सूची देखें।</li>
+</ul>
+
+<h3>चरण 3 · ग्राहक को PDF कुंडली दें</h3>
+<ol>
+  <li>कुंडली में ऊपर <b>PDF</b> आइकन दबाएँ।</li>
+  <li>जो भाग चाहिए उन पर निशान लगाएँ, और <b>हिंदी</b> या English चुनें।</li>
+  <li><b>PDF बनाएँ</b> दबाएँ (लगभग 15–17 पृष्ठ, कुछ सेकंड में)। पूर्वावलोकन देखें।</li>
+  <li><b>भेजें</b> → WhatsApp, या <b>प्रिंट</b>।</li>
+</ol>
+
+<h3>चरण 4 · कुंडली मिलान</h3>
+<ol>
+  <li>कुंडलियाँ सूची में ऊपर <b>♡ दिल</b> आइकन दबाएँ।</li>
+  <li>वर और कन्या चुनें (दोनों की कुंडली पहले से सहेजी हो)।</li>
+  <li>36 गुणों का अष्टकूट मिलान हर कूट के साथ, नाड़ी/भकूट दोष और उनका परिहार, दोनों का मंगल दोष, और दक्षिण भारतीय 10 पोरुथम व रज्जु दिखते हैं।</li>
+</ol>
+
+<h3>चरण 5 · पंचांग और मुहूर्त</h3>
+<ol>
+  <li>कुंडलियाँ सूची में ऊपर <b>📅 कैलेंडर</b> आइकन दबाएँ। एक बार अपना शहर चुनें (📍 आइकन)।</li>
+  <li>तारीख वाली पट्टी को खिसकाएँ (या तीर दबाएँ) तो दिन बदलता है; पट्टी पर टैप करें तो तारीख चुनें।</li>
+  <li>पट्टी के नीचे बटन: दिन, होरा, चौघड़िया, गौरी, मुहूर्त, लग्न सारणी, पंचक रहित, चन्द्र / तारा बल, पंचक व भद्रा, व्रत, त्योहार, ग्रहण।</li>
+</ol>
+
+<h3>चरण 6 · ग्राहक और मुलाक़ातें</h3>
+<ol>
+  <li><b>ग्राहक</b> टैब → <b>नया ग्राहक</b> (नाम, फ़ोन, शहर, नोट्स)।</li>
+  <li>ग्राहक के पृष्ठ पर <b>परिवार की कुंडलियाँ</b> के आगे <b>+</b> दबाएँ — परिवार के सदस्य (स्वयं, पति/पत्नी, पुत्र…) की नई कुंडली बनाएँ या पहले से सहेजी कुंडली जोड़ें।</li>
+  <li><b>नई मुलाक़ात</b> दबाएँ: तारीख, समय, और परामर्श के बाद अपने नोट्स, फ़ीस, मिली / बाकी, और फ़ॉलो-अप की तारीख।</li>
+  <li><b>मुलाक़ातें</b> टैब में आज, आगे, पिछली और बाकी फ़ीस दिखती है। फ़ोन मुलाक़ात से 30 मिनट पहले और फ़ॉलो-अप के दिन सुबह 10 बजे याद दिलाता है।</li>
+  <li>ग्राहक के पृष्ठ से सीधे कॉल या WhatsApp करें।</li>
+</ol>
+
+<h3>चरण 7 · बैकअप रखें (हफ़्ते में एक बार)</h3>
+<ol>
+  <li>सेटिंग्स → <b>बैकअप</b> → <b>अभी बैकअप लें</b> → <b>Drive</b> (Save to Drive) या WhatsApp चुनें।</li>
+  <li>नए फ़ोन पर: ऐप इंस्टॉल करें, सेटिंग्स → बैकअप → <b>बैकअप फ़ाइल से वापस लाएँ</b>।</li>
+</ol>
+</section>
+
+<section>
+<h2>4. सभी सुविधाओं की सूची</h2>
+
+<h3>कुंडली</h3>
+<ul>
+  <li>भारत और दुनिया के स्थान बिना इंटरनेट खोजें; भारत के पुराने टाइम ज़ोन (बॉम्बे/कलकत्ता समय, युद्ध-काल) अपने आप।</li>
+  <li>उत्तर, दक्षिण और पूर्व भारतीय कुंडली; लग्न, चंद्र, चलित और 16 वर्ग कुंडलियाँ (D1–D60); यूरेनस-नेपच्यून-प्लूटो चालू/बंद।</li>
+  <li>ग्रह सारणी: नक्षत्र, पद, नक्षत्र स्वामी/उप-स्वामी, उच्च-नीच आदि, नवांश; वक्री, अस्त, वर्गोत्तम।</li>
+  <li>जन्म विवरण (स्थानीय समय, नाक्षत्र काल, अयनांश सहित); जन्म का पंचांग; अवकहड़ा चक्र (वर्ण, वश्य, योनि, गण, नाड़ी, पाया, नामाक्षर, दशा शेष)।</li>
+  <li>ग्रह मैत्री (नैसर्गिक, तात्कालिक, पंचधा) और चर कारक (7 या 8)।</li>
+</ul>
+
+<h3>दशाएँ</h3>
+<ul>
+  <li>विंशोत्तरी (5 स्तर तक), योगिनी, चर दशा (के. एन. राव)।</li>
+  <li>अष्टोत्तरी और सशर्त दशाएँ: षोडशोत्तरी, द्वादशोत्तरी, पंचोत्तरी, शताब्दिका, चतुरशीति-सम, द्विसप्तति-सम, षष्टिहायनी, षट्त्रिंशत्-सम — साथ में यह भी कि कुंडली पर लागू है या नहीं।</li>
+  <li>दशा वर्ष की लंबाई का विकल्प।</li>
+</ul>
+
+<h3>बल, योग और केपी</h3>
+<ul>
+  <li>अष्टकवर्ग: भिन्नाष्टक, सर्वाष्टक, प्रस्तार; कुंडली पर सर्वाष्टक बिंदु।</li>
+  <li>षड्बल (हर अंग सहित) और भाव बल।</li>
+  <li>योग और दोष (मंगल, कालसर्प आदि) परिहार सहित; साढ़ेसाती और ढैया की अवधियाँ; अवस्थाएँ, उपग्रह, आरूढ़, नवतारा।</li>
+  <li>केपी: भाव और ग्रह — राशि/नक्षत्र/उप/उप-उप स्वामी, कारकत्व, भाव कारक, नक्षत्र नाड़ी, 4-चरण सिद्धांत, CIL, शासक ग्रह, प्रश्न कुंडली (1–249)।</li>
+</ul>
+
+<h3>गोचर</h3>
+<ul>
+  <li>गोचर ग्रह जन्म कुंडली पर, चंद्र से गोचर फल (वेध सहित), सर्वाष्टक/भिन्नाष्टक बिंदु।</li>
+  <li>खोज: राशि परिवर्तन, और जन्म ग्रह या लग्न पर ठीक कब आएँगे।</li>
+</ul>
+
+<h3>कुंडली मिलान</h3>
+<ul>
+  <li>अष्टकूट (36 गुण) — नाड़ी/भकूट दोष और परिहार, दोनों का मंगल दोष, 10 पोरुथम और रज्जु।</li>
+</ul>
+
+<h3>पंचांग (किसी भी तारीख, किसी भी स्थान का)</h3>
+<ul>
+  <li>तिथि, नक्षत्र, योग, करण — समाप्ति समय सहित; अमांत/पूर्णिमांत मास; शक, विक्रम, गुजराती संवत् नाम सहित; बार्हस्पत्य संवत्सर; प्रविष्टे।</li>
+  <li>सूर्योदय, सूर्यास्त, चंद्रोदय, चंद्रास्त; ऋतु, अयन, दिनमान, रात्रिमान।</li>
+  <li>शुभ समय: अभिजित, ब्रह्म, विजय, गोधूलि, निशिता, अमृत काल, सर्वार्थ सिद्धि, अमृत सिद्धि, रवि योग, रवि/गुरु पुष्य, द्वि/त्रिपुष्कर।</li>
+  <li>अशुभ समय: राहु काल, यमगंड, गुलिक, दुर्मुहूर्त, वर्ज्य, भद्रा, गण्ड मूल, आडल, विडाल, बाण।</li>
+  <li>आनन्दादि और तमिल योग, जीवनम, नेत्रम; होमाहुति, दिशा शूल, नक्षत्र शूल, राहु/अग्नि/भद्रा/चन्द्र/शिव वास, कुम्भ चक्र।</li>
+  <li>वर्ष का मंत्रिमंडल; कलि अहर्गण, राष्ट्रीय तिथियाँ और अन्य पंचांग।</li>
+  <li>होरा, चौघड़िया, गौरी, 30 मुहूर्त, लग्न सारणी, पंचक रहित, सभी राशियों का चन्द्र बल और सभी नक्षत्रों का तारा बल।</li>
+  <li>महीने के पंचक और भद्रा; वर्ष भर की एकादशी, पूर्णिमा, अमावस्या, प्रदोष, संकष्टी, शिवरात्रि और संक्रांति; 46 मुख्य त्योहार; ग्रहण और सूतक।</li>
+</ul>
+
+<h3>आपका काम-काज</h3>
+<ul>
+  <li>आपके लेटरहेड वाली PDF कुंडली, हिंदी या English में; भेजें या प्रिंट करें।</li>
+  <li>ग्राहक — परिवार की कुंडलियाँ, परामर्श के नोट्स, फ़ीस (मिली / बाकी), भेजी गई PDF, कॉल और WhatsApp बटन।</li>
+  <li>मुलाक़ातें — याद दिलाना, फ़ॉलो-अप, बाकी फ़ीस की सूची।</li>
+  <li>Google Drive पर बैकअप और वापस लाना।</li>
+  <li>हिंदी और English; केसरिया या रात्रि रंग-रूप।</li>
+</ul>
+</section>
+
+<section>
+<h2>5. इन बातों पर आपकी राय चाहिए</h2>
+<ol>
+  <li>आप कौन सा अयनांश और कौन सी कुंडली शैली इस्तेमाल करते हैं? क्या पहले से चुनी सेटिंग (लाहिड़ी, उत्तर भारतीय) ठीक है?</li>
+  <li>क्या परिणाम आपके अभी के सॉफ़्टवेयर से मिलते हैं? जहाँ कुछ अलग लगे (ग्रह अंश, दशा की तारीख, योग, मिलान के गुण), वह कुंडली ज़रूर भेजें।</li>
+  <li>आप कौन सी पद्धति इस्तेमाल करते हैं जो इसमें नहीं है — लाल किताब, वर्षफल, केपी प्रश्न का और विस्तार, कोई और दशा?</li>
+  <li>PDF कुंडली: कौन से पृष्ठ चाहिए, किस क्रम में? क्या आपकी टिप्पणी और उपाय के लिए एक पृष्ठ हो?</li>
+  <li>कौन से त्योहार और व्रत और जोड़ें?</li>
+  <li>जहाँ परंपराएँ अलग हैं: मंगल दोष का परिहार, पंचक की समाप्ति, मिलान में वश्य और गण की सारणी।</li>
+  <li>क्या अक्षर पर्याप्त बड़े हैं? केसरिया या रात्रि — कौन सा रंग-रूप पसंद है?</li>
+  <li>ऐप का नाम क्या रखें?</li>
+</ol>
+</section>
+
+<section>
+<h2>6. इस परीक्षण संस्करण की सीमाएँ</h2>
+<ul>
+  <li>स्थान का नाम अंग्रेज़ी अक्षरों में लिखें (हिंदी में स्थान खोज अभी तैयार नहीं)।</li>
+  <li>ऐप गणना देता है, लिखित फलादेश नहीं।</li>
+  <li>फ़ोन पर ऐप का नाम (“astro_app”) अस्थायी है।</li>
+</ul>
+</section>
+</div>
+  <div id="en" lang="en" hidden>
+<header class="cover">
+  <div class="kicker">Test version for your feedback</div>
+  <h1>Jyotish App — Guide</h1>
+  <p class="sub">A Vedic astrology app for your daily work: kundli, dashas, transits, KP, matching, panchang, a branded PDF kundli, and your clients and appointments — all on the phone, works without internet.</p>
+</header>
+
+<section>
+<h2>1. Install the app</h2>
+<ol>
+  <li>Open the file <b>JyotishApp.apk</b> you received on WhatsApp.</li>
+  <li>If the phone asks, allow <b>“Install unknown apps”</b> for WhatsApp (or your file manager) and tap <b>Install</b>.</li>
+  <li>If Google Play Protect warns that the app is unknown, tap <b>More details → Install anyway</b>. This is normal for a test app that is not on the Play Store yet.</li>
+  <li>Open the app (its name on the phone is <b>astro_app</b>). The first start takes a few seconds while it sets up the list of places.</li>
+</ol>
+<p class="note">The app works fully offline. Nothing is sent to the internet; your data stays on your phone.</p>
+</section>
+
+<section>
+<h2>2. First-time setup (2 minutes)</h2>
+<ol>
+  <li>Tap the <b>⚙ settings</b> icon (top right on the Kundli list).</li>
+  <li><b>Language</b> → choose <b>हिंदी</b> or English.</li>
+  <li><b>Look</b> → <b>Saffron</b> (light, almanac style) or <b>Night</b> (dark). Try both and tell us which you like.</li>
+  <li><b>Letterhead (PDF)</b> → enter your name, a title line (e.g. “Vedic Astrologer”), phone, address and choose your logo. These print on every page of the PDF kundli. Tap <b>Save</b>.</li>
+  <li>The calculation settings are already set like AstroSage (Lahiri ayanamsa, mean Rahu, upper-limb sunrise). Change them only if you work differently.</li>
+</ol>
+</section>
+
+<section>
+<h2>3. Tutorial — a normal day with the app</h2>
+
+<h3>Step 1 · Make a kundli</h3>
+<ol>
+  <li>On the <b>Kundli</b> tab tap <b>+ New kundli</b>.</li>
+  <li>Enter name, gender, date and time of birth.</li>
+  <li><b>Place:</b> type the town in English letters (e.g. <i>Lucknow</i>, <i>Agra</i>) and pick it from the list. Time zone, old Indian time zones (Bombay/Calcutta time) and war time (1942–45) are applied automatically — the panel shows what was used.</li>
+  <li>Shortcut: <b>Type or paste birth details</b> — paste a line like “Ramesh male born 12-03-1990 at 10:45 am in Agra” and the form fills itself.</li>
+  <li>Tap <b>Save and open</b>.</li>
+</ol>
+
+<h3>Step 2 · Read the kundli</h3>
+<p>The chart screen has tabs across the top — swipe sideways to see all of them:</p>
+<ul>
+  <li><b>Kundli</b> — Lagna, Chandra, Chalit and every divisional chart (D2–D60). Choose North, South or East style. Tap any planet for its full details. Turn on the switch to show Sarvashtakavarga points in each house.</li>
+  <li><b>Planets</b> — sign, degree, nakshatra-pada, star and sub lord, dignity, navamsha; retrograde, combust and vargottama marked.</li>
+  <li><b>Dasha</b> — the running period is highlighted (today). Tap a period to open its antar, pratyantar, sookshma and prana dashas. Use “Jump to date” for any date.</li>
+  <li><b>Transit</b> — today’s planets drawn on the birth chart, gochara from the Moon with vedha, and Ashtakavarga points. Step by day, month or year, or search (“when does Saturn cross my Moon?”).</li>
+  <li><b>Varga, Strength, KP, Yogas, Bhava, Details, Friendship, Karakas</b> — see the feature list below.</li>
+</ul>
+
+<h3>Step 3 · Give the client a PDF kundli</h3>
+<ol>
+  <li>In a kundli tap the <b>PDF</b> icon (top bar).</li>
+  <li>Tick the sections you want and choose <b>हिंदी</b> or English.</li>
+  <li>Tap <b>Make PDF</b> (about 15–17 pages, a few seconds). Look through the preview.</li>
+  <li><b>Share</b> → WhatsApp, or <b>Print</b>.</li>
+</ol>
+
+<h3>Step 4 · Match two kundlis</h3>
+<ol>
+  <li>On the Kundli list tap the <b>♡ heart</b> icon.</li>
+  <li>Choose the boy and the girl (both must be saved kundlis).</li>
+  <li>You see the 36-guna Ashtakoota with each koota, Nadi/Bhakoot dosha and their cancellation, Mangal dosha of both, and the South Indian 10 poruthams with rajju.</li>
+</ol>
+
+<h3>Step 5 · Panchang and muhurta</h3>
+<ol>
+  <li>Tap the <b>📅 calendar</b> icon on the Kundli list. Choose your city once (pin icon).</li>
+  <li>Swipe the date banner (or use the arrows) to change the day; tap it to pick a date.</li>
+  <li>Use the buttons under the banner: Day, Hora, Choghadiya, Gowri, Muhurta, Lagna table, Panchaka Rahita, Chandra/Tara bala, Panchak & Bhadra, Vrat, Festivals, Eclipses.</li>
+</ol>
+
+<h3>Step 6 · Clients and appointments</h3>
+<ol>
+  <li><b>Clients</b> tab → <b>New client</b> (name, phone, city, notes).</li>
+  <li>In the client, tap <b>+</b> under Family charts to make a new kundli for a family member (self, spouse, son…) or link a saved one.</li>
+  <li>Tap <b>New appointment</b>: date, time, and after the consultation your notes, fee and paid / unpaid, and a follow-up date.</li>
+  <li>The <b>Appointments</b> tab shows today, upcoming, past and unpaid. The phone reminds you 30 minutes before an appointment and at 10 am on a follow-up day.</li>
+  <li>Call or WhatsApp a client straight from their page.</li>
+</ol>
+
+<h3>Step 7 · Keep a backup (once a week)</h3>
+<ol>
+  <li>Settings → <b>Backup</b> → <b>Back up now</b> → choose <b>Drive</b> (Save to Drive) or WhatsApp.</li>
+  <li>On a new phone: install the app, Settings → Backup → <b>Restore from a backup file</b>.</li>
+</ol>
+</section>
+
+<section>
+<h2>4. Complete list of features</h2>
+
+<h3>Kundli</h3>
+<ul>
+  <li>Offline place search for India and the world; Indian time-zone history (Bombay/Calcutta time, war time) applied automatically.</li>
+  <li>North, South and East Indian charts; Lagna, Chandra, Chalit and 16 divisional charts (D1–D60); outer planets on/off.</li>
+  <li>Planet table with nakshatra, pada, star/sub lord, dignity, navamsha; retro, combust, vargottama.</li>
+  <li>Birth details with LMT, sidereal time and ayanamsa; panchang at birth; Avakhada chakra (varna, vashya, yoni, gana, nadi, paya, name letter, dasha balance).</li>
+  <li>Planetary friendship (natural, temporal, five-fold) and Chara karakas (7 or 8).</li>
+</ul>
+
+<h3>Dashas</h3>
+<ul>
+  <li>Vimshottari to 5 levels, Yogini, Chara (K. N. Rao).</li>
+  <li>Ashtottari and the conditional dashas: Shodashottari, Dwadashottari, Panchottari, Shatabdika, Chaturashiti-sama, Dwisaptati-sama, Shashtihayani, Shat-trimsha-sama — with whether each one applies to the chart.</li>
+  <li>Choice of dasha year length.</li>
+</ul>
+
+<h3>Strength, yogas and KP</h3>
+<ul>
+  <li>Ashtakavarga: BAV, SAV, prastara; SAV points on the chart.</li>
+  <li>Shadbala with every component and Bhava bala.</li>
+  <li>Yogas and doshas (Mangal, Kaal Sarp and others) with cancellation; Sade Sati and Dhaiya periods; avasthas, upagrahas, arudhas, navatara.</li>
+  <li>KP: cusps and planets with sign/star/sub/sub-sub lords, significations, house significators, Nakshatra Nadi, 4-step theory, CIL, ruling planets, horary (1–249).</li>
+</ul>
+
+<h3>Transits</h3>
+<ul>
+  <li>Transit planets on the birth chart, gochara from the Moon with vedha, SAV/BAV points.</li>
+  <li>Search: sign changes and exact crossings over natal planets or lagna.</li>
+</ul>
+
+<h3>Matching</h3>
+<ul>
+  <li>Ashtakoota (36 gunas) with Nadi/Bhakoot dosha and cancellation, Mangal dosha of both, 10 poruthams and rajju.</li>
+</ul>
+
+<h3>Panchang (any date, any place)</h3>
+<ul>
+  <li>Tithi, nakshatra, yoga, karana with end times; amanta/purnimanta month; Shaka, Vikram, Gujarati samvat with names; Brihaspati samvatsara; Pravishte.</li>
+  <li>Sunrise, sunset, moonrise, moonset; ritu, ayana, dinamana, ratrimana.</li>
+  <li>Auspicious: Abhijit, Brahma, Vijaya, Godhuli, Nishita, Amrit Kalam, Sarvartha Siddhi, Amrita Siddhi, Ravi Yoga, Ravi/Guru Pushya, Dwi/Tripushkar.</li>
+  <li>Inauspicious: Rahu Kaal, Yamaganda, Gulika, Dur Muhurtam, Varjyam, Bhadra, Ganda Moola, Aadal, Vidaal, Baana.</li>
+  <li>Anandadi and Tamil yoga, Jeevanam, Netram; Homahuti, Disha Shool, Nakshatra Shool, Rahu/Agni/Bhadra/Chandra/Shiva vasa, Kumbha chakra.</li>
+  <li>Mantri Mandala of the year; Kali Ahargana, national dates and other calendars.</li>
+  <li>Hora, Choghadiya, Gowri, 30 muhurtas, lagna table, Panchaka Rahita, Chandrabalam and Tarabalam for all rashis and nakshatras.</li>
+  <li>Monthly Panchak and Bhadra; yearly Ekadashi, Purnima, Amavasya, Pradosh, Sankashti, Shivaratri and Sankranti lists; 46 main festivals; eclipses with sutak.</li>
+</ul>
+
+<h3>Practice</h3>
+<ul>
+  <li>PDF kundli with your letterhead, in Hindi or English, share or print.</li>
+  <li>Clients with family kundlis, consultation notes, fees (paid / due), PDFs sent, call and WhatsApp buttons.</li>
+  <li>Appointments with reminders; follow-ups; list of unpaid fees.</li>
+  <li>Backup to Google Drive and restore.</li>
+  <li>Hindi and English; Saffron or Night look.</li>
+</ul>
+</section>
+
+<section>
+<h2>5. What we would like your opinion on</h2>
+<ol>
+  <li>Which ayanamsa and chart style do you use? Are the defaults (Lahiri, North Indian) right?</li>
+  <li>Do the results match the software you use now? Please send any kundli where something looks different (planet degree, dasha date, yoga, matching points).</li>
+  <li>Which systems do you use that are missing — Lal Kitab, Varshphal, KP horary details, any other dasha?</li>
+  <li>The PDF kundli: which pages do you want, in which order, and should it have a page for your remarks and remedies?</li>
+  <li>Festivals and vrats: which ones should be added?</li>
+  <li>Small rules where traditions differ: Mangal dosha cancellation, the end of Panchak, the Vashya and Gana tables in matching.</li>
+  <li>Is the text big enough? Do you prefer the Saffron or the Night look?</li>
+  <li>What name should the app have?</li>
+</ol>
+</section>
+
+<section>
+<h2>6. Known limits of this test version</h2>
+<ul>
+  <li>Type place names in English letters (Hindi place search is not ready yet).</li>
+  <li>The app gives calculations, not written predictions.</li>
+  <li>The app name on the phone is temporary (“astro_app”).</li>
+</ul>
+</section>
+</div>
+</div>
+<script>
+(function () {
+  function show(lang) {
+    if (lang !== 'en') lang = 'hi';
+    document.getElementById('hi').hidden = lang !== 'hi';
+    document.getElementById('en').hidden = lang !== 'en';
+    document.getElementById('btn-hi').setAttribute('aria-pressed', String(lang === 'hi'));
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      show(b.dataset.lang);
+      try { history.replaceState(null, '', '#' + b.dataset.lang); } catch (e) { location.hash = b.dataset.lang; }
+    });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  show(location.hash.slice(1));
+})();
+</script>
